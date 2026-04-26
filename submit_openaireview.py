@@ -51,14 +51,14 @@ def truncate_pdf(pdf_bytes: bytes, max_bytes: int = MAX_UPLOAD_BYTES) -> bytes:
     return best if best is not None else pdf_bytes
 
 
-def _natural_key(name: str):
-    return [int(c) if c.isdigit() else c for c in re.split(r"(\d+)", name)]
-
-
-def get_pdf_files() -> list[str]:
-    files = [f for f in os.listdir(PDF_DIR) if f.endswith(".pdf")]
-    files.sort(key=_natural_key)
-    return [os.path.join(PDF_DIR, f) for f in files]
+def get_pdf_files() -> dict[int, str]:
+    pattern = re.compile(r"^paper(\d+)\.pdf$")
+    result = {}
+    for f in os.listdir(PDF_DIR):
+        m = pattern.match(f)
+        if m:
+            result[int(m.group(1))] = os.path.join(PDF_DIR, f)
+    return result
 
 
 def submit_paper(pdf_path: str, email: str) -> str:
@@ -103,30 +103,29 @@ if __name__ == "__main__":
 
     all_pdfs = get_pdf_files()
 
-    selected = all_pdfs[start_idx - 1 : end_idx]
+    selected = [(idx, all_pdfs[idx]) for idx in range(start_idx, end_idx + 1) if idx in all_pdfs]
     TOKENS_DIR.mkdir(parents=True, exist_ok=True)
     tokens_file = str(TOKENS_DIR / f"{start_idx}_{end_idx}.json")
 
     print(f"Submitting {len(selected)} paper(s)...")
 
-    base_start = start_idx
     last_successful_idx = None
 
     tokens = load_tokens(tokens_file)
-    for i, pdf_path in enumerate(selected):
+    for paper_idx, pdf_path in selected:
         filename = os.path.basename(pdf_path)
         try:
             token = submit_paper(pdf_path, user_email)
             tokens[filename] = token
             save_tokens(tokens, tokens_file)
-            last_successful_idx = base_start + i
+            last_successful_idx = paper_idx
             print(f"[OK] {filename}: {token}")
             print(f"     https://openaireview.org/results.html?token={token}")
         except requests.HTTPError as e:
             if e.response is not None and e.response.status_code == 429:
                 print(f"[429] Rate limited on {filename}. Stopping.")
                 if last_successful_idx is not None:
-                    new_tokens_file = str(TOKENS_DIR / f"{base_start}_{last_successful_idx}.json")
+                    new_tokens_file = str(TOKENS_DIR / f"{start_idx}_{last_successful_idx}.json")
                     os.rename(tokens_file, new_tokens_file)
                     print(f"Tokens saved to {new_tokens_file}")
                 else:
