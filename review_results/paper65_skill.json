@@ -1,0 +1,539 @@
+{
+  "slug": "paper65_skill",
+  "title": "Broadband Thermal Imaging using Meta-Optics",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Broadband Thermal Imaging using Meta-Optics\n\nArka Majumdar\narka@uw.edu\n\nUniversity of Washington https://orcid.org/0000-0003-0917-590X"
+    },
+    {
+      "index": 1,
+      "text": "Luocheng Huang\nUniversity of Washington\n\nZheyi Han\nUniversity of Washington\n\nAnna Wirth-Singh\nUniversity of Washington"
+    },
+    {
+      "index": 2,
+      "text": "Vishwanath Saragadam\nRice University https://orcid.org/0000-0001-8028-7520\n\nSaswata Mukherjee\nUniversity of Washington"
+    },
+    {
+      "index": 3,
+      "text": "Johannes E Fr\u00f6ch\nUniversity of Washington\n\nJoshua Rollag\nAir Force Research Laboratory\n\nRicky Gibson\nAir Force Research Laboratory"
+    },
+    {
+      "index": 4,
+      "text": "Joshua Hendrickson\nAir Force Research Laboratory https://orcid.org/0000-0002-5342-0346\n\nPhilip Hon\nNG Next, Northrop Grumman Corporation"
+    },
+    {
+      "index": 5,
+      "text": "Orrin Kigner\nNorthrop Grumman Corporation https://orcid.org/0000-0002-0701-3002\n\nZachary Koppens\nNorthrop Grumman Corporation"
+    },
+    {
+      "index": 6,
+      "text": "Karl B\u00f6hringer\nUniversity of Washington https://orcid.org/0000-0002-9428-2648\n\nAshok Veeraraghavan\nRice University https://orcid.org/0000-0001-5043-7460"
+    },
+    {
+      "index": 7,
+      "text": "Article\n\nKeywords: LWIR, inverse design, meta-optic, metasurface, broadband\n\nPosted Date: July 26th, 2023"
+    },
+    {
+      "index": 8,
+      "text": "DOI: https://doi.org/10.21203/rs.3.rs-3186927/v1\n\nLicense: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 9,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on February 23rd, 2024. See the published version at https://doi.org/10.1038/s41467-024-45904-w."
+    },
+    {
+      "index": 10,
+      "text": "# Stronger Nature 2021 LaTeX template\n\n# Broadband Thermal Imaging using Meta-Optics\n\nLuocheng Huang^{1}, Zheyi Han^{1}, Anna Wirth-Singh^{2}, Vishwanath Saragadam^{3}, Saswata Mukherjee^{1}, Johannes E. Fr\u00f6ch^{1,2}, Joshua Rollag^{4,5}, Ricky Gibson^{5}, Joshua R. Hendrickson^{5}, Phillip W.C. Hon^{6}, Orrin Kigner^{6}, Zachary Coppens^{7}, Karl F. B\u00f6hringer^{1,8}, Ashok Veeraraghavan^{3} and Arka Majumdar^{1,2*}"
+    },
+    {
+      "index": 11,
+      "text": "^{1}Department of Electrical and Computer Engineering, University of Washington, Seattle, WA, USA.\n^{2}Department of Physics, University of Washington, Seattle, WA, USA.\n^{3}Department of Electrical Engineering, Rice University, Houston, TX, USA.\n^{4}KBR, Inc., 3725 Pentagon Blvd., Suite 210 Beavercreek, OH, USA.\n^{5}Sensors Directorate, Air Force Research Laboratory, 2241 Avionics Circle, Wright-Patterson AFB, OH, USA.\n^{6}NG Next, Northrop Grumman Corporation, 1 Space Park Drive, Redondo Beach, CA, USA.\n^{7}CFD Research Corporation, Huntsville, AL, USA.\n^{8}Institute for Nano-Engineered Systems, University of Washington, Seattle, WA, USA."
+    },
+    {
+      "index": 12,
+      "text": "*Corresponding author(s). E-mail(s): arka@uw.edu;\n\n###### Abstract\n\nSubwavelength diffractive optics known as meta-optics have demonstrated the potential to significantly miniaturize imaging systems. However, despite impressive demonstrations, most meta-optical imaging systems suffer from strong chromatic aberrations, limiting their"
+    },
+    {
+      "index": 13,
+      "text": "utilities. Here, we employ inverse-design to create broadband meta-optics operating in the long-wave infrared (LWIR) regime (8-12 \u00b5m). Via a deep-learning assisted multi-scale differentiable framework that links meta-atoms to the phase, we maximize the wavelength-averaged volume under the modulation transfer function (MTF) of the meta-optics. Our design framework merges local phase-engineering via meta-atoms and global engineering of the scatterer within a single pipeline. We corroborate our design by fabricating and experimentally characterizing all-silicon LWIR meta-optics. Our engineered meta-optic is complemented by a simple computational backend that dramatically improves the quality of the captured image. We experimentally demonstrate a six-fold improvement of the wavelength-averaged Strehl ratio over the traditional hyperboloid metalens for broadband imaging."
+    },
+    {
+      "index": 14,
+      "text": "###### keywords:\n\nLWIR, inverse design, meta-optic, metasurface, broadband\n\n## 1 Introduction\n\nLong-wavelength infrared (LWIR) imaging is a critical key technology for non-contact thermography, long-range imaging, and remote sensing, with applications spanning consumer electronics to defense *[1]*. High resolution imaging in LWIR typically requires bulky, and precisely engineered refractive surfaces, which ultimately add to the overall volume and weight of the imaging system, especially for high numerical aperture (NA) optics. To reduce the size and weight of LWIR imagers, diffractive optical elements such as multi-level diffractive lenses (MDL)*[2]* have been used as an alternative to traditional refractive optics. However, the use of MDLs has been limited by the complexity of the multi-layer fabrication and the large periodicity, resulting in higher order diffraction. Sub-wavelength diffractive optics, also known as meta-optics, have recently generated strong interest to spatially modulate the phase, amplitude, and polarization of the incident wavefront. These consist of scatterers, which are placed on a sub-wavelength periodic lattice to avoid any higher order diffraction, whereas the active layer thickness of the device corresponds to the height of the scatterers *[3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]*. Due to the drastic thickness and weight reduction in meta-optics compared to refractive lenses, LWIR meta-optical imaging under ambient light conditions have been recently reported *[16, 17, 18]*. However, until this point, the captured image quality remained relatively poor compared to refractive lenses, primarily due to strong chromatic aberrations."
+    },
+    {
+      "index": 15,
+      "text": "Some drawbacks of meta-optics are inherited from their diffractive counterparts, the most significant one being their axial chromatic aberration. This happens because the phase wrapping condition for different wavelengths is met at different radii *[13, 19]*. The dispersion engineering approach can ameliorate this axial chromatic aberration to some degree, but ultimately faces fundamental limitations explicitly set by the achievable group delay and group"
+    },
+    {
+      "index": 16,
+      "text": "delay dispersion *[20]* for large aperture meta-optics. To overcome this fundamental limitation and enhance the image quality, chromatic aberrations in a large-aperture meta-optics can be mitigated via computational imaging using forward designed meta-optics that exhibit extended depth of focus (EDOF) properties, as demonstrated in the visible regime*[21, 22]*."
+    },
+    {
+      "index": 17,
+      "text": "However, for forward designed meta-optics an optical designer has to strongly rely on experience and intuition about the functionality of the meta-optics. As such, this method does not provide a clear path to further improve the imaging quality. Unlike forward design, inverse design approaches define the performance of the optical element via a figure of merit (FoM), and computationally optimize their structure or arrangement to maximize the respective FoM. The inverse design methodology has been very successful in creating non-intuitive yet functional meta-optics *[23, 24, 25]*, including EDOF lenses for broadband imaging in the visible. A further refinement and extension of this approach is end-to-end design, where the meta-optics and computational backend are co-optimized with a FoM defined by the final image quality*[26]*. While such an approach takes the entire system into account, the downside is that we often lack the insight into how and why the optic performs well. This can be detrimental when translating designs from the visible domain (with ample training data) to the thermal domain (with paucity of training data). As such, a new design paradigm is required for meta-optical imagers, which provides intuition on why such meta-optics can perform broadband imaging."
+    },
+    {
+      "index": 18,
+      "text": "In this paper, we report a 1 cm ($\\sim 1000\\lambda$) aperture, f/1 (numerical aperture (NA): 0.45) broadband polarization-insensitive LWIR meta-optics, designed by a multi-scale optimization technique that maximizes the wavelength-averaged volume under the modulation transfer function (MTF) of the meta-optic. This method is \u201cmulti-scale\u201d as distinct computational methods are used to calculate the electric fields at different length scales. The meta-optics are implemented in an all-silicon platform and we demonstrate that the captured images exhibit superior performance over traditional hyperboloid metalens. Unlike previous works, which relied either on local engineering of meta-atoms (dispersion engineering) or global engineering of the phase-mask, our optimization technique employs both meta-atom and phase-mask engineering. We show that such an extended approach clearly outperforms a phase-mask engineering only approach."
+    },
+    {
+      "index": 19,
+      "text": "## 2 Results\n\n### 2.1 Inverse Design Framework\n\nThe key to achieve meta-optical broadband LWIR imaging is a fully-differentiable inverse design framework that optimizes the binary structures (i.e., binary permittivity distribution) of the meta-atoms to achieve focusing of the desired wavelengths (Fig. 1(a)). However, designing a large-area ($\\sim 10^{3}\\lambda$) meta-optic is a computationally prohibitive problem, and full-wave simulation is not possible. Therefore, phase-mask optimization is generally used, but"
+    },
+    {
+      "index": 20,
+      "text": "the scatterer-to-phase mapping on a sub-wavelength scale is not differentiable and a look-up-table based approach does not work for such an optimization methodology. In the past, polynomial proxy functions have been employed to connect scatterers to the corresponding phase [26], but were limited to only a monotonic relation. However, for broadband operations meta-atoms with a large phase diversity with multiple phase wrappings are required but suffer from multiple resonances at various wavelengths."
+    },
+    {
+      "index": 21,
+      "text": "We solve this problem by utilizing a deep neural network (DNN)-based surrogate model, that maps the geometrical parameters ($\\vec{\\mathbf{p}}$) of the meta-atom to its complex transmission coefficient $\\mathbf{\\hat{E}}(\\vec{\\mathbf{p}},\\lambda)$. The utilization of DNNs enable modeling highly complex functions, which are well suited for broadband meta-optics. To emphasize this point, we compare meta-atoms with different degrees of parameterization: the \u201csimple\u201d scatterers are defined by one design parameter (the width of the pillar), whereas the \u201ccomplex\u201d scatterers have three parameters, see Fig. 1(b). For each type of meta-atom, we sampled the parameters $\\vec{\\mathbf{p}}$ uniformly for each feature dimension and simulated it using rigorous coupled wave analysis (RCWA) [27], across different wavelengths $\\lambda$. The simulated meta-atom library is then taken as the training data set for the DNN that maps the parameterized features to the phase modulation. The RCWA simulations and the DNN fitting are pre-computed before the optimization loop, shown in Fig. 1(c). Although we are currently limited to parameterized meta-atoms, with the rapid progress of machine learning-enabled meta-optics design, we anticipate voxel-level meta-atom engineering will be possible in the near future. Also, our design currently relies on the local phase approximation, which is known to provide lower efficiency for meta-optics. However, recently a physics-inspired neural network has been used to design meta-optics without making such approximation and can be readily adapted for the scatterer-to-field mapping [28]."
+    },
+    {
+      "index": 22,
+      "text": "We define the FoM by computing the normalized MTFs first as $\\hat{M}(k_{x},k_{y},\\lambda,\\theta)$, where $k_{x}$, $k_{y}$ are defined as the spatial frequencies in the x and y direction, $\\lambda$ is the optical wavelength, and $\\theta$ signifies the incident angle (more details in Methods). The modified Strehl Ratio $\\mathbf{S}$ can then be calculated using the following expression:"
+    },
+    {
+      "index": 23,
+      "text": "\\[ \\begin{split}\\mathbf{S}(\\lambda,\\theta)&=\\int_{-k_{y1}}^{k_{y1}}\\int_{-k_{x1}}^{k_{x1}}\\hat{M}\\left(k_{x},k_{y};\\lambda,\\theta\\right)dk_{x}dk_{y}\\\\\n&=\\sum_{i}\\sum_{j}\\hat{M}\\left(k_{x}(i),k_{y}(j);\\lambda,\\theta\\right)\\Delta k_{x}\\Delta k_{y}\\end{split} \\] (1)"
+    },
+    {
+      "index": 24,
+      "text": "Here, $k_{x1}$ and $k_{y1}$ denote the cutoff spatial frequencies in the x and y direction. Using the modifed Strehl Ratio, the FoM $\\mathbf{F}$ is computed as:"
+    },
+    {
+      "index": 25,
+      "text": "$\\mathbf{F}=\\log(\\prod_{i}\\prod_{j}S(\\lambda_{i},\\theta_{j}))$ (2)\n\n![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)"
+    },
+    {
+      "index": 26,
+      "text": "![img-2.jpeg](img-2.jpeg)\nFig. 1 Design methodology to create the broadband LWIR meta-optics. (a) Our objective is a LWIR meta-optic that focuses broadband light at the same focal plane. (b) Parameterization of the \"complex\" (red) and the \"simple\" (blue) scatterers. For the complex scatterers, three variable parameters control the binary profile, namely,  $\\mathbf{p_0},\\mathbf{p_1}$ , and  $\\mathbf{p_2}$ . This method of parameterization ensures 4-fold symmetry of the geometry, thus ensuring polarization-insensitivity. The height  $\\mathbf{h}$  is kept constant at  $10\\mu \\mathrm{m}$ . The meta-atoms sit on a Manhattan grid with a periodicity  $\\Lambda$  set to  $4\\mu \\mathrm{m}$ . (c) Block diagram of the optimization routine. (d) The simulated Strehl ratio of the \"simple\", \"complex\", and hyperboloid meta-optic."
+    },
+    {
+      "index": 27,
+      "text": "![img-3.jpeg](img-3.jpeg)\n\nThis FoM can be interpreted as the wavelength and incidence angle-averaged volume under the MTF surface, and we therefore term this optimization routine as \"MTF engineering\". We emphasize that our FoM is maximized when all individual  $S(\\lambda_i, \\theta_j)$  are identical, thus constraining our meta-optics to have a uniform performance for the specified wavelengths without explicitly defining uniformity as an optimization criteria. Since the entirety of the forward computation of the FoM is implemented using differentiable operations, the gradient of the FoM with respect to the geometry parameters, i.e.  $\\partial \\mathbf{S} / \\partial \\vec{\\mathbf{p}}$ , can be readily obtained using automatic differentiation through chain rule in the direction indicated by the red arrows in Fig. 1(b). A stochastic gradient descent algorithm then optimizes the structural parameters  $\\vec{\\mathbf{p}}$ . The optimization routine halts when the value of FoM converges, yielding the final meta-optic design."
+    },
+    {
+      "index": 28,
+      "text": "# 2.2 Meta-optics Design\n\nUsing the \"MTF engineering\" framework, we designed the broadband LWIR meta-optics. We opted for an all-silicon platform, which is composed of silicon pillars on a silicon substrate, to simplify the fabrication process. We note that while silicon does absorb some of the LWIR light, we still expect about  $80\\%$  light transmission."
+    },
+    {
+      "index": 29,
+      "text": "In this study, we designed two different broadband meta-optics, each with a unique scatterer archetype shown in Fig. 1(b). Both archetypes were parameterized to ensure fourfold symmetry, which leads to polarization insensitivity. Additionally, we designed a hyperboloid metalens, based on a forward design approach *Braun et al. (2019)*, possessing similar height and periodicity, to serve as a baseline for comparison. All designed meta-optics have a nominal focal length of 1 cm and a numerical aperture of 0.45. In our simulations, the optimized broadband meta-optics displayed significantly larger wavelength-averaged Strehl Ratios\u20140.045 for the meta-optics with \u201ccomplex\u201d scatterers and 0.018 for those with \u201csimple\u201d scatterers, as compared to 0.0075 for the forward-designed hyperboloid metalens. The simulations were, however, limited to 8 optimized wavelengths spanning from 8 to 12 \u00b5m due to memory constraints. Fig. 1(d) depicts the simulated Strehl ratios of the optics described above in relation to the input wavelength. For these simulations, individual meta-atoms were simulated using RCWA, while DNN mapping was utilized solely for optimization. To mimic fabrication imperfections, we introduced normally distributed perturbation into each meta-atom\u2019s design parameters. Remarkably, the complex meta-optic design yielded Strehl ratios at eight sampled wavelengths that are comparable to the Strehl ratio at a single operational wavelength of the hyperboloid metalens."
+    },
+    {
+      "index": 30,
+      "text": "Although the spectral regions between the sampled wavelengths exhibit relatively lower Strehl ratios compared to the peak values, these ratios for the non-sampled wavelengths still remain significantly larger than those of the hyperboloid lens at the same wavelengths. As such, when averaged over all the wavelengths of interest, we still obtain a six-fold improvement for the average Strehl ratio. Our experimental results demonstrate that, despite such polychromatic behavior, it is possible to capture images under broadband ambient thermal radiation. This highlights the practicality and adaptability of our broadband meta-optic designs in real-world scenarios."
+    },
+    {
+      "index": 31,
+      "text": "### 2.3 Fabrication\n\nWe fabricated the LWIR meta-optics in an all-silicon platform, with a set of devices shown in Fig. 2(a). We pattern the Si wafer with laser direct-write lithography and etch the patterns using deep reactive ion etching (details in Methods). We note that patterning can also be acomplished with a mask aligner \u2013 therefore our all-silicon platform can be adapted to large scale foundry processes. Scanning electron microscope images of the fabricated complex and simple meta-optics are depicted in Fig. 2(b) and 2(c), respectively."
+    },
+    {
+      "index": 32,
+      "text": "### 2.4 Imaging\n\nWe first characterized the PSF of the fabricated lenses (result in Supplementary materials), and observed less variation of the PSFs across the LWIR range as expected. To conclusively demonstrate that the MTF-engineered optics deliver superior imaging quality compared to the forward-designed metalens,"
+    },
+    {
+      "index": 33,
+      "text": "![img-4.jpeg](img-4.jpeg)\nFig. 2 Images of the fabricated meta-optics: (a) Camera image of a fabricated wafer with several meta-optics. SEM images of the meta-optics with (b) complex scatterers and (c) simple scatterers."
+    },
+    {
+      "index": 34,
+      "text": "![img-5.jpeg](img-5.jpeg)\n\n![img-6.jpeg](img-6.jpeg)\n\n![img-7.jpeg](img-7.jpeg)\nFig. 3 Broadband imaging results in the lab (after computation), comparing the hyperboloid metalens (a, d), MTF engineered meta-optic with simple scatterers (b, e), and MTF engineered meta-optic with complex scatterers (c, f). For each subfigure the imaging results are shown without a filter (top), with a  $10 \\pm 0.25\\mu \\mathrm{m}$  bandpass filter (bottom left), and with a  $12 \\pm 0.25\\mu \\mathrm{m}$  bandpass (bottom right). The scale bar is  $0.56\\mathrm{mm}$ . Imaging results using two different targets, namely are a modified USAF 1951 pattern (top) and a picture of a husky (bottom) are shown."
+    },
+    {
+      "index": 35,
+      "text": "we evaluated their respective imaging performance under controlled conditions (see Methods for details). As illustrated in Fig. 3, the images captured using the MTF-engineered meta-optic with complex scatterers exhibit the highest level of clarity and detail. Stripe elements of an imaging target can be clearly distinguished and well separated, emphasizing the overall crispness of the images."
+    },
+    {
+      "index": 36,
+      "text": "To highlight the broadband capability of the MTF-engineered meta-optics, we captured images using both $10\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ and $12\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ bandpass filters (each with a linewidth of $500\\text{nm}$). We ensured a consistent distance between the meta-optics and the imaging sensor, maintaining a nominal operating wavelength of $11\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$. The resultant imaging outputs, which are presented without any denoising, are displayed at the bottom of each sub-figure in Fig. 3. Notably, the MTF-engineered meta-optic with complex scatterers outperforms both the simple scatterers and the forward-designed optics for both the line and husky targets. Additionally, the MTF-engineered meta-optic with simple scatterers demonstrates superior performance over the forward-designed hyperboloid metalens, as evidenced by a clearer image and higher peak signal-to-noise ratio (PSNR) for both patterns in both the $10\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ and $12\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ cases. A comprehensive list of PSNR values can be found in the supplementary information."
+    },
+    {
+      "index": 37,
+      "text": "To further emphasize the capabilities of the MTF-engineered LWIR meta-optics, we performed imaging \u201cin the wild\u201d under both indoor and outdoor ambient daylight conditions, shown in Fig. 4. In each case, we captured a single image using a FLIR A65 sensor, and performed a numerical deconvolution (details in the Methods and supplementary information). The MTF-engineered meta-optic with complex scatterers and forward-designed meta-optics were tested against a refractive lens for the ambient imaging. First, we imaged a truck parked outdoors shown in Fig. 4(a). The vehicle details are clearly visible such as the front grill, as well as background details, such as the windows on the top right corner of the image, and the stairs on the left side of the image captured using MTF-engineered meta-optic. In contrast, the hyperboloid image suffers from strong glowing artifacts in the center and fails to recover sharp details. Fig. 4(b) shows images of a parked car. As with the previous example, the details are clearly visible, including the tires on the car, and the branches of the tree in the background with the MTF-engineered lens. Fig. 4(c) shows image of a person with hands stretched out. The difference between MTF-engineered lens and hyperboloid metalens is distinctinctly visible here. The sharp image features are clearly visible in the MTF-engineered lens, including variable heat patterns on the shirt. In contrast, the image formed by the hyperboloid lens is noisy with no clear features on the person."
+    },
+    {
+      "index": 38,
+      "text": "## 3 Discussion\n\nIn this work, we have devised an inverse design methodology for broadband imaging meta-optics, guided by readily translatable, intuitive, and universal objective function, given by the volume of a multi-chromatic MTF surface."
+    },
+    {
+      "index": 39,
+      "text": "![img-8.jpeg](img-8.jpeg)\nRefractive\n\n![img-9.jpeg](img-9.jpeg)\nHyperboloid metalens\n\n![img-10.jpeg](img-10.jpeg)\nMTF engineered"
+    },
+    {
+      "index": 40,
+      "text": "![img-11.jpeg](img-11.jpeg)\n\n![img-12.jpeg](img-12.jpeg)\n\n![img-13.jpeg](img-13.jpeg)\n\n![img-14.jpeg](img-14.jpeg)\nFig. 4 LWIR imaging \"in the wild\". Three scenes were imaged using the refractive LWIR lens (left), the hyperboloid metalens (middle), and the MTF engineered meta-optic with complex scatterers (right). Scenes (a) and (b) were captured outdoors on a sunny day while (c) was captured indoors."
+    },
+    {
+      "index": 41,
+      "text": "![img-15.jpeg](img-15.jpeg)\n\n![img-16.jpeg](img-16.jpeg)\n\nUtilizing this MTF-engineering approach, we achieve a sophisticated, yet easily fabricable, large-aperture, broadband LWIR meta-optic, suitable for \"in the wild\" imaging under ambient temperature conditions. We have experimentally verified this framework and demonstrated polarization-insensitive broadband LWIR meta-optics with a diameter of  $1\\mathrm{cm}$  and NA of 0.45. While previous works based on forward designed LWIR meta-optics have demonstrated imaging capabilities [22], they fell short in resolving fine features due to strong chromatic aberrations. In contrast, our MTF-engineered meta-optics show significantly improved performance over a broadband spectral range, as well as narrowband imaging capabilities for wavelengths outside the center wavelength."
+    },
+    {
+      "index": 42,
+      "text": "We further elucidate, both in simulation and experiment, how a significant performance enhancement can be achieved for MTF-engineered meta-optics if we consider more structural degrees of freedom. Such complex parameterization of the meta-optics broadens the solution space during the optimization process, thereby increasing the likelihood of achieving an improved FoM. This provides a clear pathway for future designs to leverage a performance"
+    },
+    {
+      "index": 43,
+      "text": "boost by employing a higher degree of parameterization for the meta-optic scatterer, combined with large-scale optimization of the meta-optic. We note that previous works primarily employed either meta-atom engineering or phase-mask optimization, often overlooking potential synergistic effects. We demonstrate unequivocally that by utilizing structural diversity along with global phase-mask engineering, a six-fold performance improvement can be achieved. However, a clear downside is that the sampling complexity increases exponentially with the number of structural parameters. Additionally, fabrication resolution requirements become more stringent with the increased complexity of the meta-atoms. Despite these challenges, they can potentially be overcome by using a more clever parameterization of the meta-atom, similar to what has been achieved in dispersion engineering approaches."
+    },
+    {
+      "index": 44,
+      "text": "Overall, the developed MTF-engineering framework provides a universal methodology for creating large-area broadband meta-optics. Our imaging and characterization results clearly demonstrate the advantages of employing the MTF-engineering methodology over the traditional forward design. We showcase that the MTF-engineered flat optics open a new avenue for miniaturizing LWIR imaging systems, with potential applications in unmanned aerial vehicles, thermal scopes, and perimeter security."
+    },
+    {
+      "index": 45,
+      "text": "## 4 Methods\n\n### 4.1 MTF Calculation\n\nEach meta-atom is assigned a position (x, y) on a Manhattan grid with a periodicity of $\\mathbf{\\Lambda}$ and a height of $\\mathbf{h}$, whose geometric parameters are $\\mathbf{\\vec{p}}$. These geometric parameters are given random assigned initial values within the fabrication limited bounds. The spatial modulation of the meta-optic $\\mathbf{\\hat{E}}(x,y,\\lambda)$ is calculated given the meta-atom position and the wavelengths of the incident fields. The spatial modulation is then multiplied by the incident field (planewave with incidence angle $\\theta$) and propagated to the sensor plane centered to the chief ray, using the shifted angular spectrum method *Kraus et al. (2015)*. The variable $I(x,y;\\lambda,\\theta)$ represents the sampled intensities on the sensor plane given all permutations of the wavelengths and angles of incidence of the incident fields. This intensity is the point spread function (PSF) of the imaging system. The MTF ($M$) is computed from the PSF given by $\\mathbf{M}(k_{x},k_{y};\\lambda,\\theta)=|\\mathcal{F}(I(x,y;\\lambda,\\theta))|$, where $\\mathcal{F}$ is the Fourier transform. The diffraction limited MTFs are denoted as $D(k_{x},k_{y},\\lambda)$. The normalized MTF is defined as $\\hat{M}=M(k_{x},k_{y},\\lambda)/D(k_{x},k_{y},\\lambda)$."
+    },
+    {
+      "index": 46,
+      "text": "### 4.2 Optimization\n\nFor the design with the complex scatterer, we used 40 samples per feature dimension in $\\mathbf{\\vec{p}}$ while keeping $h$ constant at $10\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$. Combining with 101 samples of wavelengths $\\lambda$, there are totally $40^{3}\\times 101$ RCWA simulations conducted for training of the DNN model. For the simple scatterer case, we sampled 1000"
+    },
+    {
+      "index": 47,
+      "text": "values for the only structure variable $p_{1}$ and 101 wavelengths, also keeping $h$ constant at 10 \u00b5m, resulting in $1000\\times 101$ training samples for the surrogate. For training the DNN surrogate model, the Adam optimizer is used with a learning rate of $10^{-3}$ for 1000 epochs. To span a diameter of 10 cm, a total of $2500\\times 2500$ meta-atoms are used with a periodicity of 10 \u00b5m. During optimization, a total of 13 samples of wavelengths are used uniformly spanning from 8 \u00b5m to 12 \u00b5m. We selected $0^{\\circ}$ and $10^{\\circ}$ to be the angles of incidence in our optimization."
+    },
+    {
+      "index": 48,
+      "text": "The DNN surrogate model uses four layers of fully connected layers that have 256 units and hyperboloid tangent as the activation function for each layer. To ensure a differentiable mapping, the fitted surrogate model uses all differentiable operations."
+    },
+    {
+      "index": 49,
+      "text": "The structure parameters $\\vec{\\mathbf{p}}$ are assigned initial values within the fabrication limited bounds. There are two conditions for the optimization loop to halt: (1) $\\vec{\\mathbf{p}}$ converges, i.e. $\\vec{\\mathbf{p}}_{n}-\\vec{\\mathbf{p}}_{n-1}<\\mathbf{T}$, where $\\mathbf{T}$ denotes a threshold, and $n$ represents the iteration number; (2) the number iteration reaches a certain integer $\\mathbf{N}$. When one halting conditions is met, the final meta-atom binary structure parameters are converted to GDSII files for fabrication."
+    },
+    {
+      "index": 50,
+      "text": "### 4.3 Characterization\n\nWe characterized the PSFs of the fabricated meta-optics using a confocal microscopy setup in the LWIR. In this configuration, a tunable, 8.23 - 10.93 \u00b5m, quantum cascade laser (QCL) with 500 ns pulses and repetition rate of 100 kHz (Daylight Solutions 31090-CT) was incident on a Ge aspheric lens with focal length $f_{1}$=20 mm and NA of 0.63 (Edmund Optics #68-253). This lens focused the QCL onto a 30 \u00b5m diameter pinhole (Thorlabs P30S) where approximately 30% of the incident power was transmitted. The QCL was then incident on the meta-optic, placed $2f_{meta}+f_{2}$ = 35 mm from the pinhole. The beam was then collimated by a Ge aspheric lens with $f_{2}$=15 mm and NA of 0.83 (Edmund Optics #68-252) placed $f_{meta}+f_{2}$=35 mm after the meta-optic. The beam then traveled to a ZnSe plano-convex lens with $f_{3}$=50.8 mm which focused the beam onto the image plane. This ZnSe lens was created by Rocky Mountain Instrument Co. and had a custom coating covering the 3 \u2013 12 \u00b5m range with a reflectivity $R_{avg}\\leq 5\\%$. The image was captured on a strained layer superlattice (SLS) focal plane array (FPA) with a 15 \u00b5m pixel pitch and 640$\\times$512 pixels (FLIR A6751 SLS) cooled to 76 K. The camera acquisition time was 200 $\\mu s$ to best fit the 14-bit dynamic range of the FPA and 100 frames were captured and averaged with background correction. The schematic of the setup and the component specifications are present in the supplement information. The measured PSFs are reported in the supplementary information."
+    },
+    {
+      "index": 51,
+      "text": "### 4.4 In-lab Imaging\n\nTo assess the improved imaging performance of the MTF-engineered meta-optics over the forward-designed metalens, we captured imaged under broadband illumination using black-body radiation from a hotplate with high-emissivity fiberglass tape heated to 150^{\u2218}C as the light source. Custom aluminum targets were made using laser cutting and finished with matte black paint to prevent reflections. These targets were placed in front of the hotplate, allowing patterned LWIR light to go through, creating contrast. A Boson 640 camera was placed on the imaging plane of the meta-optic in testing and sent the data to a PC for further post-processing, which included background subtracting, contrast stretching, and block-matching denoising. Through this predefined post-processing routine, we were able to improve the dynamic range and reduce microbolometer array artifacts."
+    },
+    {
+      "index": 52,
+      "text": "### 4.5 Solving the Deconvolution Inverse Problem\n\nFig. 4 shows images captured in the wild with our meta-optic. In each case, we deconvolved the measurements by solving an inverse problem using a data-free image prior. Each $640\\times 512$ image was modeled as output of an implicit neural representation (INR) *[30, 31]* $\\mathcal{N}_{\\theta}$ with parameters $\\theta$. INRs are continuous functions that map local coordinates ($x,y$ for images) to a given output (image intensity). A unique property enabled by certain INRs, particularly ones equipped with a complex Gabor filter activation function, is the bias for images. This implies that the output tend to look more like images than noise. We leveraged this property to regularize the inverse problem. The specific inverse problem we solved is"
+    },
+    {
+      "index": 53,
+      "text": "$\\min_{\\theta,K}\\sum_{n=1}^{N}\\sum_{m=1}^{M}\\|I_{\\text{obs}}(m,n)-(K*\\mathcal{N}_{\\theta})(m,n)\\|^{2}+\\eta_{\\text{TV}}\\text{TV}(\\mathcal{N}_{\\theta}(m,n)),$ (3)"
+    },
+    {
+      "index": 54,
+      "text": "where $I_{\\text{obs}}$ is the observed 2D image, $K$ is the PSF of the optical system, TV() is the total variation loss function, and $\\eta_{\\text{TV}}$ is the weight for the total variation loss. We perform a semi-blind deconvolution where we initialize $K$ to be the analytical PSF from our simulations, and then solve for the parameters of the network and the PSF together."
+    },
+    {
+      "index": 55,
+      "text": "LWIR sensors based on microbolometers suffer from fixed pattern noise, which causes horizontal and vertical striations. Inspired by recent work on removing fixed pattern noise in thermal images *[32]*, we modeled it as a low-rank image. We then simultaneously solved for the fixed pattern noise, the PSF, and the parameters of the network, giving us"
+    },
+    {
+      "index": 56,
+      "text": "$\\min_{\\theta,K,F}\\sum_{n=1}^{N}\\sum_{m=1}^{M}\\|I_{\\text{obs}}(m,n)-F(m,n)(K*\\mathcal{N}_{\\theta})(m,n)\\|^{2}+\\eta_{\\text{TV}}\\text{TV}(\\mathcal{N}_{\\theta}(m,n)),$\n$\\text{s.t}\\quad\\text{rank}(F)=r,$"
+    },
+    {
+      "index": 57,
+      "text": "$F$ is the fixed pattern noise. We used the recently developed wavelet implicit neural representations (WIRE) [31] for the INR architecture as it resulted in highest qualitative accuracy. An overview of the reconstruction pipeline is shown in Fig. S5."
+    },
+    {
+      "index": 58,
+      "text": "### 4.6 Fabrication\n\nThe meta-optics are fabricated on a 500 \u00b5m thick double-side polished silicon wafer, lightly doped with boron, giving a sheet resistivity of 1-10 $\\Omega$-cm. Direct-write lithography (Heidelberg DWL 66+) defines the aperture locations in the photoresist covering the wafer surface. A 220 nm thick aluminum layer is deposited onto the patterned photoresist via electron beam evaporation (CHA Solution) and lifted off to construct the metal mask around the circular apertures, helping to reduce noise during the experiments. The wafer is coated with another photoresist and patterned with the meta-optic scatterers via direct-write lithography, aligned inside the defined apertures. The photoresist pattern of meta-optics is transferred to the bulk silicon to a depth of 10 \u00b5m by deep reactive ion etching (SPTS DRIE), utilizing its capability to etch with high aspect ratios and vertical sidewalls. After etching, the photoresist residue is stripped, and the fabricated meta-optics are ready for characterization. This process is shown on Fig. S8 in the supplement."
+    },
+    {
+      "index": 59,
+      "text": "## Funding\n\nFunding for this work was supported by the federal SBIR program. Part of this work was conducted at a National Nanotechnology Coordinated Infrastructure (NNCI) site at the University of Washington with partial support from the National Science Foundation. J.R.H. acknowledges support from the Air Force Office of Scientific Research (Program Manager Dr. Gernot Pomrenke) under award number FA9550-20RYCOR059."
+    },
+    {
+      "index": 60,
+      "text": "## References\n\n- (1) Vollmer, M., M\u00f6llmann, K.-P.: Infrared Thermal Imaging: Fundamentals, Research and Applications, pp. 88\u201396. John Wiley & Sons, ??? (2017)\n- (2) Meem, M., Banerji, S., Majumder, A., Vasquez, F.G., Sensale-Rodriguez, B., Menon, R.: Broadband lightweight flat lenses for long-wave infrared imaging. Proceedings of the National Academy of Sciences 116(43), 21375\u201321378 (2019). https://doi.org/10.1073/pnas.1908447116. Accessed 2021-03-30\n- (3) Zhan, A., Colburn, S., Trivedi, R., Fryett, T.K., Dodson, C.M., Majumdar, A.: Low-contrast dielectric metasurface optics. ACS Photonics 3(2), 209\u2013214 (2016)\n-"
+    },
+    {
+      "index": 61,
+      "text": "- [4] Arbabi, A., Briggs, R.M., Horie, Y., Bagheri, M., Faraon, A.: Efficient dielectric metasurface collimating lenses for mid-infrared quantum cascade lasers. Optics Express 23(26), 33310\u201333317 (2015)\n- [5] Farn, M.W.: Binary gratings with increased efficiency. Applied optics 31(22), 4453\u20134458 (1992)\n- [6] Lu, F., Sedgwick, F.G., Karagodsky, V., Chase, C., Chang-Hasnain, C.J.: Planar high-numerical-aperture low-loss focusing reflectors and lenses using subwavelength high contrast gratings. Optics express 18(12), 12606\u201312614 (2010)\n- [7] Arbabi, A., Horie, Y., Ball, A.J., Bagheri, M., Faraon, A.: Subwavelength-thick lenses with high numerical apertures and large efficiency based on high-contrast transmitarrays. Nature communications 6(1), 1\u20136 (2015)\n- [8] Fattal, D., Li, J., Peng, Z., Fiorentino, M., Beausoleil, R.G.: Flat dielectric grating reflectors with focusing abilities. Nature Photonics 4(7), 466\u2013470 (2010)\n- [9] Aieta, F., Genevet, P., Kats, M.A., Yu, N., Blanchard, R., Gaburro, Z., Capasso, F.: Aberration-free ultrathin flat lenses and axicons at telecom wavelengths based on plasmonic metasurfaces. Nano letters 12(9), 4932\u20134936 (2012)\n- [10] Khorasaninejad, M., Chen, W.T., Devlin, R.C., Oh, J., Zhu, A.Y., Capasso, F.: Metalenses at visible wavelengths: Diffraction-limited focusing and subwavelength resolution imaging. Science 352(6290), 1190\u20131194 (2016)\n- [11] Banerji, S., Meem, M., Majumder, A., Sensale-Rodriguez, B., Menon, R.: Extreme-depth-of-focus imaging with a flat lens. Optica 7(3), 214\u2013217 (2020)\n- [12] Arbabi, E., Arbabi, A., Kamali, S.M., Horie, Y., Faraon, A.: Multi-wavelength polarization-insensitive lenses based on dielectric metasurfaces with meta-molecules. Optica 3(6), 628\u2013633 (2016)\n- [13] Arbabi, E., Arbabi, A., Kamali, S.M., Horie, Y., Faraon, A.: Controlling the sign of chromatic dispersion in diffractive optics with dielectric metasurfaces. Optica 4(6), 625\u2013632 (2017)\n- [14] Colburn, S., Zhan, A., Majumdar, A.: Metasurface optics for full-color computational imaging. Science advances 4(2), 2114 (2018)\n- [15] Fan, Q., Liu, M., Yang, C., Yu, L., Yan, F., Xu, T.: A high numerical aperture, polarization-insensitive metalens for long-wavelength infrared"
+    },
+    {
+      "index": 62,
+      "text": "imaging. Applied Physics Letters 113(20), 201104 (2018)\n- [16] Huang, L., Coppens, Z., Hallman, K., Han, Z., B\u00f6hringer, K.F., Akozbek, N., Raman, A., Majumdar, A.: Long wavelength infrared imaging under ambient thermal radiation via an all-silicon metalens. Optical Materials Express 11(9), 2907\u20132914 (2021)\n- [17] Nalbant, H.C., Balli, F., Yelbo\u011fa, T., Eren, A., S\u00f6zak, A.: Transmission optimized lwir metalens. Applied Optics 61(33), 9946\u20139950 (2022)\n- [18] Saragadam, V., Han, Z., Boominathan, V., Huang, L., Tan, S., Fr\u00f6ch, J.E., B\u00f6hringer, K.F., Baraniuk, R.G., Majumdar, A., Veeraraghavan, A.: Foveated Thermal Computational Imaging in the Wild Using All-Silicon Meta-Optics. arXiv (2022). https://doi.org/10.48550/ARXIV.2212.06345. https://arxiv.org/abs/2212.06345\n- [19] Huang, L., Colburn, S., Zhan, A., Majumdar, A.: Full-color metaoptical imaging in visible light. Advanced Photonics Research 3(5), 2100265 (2022) https://onlinelibrary.wiley.com/doi/pdf/10.1002/adpr.202100265. https://doi.org/10.1002/adpr.202100265\n- [20] Presutti, F., Monticone, F.: Focusing on bandwidth: achromatic metalens limits. In: 2020 Conference on Lasers and Electro-Optics (CLEO), pp. 1\u20132 (2020). IEEE\n- [21] Colburn, S., Zhan, A., Bayati, E., Whitehead, J., Ryou, A., Huang, L., Majumdar, A.: Broadband transparent and cmos-compatible flat optics with silicon nitride metasurfaces. Optical Materials Express 8(8), 2330\u20132344 (2018)\n- [22] Huang, L., Whitehead, J., Colburn, S., Majumdar, A.: Design and analysis of extended depth of focus metalenses for achromatic computational imaging. Photonics Research 8(10), 1613\u20131623 (2020)\n- [23] Bayati, E., Pestourie, R., Colburn, S., Lin, Z., Johnson, S.G., Majumdar, A.: Inverse designed metalenses with extended depth of focus. ACS photonics 7(4), 873\u2013878 (2020)\n- [24] Lin, Z., Roques-Carmes, C., Pestourie, R., Solja\u010di\u0107, M., Majumdar, A., Johnson, S.G.: End-to-end nanophotonic inverse design for imaging and polarimetry. Nanophotonics 1(ahead-of-print) (2020)\n- [25] Campbell, S.D., Sell, D., Jenkins, R.P., Whiting, E.B., Fan, J.A., Werner, D.H.: Review of numerical optimization techniques for meta-device design. Optical Materials Express 9(4), 1842\u20131863 (2019)\n- [26] Tseng, E., Colburn, S., Whitehead, J., Huang, L., Baek, S.-H., Majumdar,"
+    },
+    {
+      "index": 63,
+      "text": "A., Heide, F.: Neural Nano-Optics for High-quality Thin Lens Imaging. arXiv e-prints, 2102\u201311579 (2021) arXiv:2102.11579 [physics.optics]\n- [27] Liu, V., Fan, S.: S4: A free electromagnetic solver for layered periodic structures. Computer Physics Communications 183(10), 2233\u20132244 (2012)\n- [28] Zhelyeznyakov, M.V., Froch, J.E., Wirth-Singh, A., Noh, J., Rho, J., Brunton, S.L., Majumdar, A.: Large area optimization of meta-lens via data-free machine learning. arXiv (2022). https://doi.org/10.48550/ARXIV.2212.10703. https://arxiv.org/abs/2212.10703\n- [29] Matsushima, K.: Shifted angular spectrum method for off-axis numerical propagation. Opt. Express 18(17), 18453\u201318463 (2010). https://doi.org/10.1364/OE.18.018453\n- [30] Sitzmann, V., Martel, J., Bergman, A., Lindell, D., Wetzstein, G.: Implicit neural representations with periodic activation functions. Adv. Neural Info. Processing Systems (2020)\n- [31] Saragadam, V., LeJeune, D., Tan, J., Balakrishnan, G., Veeraraghavan, A., Baraniuk, R.G.: WIRE: Wavelet Implicit Neural Representations. In: IEEE Comp. Vision and Pattern Recognition (CVPR) (2023)\n- [32] Saragadam, V., Dave, A., Veeraraghavan, A., Baraniuk, R.G.: Thermal image processing via physics-inspired deep networks. In: IEEE Intl. Conf. Computer Vision (ICCV) (2021)"
+    },
+    {
+      "index": 64,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- BroadbandThermalImagingusingMetaOpticsSI.pdf"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "This paper presents a genuinely interesting MTF-engineering inverse-design framework for broadband LWIR meta-optics, with a concrete fabricated 1 cm aperture device and visually compelling thermal imagery. The core contribution -- jointly optimizing meta-atom geometry and global phase via a DNN surrogate to maximize a wavelength-averaged MTF FoM -- is sound and worth revising. However, the headline \"six-fold Strehl improvement\" is presented as experimental but is in fact a simulated comparison against a same-library hyperboloid baseline, and the FoM being optimized is essentially the same metric used to declare victory. The most significant problems are: (1) the central 6x claim conflates simulated metrics with experimental demonstration and lacks a quantitative refractive-lens comparison; (2) the in-the-wild deconvolution jointly re-optimizes the PSF, so Fig. 4 reflects (lens + reconstruction stack) rather than lens quality alone, and parity of pipeline across baselines is not stated; and (3) Methods 4.2 contains internally inconsistent aperture/periodicity numbers that contradict the rest of the paper. These issues are fixable with revisions and additional measurements/clarifications, not fundamental concerns with the underlying idea.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Headline 'six-fold' improvement is a simulated, optimization-metric-derived ratio, not an experimental measurement",
+          "quote": "We experimentally demonstrate a six-fold improvement of the wavelength-averaged Strehl ratio over the traditional hyperboloid metalens for broadband imaging.",
+          "explanation": "The 0.045 vs 0.0075 wavelength-averaged Strehl ratios that produce the '6x' headline are reported only from simulations in Section 2.2 ('In our simulations, the optimized broadband meta-optics displayed significantly larger wavelength-averaged Strehl Ratios'). The PSF characterization (Sec 4.3) measures the fabricated lens but the paper does not report measured Strehl values from the PSFs in the main text. Compounding this, the figure of merit being optimized (log-product of modified Strehl ratios) is essentially the same quantity as the evaluation metric, so the ratio in part reflects 'we trained on this metric, the baseline did not.' The abstract should either present measured Strehl numbers, or describe the 6x as a simulation prediction; and the comparison should be supplemented with a metric the meta-optic was not directly trained for (e.g., PSNR with a fixed reconstruction pipeline).",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 13
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Aperture and periodicity in Methods 4.2 contradict main text and Fig. 1 caption",
+          "quote": "To span a diameter of 10 cm, a total of $2500\\times 2500$ meta-atoms are used with a periodicity of 10 \u00b5m.",
+          "explanation": "Section 4.2 states a 10 cm aperture and 10 \u00b5m periodicity with 2500x2500 atoms, but 2500*10 \u00b5m = 2.5 cm, so the sentence is internally inconsistent. The Introduction, Section 2.2, and Discussion all state a 1 cm aperture (~1000 lambda), and Fig. 1 caption gives Lambda = 4 \u00b5m. Only diameter = 1 cm and periodicity = 4 \u00b5m produce 2500x2500 atoms self-consistently. As written, Methods 4.2 misdescribes the simulated/fabricated lens, and a careful reader cannot tell which of the figures was the actual lens analyzed. This needs a corrigendum.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 47
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "Number of optimization wavelengths reported as 8 in Section 2.2 and 13 in Section 4.2",
+          "quote": "The simulations were, however, limited to 8 optimized wavelengths spanning from 8 to 12 \u00b5m due to memory constraints.",
+          "explanation": "Section 2.2 reports 8 optimized wavelengths 'due to memory constraints', but Methods 4.2 says 'During optimization, a total of 13 samples of wavelengths are used uniformly spanning from 8 \u00b5m to 12 \u00b5m.' These cannot both describe the same simulation. The wavelength sampling density directly determines how representative the FoM is of the continuous 8-12 \u00b5m band, and underlies the claim about non-sampled wavelengths still outperforming the hyperboloid. The two numbers should be reconciled, or a clear distinction made between training and evaluation samples.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "f/1 and NA 0.45 are not simultaneously consistent",
+          "quote": "we report a 1 cm ($\\sim 1000\\lambda$) aperture, f/1 (numerical aperture (NA): 0.45) broadband polarization-insensitive LWIR meta-optics",
+          "explanation": "f/# = 1/(2 NA) in air gives f/1 -> NA = 0.5, and NA = 0.45 -> f/1.11. The pairing 'f/1 (NA: 0.45)' as if equivalent appears in the Introduction and is repeated by '1 cm focal length and a numerical aperture of 0.45' in Section 2.2 (which would give f/# = 1.0 only with the paraxial sin formula). The mismatch is small but the spec is core to the paper. A single, internally consistent specification (with the convention used to compute NA, e.g. n*sin(theta_max) with theta_max = arctan(D/2f)) should be given.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "FoM = log(prod S_i) does not actually 'constrain uniform performance' as claimed",
+          "quote": "We emphasize that our FoM is maximized when all individual  $S(\\lambda_i, \\theta_j)$  are identical, thus constraining our meta-optics to have a uniform performance for the specified wavelengths without explicitly defining uniformity as an optimization criteria.",
+          "explanation": "log(prod S_i) is monotone in each S_i and does not by itself enforce equality of S_i. The argument that 'FoM is maximized when all S_i are identical' holds only with a fixed-sum (or fixed-mean) constraint on the S_i, which the optimization does not impose. The objective primarily strongly penalizes any S_i approaching zero (since log -> -infinity), which empirically suppresses worst-case wavelengths but is not a uniformity constraint. Separately, this FoM is unbounded below as any one S_i -> 0, which is a relevant numerical caveat. The justification should be tightened (e.g., compared empirically to alternative FoMs like the arithmetic mean or min-Strehl) rather than asserted.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "'Modified Strehl ratio' departs from textbook definition and lacks specified frequency cutoffs",
+          "quote": "Here, $k_{x1}$ and $k_{y1}$ denote the cutoff spatial frequencies in the x and y direction.",
+          "explanation": "The 'modified Strehl ratio' is defined as the integral of the normalized MTF over a finite frequency window (kx1, ky1), but: (a) the conventional Strehl ratio is a peak-PSF intensity ratio, not an MTF integral, so reusing the name is confusing; (b) the cutoff frequencies kx1, ky1 are introduced symbolically but never assigned numerical values, and the absolute Strehl numbers (0.045, 0.018, 0.0075) and the 6x ratio depend on this choice. Different cutoffs would change the numbers and could change the ranking. The paper should either rename the quantity (e.g., 'frequency-bounded MTF volume') or specify the cutoffs and their relationship to the diffraction-limited cutoff, so that absolute numbers can be interpreted and reproduced.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 24
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "MTF defined as the modulus of the FT of intensity, not normalized to OTF(0,0)",
+          "quote": "The MTF ($M$) is computed from the PSF given by $\\mathbf{M}(k_{x},k_{y};\\lambda,\\theta)=|\\mathcal{F}(I(x,y;\\lambda,\\theta))|$, where $\\mathcal{F}$ is the Fourier transform.",
+          "explanation": "The conventional MTF is |OTF| / |OTF(0,0)|, i.e. normalized so that M(0,0) = 1. As written, M(0,0) is the integrated PSF intensity, which depends on lens transmission and not just imaging quality. The paper does subsequently normalize by the diffraction-limited MTF (M-hat = M / D), but dividing two un-normalized magnitudes only equals dividing two normalized MTFs if their DC values are equal -- which would only hold under specific transmission conditions. Either the MTF definition should be written with the conventional normalization, or the paper should justify why the un-normalized form is equivalent here.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 45
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "DNN surrogate accuracy is never validated against held-out RCWA simulations",
+          "quote": "We solve this problem by utilizing a deep neural network (DNN)-based surrogate model, that maps the geometrical parameters ($\\vec{\\mathbf{p}}$) of the meta-atom to its complex transmission coefficient $\\mathbf{\\hat{E}}(\\vec{\\mathbf{p}},\\lambda)$.",
+          "explanation": "The DNN surrogate is the differentiable bridge from geometry to phase that drives gradient descent over 2500x2500 meta-atom parameters. Yet the paper reports no held-out test loss, no comparison of DNN-predicted vs. RCWA-simulated transmission, no analysis of error in regions of parameter space far from training samples. The optimizer can readily drive p toward configurations the DNN extrapolates incorrectly, in which case the realized fabrication does not match the simulation. Because the simple-vs-complex comparison also has very different surrogate training-data sizes (101k vs 6.464M samples), the difference between simple and complex performance may also partly reflect surrogate quality differences rather than only library expressiveness. Quantitative surrogate validation is needed.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "Polarization insensitivity claimed structurally but never measured",
+          "quote": "Both archetypes were parameterized to ensure fourfold symmetry, which leads to polarization insensitivity.",
+          "explanation": "The Abstract, Introduction, and Section 2.2 all advertise polarization insensitivity, but it is asserted only from meta-atom symmetry; no PSF or imaging measurement under TE vs. TM polarized illumination is reported. Four-fold symmetry of an idealized isolated meta-atom does not guarantee polarization-insensitive performance for the assembled lens, especially under oblique incidence (the optimization includes 10 deg) and in the presence of fabrication asymmetries from DRIE sidewall angles or alignment. This is a verifiable claim that should be backed up with a polarization-resolved measurement.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Quantitative comparison with the refractive lens baseline is missing",
+          "quote": "The MTF-engineered meta-optic with complex scatterers and forward-designed meta-optics were tested against a refractive lens for the ambient imaging.",
+          "explanation": "The Introduction motivates the work by noting that prior meta-optics have lower image quality than refractive lenses. Fig. 4 shows side-by-side outputs of refractive, hyperboloid, and MTF-engineered optics 'in the wild', but no quantitative metric (PSNR, MTF50, line-pair resolution) is reported for any of them. The natural strength claim is 'closes the gap with refractive optics', and a number is needed to support it. As presented the reader cannot tell whether the meta-optic is 90% or 30% as good as the refractive lens. The headline 6x claim is against a strawman hyperboloid, not the refractive lens that motivates the paper.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 37
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Quantitative imaging metric (PSNR) values relegated to supplement; reference image and alignment unspecified",
+          "quote": "as evidenced by a clearer image and higher peak signal-to-noise ratio (PSNR) for both patterns in both the $10\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ and $12\\text{\\,}\\mathrm{\\SIUnitSymbolMicro m}$ cases. A comprehensive list of PSNR values can be found in the supplementary information.",
+          "explanation": "The only quantitative experimental imaging metric is PSNR, but the actual numbers and the procedure used to compute them (reference image, alignment/registration, masking, whether reconstruction is included) are not in the main text. PSNR values for natural-looking targets depend strongly on the reference choice, and the meta-optic vs. hyperboloid comparison can flip depending on whether deconvolution is applied symmetrically (see related fairness comment). Headline numbers and a precise PSNR-computation protocol should be in the main text.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Semi-blind deconvolution that re-optimizes the PSF undermines lens-quality interpretation",
+          "quote": "We perform a semi-blind deconvolution where we initialize $K$ to be the analytical PSF from our simulations, and then solve for the parameters of the network and the PSF together.",
+          "explanation": "Eq. (3) jointly optimizes the WIRE network parameters theta, the PSF K, and the fixed-pattern noise F. Because K is a free variable, the deconvolved image quality is decoupled from the actual quality of the analytical PSF. This makes the Fig. 4 comparison effectively '(lens + reconstruction stack) yielding good imagery' rather than 'this lens has good imaging properties'. The fairness vs. the hyperboloid lens depends on whether the same reconstruction pipeline (with the same hyperparameters) is applied to both lenses; the paper does not state this. Whether the refractive lens images in Fig. 4 also receive this deconvolution is also unstated. As presented, an unfair comparison is plausible -- the meta-optic could win simply because the joint PSF optimization recovers more aggressively when the initial PSF is more diffuse.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 54
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Off-axis performance characterized only at 10 deg, far short of the imaging FOV",
+          "quote": "We selected $0^{\\circ}$ and $10^{\\circ}$ to be the angles of incidence in our optimization.",
+          "explanation": "Optimization includes only 0 and 10 deg incidence angles. For the f/1 (NA 0.45) optic with the Boson 640 / FLIR A65 / FLIR A6751 sensors used (640x512 to 640x512 with 12-15 \u00b5m pitch), the diagonal half-FOV is approximately 25-31 deg, well beyond 10 deg. The PSF is not characterized off-axis past 10 deg, and the in-lab and in-the-wild figures do not separate center vs. corner sharpness. The Discussion advertises applications -- 'thermal scopes, perimeter security, UAVs' -- where corner-of-FOV performance matters. The paper should report the meta-optic's PSF or MTF as a function of field angle out to the sensor corner.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 47
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "PSF characterization wavelength range (8.23-10.93 \u00b5m) does not cover the design band (8-12 \u00b5m)",
+          "quote": "we characterized the PSFs of the fabricated meta-optics using a confocal microscopy setup in the LWIR. In this configuration, a tunable, 8.23 - 10.93 \u00b5m, quantum cascade laser (QCL) ...",
+          "explanation": "The QCL tunes from 8.23 to 10.93 \u00b5m but the design band is 8-12 \u00b5m and one of the imaging filter conditions is 12 +/- 0.25 \u00b5m. The PSF measurement therefore does not cover the 11-12 \u00b5m portion of the band, leaving the long-wavelength performance unmeasured. The broadband claim depends on uniform performance across the full band, so this gap should be filled (e.g., with a different QCL line, blackbody-illuminated narrowband measurements, or an explicit caveat).",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Optical setup distance contradicts the formula for collimating-lens placement",
+          "quote": "The QCL was then incident on the meta-optic, placed $2f_{meta}+f_{2}$ = 35 mm from the pinhole. The beam was then collimated by a Ge aspheric lens with $f_{2}$=15 mm and NA of 0.83 (Edmund Optics #68-252) placed $f_{meta}+f_{2}$=35 mm after the meta-optic.",
+          "explanation": "With f_meta = 10 mm and f_2 = 15 mm: 2*f_meta + f_2 = 35 mm (correct for the first sentence) but f_meta + f_2 = 25 mm, not 35 mm (incorrect for the second sentence). The 35 mm distance from the meta-optic to the collimating lens cannot equal f_meta + f_2 with these focal lengths. Either the formula is wrong, or the distance is wrong; in either case the actual confocal alignment determines whether the post-collimating beam is parallel and how the PSF maps to the FPA. This is a real specification error in the characterization setup that should be corrected.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Robustness analysis lacks the magnitude of the fabrication-mimicking perturbation",
+          "quote": "To mimic fabrication imperfections, we introduced normally distributed perturbation into each meta-atom\u2019s design parameters.",
+          "explanation": "The paper claims the design is robust to fabrication imperfections by injecting normally distributed perturbations into design parameters, but the standard deviation, distribution truncation, whether perturbations were applied during training (data augmentation) or only at evaluation, and whether they were applied to all parameters or a subset are not specified. The robustness claim is unverifiable as written, and is the primary bridge from simulation to expected fabricated performance.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "Critical hyperparameters of optimization and deconvolution are missing",
+          "quote": "There are two conditions for the optimization loop to halt: (1) $\\vec{\\mathbf{p}}$ converges, i.e. $\\vec{\\mathbf{p}}_{n}-\\vec{\\mathbf{p}}_{n-1}<\\mathbf{T}$, where $\\mathbf{T}$ denotes a threshold, and $n$ represents the iteration number; (2) the number iteration reaches a certain integer $\\mathbf{N}$.",
+          "explanation": "Reproduction is blocked by missing hyperparameters: the convergence threshold T, the maximum iteration count N, the SGD learning rate for the meta-optic optimization (only the DNN training rate is given), the cutoff frequencies (kx1, ky1), the perturbation standard deviation for the robustness check, the TV regularization weight eta_TV, the rank r of the fixed-pattern noise, and the WIRE iteration counts. Each is fixable independently; cumulatively they prevent reproduction of both the central simulated Strehl numbers and the deconvolved Fig. 4 imagery.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 49
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Equation (3) TV term and rank constraint underspecified; multiplicative FPN model deviates from cited prior work",
+          "quote": "$\\min_{\\theta,K,F}\\sum_{n=1}^{N}\\sum_{m=1}^{M}\\|I_{\\text{obs}}(m,n)-F(m,n)(K*\\mathcal{N}_{\\theta})(m,n)\\|^{2}+\\eta_{\\text{TV}}\\text{TV}(\\mathcal{N}_{\\theta}(m,n)),$ $\\text{s.t}\\quad\\text{rank}(F)=r,$",
+          "explanation": "Multiple specification problems with Eq. (3): (a) the TV term inside the sum, written as TV(N_theta(m,n)), depends on a single (m,n) but TV is conventionally a function of an entire image involving differences between neighboring pixels -- as written the equation is ill-defined; (b) the rank-constrained F is multiplicative (F * (K*N_theta)) rather than additive, but the cited prior work [32] models thermal fixed-pattern noise additively; the choice and its justification are not given; (c) the rank r is never specified. These together mean the headline 'in the wild' deconvolution is not reproducible.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Different image post-processing applied across panels confounds visual comparison",
+          "quote": "Through this predefined post-processing routine, we were able to improve the dynamic range and reduce microbolometer array artifacts.",
+          "explanation": "The in-lab pipeline (Section 4.4) applies background subtraction, contrast stretching, and block-matching denoising; the in-the-wild pipeline (Section 4.5) applies a different deconvolution stack; Section 2.4 says bandpass results are 'presented without any denoising' even though the broadband-result Fig. 3 caption notes 'after computation'. Whether the same processing is applied uniformly across the lenses being compared (especially the hyperboloid baseline and refractive lens) is not stated. As presented, post-processing differences could account for some of the visual quality differences claimed for the meta-optic.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 51
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Different sensors used across imaging conditions without cross-calibration",
+          "quote": "A Boson 640 camera was placed on the imaging plane of the meta-optic in testing and sent the data to a PC for further post-processing, ... we captured a single image using a FLIR A65 sensor, and performed a numerical deconvolution",
+          "explanation": "Three different LWIR sensors are used: Boson 640 (in-lab imaging), FLIR A65 (in-the-wild imaging), FLIR A6751 SLS at 76 K (PSF characterization). These differ in pixel pitch, NETD, dynamic range, and spectral response. While within each figure the same sensor compares matched conditions, sensor changes between figures preclude unified interpretation. The paper should justify why each sensor was chosen for its condition and address whether sensor differences could account for observed image quality differences.",
+          "comment_type": "methodology",
+          "severity": "minor",
+          "paragraph_index": 51
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Hyperboloid baseline at the same height/periodicity may be unfairly handicapped",
+          "quote": "Additionally, we designed a hyperboloid metalens, based on a forward design approach *Braun et al. (2019)*, possessing similar height and periodicity, to serve as a baseline for comparison.",
+          "explanation": "The hyperboloid baseline is constrained to the same height and periodicity as the meta-optic under test, which may not be the design parameters that maximize hyperboloid performance. The hyperboloid is a monochromatic phase profile, and its performance depends on having a meta-atom library that spans 0-2pi at the design wavelength. Whether the simple-pillar library used for the hyperboloid spans full phase coverage at 10 \u00b5m (or whichever the chosen design wavelength is -- not stated), and whether a different library would have produced a stronger hyperboloid baseline, is not addressed. This bears on whether the 6x advantage is in part due to a weakened baseline.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Local phase approximation acknowledged but not quantified",
+          "quote": "Also, our design currently relies on the local phase approximation, which is known to provide lower efficiency for meta-optics. However, recently a physics-inspired neural network has been used to design meta-optics without making such approximation and can be readily adapted for the scatterer-to-field mapping [28].",
+          "explanation": "The local phase approximation (LPA) is acknowledged as a limitation but not characterized. With Lambda = 4 \u00b5m and lambda spanning 8-12 \u00b5m, neighbor coupling is significant, and inverse-designed phase profiles tend to have abrupt transitions where LPA error is largest. Quoting a future fix without quantifying current LPA error -- e.g., by comparing LPA-based simulation to a full-wave simulation on a small representative region of the optic -- leaves uncertain how predictive the simulated 0.045 Strehl is of the fabricated lens.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Black-body source at 150 C is not flat across the 8-12 \u00b5m band",
+          "quote": "we captured imaged under broadband illumination using black-body radiation from a hotplate with high-emissivity fiberglass tape heated to 150^{\\circ}C as the light source.",
+          "explanation": "A black body at 150 C (423 K) has its Planck peak near 6.85 \u00b5m (Wien) and falls roughly monotonically across 8-12 \u00b5m, with the 12 \u00b5m flux substantially lower than the 8 \u00b5m flux. The 'broadband' source is therefore spectrally weighted toward the short end of the band, biasing the in-lab broadband test toward wavelengths where the hyperboloid baseline naturally has less chromatic aberration (i.e., closer to its design wavelength). A hotter source, or photometric correction, would more uniformly probe the design band.",
+          "comment_type": "methodology",
+          "severity": "minor",
+          "paragraph_index": 51
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "DRIE-induced sidewall and CD imperfections at 10 \u00b5m depth not characterized",
+          "quote": "The photoresist pattern of meta-optics is transferred to the bulk silicon to a depth of 10 \u00b5m by deep reactive ion etching (SPTS DRIE), utilizing its capability to etch with high aspect ratios and vertical sidewalls.",
+          "explanation": "At 10 \u00b5m scatterer height with potentially sub-micron features in a 4 \u00b5m pitch, aspect ratios may exceed 10:1. DRIE introduces sidewall scalloping, draft angle, and bottom-corner rounding; these systematic deviations from the idealized binary geometry are not the same as the random Gaussian perturbation analysis in Sec 2.2. The minimum CD achieved on the fabricated optic, the measured sidewall angle, and the resulting deviation from the simulated transmission spectrum are not reported. This is the most likely real-world divergence between simulated 0.045 Strehl and what the lens actually delivers.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 58
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Foundry-compatibility claim asserted without minimum feature-size evidence",
+          "quote": "We note that patterning can also be acomplished with a mask aligner -- therefore our all-silicon platform can be adapted to large scale foundry processes.",
+          "explanation": "Section 2.3 jumps from 'mask aligner could be used' to 'foundry compatible'. The fabricated optic uses Heidelberg DWL 66+ direct-write lithography with sub-micron capability, while mask-aligner contact lithography typically resolves >= ~0.5 \u00b5m critical dimensions. The minimum CD of the fabricated meta-optic is not reported, so the reader cannot verify that the design fits within mask-aligner capability. Foundry compatibility also requires standard layer stacks and processes, not just the patterning step. The claim is plausible but unsupported.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "Discussion of higher-degree parameterization 'pathway' overreaches from two data points",
+          "quote": "This provides a clear pathway for future designs to leverage a performance boost by employing a higher degree of parameterization for the meta-optic scatterer, combined with large-scale optimization of the meta-optic.",
+          "explanation": "The 'clear pathway' for future gains from richer parameterization rests on a two-point comparison (1-parameter simple vs. 3-parameter complex). Two data points cannot establish a trend; gains may saturate or reverse with even more parameters because (a) the optimization landscape becomes harder, (b) fabrication CD limits become binding, and (c) the LPA error grows. The paper acknowledges sampling complexity scales exponentially but still describes the path as 'clear'. Tempering the claim or adding intermediate parameter counts (e.g., 5, 7) would calibrate this.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 43
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "Introduction promises 'intuition' that is not delivered",
+          "quote": "While such an approach takes the entire system into account, the downside is that we often lack the insight into how and why the optic performs well. ... As such, a new design paradigm is required for meta-optical imagers, which provides intuition on why such meta-optics can perform broadband imaging.",
+          "explanation": "The Introduction explicitly distinguishes the proposed approach from end-to-end design by promising mechanistic insight into why the optic works. The Discussion does not deliver this: it restates that the FoM enforces uniform Strehl (which is itself imprecise -- see related FoM comment) but does not explain physically why the joint meta-atom + phase-mask optimization yields broadband performance, what the optimized phase profile looks like, or how the complex meta-atom library exploits multiple resonances. The framing should either be tempered or the missing analysis added.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_27",
+          "title": "Reference [22] cited as a forward-designed LWIR meta-optic, but [22] is a visible-band EDOF paper",
+          "quote": "While previous works based on forward designed LWIR meta-optics have demonstrated imaging capabilities [22], they fell short in resolving fine features due to strong chromatic aberrations.",
+          "explanation": "Reference [22] in the bibliography is 'Huang, L., Whitehead, J., Colburn, S., Majumdar, A.: Design and analysis of extended depth of focus metalenses for achromatic computational imaging. Photonics Research 8(10), 1613-1623 (2020)', an EDOF computational imaging paper. The actual prior LWIR meta-optical imaging works are [16] (Huang et al., 'Long wavelength infrared imaging under ambient thermal radiation via an all-silicon metalens'), [17], and [18], which are cited in the Introduction. The Discussion's [22] citation appears mis-targeted.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 41
+        },
+        {
+          "id": "openaireview__claude_28",
+          "title": "Activation function 'hyperboloid tangent' is a typo for 'hyperbolic tangent'",
+          "quote": "The DNN surrogate model uses four layers of fully connected layers that have 256 units and hyperboloid tangent as the activation function for each layer.",
+          "explanation": "The standard activation is 'hyperbolic tangent' (tanh). 'Hyperboloid tangent' is not a recognized activation function and appears to be a typographical error, likely cross-contaminated from the 'hyperboloid metalens' baseline used in the same paper. While easy to identify for an ML reader, this should be corrected in the methods.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 48
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

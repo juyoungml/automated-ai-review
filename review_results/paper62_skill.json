@@ -1,0 +1,522 @@
+{
+  "slug": "paper62_skill",
+  "title": "Demixing fluorescence time traces transmitted by multimode fibers",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Demixing fluorescence time traces transmitted by multimode fibers\n\nCaio Vaz Rimoli\nLaboratoire Kastler Brossel"
+    },
+    {
+      "index": 1,
+      "text": "Claudio Moretti\nItalian Institute of Technology https://orcid.org/0000-0002-7636-7736\n\nFernando Soldevila\nLaboratoire Kastler Brossel, ENS-Universite PSL, CNRS, Sorbonne Universite"
+    },
+    {
+      "index": 2,
+      "text": "Enora Br\u00e9mont\nInstitut de Biologie de l'ENS (IBENS) https://orcid.org/0009-0000-1991-5217\n\nSylvain Gigan\nLKB - ENS - Sorbonne Universit\u00e9 https://orcid.org/0000-0002-9914-6231"
+    },
+    {
+      "index": 3,
+      "text": "Cathie Ventalon\ncathie.ventalon@psl.ens.eu\n\nInstitut de Biologie de l'ENS (IBENS)\n\n# Article\n\nKeywords: Spatio-temporal demixing, time traces, scattering fingerprints, transient patterns, short multimode fiber, neuronal microendoscopy, non-negative matrix factorization."
+    },
+    {
+      "index": 4,
+      "text": "Posted Date: June 15th, 2023\n\nDOI: https://doi.org/10.21203/rs.3.rs-3010840/v1\n\nLicense: \u00a9 \u2460 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 5,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on July 26th, 2024. See the published version at https://doi.org/10.1038/s41467-024-50306-z."
+    },
+    {
+      "index": 6,
+      "text": "Page 1/20\n\n### Abstract\n\nFiber photometry is a significantly less invasive method compared to other deep brain imaging microendoscopy approaches due to the use of thin multimode fibers (MMF diameter < 500 \u03bcm). Nevertheless, the transmitted signals get scrambled upon propagation within the MMF, thus limiting the technique's potential in resolving temporal readouts with cellular resolution. Here, we demonstrate how to separate the time trace signals of several fluorescent sources probed by a thin (\u2248 200 \u03bcm) MMF with typical implantable length in a mouse brain. We disentangled several spatio-temporal fluorescence signals by using a general unconstrained non-negative matrix factorization (NMF) algorithm directly on the raw video data. Furthermore, we show that commercial and low-cost open-source miniscopes display enough sensitivity to image the same fluorescence patterns seen in our proof of principle experiment, suggesting that a whole new avenue for novel minimally invasive deep brain studies with multimode fibers in freely-behaving mice is possible."
+    },
+    {
+      "index": 7,
+      "text": "## Introduction\n\nFluorescence-based techniques are providing researchers with different ways to collect functional readouts from neuronal activity in the brain^{1--10}. However, measuring neuronal activity at depths greater than 1 mm is still challenging mainly due to issues resulting from light scattering, especially in prominent paradigms such as freely behaving animals^{11--14}. To address this problem, neuronal microendoscopy methods have emerged as complementary alternatives to linear and nonlinear fluorescence microscopy techniques for studying neuronal activity in deep brain regions using genetically encoded calcium indicators (GECI)^{13--16}. Among these methods, conventional microendoscopic methods that use a single gradient index (GRIN) lens optics^{16--19}, as well as fiber photometry recordings using multimode fiber (MMF)^{15,20--23}, have been successfully used to obtain functional neuronal activity signals in deep brain regions in freely behaving mice^{15,22,24}. Nonetheless, direct imaging techniques and fiber photometry approaches bring peculiar tradeoffs in terms of spatial and temporal discerning capabilities^{13,25,26}. On one hand, albeit GRIN lens microendoscopy retrieves calcium transients with cellular resolution, it demands a somewhat invasive surgical procedure to implant the GRIN lens into the mouse brain. Commercial GRIN lenses are relatively thick (\u2265 500 \u03bcm), and oftentimes it necessitates the removal of a significant amount of brain tissue to effectively conduct the experiment^{12,26}. On the other hand, the use of thin multimode fibers (< 500 \u03bcm diameter) in photometric recordings, as well as in optogenetics experiments, has a significantly less invasive surgical procedure, which does not require any brain tissue removal, but only a careful penetration of the thin fiber through the mouse brain^{6,15,25}. It is known that the implantation of multiple multimode fibers (up to a maximum of 48 fibers^{27}) to optogenetically control and/or photometrically probe different regions in freely-behaving mouse brains is already a reality in neuroscience labs^{26--28}. However, the light wavefront propagating inside multimode fiber gets spatio-temporally scrambled due to multimodal mixing (internal scattering)^{29--31}. Generally, that is not a limitation for delivering light (optogenetics) to an ensemble of neurons in a given depth (unless one"
+    },
+    {
+      "index": 8,
+      "text": "wants to probe specific neurons within the fiber field of view, FoV), but it poses a challenge for fiber photometry methods which limits the technique's potential to resolve (demix) time traces from individual neurons. Consequently, fiber photometry time traces coming from a whole population of neurons transmitted through MMF are ensemble integrated during detection, and therefore, fast single-pixel detectors are frequently chosen to optimize the detection speed and sensitivity^{15,26}. While the use of fast scientific Complementary Metal--Oxide--Semiconductor (sCMOS) cameras to simultaneously probe multiple fiber photometric signals has been demonstrated^{26,28}, the mixing between all the spatial patterns transmitted by each MMF prevented the individual retrieval of each neuron time trace^{26}."
+    },
+    {
+      "index": 9,
+      "text": "Recently, researchers have developed novel techniques that utilize the deterministic nature of the multimode fiber transmission matrix (TM) to perform bioimaging^{30--40}. These approaches have enabled the acquisition of diffraction-limited images of fluorescently labeled brain structures and neuronal activity, even in deep brain regions (e.g. head-fixed mouse), using a multimode fiber microendoscope^{31}. To achieve this, however, an extensive characterization of MMFs transmission properties is necessary, ideally taking into account TM changes whenever the MMF fiber is bending or changing its transmission properties during an experiment, as well discussed in previous research^{32,40,41}. Consequently, while these techniques provide a minimally invasive method to obtain diffraction-limited resolution in deep brain regions, they are complex to implement and require a wavefront shaping device (e.g. spatial light modulator, SLM) to compensate for the fluorescence randomized wavefronts through a lengthy calibration procedure. Moreover, the calibration can be even more complex if the experiment is not performed in head-fixed mice, but in freely behaving mice, such as those in long-term social behavior studies^{31,32}. Finally, the use of spatial light modulators and complex distal optical devices poses an extra challenge in future use in miniaturized wireless systems."
+    },
+    {
+      "index": 10,
+      "text": "In this article, we propose a novel approach to perform minimally invasive fiber photometry experiments disentangling single-source time traces transmitted by short and thin multimode fibers (\u2248 200 \u03bcm diameter and with < 10 mm length). Our method involves the demixing of fluorescence spatio-temporal signals by applying a single post-processing step on the recorded video data of 2D scattered fluorescence patterns transmitted by the fiber. By substituting the bucket detector with a camera (i.e. a pixelated detector such as CMOS sensor), we can profit from using the spatial information of the fluorescence patterns transmitted by the multimode fiber, enabling single-source temporal activity resolution. Analysis of the recorded video is performed employing a simple unconstrained Non-Negative Matrix Factorization (NMF) algorithm that separates each spatial scattering pattern component with its corresponding temporal trace (singular trace)^{42,43}. With this approach, we show that it is possible to extract single-source time traces in fiber photometry without the need to perform any complicated calibration procedure."
+    },
+    {
+      "index": 11,
+      "text": "Previous work from some of the authors showed that it is possible to spatio-temporally demix fluorescence scattering patterns (speckles) transmitted through a highly scattering media (e.g. mouse skull) by using a Non-Negative Matrix factorization (NMF) algorithm^{43,44}. The NMF algorithm relies on"
+    },
+    {
+      "index": 12,
+      "text": "the premise that the input data matrix only contains non-negative values, and it has been used to decompose datasets into their representative parts or components^{42,43,45--48}. In addition, if a priori knowledge of the input dataset is known (e.g. sparsity, calcium transient profile, etc.), it is possible to improve the performance of NMF by adding some constraints^{49--52}. Therefore, the video data of fluorescence speckles fluctuating over time are a highly appropriate input matrix for NMF, because the superposition of these intensity signals is naturally positive, linear, and sparse due to the incoherent nature of the fluorescence process (i.e. there is no destructive interference on the propagation process of incoherent light). Based on that, one could in principle apply the same algorithm to the video data from scattering patterns that are characteristic of the light transmitted through short multimode fibers of the same length as the ones implanted in fiber photometry^{26,53--55}. It is well known that multimode fibers randomize the fluorescence wavefront propagating within it, acting as a scattering media over the fiber length due to multimodal mixing. Nevertheless, the multimode fibers (< 10 mm) typically implanted in living mice for chronic behavioral experiments are too short to generate a fully evolved speckle wavefront^{53,55}. In fact, the light wavefront that emerges from such short fibers displays a very peculiar spatial distribution of light, which is structurally mixed, but not fully spatially randomized/sparse^{53,54}. Hence, these scattering patterns cannot be considered yet a fully developed speckle (such as the ones in our previous work^{43}), because they still display some continuous structures whose shape depends mostly on the multimode fiber core geometry^{56}. Here, we call these short MMF patterns as scattering fingerprints."
+    },
+    {
+      "index": 13,
+      "text": "In the present work, we designed a proof of principle experiment (Fig. 01) and we confirmed that a simple unconstrained NMF could also disentangle the short MMFs scattering fingerprints signals and retrieve their corresponding time traces. As a consequence, one may now temporally resolve and count the number of sources with singular time traces transmitted by a minimally invasive multimode fiber. Thus, the results of this paper consist of a proof of concept on how to obtain individual time trace resolution in fiber photometry methods. Besides, we validated our approach in a more realistic condition by selectively exciting a few structurally Gad-eGFP labeled neurons in a 50 \u03bcm fixed brain slice with literature-available time traces to mimic neuronal activity. Finally, we propose a novel method for probing neuronal microendoscopic signals by simply combining a miniscope and an implantable short multimode fiber, which we called MiniDART (for Miniaturized Deep Activity Recording with high Throughput). For that, we demonstrate that the inexpensive and commercially available open-source miniscope (Open Ephys Miniscope-v4.4) has already enough sensitivity and illumination power to detect the typical intricated patterns of short MMFs. This new way of measuring individual fluorescence time traces from an ensemble of fluctuating sources profits from the short length of multimode fibers that are naturally more rigid (bending resistant) and therefore very suitable to be used in long-term freely-moving mice neuroscience experiments."
+    },
+    {
+      "index": 14,
+      "text": "## Results\n\n### Proof of principle using phantom samples made of 10 \u03bcm diameter fluorescent beads\n\nTo demonstrate the validity of the method, we implemented an optical setup using a digital micromirror device (DMD), which was used to generate different excitation ground truth (GT)^{43,57} activity traces for each fluorescent source (10 \u03bcm fluorescent beads \u2248 neuron soma size). Each source emits fluorescence that is collected and transmitted by the multimode fiber (see Fig. 01 and methods for details). Upon propagating through the MMF, the fluorescence wavefront undergoes scrambling, resulting in the emergence of fluorescence patterns upon exiting the fiber. The controlled excitation guarantees that each fluorescent source generates a fingerprint pattern whose intensity transiently fluctuates accordingly with the chosen GT time trace profile (see transient patterns in Fig. 01). Thereafter, we record a video of the transient patterns that emerge from a short multimode fiber and apply the NMF to the recorded data. In Fig. 02 we show the results retrieved by NMF and compared with the ground truth. The results consist of individual spatial fingerprint patterns (Fig. 02e) and, most importantly, their corresponding single-activity time traces (Fig. 02f) that without NMF would be mixed."
+    },
+    {
+      "index": 15,
+      "text": "As can be seen in Fig. 02a, the scattering patterns transmitted by the short MMF of 6 fluorescent bead sources (Fig. 02c) have a significant overlap in space when all of the sources are simultaneously excited with the DMD (Fig. 02a). On the other hand, whenever a fluorescent bead is excited individually, each detected spatial pattern has a very different spatial structure/morphology (see the GT scattering fingerprints in Fig. 02d). After applying the unconstrained NMF on the recorded video data, the demixed spatio-temporal result by NMF had an overall good agreement with the GT. Not only the NMF retrieved well each singular temporal activity trace (Fig. 02f-g), but also the individual spatial fingerprint patterns (Fig. 02d-e). Since we know the GT activity, we sorted and assigned the source indexes in descending order of the correlation between their time trace obtained by the NMF and the GT. As we can see in Fig. 02g, the GT-NMF temporal correlation coefficient values were high for all the first 5 beads, which were localized closer to the central region of the fiber (Fig. 02c). More specifically, we obtained an average value of < \u03b4_{g,n} > = \u03b4_{avg} = 85.4% with a standard deviation of std = 3.6% (Fig. 02g). However, the NMF algorithm could not reliably recover the time trace and fluorescence patterns corresponding to bead #6 due to low SNR, probably because it was localized too far from the center, i.e. at the edge of the field of view (fiber core border, see Fig. 02c), as suggested by the low intensity of GT scattering pattern (Fig. 02d, index 6). In the analysis process, the input rank of NMF determines the number of components the algorithm demixes the spatio-temporal signal. When we choose an NMF's rank value higher than the real number of fluorescence sources, we obtain replicas of the scattering fingerprints and the background (see supp info), similar to what happened in a previous work^{48}. Thus, counting the maximum number of unique patterns demixed by NMF could be a way to count the real number of sources probed by the fiber. A more technical analysis of it can be found in the supp info."
+    },
+    {
+      "index": 16,
+      "text": "### Validation of the method while probing GFP-labelled neurons in a 50 \u03bcm thick fixed brain slice\n\nWe showed that our method works for a sample of fluorescent beads mimicking neuronal size and activity, however, a real GFP-labeled brain would display higher background and the labeled neurons would have a lower fluorescence signal^{43}. Therefore, in a second set of experiments, we changed our fluorescent sample to a 50 \u03bcm fixed brain slice (structurally Gad-eGFP labeled neurons, see methods for more details), and carried out the same type of GT excitation on a few selected neurons in the fiber FoV (mimicking more realistically the neuronal activity in a living brain. After recording a video of the scattering transient patterns and applying the unconstrained NMF, we confirmed again (see Fig. 03) a good retrieval of the number of neurons, their scattering fingerprints (Fig. 03d--e), and their individual activity traces (see Fig. 03f--g and supp info). As in the previous experiment, the GT-NMF temporal trace correlation values obtained were high, with an average value of < \u03b4_{g,n} > = \u03b4_{avg} = 86.7%, and a standard deviation of std = 2.8%."
+    },
+    {
+      "index": 17,
+      "text": "### Sensitivity of low-cost miniscopes in probing individual short MMF scattering fingerprints\n\nFinally, we investigated if an inexpensive miniscope (Open Ephys Miniscope-v.4.4) would have enough sensitivity to excite and image an individual fluorescence fingerprint pattern emitted from a single fluorescent source (Fig. 04a). In other words, both the LED excitation from the miniscope and the fluorescence signal from the sample would be transmitted within the short MMF before imaging. This is an important question because the miniscope has simple, inexpensive, and compact components, such as the commercial-grade CMOS detector, rather than a high-end sCMOS camera as in our proof of principle tabletop experiment (see methods). To tackle this question, we combined a miniscope with a short MMF (the MiniDART) and tested the miniscope sensitivity with a very sparse bead sample: a single fluorescent bead that we can displace laterally in the fiber FoV (see methods and Fig. 04b--c). When we set the miniscope for low LED power and with no camera gain (LED = 20% corresponds to a transmitted power through the short MMF of P_{MMF} < 10 \u03bcW), it was already possible to detect short MMF scattering fingerprint patterns with very good contrast at the fastest framerate available in the miniscope control software (FPS = 30 Hz, see supp info). Interestingly, whenever raising the LED power, decreasing the framerate speed, or raising the camera gain value, the detected patterns by the miniscope got saturated, showing that the tested miniscope has already enough sensitivity to probe scattering fingerprints through short MMFs even from less bright fluorescent sources than the ones used here, especially when the fluorescent source is close to the center of the fiber core (see Fig. 04a,d). At distances d < 20 \u03bcm from the core center, the CMOS got saturated while the miniscope GUI settings were: LED power = 20% (where LED_{max} = 100%, corresponding to a transmitted power through the short MMF of P_{MMF}^{max} = 125 \u03bcW), FPS = 10 Hz (where FPS_{max} = 30 Hz), and Gain = 1 (where Gain_{max} = 3.5)."
+    },
+    {
+      "index": 18,
+      "text": "Fundamentally, the MiniDART is not designed for imaging or localization (like in other works that used learning algorithm methods^{53,54}). In many experiments, the relevant biological information does not depend on the shape or local position of the neurons, but mostly on the activity of each of them and their number. To extract this information, just demixing fluorescence time trace signals with NMF would be enough for relevant applications, since the number of neurons (NMF rank) could be obtained by counting"
+    },
+    {
+      "index": 19,
+      "text": "the number of unique MMF fingerprints, and possibly confirmed by a post-mortem evaluation of the brain region right below the thin hole made by the MMF. In addition, recording the spatial fingerprints of each source would be useful for chronic experiments (to match the sources from one session to the next). However, as we can also see in Fig. 04, the morphology of short MMF fingerprints provides some interesting insights into the point source position at the fiber distal end - without the need for any computational learning method. As we move a single bead laterally in a radial manner (in the x,y-plane at the fiber's distal end), a few easily interpretable geometrical properties of the fluorescence patterns systematically change in the fiber's proximal end (Fig. 04c-d). More specifically, when the bead is displaced from the center towards the fiber border (of a distance d) a bright ring (of diameter \u03c1) with some spiral ramifications is deterministically formed (see supp info for more details). Larger d distances yield wider rings (larger \u03c1, see Fig. 04d). Thus, each fingerprint's bright ring diameter is encoding radial information about the bead lateral localization at the distal end. The dependence of fingerprint shape features on the individual point source position is further discussed in the supplementary information."
+    },
+    {
+      "index": 20,
+      "text": "## Discussion\n\nMultimode fibers are well known to be minimally invasive microendoscopic probes that could be promptly combined with optogenetics manipulation of neuronal activity for behavioral neuroscience studies in living mice^{15,27,28,55}. It is well known from the literature that long multimode fibers (MMF length > 100 mm) could be used to transmit fluorescence activity signal and that would naturally generate a speckle wavefront due to internal multimodal mixing^{30,34,58,59}. However, as well described in wavefront shaping experiments, speckle wavefronts are extremely sensitive to fiber bending, torsion movements, and temperature changes along the fiber, which demands a long and meticulous wavefront propagation characterization (e.g. calibration using spatial light modulators, SLM) to compensate for all the changes in spatial properties of the speckles^{32,41}. In other words, there would be many experimental conditions to take into account to guarantee that the speckle patterns from each source would remain the same over time when using a long MMF as a photometric probe in freely-behaving mice experiments. That is using only a short and more stable multimode fiber for this type of application could be a very pragmatic solution."
+    },
+    {
+      "index": 21,
+      "text": "To this end, we designed an experiment with known ground truth excitation to be able to evaluate if NMF could demix the individual spatio-temporal readouts characteristic of short MMFs. In this paper, we demonstrate that it is possible to demix such spatio-temporal signals. We used a simple and general unconstrained NMF algorithm on the video data recorded in our proof of principle experiment. It is the first time, to the best of our knowledge, that NMF is used to demix fluorescence fluctuating signals transmitted by a multimode fiber. In particular, the present work presents the proof of concept on how to obtain fluorescence activity readouts reaching single-source resolution in short multimode fibers. Since in our previous work, we already proved how to demix fluorescence speckles that are transmitted by highly scattering media (e.g. bone tissue^{43}), the same principle is also readily applied for long MMF"
+    },
+    {
+      "index": 22,
+      "text": "applications too. Therefore, this work opens a promising direction to improve fiber photometry fluorescence experiments by reaching single-source temporal activity resolution."
+    },
+    {
+      "index": 23,
+      "text": "To benefit from the short MMF's scattering fingerprint patterns and rigidity, one could directly image the proximal end of the short (implantable) MMF with a miniscope. That would be different from the typical scheme in fiber photometry, where there is an optical coupling between the transmitted light from the implantable MMF to another long MMF. In this sense, we tested and confirmed that even a low-cost miniscope would have enough LED power and CMOS speed/sensitivity to image the intricated scattering patterns transmitted by short MMFs emitted from just a single source. Both the multimode fiber and the miniscope (Open Ephys Miniscope-v4.4) are affordable and available in the market to carry out an experiment on living mice. Therefore, in this paper, we show a low-cost and simple way to expand the capacity of fiber photometry methods in resolving neuronal activity circuitry (that have already been used to investigate deep brain regions in chronic behavioral experiments in freely-behaving mice). In addition, as a minor result, we point out in Fig. 04 that the short MMF scattering fingerprint morphology can have some interpretable geometry that has a relation with the source (\u2248 10 \u03bcm size) localization at the distal end of the fiber. The relationship between the source localization and its fluorescence pattern shape is discussed in the supp info, but the key message for demixing is that the scattering fingerprint patterns seem to not be ambiguous depending on the source lateral position from the fiber axis."
+    },
+    {
+      "index": 24,
+      "text": "Although computational learning tools have already been applied on short MMF scattering fingerprints to retrieve back the ground truth structural image of deep brain regions from a fixed thick brain slice^{53,54}, it is not yet proven that their approach could correctly assign the neuronal activity in living mice or any artificial condition. On the temporal resolution side, they tracked the movement of a fluorescently labeled worm in 2D with a framerate (2 Hz), which is relatively low for typical calcium transient imaging experiments performed in living mice. In the latter case, experiments are typically carried out with a framerate of at least 10 Hz (such as the one available in the miniscope DAQ software). Besides, any learning algorithm depends on the specific conditions of the training set (fiber properties, imaging optical components properties, etc.), which is less general and therefore less applicable to any other new neuroscience experiment."
+    },
+    {
+      "index": 25,
+      "text": "Finally, we emphasize that in our method we used a very simple and general unconstrained NMF directly on the raw data, which means that there is plenty of room for performance improvement, not only optically wise (tailoring new miniscopes for this specific application) but also on the computational analysis side. On the latter, one could add biophysical-inspired constraints on the NMF algorithm (spatio-temporal priors, such as in CNMF^{51,52}) or simply add some extra data processing steps on the recorded data (e.g. matrix transformations, filtering, etc^{51}). Indeed, it is already well known in the literature that CNMF is superior compared to NMF in demixing calcium trace signals in conventional GRIN lens imaging microendoscopy^{51,52}. Regarding the miniscope potential improvements, when we spatially binned the video recorded by our high-end sCMOS camera (tabletop experiment) until we get a similar number of FoV pixels used in the miniscope, the retrieved results of NMF fingerprints and traces were visually indistinguishable (see supp info) compared to a non-binned analysis. This finding reinforces the"
+    },
+    {
+      "index": 26,
+      "text": "idea that the current default design of the miniscope (LED power, camera speed/sensitivity, and FoV magnification) might be already enough to perform a living mouse experiment, although most pixels of the miniscope's camera chip were not used in our case (less than 1/9 of the FoV pixels were used to image a single MMF proximal end tip). Nevertheless, another way to improve the technical performance would be to design new miniscopes specifically for the application of our method, such as having a smaller FoV, with faster and even more sensitive detection (e.g. having a bigger bit-depth)."
+    },
+    {
+      "index": 27,
+      "text": "## Conclusion\n\nIn this paper, we demonstrate how one could obtain single-source temporal activity resolution in fiber photometry experiments that use multimode fibers as a microendoscopic probe. Besides, we show that the currently available low-cost miniscope has enough sensitivity to image directly the implantable short MMF scattering fingerprints so that it could be advantageous for long-term microendoscopic studies in freely-behaving animals due to the rigidity of short fibers (< 10 mm). Therefore, we believe that this work can open a whole new avenue for novel and affordable minimally invasive deep brain microendoscopic studies to probe (potentially several) deep brain regions in freely-behaving animals, including experiments that could be conveniently coupled with optogenetics approaches like already been implemented in the neuroscience community."
+    },
+    {
+      "index": 28,
+      "text": "## Methods\n\n### Proof of principle setup:\n\nThe proof of principle setup is visually illustrated and fully described in the supp info."
+    },
+    {
+      "index": 29,
+      "text": "### Fiber-ferrule preparation:\n\nThe multimode fiber was purchased from Thorlabs (FT200UMT, NA = 0.39, 200 \u00b1 5 \u03bcm core diameter, 225 \u00b1 5 \u03bcm cladding diameter). Around 10 cm of the fiber was initially cleaved with a ruby blade (Thorlabs, S90R), and the quality of the cleaved edge was inspected with a stereomicroscope (LEICA A60F, maximum magnification 30x). The fiber was glued within a 1.25 mm wide and 6 mm long stainless-steel ferrule (Thorlabs SFLC230-10, 230 \u00b1 10\u03bcm bore diameter) using an ultraviolet curing glue (Norland optical adhesive 81) so that the cleaved end was chosen to be the distal end of the fiber (with 2mm of it sticking out of the ferrule). The excess of the fiber on the other end (proximal end) was cut close to the ferrule edge and then sequentially polished (KRELLTECH NOVA device) with 3 different silicon carbide polishing disks with gradually descending roughness (30 mm, 3 mm, 0.3 mm, PSA 4\u201d polishing disks from KRELLTECH). The quality of the polished end (proximal end of the fiber) was verified with the LEICA A60F stereomicroscope. We used a customized titanium tweezer and baseplate to hold the ferrule and the miniscope respectively (YMETRY\u00ae)."
+    },
+    {
+      "index": 30,
+      "text": "### Preparation of the fluorescent bead sample:\n\nIn the proof of principle experiments, the samples consisted of randomly distributed fluorescent beads on borosilicate glass (22\u00d740 mm cover glass, thickness Nb.1.5, purchased from VWR). An aliquot (100x diluted in milli-Q water) of the polystyrene (PS) particles aqueous suspension (PS - FluoGreen - Fi226-- 1mL, 10.23 \u00b1 0.13 \u03bcm size, abs/em = 502/518 nm, purchase from microParticles GmbH, Germany) was used to randomly distribute the beads on the cover glass. The beads' size was chosen to have similar size to typical neuron soma probed in calcium imaging experiments. Besides, the emission spectrum of the beads is close to the common GFP calcium indicators. For the single-bead sample, a more diluted aliquot (from 10^{6} to 10^{7} times dilution) was used to guarantee a very spatially sparse bead sample with density \u2264 1 bead/cm\u00b2, so that there would be only a single bead throughout the Fiber FoV whenever translating the bead laterally in the miniDART experiment (easily inspected by the miniscope itself without the fiber)."
+    },
+    {
+      "index": 31,
+      "text": "Preparation of the fixed brain slice sample:\n\nThe work includes data from one GAD65-EGFP transgenic mouse (heterozygote; male; aged 6 months) expressing EGFP in Gad65-positive interneurons in the brain and spinal cord. All procedures involving this animal complied with French and European legislations relative to the protection of animals used for experimental and other scientific purposes (2010/63/UE) and were approved by the \u201cCharles Darwin\u201d institutional ethics committee under the direction of the French National Committee of Ethical Reflection on Animal Experimentation under authorization number APAFIS 26667. The mouse was euthanized by cervical dislocation performed on the terminally anesthetized animal (5% isoflurane for 5 minutes in an induction chamber) and the brain was quickly removed from the skull and immediately transferred into a fixation solution (4% paraformaldehyde; pH 6.9 buffered; Sigma-Aldrich #1004965000). After 12 h at 5\u00b0 the brain was transferred into phosphate-buffered saline (PBS) and cut into tangential slices of 50 to 100 \u03bcm thickness using a vibratome (Leica VT1000). Obtained slices were stored in multi-well plates with PBS and assessed with a fluorometric microscope before the experiment with the DMD."
+    },
+    {
+      "index": 32,
+      "text": "### NMF Analysis in Python:\n\nThe raw video data [2D image, time] was reshaped to a 2D matrix [1D image, time] to fit the input format of NMF. We used the scikit-learn decomposition NMF package freely available online (Python)^{44,60}. In the code pipeline, an optional pre-processing step was added, which included an option for pixel binning (see supp info). The NMF parameters chosen ignored the additional parametric terms that are introduced to account for the sparsity of the data. The parameters chosen were: init = \u2018nndsvd', random_state = 0, max_iter = 3000, solver = \u2018cd', l1_ratio = 1, beta_loss = 2, alpha_W = 0, alpha_H = 0. The parameter n_components (which is the chosen NMF rank) changes depending on the experiment and a more detailed discussion about how to choose this value can be found in the supp info. In particular, the rank used in Fig. 02 was rank_{Fig2}=9 (explained in the supp info), and the rank for Fig. 03 was rank_{Fig3} = 5. The results of Fig. 02 with different ranks are illustrated in the supp info."
+    },
+    {
+      "index": 33,
+      "text": "The non-diagonal coefficients mean and standard deviation of the temporal correlation results:\n\nThe matrix of the non-diagonal elements $\\zeta=\\zeta_{i\\neq j}$, where each element is the mean absolute error value between GT-NMF and GT-GT coefficients is detailed described in the supp info. The mean absolute error (MAE) value of a given element in $\\zeta_{i\\neq j}$ is given by:"
+    },
+    {
+      "index": 34,
+      "text": "$MAE_{i,j}=\\left|\\nu_{i,j}-\\gamma_{i,j}\\right|$\n\nWhere, $\\nu_{i,j}$ is the (i,j) non-diagonal coefficient of GT-NMF temporal correlations, and is $\\gamma_{i,j}$ the corresponding (i,j) non-diagonal coefficient of the GT-GT temporal correlations. The average value ($\\zeta_{avg}$) of all these non-diagonal elements and the standard deviation ($\\sigma$) is given by:"
+    },
+    {
+      "index": 35,
+      "text": "$\\zeta_{avg}=mean\\left(\\zeta_{i\\neq j}\\right)=\\frac{1}{2(N_{s}-1)}\\left(\\sum_{i\\neq j}^{N_{s}-1}\\left|\\nu_{i,j}-\\gamma_{i,j}\\right|\\right)$\n$\\sigma_{\\zeta}=std\\left(\\zeta_{i\\neq j}\\right)$"
+    },
+    {
+      "index": 36,
+      "text": "Where N_{s} is the total number of sources. These two values ($\\zeta_{avg}\\pm\\sigma_{\\zeta}$), together with the diagonal values ($\\delta_{avg}\\pm\\sigma_{\\delta}$), give us an estimation of whole experiment quality since ($\\zeta_{avg}\\pm\\sigma_{\\zeta}$) should ideally approach to zero."
+    },
+    {
+      "index": 37,
+      "text": "## Declarations\n\n### Acknowledgments\n\nThe authors are grateful to Serena Bovetti, Stefano Zucca, and Laurent Bourdieu for productive discussions about the applications of the concept to in-vivo imaging. We are very thankful to Walther Akemann for the mouse brain extraction and fixation. In addition, we are grateful to Guillaume Dugu\u00e9, Thomas Pujol, Arnaud Leclercq, and Maurice Debray for the fiber-ferrule assembly discussions and technical support (Lab. Kastler Brossel and IBENS' FabLab facilities, the latter which received support from the F\u00e9d\u00e9ration pour la Recherche sur le Cerveau - Rotary International France (2018)). The authors acknowledge the funding sources HFSP, SMARTIES, and France's Agence Nationale de la Recherche (ANR). The project is funded thanks to HFSP project N\u00b0RGP0003/2020. S.G. acknowledges support from H2020 European Research Council (724473 SMARTIES). C.V. acknowledges support from ANR (ANR-19-CE37-0007-02)."
+    },
+    {
+      "index": 38,
+      "text": "### Author contributions\n\nC.M. and S.G. conceived the idea. C.V.R. adapted the setup and performed the optical experiments, prepared the samples, adapted the code and performed the NMF analysis, and wrote the article. C.M. built the excitation ground-truth part of the setup (DMD alignment) and wrote the Matlab control code. F.S. wrote the core code in Python for the NMF analysis. E.B. and C.V.R. assembled fiber-ferrules and"
+    },
+    {
+      "index": 39,
+      "text": "performed experiments with the MiniDART. C.V. and S.G. supervised and initiated the project. All authors discussed the results and commented on the paper."
+    },
+    {
+      "index": 40,
+      "text": "# Competing interests\n\nThe authors declare no competing interests.\n\n# References\n\n1. Akemann, W. et al. Fast optical recording of neuronal activity by three-dimensional custom-access serial holography. Nat Methods 19, 100-110 (2022).\n2. Faini, G. et al. Ultrafast light targeting for high-throughput precise control of neuronal networks. Nat Commun 14, 1888 (2023).\n3. James Sofroniew, N., Flickinger, D., King, J. &amp; Svoboda, K. A large field of view two-photon mesoscope with subcellular resolution for in vivo imaging. (2016) doi:10.7554/eLife.14472.001.\n4. Hontani, Y., Xia, F. &amp; Xu, C. Multicolor three-photon fluorescence imaging with single-wavelength excitation deep in mouse brain. Sci. Adv vol. 7 http://spectra.arizona.edu/. (2021).\n5. Meng, C. et al. Spectrally Resolved Fiber Photometry for Multi-component Analysis of Brain Circuits. Neuron 98, 707-717.e4 (2018).\n6. Yizhar, O., Fenno, L. E., Davidson, T. J., Mogri, M. &amp; Deisseroth, K. Optogenetics in Neural Systems. Neuron vol. 71 9-34 Preprint at https://doi.org/10.1016/j.neuron.2011.06.004 (2011).\n7. Shoham, S. Optogenetics meets optical wavefront shaping. Nature Methods vol. 7 798-799 Preprint at https://doi.org/10.1038/nmeth1010-798 (2010).\n8. Emiliani, V., Cohen, A. E., Deisseroth, K. &amp; H\u00e4usser, M. All-optical interrogation of neural circuits. Journal of Neuroscience vol. 35 13917-13926 Preprint at https://doi.org/10.1523/JNEUROSCI.2916-15.2015 (2015).\n9. Szabo, V., Ventalon, C., De Sars, V., Bradley, J. &amp; Emiliani, V. Spatially Selective Holographic Photoactivation and Functional Fluorescence Imaging in Freely Behaving Mice with a Fiberscope. Neuron 84, 1157-1169 (2014).\n10. Wang, W., Kim, C. K. &amp; Ting, A. Y. Molecular tools for imaging and recording neuronal activity. Nature Chemical Biology vol. 15 101-110 Preprint at https://doi.org/10.1038/s41589-018-0207-0 (2019).\n11. Zhao, C. et al. Miniature three-photon microscopy maximized for scattered fluorescence collection. Nat Methods (2023) doi:10.1038/s41592-023-01777-3.\n12. Resendez, S. L. et al. Visualization of cortical, subcortical and deep brain neural circuit dynamics during naturalistic mammalian behavior with head-mounted microscopes and chronically implanted lenses. Nat Protoc 11, 566-597 (2016).\n13. Resendez, S. L. &amp; Stuber, G. D. In vivo calcium imaging to illuminate neurocircuit activity dynamics underlying naturalistic behavior. Neuropsychopharmacology vol. 40 238-239 Preprint at https://doi.org/10.1038/npp.2014.206 (2015)."
+    },
+    {
+      "index": 41,
+      "text": "14. Grienberger, C. &amp; Konnerth, A. Imaging Calcium in Neurons. Neuron vol. 73 862-885 Preprint at https://doi.org/10.1016/j.neuron.2012.02.011 (2012).\n15. Gunaydin, L. A. et al. Natural neural projection dynamics underlying social behavior. Cell 157, 1535-1551 (2014).\n16. Ghosh, K. K. et al. Miniaturized integration of a fluorescence microscope. Nat Methods 8, 871-878 (2011).\n17. Aharoni, D. &amp; Hoogland, T. M. Circuit investigations with open-source miniaturized microscopes: Past, present and future. Frontiers in Cellular Neuroscience vol. 13 Preprint at https://doi.org/10.3389/fncel.2019.00141 (2019).\n18. Ziv, Y. et al. Long-term dynamics of CA1 hippocampal place codes. Nat Neurosci 16, 264-266 (2013).\n19. Cai, D. J. et al. A shared neural ensemble links distinct contextual memories encoded close in time. Nature 534, 115-118 (2016).\n20. Eriksson, D. et al. Multichannel optogenetics combined with laminar recordings for ultra-controlled neuronal interrogation. Nat Commun 13, (2022).\n21. Wang, Y., DeMarco, E. M., Witzel, L. S. &amp; Keighron, J. D. A selected review of recent advances in the study of neuronal circuits using fiber photometry. Pharmacology Biochemistry and Behavior vol. 201 Preprint at https://doi.org/10.1016/j.pbb.2021.173113 (2021).\n22. Legaria, A. A. et al. Fiber photometry in striatum reflects primarily nonsomatic changes in calcium. Nat Neurosci 25, 1124-1128 (2022).\n23. Patel, A. A., McAlinden, N., Mathieson, K. &amp; Sakata, S. Simultaneous Electrophysiology and Fiber Photometry in Freely Behaving Mice. Front Neurosci 14, (2020).\n24. Paukert, M. et al. Norepinephrine controls astroglial responsiveness to local circuit activity. Neuron 82, 1263-1270 (2014).\n25. Li, Y., Liu, Z., Guo, Q. &amp; Luo, M. Long-term Fiber Photometry for Neuroscience Studies. Neurosci Bull 35, 425-433 (2019).\n26. Girven, K. S. &amp; Sparta, D. R. Probing Deep Brain Circuitry: New Advances in in Vivo Calcium Measurement Strategies. ACS Chemical Neuroscience vol. 8 243-251 Preprint at https://doi.org/10.1021/acschemneuro.6b00307 (2017).\n27. Sych, Y., Chernysheva, M., Sumanovski, L. T. &amp; Helmchen, F. High-density multi-fiber photometry for studying large-scale brain circuit dynamics. Nat Methods 16, 553-560 (2019).\n28. Kim, C. K. et al. Simultaneous fast measurement of circuit dynamics at multiple sites across the mammalian brain. Nat Methods 13, 325-328 (2016).\n29. Rahmani, B. et al. Learning to image and compute with multimode optical fibers. *Nanophotonics* vol. 11 1071-1082 Preprint at https://doi.org/10.1515/nanoph-2021-0601 (2022).\n30. Li, S., Horsley, S. A. R., Tyc, T., \u010ci\u017em\u00e1r, T. &amp; Phillips, D. B. Memory effect assisted imaging through multimode optical fibres. Nat Commun 12, (2021)."
+    },
+    {
+      "index": 42,
+      "text": "31. Stib\u016frek, M. et al. 110  $\\propto$ m thin endo-microscope for deep-brain in vivo observations of neuronal connectivity, activity and blood flow dynamics. Nat Commun 14, 1897 (2023).\n32. Ohayon, S., Caravaca-Aguirre, A., Piestun, R. &amp; DiCarlo, J. J. Minimally invasive multimode optical fiber microendoscope for deep brain fluorescence imaging. Biomed Opt Express 9, 1492 (2018).\n33. Singh, S., Labouesse, S. &amp; Piestun, R. Tunable Mode Control Through Myriad-Mode Fibers. JOURNAL OF LIGHTWAVE TECHNOLOGY 39, (2021).\n34. Singh, S., Labouesse, S. &amp; Piestun, R. Multiview Scattering Scanning Imaging Confocal Microscopy Through a Multimode Fiber. IEEE Trans Comput Imaging 9, 159-171 (2023).\n35. Schmidt, C. C., Turcotte, R., Booth, M. J. &amp; Emptage, N. J. Repeated imaging through a multimode optical fiber using adaptive optics. Biomed Opt Express 13, 662 (2022).\n36. Turcotte, R., Schmidt, C. C., Booth, M. J. &amp; Emptage, N. J. Volumetric two-photon fluorescence imaging of live neurons using a multimode optical fiber. Opt Lett 45, 6599 (2020).\n37. Turcotte, R., Sutu, E., Schmidt, C. C., Emptage, N. J. &amp; Booth, M. J. Deconvolution for multimode fiber imaging: modeling of spatially variant PSF. Biomed Opt Express 11, 4759 (2020).\n38. Lee, S.-Y., Parot, V. J., Bouma, B. E. &amp; Villiger, M. Confocal 3D reflectance imaging through multimode fiber without wavefront shaping. Optica 9, 112 (2022).\n39. Sato, M. et al. In vivo rat brain imaging through full-field optical coherence microscopy using an ultrathin short multimode fiber probe. Applied Sciences (Switzerland)9, (2019).\n40. Cao, H., \u010ci\u017em\u00e1r, T., Turtaev, S., Tyc, T. &amp; Rotter, S. Controlling light propagation in multimode fibers for imaging, spectroscopy and beyond. (2023) doi:10.48550/arXiv.2305.09623.\n41. Resisi, S., Viernik, Y., Popoff, S. M. &amp; Bromberg, Y. Wavefront shaping in multimode fibers by transmission matrix engineering. APL Photonics 5, (2020).\n42. Lee, D. D. &amp; Seung, H. S. Learning the parts of objects by non-negative matrix factorization. Nature 401, 788-791 (1999).\n43. Moretti, C. &amp; Gigan, S. Readout of fluorescence functional signals through highly scattering tissue. Nat Photonics 14, 361-364 (2020).\n44. Soldevila, F. et al. Functional imaging through scattering medium via fluorescence speckle demixing and localization. (2023).\n45. Anderson, A. et al. Non-negative matrix factorization of multimodal MRI, fMRI and phenotypic data reveals differential changes in default mode subnetworks in ADHD. NeuroImage vol. 102 207-219 Preprint at https://doi.org/10.1016/j.neuroimage.2013.12.015 (2014).\n46. Gillis, N. The Why and How of Nonnegative Matrix Factorization. arxiv.org (2014) doi:https://doi.org/10.48550/arXiv.1401.5226.\n47. Lee, D. D. &amp; Seung, H. S. Algorithms for Non-negative Matrix Factorization. in NIPS'00: Proceedings of the 13th International Conference on Neural Information Processing Systems (2000).\n48. Boniface, A., Dong, J. &amp; Gigan, S. Non-invasive focusing and imaging in scattering media with a fluorescence-based transmission matrix. Nat Commun 11, (2020)."
+    },
+    {
+      "index": 43,
+      "text": "49. Hoyer PATRIKHOYER, P. O. Non-negative Matrix Factorization with Sparseness Constraints. Journal of Machine Learning Research vol. 5 http://cbcl.mit.edu/cbcl/software-datasets/FaceData2.html (2004)."
+    },
+    {
+      "index": 44,
+      "text": "50. Kim, H. &amp; Park, H. Sparse non-negative matrix factorizations via alternating non-negativity-constrained least squares for microarray data analysis. Bioinformatics 23, 1495\u20131502 (2007)."
+    },
+    {
+      "index": 45,
+      "text": "51. Zhou, P. et al. Efficient and accurate extraction of in vivo calcium signals from microendoscopic video data. *Elife*7, (2018)."
+    },
+    {
+      "index": 46,
+      "text": "52. Pnevmatikakis, E. A. et al. Simultaneous Denoising, Deconvolution, and Demixing of Calcium Imaging Data. Neuron 89, 285 (2016)."
+    },
+    {
+      "index": 47,
+      "text": "53. Guo, R. et al. Scan-less machine-learning-enabled incoherent microscopy for minimally-invasive deep-brain imaging. Opt Express 30, 1546 (2022)."
+    },
+    {
+      "index": 48,
+      "text": "54. Mitra, E., Guo, R., Nelson, S., Nagarajan, N. &amp; Menon, R. Computational microscopy for fast widefield deep-tissue fluorescence imaging using a commercial dual-cannula probe. Optics Continuum 1, 2091 (2022)."
+    },
+    {
+      "index": 49,
+      "text": "55. Cui, G. et al. Deep brain optical measurements of cell type-specific neural activity in behaving mice. Nat Protoc 9, 1213\u20131228 (2014)."
+    },
+    {
+      "index": 50,
+      "text": "56. OKAMOTO, K. Fundamentals of Optical Waveguides. (Elsevier, 2006). doi:10.1016/B978-0-12-525096-2.X5000-4."
+    },
+    {
+      "index": 51,
+      "text": "57. Chen, T. W. et al. Ultrasensitive fluorescent proteins for imaging neuronal activity. Nature 499, 295\u2013300 (2013)."
+    },
+    {
+      "index": 52,
+      "text": "58. Pl\u00f6schner, M., Tyc, T. &amp; \u010ci\u017em\u00e1r, T. Seeing through chaos in multimode fibres. Nat Photonics 9, 529\u2013535 (2015)."
+    },
+    {
+      "index": 53,
+      "text": "59. Defienne, H., Barbieri, M., Walmsley, I. A., Smith, B. J. &amp; Gigan, S. Two-photon quantum walk in a multimode fiber. Sci Adv 2, (2016)."
+    },
+    {
+      "index": 54,
+      "text": "60. sklearn.decomposition.NMF. https://scikit-learn/stable/modules/generated/sklearn.decomposition.nmf.html (2023)."
+    },
+    {
+      "index": 55,
+      "text": "## Figures\n\nPage 15/20\n\n![img-0.jpeg](img-0.jpeg)\nFigure 1\n\nConcept of single-activity resolved fiber photometry. From left to right: ground-truth excitation mimicking neuronal activity is performed by using a DMD, which can selectively excite a set of fluorescent emitters on the sample with a given time trace, likewise in . A short (8 mm long) multimode fiber typically implanted in optogenetics or fiber photometry experiments (NA = 0.39, 200  $\\mu$ m core diameter, step-index fiber) is placed almost touching the sample (distance of  $\\approx 50~\\mu \\mathrm{m}$ ) to collect the fluorescence dynamics of each source. Due to its proximity to the sample, the fiber's effective FoV is expected to be slightly larger than the core size. Fluorescence light inside the multimode fiber is subject to multimodal mixing during propagation, which scrambles/mixes the emitters' wavefront similarly to any scattering media. The transmitted superimposed signal consists of fluorescence transient patterns, i.e., 2D patterns that fluctuate in intensity over time. A video is recorded with a camera and a post-processing step using a spatio-temporal demixing algorithm (unconstrained NMF) is applied to disentangle the overlapped transient patterns into individual 2D spatial fingerprints and their corresponding singular time trace profiles that should match the GT excitations. For setup details, see supp info."
+    },
+    {
+      "index": 56,
+      "text": "![img-1.jpeg](img-1.jpeg)\nFigure 02 \u2013 Results of the proof of principle experiment. From (a) to (c) we have: (a) the fiber proximal end image of 6 fluorescent bead fingerprint patterns overlapped on the sCMOS camera chip (see methods); (b) the short MMF located at a distance of  $60 \\pm 10 \\mu \\mathrm{m}$  from the fluorescent beads; (c) a CMOS Basler camera with the ground truth image of the sample (see supp info). (d) The ground truth (GT) fingerprint patterns were obtained from each bead when they were individually excited. (e) The fingerprint patterns obtained via NMF are to be compared with the GT patterns in d. (f) The individual temporal activity traces of the sources obtained with NMF (blue) and their corresponding GT traces (gray). The NMF trace (#6) was not recovered well by NMF since bead #6 was localized very close to the fiber core edge, therefore yielding low signal/contrast of its pattern (see GT scattering fingerprint of bead #6 in d). (g) The GT-NMF time trace correlations. The average diagonal value of the first 5 beads was  $&lt; \\delta_{b,+} &gt; = \\delta_{seq} = 85.4\\%$  with  $\\sigma_g = 3.6\\%$ . To better evaluate the off-diagonal elements, we subtract them from their corresponding GT-GT coefficients. Then, we averaged the absolute values of these differences and we obtained the mean absolute error of  $\\zeta_{avg} = 7.06\\%$  with a standard deviation of  $\\sigma_f = 7.29\\%$  for the first 5 beads (see supp info). (h) The GT-GT temporal trace correlation table. Importantly, the GT-GT correlation coefficients show that although each GT trace was unique in time (singular), GTs from different sources were not fully uncorrelated. For example, GT traces of beads #3 and #4 were fairly correlated ( $\\gamma_{3,4} = \\gamma_{4,3} = 31.2\\%$ , in (h)) and had a very clear spatial overlap (see GT and NMF scattering fingerprints #3 and #4 in (d) and (e))."
+    },
+    {
+      "index": 57,
+      "text": "![img-2.jpeg](img-2.jpeg)\nFigure 2\n\n![img-3.jpeg](img-3.jpeg)\n\nSee image above for figure legend.\n\n![img-4.jpeg](img-4.jpeg)\nFigure 03 - Validation of the concept of single-activity resolved fiber photometry with short multimode fibers (short MMF) in a more realistic biological condition. Sample: Gad-EGFP neurons fixed in a  $50~\\mu \\mathrm{m}$  brain slice, sealed in between 2 coverslips to keep the humidity of the tissue (see methods). From (a) to (c) we have: (a) the fiber proximal end image of 4 neurons' fingerprint patterns spatially overlapped on the sCMOS camera chip; (b) an illustration of the short MMF placed above the top coverslip of the sample, at a distance of  $\\approx 60 \\pm 10~\\mu \\mathrm{m}$  from it; and (c) the GT image of the sample highlighting the 4 selected neurons to be excited (structurally labeled). (d) The GT fingerprint patterns are obtained from each neuron when individually excited. (e) The fingerprint patterns retrieved via NMF are in good agreement with the GT patterns in (d). (f) The demixed temporal activity traces are sorted in descending GT-NMF correlation order. Traces in blue are retrieved by NMF and temporal traces in gray are their GT. (g) The GT-NMF temporal trace correlation coefficients. The average diagonal value of the 4 neurons was  $&lt; \\delta_{z, + } &gt; = \\delta_{v + z} = 86.7\\%$  with standard deviation of  $\\sigma_z = 2.8\\%$ . Regarding the non-diagonal elements, the mean absolute error compared with the GT-GT coefficients was  $\\zeta_{avg} = 8.95\\%$  with a standard deviation of  $\\sigma_z = 8.02\\%$  (see supp info). Again, although each GT trace was unique in time (singular), they were not fully uncorrelated as we can see in the GT-GT correlation traces (h). Interestingly, neurons #1 and #2 (i.e., the two best NMF retrieved results) were also the most temporally correlated ones in the GT excitation ( $\\gamma_{1,2} = \\gamma_{2,1} = 25.0\\%$ )."
+    },
+    {
+      "index": 58,
+      "text": "# Figure 3\n\nSee image above for figure legend.\n\n# Neuronal microendoscopy with a MiniDART\n\n![img-5.jpeg](img-5.jpeg)\na)"
+    },
+    {
+      "index": 59,
+      "text": "![img-6.jpeg](img-6.jpeg)\nb)\n\n![img-7.jpeg](img-7.jpeg)\nc)\n\n![img-8.jpeg](img-8.jpeg)\ne)\n\n![img-9.jpeg](img-9.jpeg)\nd) Radial dependence:\nFigure 4"
+    },
+    {
+      "index": 60,
+      "text": "Novel microendoscopy concept using a short MMF and a miniscope: the MiniDART. (a) A typical fingerprint pattern from a single-fluorescent bead (10  $\\mu$ m diameter) probed by using only the miniscope excitation and miniscope detection through the multimode fiber. (b) The experimental setup to probe scattering patterns from the short MMF includes (i) the miniscope, (ii) a customized titanium base plate (YMETRY\u00ae) to hold the miniscope, (iii) a ferrule (Thorlabs SFLC230-10) that rigidly holds the multimode fiber (iv) within it, (v) a sample consisting of a single fluorescent 10  $\\mu$ m bead (spatial density &lt; 1 bead/cm\u00b2), and (vi) a customized titanium tweezer (YMETRY\u00ae) to hold the ferrule. (c) Illustration of the experiment designed to probe the scattering pattern sensitivity from a single fluorescent source and its dependence on the source radial position in the FoV. The radial position is represented by the red vector d from the fiber axis (orange dashed line). The blue light in the illustration represents the LED excitation from the miniscope. (d) The scattering fingerprints (proximal end) morphology depending on the radial position (d) of the single-bead (blue dot, in the distal end), which was displaced every 10  $\\mu$ m from the fiber main axis (black dot in the center at distal end cartoons). The bigger the distance d, the wider the diameter of the bright spiral-ring pattern (radius \u03c1 in the proximal end) transmitted through the short"
+    },
+    {
+      "index": 61,
+      "text": "MMF. The diagonal white dashed line is the azimuthal orientation of the vector d, which always coincides with the alignment angle of the 2 central bright points of the fingerprint patterns in the proximal end (see supp info for details). (e) The concept of doing experiments with a MiniDART device, which combines a miniscope and a short implantable multimode fiber. The system should be glued on the mouse skull with dental cement in the same way typical miniscope experiments are performed with GRIN lenses."
+    },
+    {
+      "index": 62,
+      "text": "## Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download."
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The paper introduces a genuinely useful idea: applying unconstrained NMF directly to camera-recorded scattering fingerprints from short multimode fibers to demix multiple fluorescent sources without SLM-based wavefront calibration. The proof-of-principle (delta_avg = 85.4% in beads, 86.7% in a fixed brain slice) is a meaningful baseline result, and the MiniDART concept is appealing. However, the paper's headline claims about enabling deep-brain freely-behaving fiber photometry rest on bench-only experiments with very small N (5 of 6 beads, 4 neurons in one slice) and on conditions far simpler than the targeted in-vivo regime: structural eGFP rather than calcium indicators, only mildly correlated GT time traces (max ~31%), no fingerprint-stability test under bending or temperature, and a miniscope sensitivity test using a single bead. Several core methodological levers - rank selection, framerate, DMD trace shape, full setup - are deferred to the supplement, and the source-counting claim is not quantitatively validated. These issues are largely fixable through expanded experiments, scoped claims, and methods detail rather than fundamental redesign; the contribution is sound but the conclusions need substantial scoping.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Conclusions about freely-behaving in-vivo deep-brain fiber photometry are not supported by the bench-only experiments",
+          "quote": "we believe that this work can open a whole new avenue for novel and affordable minimally invasive deep brain microendoscopic studies to probe (potentially several) deep brain regions in freely-behaving animals",
+          "explanation": "Every experiment in the paper is on a coverslip or a fixed (post-mortem) 50 um brain slice with DMD-controlled excitation; the miniscope+fiber test uses only a single bead. There is no in-vivo recording, no implantation, no awake-animal data, and no demonstration of fiber bending, motion, or chronic stability. Yet the abstract suggests 'a whole new avenue for novel minimally invasive deep brain studies with multimode fibers in freely-behaving mice is possible' and the conclusion projects to multi-region freely-behaving deep-brain experiments. This is a substantive overgeneralization from bench data; the paper-level conclusions need to be scoped to what is actually demonstrated, with the freely-behaving applications presented as motivated future work pending in-vivo validation.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Headline correlation (delta_avg = 85.4%) excludes the bead that failed, hiding a ~17% per-source failure rate at the FoV edge",
+          "quote": "we obtained an average value of < \u03b4_{g,n} > = \u03b4_{avg} = 85.4% with a standard deviation of std = 3.6% (Fig. 02g). However, the NMF algorithm could not reliably recover the time trace and fluorescence patterns corresponding to bead #6 due to low SNR",
+          "explanation": "By restricting the headline statistic to the 5 most central beads and explicitly excluding bead #6 (which lay at the fiber-core edge), the reported delta_avg = 85.4% inflates apparent performance. For a method intended to record from an unknown distribution of neurons across the FoV (some inevitably peripheral), the relevant performance metric must include peripheral sources or report a separate radial-position-dependent failure rate. The paper does not quantify how delta_{g,n} depends on radial position d, nor what fraction of the FoV is reliably demixable - directly relevant since at-edge sources are the limiting case for any practical multi-cell recording.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 15
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "Validation in a 50 um fixed brain slice with structural eGFP does not approximate the targeted in-vivo calcium-photometry regime",
+          "quote": "we changed our fluorescent sample to a 50 \u03bcm fixed brain slice (structurally Gad-eGFP labeled neurons, see methods for more details), and carried out the same type of GT excitation on a few selected neurons in the fiber FoV (mimicking more realistically the neuronal activity in a living brain.",
+          "explanation": "A fixed 50 um slice differs from a living brain in essentially every relevant way: no actual neuronal calcium dynamics (the 'activity' is still DMD-driven on a static structural label), no autofluorescence from blood and other tissue layers, only 50 um of tissue versus hundreds of micrometers above and below in vivo, no motion artifacts, and no out-of-focus background from neurons outside the slice plane. Furthermore, structural eGFP brightness produces high-contrast signals that bear little resemblance to a few-percent dF/F calcium indicator response convolved with the indicator kernel. Calling this 'mimicking more realistically' the in-vivo situation is an overstatement, and the implicit transfer of the 86.7% recovery to GCaMP-based recordings in living mice is unsupported.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 16
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Sample size in the brain-slice validation (N = 4 neurons, single slice, single mouse) cannot support a generalization claim",
+          "quote": "the GT-NMF temporal trace correlation values obtained were high, with an average value of < \u03b4_{g,n} > = \u03b4_{avg} = 86.7%, and a standard deviation of std = 2.8%.",
+          "explanation": "The validation rests on N=4 neurons in a single slice from a single GAD65-EGFP mouse. There is no second slice, no biological replicate, no varying neuron-density condition, and no scan over the number of simultaneously active sources. The reported delta_avg = 86.7% and the small sigma = 2.8% are based on a handful of pairwise correlations and have very low statistical power to distinguish among many alternative hypotheses (e.g., that performance degrades sharply with denser labeling, or with more strongly correlated sources). The validation should be either expanded or framed as preliminary.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 16
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "GT-NMF testing uses only mildly correlated time traces (max ~31%), unlike real co-active neuronal populations",
+          "quote": "the GT-GT correlation coefficients show that although each GT trace was unique in time (singular), GTs from different sources were not fully uncorrelated. For example, GT traces of beads #3 and #4 were fairly correlated ($\\gamma_{3,4} = \\gamma_{4,3} = 31.2\\%$, in (h))",
+          "explanation": "The maximum reported GT-GT temporal correlation is approximately 25-31%. Real neural calcium signals from functionally connected neurons - the very scientific use case for fiber photometry - can be far more correlated (>0.5-0.8 in some circuits). NMF identifiability degrades sharply as temporal correlations between sources increase. The paper validates the method only in a regime that is plausibly easier than its target application, yet the conclusions about 'single-source resolution' for neuronal activity are not bounded by this limitation.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "MiniDART feasibility for multi-source photometry is asserted from a single-bead sensitivity test only",
+          "quote": "we combined a miniscope with a short MMF (the MiniDART) and tested the miniscope sensitivity with a very sparse bead sample: a single fluorescent bead that we can displace laterally in the fiber FoV",
+          "explanation": "The paper concludes that the miniscope MiniDART can support full single-source-resolved fiber photometry in freely-behaving mice, but the actual experimental test is sensitivity to a single 10 um bead. The combined system has never been demonstrated end-to-end with multiple sources, NMF demixing, or the full proof-of-principle pipeline performed earlier on the sCMOS bench. The leap from 'CMOS detects a fingerprint with adequate SNR' to 'NMF demixing of dynamic multi-source recordings will work with this hardware' is unsupported; CMOS noise floor, bit-depth, gain non-linearity, and quantization may matter very differently when the algorithm must separate near-overlapping fingerprints with low-contrast intensity modulation.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Stability of fingerprints under fiber bending, temperature, and motion is never tested, despite being central to the calibration-free claim",
+          "quote": "while these techniques provide a minimally invasive method to obtain diffraction-limited resolution in deep brain regions, they are complex to implement and require a wavefront shaping device (e.g. spatial light modulator, SLM) to compensate for the fluorescence randomized wavefronts through a lengthy calibration procedure.",
+          "explanation": "The paper levels a strong criticism at TM-based approaches for needing SLM calibration that breaks under fiber bending, and uses this to motivate the proposed approach as 'calibration-free.' But unconstrained NMF demixing has its own analogous failure mode: it assumes that the spatial fingerprints remain temporally stable so they can be linearly separated. Any fiber bending, temperature change, or distal mechanical perturbation that alters the fingerprint during a recording will degrade NMF demixing, just as it would degrade TM-based imaging. The paper neither measures fingerprint drift over time nor reports robustness of NMF outputs to mechanical or thermal perturbation - precisely the experiments that would distinguish 'short MMF + NMF' from 'long MMF + SLM' on the dimension the paper itself emphasizes. This is the same standard the paper applies to others.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 9
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "NMF rank selection and source-counting claim are unsupported; rank=9 for 6 sources can inflate apparent recovery",
+          "quote": "Thus, counting the maximum number of unique patterns demixed by NMF could be a way to count the real number of sources probed by the fiber.",
+          "explanation": "The proof-of-principle uses NMF rank = 9 for 6 actual beads (and bead #6 was not even recovered), and the brain-slice experiment uses rank = 5 for 4 neurons. Setting rank above the true source count gives the algorithm extra free components to absorb background and noise, which can artificially raise diagonal correlation values for the 'true' components. Yet the paper claims that 'counting unique NMF fingerprints' can identify the true source count - a claim that requires the rank-versus-source mapping to be reliable. The main text provides no validation: no false-positive/false-negative rate as a function of rank, no sweep over different ground-truth source counts, no replication in the brain-slice experiment, and the Discussion subtly walks the claim back ('possibly confirmed by a post-mortem evaluation'). Rank choice is the single most consequential user-facing parameter and is supported only by 'see supp info.'",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 15
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "The 'calibration-free' framing understates the practical burden of choosing rank in unknown samples",
+          "quote": "we show that it is possible to extract single-source time traces in fiber photometry without the need to perform any complicated calibration procedure.",
+          "explanation": "It is correct that no SLM-based wavefront calibration is required, but the user must still pick the NMF rank n_components, which the Methods concedes 'changes depending on the experiment.' In an unknown biological sample the true source count is unknown, and the paper itself states that higher-than-true rank produces 'replicas' of fingerprints and absorbs background. Calling the method 'calibration-free' understates this practical burden and its impact on result interpretation, especially because the source-counting claim depends on the same parameter. A more accurate framing would acknowledge that the method removes wavefront-calibration but introduces a model-selection problem.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 10
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Critical methods - the entire proof-of-principle setup, rank rationale, and supplementary analyses - are deferred to supp info",
+          "quote": "The proof of principle setup is visually illustrated and fully described in the supp info.",
+          "explanation": "The proof-of-principle optical setup is the central apparatus that produces every quantitative result, yet its description is fully deferred to the supplementary information. Several other consequential items - rank-selection rationale, binning analysis, radial-dependence quantitative details, off-diagonal MAE table, and fingerprint shape ambiguity - are similarly deferred. A reader of the main text cannot evaluate (or reproduce) camera, magnification, exposure, frame rate, alignment tolerances, DMD pattern, or excitation power. Methodological transparency for headline numerical claims requires their experimental basis to be in the main body.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "DMD time-trace shape, framerate, recording length, and noise model are not specified in the main text",
+          "quote": "we implemented an optical setup using a digital micromirror device (DMD), which was used to generate different excitation ground truth (GT)$^{43,57}$ activity traces for each fluorescent source",
+          "explanation": "Citation 57 (Chen et al. 2013, GCaMP6) and 43 (the authors' prior work) are invoked but the actual GT temporal profile (calcium-transient kernel? square pulses? sinusoids?), framerate, total recording length, photobleaching control, and shot/read-noise characterization are not stated in the main text. For the brain-slice experiment, the description 'literature-available time traces to mimic neuronal activity' is even vaguer - the reader cannot tell which calcium dataset, which event rates, or which dF/F amplitudes were used. Without these, neither the recovery numbers nor the difficulty of the task can be evaluated, and the experiments cannot be reproduced.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 14
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "NMF hyperparameter choices are listed but not justified; sensitivity to initialization and seed is not reported",
+          "quote": "The parameters chosen were: init = 'nndsvd', random_state = 0, max_iter = 3000, solver = 'cd', l1_ratio = 1, beta_loss = 2, alpha_W = 0, alpha_H = 0.",
+          "explanation": "Setting alpha_W = alpha_H = 0 disables sparsity regularization, which the paper notes but does not motivate, even though incoherent fluorescence signals are 'naturally positive, linear, and sparse.' random_state = 0 fixes initialization, but NMF is non-convex and final factorization is known to depend on initialization. No robustness analysis (multiple seeds, alternative inits, range of max_iter) is reported. Given that the algorithm is the core contribution, sensitivity of delta_avg and zeta_avg to these choices is needed.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Self-imposed framerate standard (>=10 Hz) is not reported for the paper's own NMF recordings",
+          "quote": "they tracked the movement of a fluorescently labeled worm in 2D with a framerate (2 Hz), which is relatively low for typical calcium transient imaging experiments performed in living mice. In the latter case, experiments are typically carried out with a framerate of at least 10 Hz",
+          "explanation": "The Discussion criticizes refs 53 and 54 for using a low (2 Hz) framerate as inadequate for calcium imaging and asserts that 'experiments are typically carried out with a framerate of at least 10 Hz.' But the actual NMF demixing experiments in Figs 2 and 3 do not state the framerate at which the sCMOS recorded the videos, the number of frames, the integration time, or the per-source signal-to-noise per frame. Holding others to a 10 Hz standard while not reporting one's own basis for comparison is an asymmetry; the paper should report its experimental framerate prominently in the main text.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 24
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Cross-talk metric zeta_avg ~= sigma_zeta indicates heavy variability that is not analyzed",
+          "quote": "we obtained the mean absolute error of $\\zeta_{avg} = 7.06\\%$ with a standard deviation of $\\sigma_f = 7.29\\%$ for the first 5 beads",
+          "explanation": "A standard deviation (~7.29%) approximately equal to the mean (~7.06%) suggests heavy variability across off-diagonal coefficients - some pairs may exhibit large cross-talk while others are near zero. The paper does not break this distribution down (e.g., does cross-talk concentrate among GT-correlated source pairs like beads #3 and #4 with gamma_{3,4} = 31.2%?). For fiber photometry, the worst-case cross-talk between specific pairs - not the average - determines whether single-source resolution is justified, and this paired analysis is missing.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Miniscope vs sCMOS equivalence argument relies on pixel-binning which ignores detector-physics differences",
+          "quote": "when we spatially binned the video recorded by our high-end sCMOS camera (tabletop experiment) until we get a similar number of FoV pixels used in the miniscope, the retrieved results of NMF fingerprints and traces were visually indistinguishable (see supp info) compared to a non-binned analysis.",
+          "explanation": "Equating spatially binned sCMOS data to miniscope CMOS data ignores fundamental detector differences: pixel size, full-well capacity, read noise, quantum efficiency, dark current, bit depth, electronic gain non-linearity, and rolling-shutter artifacts. Binning a high-quality sCMOS image preserves photon SNR scaled by sqrt(N), but a CMOS detector with smaller wells and higher read noise per pixel can have qualitatively different noise. The 'visually indistinguishable' binning comparison therefore does not establish that the miniscope is sufficient for the demixing task - especially in low-contrast regimes that calcium imaging requires.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "No quantitative SNR or noise-floor measurement for the miniscope; the system saturates at the lowest practical settings",
+          "quote": "At distances d < 20 \u03bcm from the core center, the CMOS got saturated while the miniscope GUI settings were: LED power = 20% (where LED_{max} = 100%, corresponding to a transmitted power through the short MMF of P_{MMF}^{max} = 125 \u03bcW), FPS = 10 Hz (where FPS_{max} = 30 Hz), and Gain = 1 (where Gain_{max} = 3.5).",
+          "explanation": "Saturation at the lowest practical settings for d < 20 um with a 10 um bead implies the dynamic range available for actual neurons (which are typically dimmer per pixel and lower contrast in vivo) may be much smaller than for this test source. The paper does not report SNR, dF/F sensitivity, dark current, read noise, or quantization step in absolute units. Without these, the claim that 'the miniscope is sensitive enough' cannot be evaluated for realistic regimes - calcium dF/F of a few percent against autofluorescence-dominated background is the actual demand.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "Discussion concedes CNMF is superior for calcium signals, undermining the unconstrained-NMF baseline as evidence for in-vivo viability",
+          "quote": "it is already well known in the literature that CNMF is superior compared to NMF in demixing calcium trace signals in conventional GRIN lens imaging microendoscopy",
+          "explanation": "The authors acknowledge that constrained NMF (CNMF) outperforms unconstrained NMF for calcium signals but choose unconstrained NMF for proof-of-principle. This is reasonable as a baseline demonstration, but creates an asymmetry: the recovery numbers (~85%) are presented as positive evidence for the method's viability while the same authors acknowledge a known-better alternative. The paper would either need a CNMF comparison on the same data or a clearer statement that the unconstrained-NMF numbers are a lower bound that may not transfer to the actual targeted regime (calcium dynamics in vivo).",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Comparison with prior learning-based MMF approaches is qualitative and one-sided",
+          "quote": "any learning algorithm depends on the specific conditions of the training set (fiber properties, imaging optical components properties, etc.), which is less general and therefore less applicable to any other new neuroscience experiment.",
+          "explanation": "The Discussion dismisses learning-based approaches (refs 53, 54) by arguing they are dataset-specific, but does not perform a controlled comparison on equivalent data nor reproduce those methods. Moreover, NMF itself depends on the assumption that fingerprints are stable and independent enough to be linearly demixed - an assumption that, like a training set, is fiber- and condition-specific. Framing the proposed method as more 'general' is asserted, not demonstrated, and the paper would benefit from at least a qualitative head-to-head on the same MMF/sample.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 24
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Threshold separating short-fiber 'fingerprints' from long-fiber speckles is never quantitatively defined",
+          "quote": "the multimode fibers (< 10 mm) typically implanted in living mice for chronic behavioral experiments are too short to generate a fully evolved speckle wavefront",
+          "explanation": "The paper repeatedly contrasts 'scattering fingerprints' (their regime) with 'fully developed speckles' (long-fiber regime), and the entire premise that NMF can demix without TM calibration depends on this distinction. Yet no quantitative criterion is offered for when this transition occurs as a function of MMF length, NA, core diameter, wavelength, or number of guided modes. The paper cites Okamoto (ref 56) generally but does not present a relevant length scale (mode-mixing length, equilibrium length). A reader using a different MMF cannot determine whether their fiber will produce 'fingerprints' amenable to unconstrained NMF.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 12
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Long-MMF generalization claim is invoked from prior work but not demonstrated in this paper",
+          "quote": "Since in our previous work, we already proved how to demix fluorescence speckles that are transmitted by highly scattering media (e.g. bone tissue$^{43}$), the same principle is also readily applied for long MMF applications too.",
+          "explanation": "The paper is about short MMFs and explicitly distinguishes the short-fiber 'fingerprint' regime from the long-fiber 'fully developed speckle' regime. Asserting that the unconstrained NMF method 'is also readily applied for long MMF applications' invokes the prior work for support but does not show that long MMFs in the present setup yield equivalent results. Given the well-known sensitivity of long-fiber speckles to bending and temperature - which the paper itself emphasizes - this generalization should be presented as a hypothesis, not a fact.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Fiber length used in experiments is never explicitly stated; reader must infer it",
+          "quote": "we propose a novel approach to perform minimally invasive fiber photometry experiments disentangling single-source time traces transmitted by short and thin multimode fibers (\u2248 200 \u03bcm diameter and with < 10 mm length).",
+          "explanation": "Fiber length appears as '< 10 mm' (Introduction, Conclusion), '~ 8 mm long' (Figure 1 caption), and the Methods describes '2 mm of it sticking out of the ferrule' from a 6 mm ferrule, suggesting around 8 mm total. The Methods section never states an exact fiber length used in the experiments, despite this being a critical parameter that determines whether the fiber operates in the 'fingerprint' regime that the entire claim depends on.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 10
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Radial-position-encoded ring diameter rho(d) is presented as a localization tool without calibration or replication",
+          "quote": "Larger d distances yield wider rings (larger \u03c1, see Fig. 04d). Thus, each fingerprint's bright ring diameter is encoding radial information about the bead lateral localization at the distal end.",
+          "explanation": "The relationship rho(d) is presented as monotonic and useful for inferring source localization, but no calibration curve, fit to a waveguide model, or uncertainty quantification is provided. The paper does not state how many sweeps were performed, the number of repeats, whether the relationship is preserved across different fibers, or how bending alters rho(d). As stated, it is a qualitative observation used to motivate a localization claim that has not been quantitatively demonstrated.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 19
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Hedged statement that fingerprints are 'not ambiguous' with source position ignores azimuthal degeneracy",
+          "quote": "the scattering fingerprint patterns seem to not be ambiguous depending on the source lateral position from the fiber axis.",
+          "explanation": "The radial sweep in Fig 4 only varies one azimuthal angle (the 'diagonal white dashed line') and the paper itself notes that this angle 'always coincides with the alignment angle of the 2 central bright points of the fingerprint patterns.' Two sources at the same radius but different azimuthal angles would presumably yield rotated versions of the same fingerprint, so the rho(d) information alone is not sufficient to localize a source uniquely. The phrasing 'seem to not be ambiguous' is hedged and not justified by data on multiple azimuths or by combinations at the same radius. This affects the source-counting and identifiability claims downstream.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Off-diagonal MAE formula has an inconsistent normalization factor",
+          "quote": "$\\zeta_{avg}=mean\\left(\\zeta_{i\\neq j}\\right)=\\frac{1}{2(N_{s}-1)}\\left(\\sum_{i\\neq j}^{N_{s}-1}\\left|\\nu_{i,j}-\\gamma_{i,j}\\right|\\right)$",
+          "explanation": "For a symmetric correlation matrix with N_s sources, the number of unique off-diagonal pairs is N_s(N_s - 1)/2 and the number of off-diagonal entries (counting both (i,j) and (j,i)) is N_s(N_s - 1). The denominator 1/[2(N_s - 1)] does not correspond to either; it would only match a particular case (N_s = 2 or one specific symmetry assumption). The upper limit of the sum is shown as N_s - 1 rather than N_s. As written, this expression does not correctly compute a mean for arbitrary N_s and should be revisited.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 35
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Notation inconsistency in correlation and standard-deviation symbols across captions and equations",
+          "quote": "$\\zeta_{avg} = 7.06\\%$ with a standard deviation of $\\sigma_f = 7.29\\%$ for the first 5 beads",
+          "explanation": "Across captions and equations, the same quantities are labeled inconsistently: the GT-NMF diagonal correlation appears as < delta_{g,n} >, < delta_{b,+} >, delta_avg, and delta_seq (with no statement that these are the same). The standard-deviation symbol is variously 'std', sigma_g, sigma_delta, sigma_f, sigma_z, and sigma_zeta - several with subscripts (f, z, g) that are never defined. In the equations subsection only sigma_zeta is formally introduced. This inconsistency makes it nontrivial to follow which standard deviation refers to which quantity (delta diagonal vs zeta off-diagonal) across the figures and methods.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "Brain-slice sample preparation is folded into the bead preparation section without its own heading",
+          "quote": "Preparation of the fixed brain slice sample:",
+          "explanation": "The fixed brain slice preparation appears as a sub-paragraph but is not given its own top-level heading in the section index, making it harder to find and review. It also does not specify how individual neurons were selected for excitation, the optical mapping between DMD pixels and individual neurons in the FoV, or how the 'few selected neurons' were registered to the GT image - details that directly affect interpretation of the validation result.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "Bead size is reported with high precision in Methods (10.23 +/- 0.13 um) but the radial-localization claim is implicitly only validated for this single size",
+          "quote": "polystyrene (PS) particles aqueous suspension (PS - FluoGreen - Fi226-- 1mL, 10.23 \u00b1 0.13 \u03bcm size",
+          "explanation": "The Methods specifies bead size 10.23 +/- 0.13 um, but the rest of the paper rounds to '10 um.' More importantly, the radial-position-encoding (rho(d)) and source-counting/identifiability claims are validated only at this single source size. Since fingerprint shape and ring diameter almost certainly depend on source size relative to fiber NA and core, the localization claim is implicitly bounded to ~10 um sources and should be stated as such.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 30
+        },
+        {
+          "id": "openaireview__claude_27",
+          "title": "Sample-to-fiber distance is reported with two slightly different values across figures (~50 um vs 60 +/- 10 um)",
+          "quote": "is placed almost touching the sample (distance of  $\\approx 50~\\mu \\mathrm{m}$ ) to collect the fluorescence dynamics of each source",
+          "explanation": "Figure 1 (concept) describes a fiber-sample distance of ~50 um, while Figs 2 and 3 captions specify 60 +/- 10 um. Figure 1 is conceptual but the discrepancy could mislead about the actual experimental geometry. FoV size, illumination, and fingerprint pattern depend on this distance, and a sensitivity analysis at +/-10 um is not provided.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 55
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

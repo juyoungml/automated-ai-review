@@ -1,0 +1,467 @@
+{
+  "slug": "paper60_skill",
+  "title": "Compound mortality impacts from extreme temperatures and pandemics",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Compound mortality impacts from extreme temperatures and pandemics\n\nY. T. Eunice Lo\n\neunice.lo@bristol.ac.uk"
+    },
+    {
+      "index": 1,
+      "text": "University of Bristol https://orcid.org/0000-0002-7389-7272\n\nDann Mitchell\n\nUniversity of Bristol https://orcid.org/0000-0002-0117-3486"
+    },
+    {
+      "index": 2,
+      "text": "Antonio Gasparrini\n\nLondon School of Hygiene &amp; Tropical Medicine https://orcid.org/0000-0002-2271-3568"
+    },
+    {
+      "index": 3,
+      "text": "Article\n\nKeywords:\n\nPosted Date: January 18th, 2024\n\nDOI: https://doi.org/10.21203/rs.3.rs-3866346/v1"
+    },
+    {
+      "index": 4,
+      "text": "License: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 5,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on May 23rd, 2024. See the published version at https://doi.org/10.1038/s41467-024-48207-2."
+    },
+    {
+      "index": 6,
+      "text": "Page 1/14\n\n## Abstract\n\nClimate change and coronavirus-type pandemics are both major global health threats. Until now, no study has quantified the compound health consequences of the co-occurrence of these crises. We estimate the mortality attributable to short-term heat and cold events, which dominate the UK health burden from weather hazards, in England and Wales in the period 2020--2022, during which the COVID-19 pandemic peaked in terms of mortality. We show that temperature-related mortality exceeded COVID-19 mortality by 8% in South West England. Combined, extreme temperatures and COVID-19 led to 19 (in North West England) to 24 (in Wales) excess deaths per 100,000 population during heatwaves, and 80 (in Yorkshire and the Humber) to 127 (in East of England) excess deaths per 100,000 population during cold snaps. These numbers are at least ~2 times higher than the previous decade. Society must increase preparedness for compound health crises such as extreme weather coinciding with pandemics."
+    },
+    {
+      "index": 7,
+      "text": "## Introduction\n\nClimate change is deeply embedded in the long-term global health concern^{1}, with much of its direct health burden coming from extreme weather events. However, it is a crisis that is nearly always considered in isolation from other crises, even though there can be compound socio-economic impacts when major crises occur in parallel. While the climate-conflict nexus is relatively well studied^{2,3}, other parallel crises such as climate change and obesity, climate change and artificial intelligence, and, as studied here, extreme weather and pandemics, are far less investigated."
+    },
+    {
+      "index": 8,
+      "text": "Extreme weather events are \u201cshattering\u201d observational records, disrupting infrastructure, and, in the worst cases, claiming lives^{4,5}. In the period that the most recent global pandemic -- COVID-19 -- was officially declared a public health emergency of international concern by the World Health Organization (between January 2020 and March 2023), the UK recorded 40.3\u00b0C unprecedented extreme heat^{6} and a record number of around 3,000 heatwave excess deaths^{7}, western North America experienced one of the most extreme heatwaves ever recorded globally^{8} that led to hundreds of deaths^{9}, Pakistan had floods that killed nearly 2,000 people and displaced 7 million more^{10}, and the Horn of Africa experienced persistent droughts that led to over 3 million people requiring humanitarian assistance^{11}. These life-threatening weather events, attributable in part to human-induced climate change^{12--14}, prompted scientists to warn about compound societal risks arising from the intersection of climate hazards and pandemics like COVID-19^{15}."
+    },
+    {
+      "index": 9,
+      "text": "One way that the intersection of extreme weather events and pandemics can result in major societal risks is through overwhelming health systems. If health services are already operating at capacity because of one crisis, the additional health burden from another crisis can break the system entirely, endangering the lives of many people. From the emergence of COVID-19 in December 2019 to the writing of this paper in late 2023, almost 7,000,000 COVID-19 deaths have occurred worldwide^{16}, with Peru and Bulgaria having the highest numbers of confirmed deaths per one million population^{17}. In the UK, about 230,000 people, or 0.3% of the total population, have died from COVID-19 according to death certificates^{18}. These numbers would likely have been much higher had there not been preventative measures put in place, such as social restrictions or vaccination^{19--21}. The rapid development, severity, and adverse impacts of the pandemic on public health and the functioning of society meant that it dominated global news and everyday life for an extended period of time^{22}."
+    },
+    {
+      "index": 10,
+      "text": "However, the exact respective and compound health impacts of extreme weather and COVID-19 remain unknown. Understanding these impacts from observations of recent events is extremely important to inform climate adaptation, long-term pandemic preparedness, and public health solutions that simultaneously address both^{15}."
+    },
+    {
+      "index": 11,
+      "text": "Here, we use England and Wales as a well-observed and well-documented case study to illustrate the respective and combined mortality impacts of weather hazards and COVID-19, in the period between 30 January 2020 and 31 December 2022. The first COVID-19 death recorded on a death certificate in England and Wales was on 30 January 2020 (in South East England), so this date is chosen as the starting date for this study. We choose England and Wales because we already have location-specific epidemiological models linking temperature variability to daily mortality set up for regions within them^{23}, and that daily COVID-19 mortality statistics for the same sub-national regions are publicly available from the UK Government dashboard^{18"
+    },
+    {
+      "index": 12,
+      "text": "We consider excess mortality associated with non-optimal high and low temperatures because it dominates the short-term health impact of other weather hazards^{24}, including floods, storms, and droughts in the UK^{25}. Temperature-related mortality is also relatively straightforward to quantify through time series epidemiological modelling. Specifically, we focus on the hottest (heatwaves) and coldest (cold snaps) days during the study period, in order to understand the compound impacts when regional extreme temperatures coincide with the global pandemic."
+    },
+    {
+      "index": 13,
+      "text": "## Results\n\nFigure 1a shows that heat-related mortality (red lines, with red shading indicating its 95% confidence interval) in England and Wales primarily occurred between July and September during the study period of 30 January 2020 to 31 December 2022. A total of 8,481 excess deaths (95% confidence interval: 6,387--10,493) were attributable to high temperatures, with daily heat-related mortality peaking at 580 deaths (95% confidence interval: 484--670) on 19 July 2022, when England recorded 40.3\u00b0C unprecedented extreme heat. Figure 1b zooms in on the time evolution of mortality during this heatwave for greater legibility. Although the UK Met Office and UK Health Security Agency (UKHSA) had issued Level 2 (yellow) and Level 3 (amber) Heat Health Alerts for all regions except North East England since 11 July 2021 to warn the public about this heatwave, which they subsequently raised to the highest Level 4 (red) alert for all regions on 18 July 2021 to trigger a national emergency response^{26}, peak heat-related mortality during this heatwave exceeded the maximum daily level from the previous ten years (i.e. 2010--2019; red error bar in Figure 1a), which was 376 deaths (95% confidence interval: 304--445)."
+    },
+    {
+      "index": 14,
+      "text": "In months other than July, August and September, cold-related mortality (blue lines, with blue shading indicating its 95% confidence interval) dominated over heat-related mortality. Over the study period, a total of 128,533 excess deaths (95% confidence interval: 107,430--153,642) were attributable to low temperatures, indicating a fifteen-fold larger cold than heat mortality burden. These results are consistent with the literature, which found that most days of the year are considered moderately cold in England and Wales in distributed lag non-linear models (DLNMs) for health modelling, resulting in a large number of cold-related deaths^{27} . Daily cold-related mortality peaked at 531 excess deaths (95% confidence interval: 493--574) on 15 December 2022, but this falls within the range from the previous ten years (maximum: 691 deaths, 95% confidence interval: 643--743)."
+    },
+    {
+      "index": 15,
+      "text": "These temperature-related deaths are theoretically independent of COVID-19 deaths because they are calculated from DLNMs that describe the relationships between daily mean temperature and daily all-cause mortality, after COVID-19 mortality has been removed (see Methods). For comparison, Figure 1 also shows the time evolution of daily COVID-19 mortality according to death certificates (purple lines). Distinct surges in COVID-19 deaths were seen soon after the first emergence of COVID-19 in early 2020 and the domination of the Alpha variant in December 2020 (dotted vertical line in Figure 1a)^{28}, with the highest daily mortality level being 1,382 deaths on 19 Janurary 2021. The emergence of the Delta and Omicron variants were not followed by as large a surge in deaths, likely because COVID-19 vaccination had become more common by then (see Figure S1), with about half of the population above the age of 12 having had two doses of COVID-19 vaccines by 1 July 2021 (solid vertical line in Figure 1a), in all regions in England and Wales except London (see Table S1). Over the whole study period, 194,480 COVID-19 deaths were reported on death certificates in England and Wales."
+    },
+    {
+      "index": 16,
+      "text": "Figure 1a shows that from June to October 2020, March to August 2021, and from September 2021 to the end of 2022, temperature-related deaths (the sum of heat- and cold-related deaths) exceeded COVID-19 deaths. These exceedances were driven by heat-related mortality spikes when COVID-19 mortality was relatively low, e.g. during the July 2022 heatwave (Figure 1b), as well as cold-related mortality dominating in the colder months after COVID-19 vaccination was introduced. To further examine the respective mortality impacts of non-optimal temperatures and COVID-19, Figure 2 shows the ratios of cumulative deaths from these two causes for each region in England and Wales, across the whole study period (panel a), and during heatwaves and cold snaps therein (panels b and c)."
+    },
+    {
+      "index": 17,
+      "text": "Considering the whole study period of 30 January 2020 to 31 December 2022, cumulative temperature-related deaths exceeded cumulative COVID-19 deaths by 8% in South West England. While this exceedance did not occur in the other regions, temperature-related deaths amounted to 58% (East Midlands) to 75% (London) of COVID-19 deaths by the end of 2022. These"
+    },
+    {
+      "index": 18,
+      "text": "results demonstrate that even during a global pandemic that dominated everyone's lives, heat and cold were a comparable but arguably much more under-reported killer than COVID-19. Reducing temperature-related mortality would free up resources and capacity for the health services to respond to major pandemics when they occur."
+    },
+    {
+      "index": 19,
+      "text": "Since extreme weather events are where we would expect the health effects to be largest, focusing on them provides important information on their interplay with other parallel health crises, including their compound health effects. Figure 2b shows that during the ten heatwave episodes (spanning a total of 70 days; see Table S2) in the study period, identified through UKHSA's Heat Mortality Monitoring Reports^{26,29,30} , temperature-related deaths outnumbered COVID-19 deaths in 9 of the 10 regions (except in North West England). This exceedance is particularly apparent in the southern regions where heat stress is more pronounced^{31}. The ratios of temperature-related deaths to COVID-19 deaths in the southern regions range from 1.7 in East of England and South East England to 2.7 in London. The ratios for the rest of the regions lie between 1.1 and 1.3, except for North West England which has a ratio of 0.8. These results highlight that even during the COVID-19 pandemic, heatwaves posed a serious threat to public health, which is often downplayed^{32} or misrepresented as something enjoyable by the media in the UK^{33}."
+    },
+    {
+      "index": 20,
+      "text": "Figure 2c shows the corresponding results during eight cold snaps in the study period, which are defined here as days on which a Level 3 Cold Health Alert was issued by UKHSA for any region in England (also spanning 70 days; see Table S2). A Level 3 (amber) Cold Health Alert represents a situation in which impacts are likely to be felt across the health and social care sectors, and potentially the whole population^{34}. During these cold snaps, temperature-related deaths were lower than COVID-19 deaths in all regions, with the ratios ranging from 0.4 in East of England to 0.8 in South West England. These results are likely to be driven by the large surges in COVID-19 mortality following the first emergence of the coronavirus and the domination of the Alpha variant, both of which occurred in winter (Figures 1a and S1). In this sense, our results should not be interpreted as low temperatures being less important than COVID-19 to health in winter, as we have already shown that cold-related mortality occurs throughout the year and dominated over COVID-19 in the second half of the study period (Figure 1a). Future outbreaks of COVID-19 or novel viruses could have a different seasonal pattern from the COVID-19 pandemic studied here. Therefore, they could have different health impacts relative to extreme cold in winter."
+    },
+    {
+      "index": 21,
+      "text": "The co-occurrence of non-optimal temperatures and COVID-19 meant that all-cause mortality in England and Wales was, on average, higher in the study period than in the previous ten years (black line and bar in Figure 1a). During extreme events, the health system needed to deal with an unprecedented compound health impact from both extreme weather and COVID-19. Figure 3a shows the total number of deaths arising from high temperatures and COVID-19 during the 70 heatwaves days in the study period. Regional compound (heat-related and COVID-19) mortality ranged from 19 deaths per 100,000 people (95% confidence interval: 16--22) in North West England, to 24 deaths per 100,000 people (95% confidence interval: 20--29) in Wales."
+    },
+    {
+      "index": 22,
+      "text": "These compound mortality levels are put into context by comparing Figure 3a with Figure 3c, which shows the reference levels of heat-related mortality from 70 heatwave days, calculated from the average of all identified heatwaves in the ten years that preceded COVID-19 (i.e. 2010--2019; see Methods). Substantially fewer heat-related deaths occurred during 70 heatwave days in 2010--2019, with the regional number ranging from 5 deaths per 100,000 people (95% confidence interval: 3--8) in North West England, to 13 deaths per 100,000 people (95% confidence interval: 12--15) in London. In other words, demand on regional health services was 1.7 (London) to 3.8-fold (North West England) when extreme heat coincided with COVID-19 in the study period, compared to the previous decade."
+    },
+    {
+      "index": 23,
+      "text": "During the 70 cold snap days in the study period (30 January 2020 to 31 December 2022), regional compound (cold-related and COVID-19) mortality ranged from 80 per 100,000 people (95% confidence interval: 75--86) in Yorkshire and the Humber, to 127 deaths per 100,000 people (95% confidence interval: 123--132) in East of England (Figure 3b), highlighting the higher absolute demand on the health system during cold snaps that heatwaves in the study period. These compound mortality numbers are substantially higher than the reference numbers of cold-related deaths from the same number of cold snap days in 2010--2019 (Figure 3d), which ranged from 34 deaths per 100,000 people (95% confidence interval: 31--38) in London, to 48 deaths per 100,000 people (95% confidence interval: 34--50) in North East England. This means that depending on the region, demand on"
+    },
+    {
+      "index": 24,
+      "text": "health services was 2.1 (South West England) to 3.5-fold (East of England) when extreme cold co-occurred with COVID-19, compared to extreme cold in the previous decade."
+    },
+    {
+      "index": 25,
+      "text": "By adding temperature-related deaths (with COVID-19 deaths removed prior to calculation) and COVID-19 deaths together to estimate the compound mortality impact, we have assumed that they are independent of each other. Figure 4 shows the average number of temperature-related deaths per 100,000 population per day of individual heatwaves (panel a) and cold snaps (panel b) in all regions in 2016--2019 (non-COVID-19 years; grey markers) and 2020--2022 (COVID-19 years; coloured markers), versus the average temperatures of these events. While heat-related mortality generally increased with the average heatwave temperature for all events, and cold-related mortality generally decreased when cold snaps were milder, the extreme temperature events that co-occurred with COVID-19 have different distributions (grey dashed lines) from the events that occurred without COVID-19 co-occurrence (black solid lines). For heatwaves (Figure 4a), mean temperature and heat-related mortality shifted higher in the COVID-19 years, compared to events that were not affected by COVID-19. For cold snaps (Figure 4b), the variances in temperature and cold-related mortality were larger in events in the COVID-19 years than non-COVID-19 years. Two-sample Kolmogorov--Smirnov tests confirm that the COVID-19 event distributions are significantly different from the non-COVID-19 distributions at the 5% significance level. These results suggest that COVID-19 may have impacted temperature-related mortality during extreme weather events."
+    },
+    {
+      "index": 26,
+      "text": "On the other hand, extreme heat may have exacerbated COVID-19 mortality in England and Wales too. This is evident on the hottest day ever recorded in the UK (19 July 2022), when the 91 more daily COVID-19 deaths occurred, compared to the average on days between 10 July and 25 July 2022 (Figure 1b). Modelling COVID-19 mortality is not within the scope of this study, but our results highlight the complex interplay between extreme temperatures and the COVID-19 pandemic, as well as its implications on population health and health services capacity."
+    },
+    {
+      "index": 27,
+      "text": "## Discussion\n\nThe 2023 UK National Risk Register states that extreme weather events and pandemics are two of the most serious risks facing the UK, alongside other risks such as terrorism, cyber attacks and conflicts^{35}. In this study, we have demonstrated the respective mortality impacts of extreme temperatures and COVID-19, as well as the substantial compound mortality impact arising from the co-occurrence of these two crises, on all regions in England and Wales. UK summers are becoming hotter in a warming climate^{36}, and extreme heat events are increasing in frequency, intensity, and duration. While UK winters are generally becoming milder^{36}, extremely cold episodes driven by natural climate variability, such as the 2018 \u201cBeast from the East\u201d, will still have a large adverse health impact. Viewing extreme heat and cold as serious health threats on a par with the COVID-19 global pandemic and other major crises is an important first step to preventing further loss of lives to extreme weather."
+    },
+    {
+      "index": 28,
+      "text": "With the latest long-term forecasts of COVID-19 for the UK predicting a steady 95% effective population immunity and a reduced death rate until at least May 2024^{37}, it is probable that cumulative temperature-related deaths would exceed COVID-19 deaths in more regions than South West England (Figure 2) in the next 2 to 5 years (not shown). While extreme temperatures cannot be vaccinated against, interventions such as increasing tree coverage in cities^{38}, adding reflective or green roofs to buildings^{39}, and installing external shutters to the housing stock^{40} have been shown to reduce the health risk of heat. Fitting mechanical ventilation with heat recovery systems in homes can simultaneously improve insulation and improve energy efficiency in the colder months, thereby reducing the health risk of cold, while maintaining ventilation^{41}. It is vital to implement these interventions in urban planning and housing regulations, in order to improve population resilience to heat and cold in the UK."
+    },
+    {
+      "index": 29,
+      "text": "Recent analyses of NHS hospital beds show a persistent decline in the total number of beds, by 11% in England and 15% in Wales in the period 2010--2022^{42,43}.Even before the COVID-19 pandemic, average hospital bed occupancy consistently surpassed 85%, a level widely considered to be the upper limit for hospitals to operate safely and effectively^{44}. Many hospitals trusts regularly exceeded an even higher capacity of 95% in winter^{42}. These statistics highlight a significantly overwhelmed health system in England and Wales. The deadly consequences of an already overwhelmed NHS severely stretched to function through the compound crises of extreme weather and COVID-19, whose mortality impacts are additive to the first order, are clear"
+    },
+    {
+      "index": 30,
+      "text": "in this paper. Decisive actions to improve NHS ability to substantially increase bed numbers and staff availability with little notice, since major crises tend to occur abruptly, are extremely important to build health resilience for future crises."
+    },
+    {
+      "index": 31,
+      "text": "Anticipating and preparing for the co-occurrence of extreme weather events and major disease outbreaks like COVID-19 would be lifesaving, not least because they share commonalities in who in the population are particularly vulnerable to them. For instance, extreme heat and cold adversely affect the health of older people (above the age of 65), young children (under the age of 5), people with pre-existing health conditions such as cardiovascular, respiratory and kidney conditions (kidney disease is a risk factor for heat-health), those who are socially isolated, those who are homeless, and those who live in deprived circumstances (a risk factor for cold-health), more than other population groups^{34,45,46}. A number of these groups such as older people, people with various pre-existing conditions including severe asthma and chronic kidney disease, and those who are deprived are also at a higher risk of dying from COVID-19 in the UK^{47,48}. Enhancing access to health and care services, support and guidance for these groups would simultaneously address their vulnerability to extreme weather and a future coronavirus-type outbreak, which is still a priority disease with pandemic potential according to the WHO, along with Zika, haemorrhagic fevers, influenza, and \u201cdisease X\u201d (an unexpected new disease)^{49}."
+    },
+    {
+      "index": 32,
+      "text": "Because of the common risk factors for temperature-related and COVID-19 mortality, disentangling their effects on health and attributing mortality to a single cause is challenging. Here, we have suggested that COVID-19 may have confounded with temperature-related mortality in England and Wales during heatwaves or cold snaps in the period 2020--2022 (Figure 4), although the number of extreme temperature events sampled is limited by the short study period. This result is consistent with previous hypotheses that COVID-19 acted as a risk amplifier of heat-health impacts in the UK^{23} and other countries including Portugal^{50}, potentially due to increased vulnerability, social restrictions, and people not seeking healthcare during the pandemic. On the contrary, another previous study found similar heatwave mortality in England in 2020 and the pre-pandemic period of 2016--2018, with no indication of more at-home heat-related deaths linked to COVID-19 social restrictions^{51}."
+    },
+    {
+      "index": 33,
+      "text": "Future work is recommended to understand the confounding effect(s) of COVID-19 on temperature-related health outcomes. For example, instead of using all available observed temperature and mortality data (1981--2022 data, but with reported COVID-19 mortality removed) to construct the DLNMs here (see Methods), future work can derive temperature-mortality associations using only data from the COVID-19 time period. We have not done this because two years of data (in the COVID-19 period of 2020--2022) are not enough to derive constrained temperature-mortality associations with low uncertainty on the regional level. This limitation will be reduced when more data become available going forward. Future work can also investigate the feasibility of controlling for time-varying COVID-19 effects in the models."
+    },
+    {
+      "index": 34,
+      "text": "On the other hand, we have shown above-average COVID-19 mortality in July 2022 when temperatures were unprecedentedly high (Figure 1b). Detailed modelling of COVID-19 infections and mortality is out of the scope of this study, but future research on this topic is extremely important because the literature is inconclusive about the effect of temperature and humidity on the transmission of COVID-19, with some of these studies contradicting each other. For instance, previous studies found (i) low temperatures and/or low absolute humidity increased transmission^{52}, but only in the absence of policy interventions such as lockdowns^{53}; (ii) modest non-linear associations between these variables and COVID-19 transmission^{54}; and (iii) no association between temperature and COVID-19 but weak negative associations with absolute and relative humidity^{55}. Recent research found that most of the studies about weather effects on COVID-19 spread that were published in 2020 and 2021, did not include a time lag between weather exposure and reported COVID-19 cases, did not properly account for seasonality or other confounding factors of disease transmission, or did not go through rigorous peer review^{56}. These aspects need to be thoroughly considered in future research, for the purpose of long-term planning and preparedness that are resilient to climate change."
+    },
+    {
+      "index": 35,
+      "text": "## Methods\n\n### Distributed Lag Nonlinear Models (DLNMs)\n\nFor each region in England and Wales, we derive the non-linear association between daily average temperature and daily mortality in the period 1981--2022. We calculate daily average temperature by averaging the daily maximum and minimum"
+    },
+    {
+      "index": 36,
+      "text": "temperatures in the HadUK-Grid Climate Observations by Administrative Regions over the UK dataset^{57}. We use daily all-cause death occurrences across all age and sex groups in the same time period. These data are provided by the Office for National Statistics (see Data availability). Since the 2020--2022 mortality data include COVID-19 deaths, which we want to separate from temperature-related deaths in this study, we remove deaths with COVID-19 on the death certificate from the all-cause mortality data. We then derive the non-linear association between the temperature and mortality time series using quasi-Poisson regression with DLNMs, adapting the methods from previous studies^{58}."
+    },
+    {
+      "index": 37,
+      "text": "Briefly, we model the temperature-mortality association for each region using natural cubic splines with three internal knots at the 10^{th}, 75^{th}, and 90^{th} percentiles of the 1981--2022 temperature distribution of that region. Since we are interested in both heat- and cold-related mortality, year-round temperatures are considered. It is known that the mortality effect of exposure to heat and cold can take up to a few days (heat) and a few weeks (cold) to be observed^{58}, so we include a time lag association in each DLNM. We model this association with natural cubic splines with three internal knots that are equally spaced in the log-scale, following a standard set up in the literature^{27}. We consider a maximum lag period of 21 days, which has been shown to be sufficient to capture cold health effects^{59}."
+    },
+    {
+      "index": 38,
+      "text": "In the main quasi-Poisson regression model, we also include an indicator of day of the week and a natural cubic spline of time with 8 degrees of freedom per year. This follows a standard set up in the literature^{59} and controls for residual variation and seasonality in the data. Through the methods described above, we find the overall temperature-mortality association across the 21-day lag period for each region in England and Wales. This overall association is centred on a \u2018minimum mortality temperature' (MMT) corresponding to the region. We constrain the MMT to the 2^{th} to 98^{th} percentiles of the 1981--2022 daily average temperature distribution of the region. By definition, mortality risk at the MMT is the lowest among all observed temperatures of the same region. Increased mortality risk is expected above (considered as heat-related mortality) and below (cold-related mortality) the MMT."
+    },
+    {
+      "index": 39,
+      "text": "Based on the observed daily average temperature between 30 January 2020 and 31 December 2022 from HadUK-Grid, the derived mortality risk at each temperature, and the average number of all-cause deaths (excluding COVID-19 deaths) for each calendar day in a year based on the 1981--2022 period, best estimates of heat- and cold-related mortality for each day in the study period are calculated for each region. Their 95% empirical confidence intervals are estimated through Monte Carlo simulations of the spline model coefficients 100 times, assuming that the coefficients have a multivariate normal distribution."
+    },
+    {
+      "index": 40,
+      "text": "### Heatwaves and cold snaps before 2016\n\nThroughout this study, we focus on heatwaves and cold snaps when extreme temperatures have the largest mortality impacts. The dates of these events are extracted from the UKHSA Heatwave Mortality Reports and historical Level 3 Cold Health Alerts, as mentioned in the main text. However, these reports and the alerts record available to us only start in 2016, so we find the dates of heatwaves and cold snaps based on the same criteria for the period 2010--2015 for Figure 3. For heatwaves, we find days on which there was a UKHSA Level 3 Heat Health Alert, or days with a mean central England temperature greater than 20\u00b0C, plus one day before and after the time period identified through the first two criteria. The 2010--2015 heatwaves defined this way are published in the literature^{23}. For cold snaps, we find periods during which any region in England and Wales had an average temperature below 2\u00b0C for two consecutive days or more. This follows the temperature criterion for a Level 3 Cold Health Alert in 2016^{60}."
+    },
+    {
+      "index": 41,
+      "text": "### Deaths per 100,000 population\n\nWe present number of deaths (temperature-related or COVID-19) per 100,000 population in the latter part of this manuscript to enable comparison of the results across the studied regions. These are calculated based on the mid-2021 UK population estimates provided by the Office for National Statistics (see Data availability). The regional population data are as follows - North East England: 2,646,772; North West England: 7,422,295; Yorkshire and the Humber: 5,481,431; East Midlands: 4,880,094; West Midlands: 5,954,240; East of England: 6,348,096; London: 8,796,628; South East England: 9,294,023; South West England: 5,712,840; and Wales: 3,105,410."
+    },
+    {
+      "index": 42,
+      "text": "Data availability\n\nMet Office HadUK-Grid climate observations by administrative regions over the UK are available on the CEDA archive (https://catalogue.ceda.ac.uk/uuid/b39898e76ab7434a9a20a6dc4ab721f0). Daily all-cause death occurrences in regions of England and Wales are available from the Office for National Statistics (https://www.ons.gov.uk/peoplepopulationandcommunity/ birthsdeathsandmarriages/deaths/adhocs/14173dailydeathsoccurrencesenglandandwales1981and2020 and https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/adhocs/1724dailydeathoccurrencesenglandandwales2021and2022). Mid-2021 populations estimates for the UK are available from the Office for National Statistics (https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/datasets/populationestimatesforukenglandandwalesscotlandandnorthernireland). Daily deaths with COVID-19 on the death certificate by UK regions and nations can be obtained from the Government Coronavirus (COVID-19) in the UK dashboard (https://coronavirus.data.gov.uk/details/deaths). Cumulative COVID-19 vaccine uptake by dosage and regions were available on the dashboard (https://coronavirus.data.gov.uk/details/vaccinations), but it has since been discontinued. NHS England hospital bed availability and occupancy are available from NHS England Statistics (https://www.england.nhs.uk/statistics/statistical-work-areas/bed-availability-and-occupancy/). NHS Wales hospital bed availability and occupancy are available from StatsWales (https://statswales.gov.wales/Catalogue/Health-and-Social-Care/NHS-Hospital-Activity/NHS-Beds)."
+    },
+    {
+      "index": 43,
+      "text": "Code availability\n\nAll code used to process data and generate the figures and results in this study will be publicly available on GitHub at https://github.com/yteunicelo/EnglandWales_climate_vs_covid_paper, once this paper is published."
+    },
+    {
+      "index": 44,
+      "text": "Acknowledgements\n\nThis research is a direct result of a discussion with Sir Patrick Vallance, then Chief Scientific Adviser to the UK Government, at COP26 in 2021. We thank Sir Patrick for a follow-up meeting at the Natural History Museum in 2023. We thank Prof Oliver Johnson and Dr Juliette Unwin of University of Bristol for discussing COVID-19 statistics with us. We thank Prof Philip Taylor of University of Bristol for supporting this research. Y.T.E.L was funded by the University of Bristol Climate Change and Health Fellowship."
+    },
+    {
+      "index": 45,
+      "text": "Author contributions\n\nD.M.M conceived the research idea. Y.T.E.L conducted the analysis, made the figures, and wrote the initial manuscript. D.M.M and A.G provided comments on the figures and manuscript."
+    },
+    {
+      "index": 46,
+      "text": "Competing interests\n\nThe authors declare no competing interests.\n\n## References\n\n- 1 Kanem N, Murray CJL, Horton R (2023) The Lancet Commission on 21st-Century Global Health Threats. The Lancet 401:10--11\n- 2 von Uexkull N, Buhaug H (2021) Security implications of climate change: A decade of scientific progress. Journal of Peace Research vol. 58 3--17 Preprint at https://doi.org/10.1177/0022343320984210\n- 3 Koubi V (2019) Climate Change and Conflict. Annu Rev Polit Sci 22:343--360"
+    },
+    {
+      "index": 47,
+      "text": "4. Hopke JE (2020) Connecting Extreme Heat Events to Climate Change: Media Coverage of Heat Waves and Wildfires. Environ Commun 14:492\u2013508\n5. Stoddart MCJ, Ramos H, Foster K (2023) Yl\u00e4-Anttila, T. Competing Crises? Media Coverage and Framing of Climate Change During the COVID-19 Pandemic. Environ Commun 17:276\u2013292\n6. UK Met Office (2022) A milestone in UK climate history. https://www.metoffice.gov.uk/about-us/press-office/news/weather-and-climate/2022/july-heat-review\n7. UKHSA. Heat mortality monitoring report: 2022 (2023)\n8. Thompson V et al (2022) The 2021 western North America heat wave among the most extreme events ever recorded globally. Sci Adv 8:1\u201310\n9. Tetzlaff EJ, Goulet N, Gorman M, Richardson GRA, Kenny GP (2023) The Intersection of the COVID-19 Pandemic and the 2021 Heat Dome in Canadian Digital News Media: A Content Analysis. Int J Environ Res Public Health 20:6674\n10. The Guardian (2022) Biggest climate toll in year of 'devastating' disasters revealed. The Guardian\n11. The UN, Refugee Agency UK (2023) Horn of Africa drought emergency. https://www.unhcr.org/uk/emergencies/horn-africa-drought-emergency\n12. Zachariah M et al (2022) Without human-caused climate change temperatures of 40C in the UK would have been extremely unlikely. 1\u201326\n13. Philip SY et al (2021) Rapid attribution analysis of the extraordinary heatwave on the Pacific Coast of the US and Canada June 2021. Earth Sys Dyn Discuss 119\u2013123. 10.5194/esd-2021-90\n14. World Weather Attribution (2023) Human-induced climate change increased drought severity in Horn of Africa. https://www.worldweatherattribution.org/human-induced-climate-change-increased-drought-severity-in-southern-horn-of-africa/#:~:text=The%20resulting%20drought%20was%20reported,assistance%20(NDMA%2C%202022).\n15. Phillips CA et al (2020) Compound climate risks in the COVID-19 pandemic. Nat Clim Chang 10:586\u2013588\n16. World Health Organization. WHO Coronavirus (COVID-19) Dashboard (2023)\n17. Worldometer (2023) COVID-19 Coronavirus Pandemic. https://www.worldometers.info/coronavirus/\n18. GOV.UK (2023) Coronavirus (COVID-19) in the UK. https://coronavirus.data.gov.uk/details/deaths\n19. Smith TP et al (2021) Temperature and population density influence SARS-CoV-2 transmission in the absence of nonpharmaceutical interventions. Proc Natl Acad Sci U S A 118,\n20. Zheng C et al (2022) Real-world effectiveness of COVID-19 vaccines: a literature review and meta-analysis. Int J Infect Dis 114:252\u2013260\n21. Flaxman S et al (2020) Estimating the effects of non-pharmaceutical interventions on COVID-19 in Europe. Nature 584:257\u2013261\n22. Mach KJ et al (2021) News media coverage of COVID-19 public health and policy information. Humanit Soc Sci Commun 8:1\u201311\n23. Lo YTE, Mitchell DM, Thompson R, O'Connell E, Gasparrini A (2022) Estimating heat-related mortality in near real time for national heatwave plans. Environ Res Lett 17,\n24. Gasparrini A et al (2022) Small-area assessment of temperature-related mortality risks in England and Wales: a case time series analysis. Lancet Planet Health 6:e557\u2013e564\n25. Mitchell D Expert judgement of current and emerging UK climate-mortality causes. In prep\n26. UKHSA. Heat mortality monitoring report (2022): https://www.gov.uk/government/publications/heat-mortality-monitoring-reports/heat-mortality-monitoring-report-2022 (2023)\n27. Gasparrini A et al (2015) Mortality risk attributable to high and low ambient temperature: a multicountry observational study. The Lancet 14:464\u2013465\n28. Office for National Statistics. Regional and sub-regional estimates of coronavirus (COVID-19) positivity over time, UK: 12 January 2023 (2023)"
+    },
+    {
+      "index": 48,
+      "text": "Page 9/14\n\n29. UKHSA (2023) Heat mortality monitoring report: 2020. https://www.gov.uk/government/publications/heat-mortality-monitoring-reports/heat-mortality-monitoring-report-2020\n30. UKHSA. Heat mortality monitoring report: 2021. https://www.gov.uk/government/publications/heat-mortality-monitoring-reports/heat-mortality-monitoring-report-2021\n31. Kennedy-Aasser AT et al (2022) Projected risks associated with heat stress in the UK Climate Projections (UKCP18). Environ Res Lett 17,\n32. Mitchell DM, Lo YTE (2022) Downplaying the catastrophic health impact of heatwaves costs lives. The BMJ 10.1136/bmj.o1940\n33. O'Neill S et al (2023) Visual portrayals of fun in the sun in European news outlets misrepresent heatwave risks. Geogr J 189:90-103\n34. UK Health Security Agency. Adverse Weather and Health Plan: Supporting evidence 2023 to 2024. 1-70 (2023)\n35. Cabinet Office. National Risk Register (2023) GOV.UK https://www.gov.uk/government/publications/national-risk-register-2023 (2023)\n36. Lowe JA (2019) UKCP18 Science Overview Report. Met Office vol. 2 https://www.metoffice.gov.uk/pub/data/weather/uk/ukcp18/science-reports/UKCP18-Overview-report.pdf\n37. Dynamic C, Modelling UCL (2023) U. Long-term forecasting of the COVID-19 epidemic. The Wellcome Centre for Human Neuroimaging, UCL Queen Square Institute of Neurology https://www.fil.ion.ucl.ac.uk/spm/covid-19/forecasting/\n38. Lungman T et al (2023) Cooling cities through urban green infrastructure: a health impact assessment of European cities. The Lancet 6736,\n39. Macintyre HL, Heaviside C (2019) Potential benefits of cool roofs in reducing heat-related mortality during heatwaves in a European city. Environ Int 127:430-441\n40. Taylor J et al (2018) Comparison of built environment adaptations to heat exposure and mortality during hot weather, West Midlands region, UK. Environ Int 111:287-294\n41. Centre for Sustainable Energy (2023) Mechanical ventilation with heat recovery. Home Energy Advice https://centreforsustainableenergy.ams3.digitaloceanspaces.com/wp-content/uploads/2023/03/18215636/advice_leaflet_mechanical_ventilation_with_heat_recovery.pdf\n42. British Medical Association. NHS hospital beds data analysis (2023)\n43. NHS Wales (2023) NHS beds by organisation and year, 2009-10 onwards. Welsh Government https://statswales.gov.wales/Catalogue/Health-and-Social-Care/NHS-Hospital-Activity/NHS-Beds/nhsbeds-by-organisation-site\n44. Pratt AC, Wood RM (2021) Addressing overestimation and insensitivity in the  $85\\%$  target for average bed occupancy. Int J Qual Health Care 33:1-7\n45. Ballester J et al (2023) Heat-related mortality in Europe during the summer of 2022. Nat Med 29:1857-1866\n46. Ebi KL et al (2021) Hot weather and heat extremes: health risks. The Lancet 398:698-708\n47. Williamson EJ et al (2020) Factors associated with COVID-19-related death using OpenSAFELY. Nature 584:430-436\n48. Gansevoort RT, Hilbrands L (2020) B. CKD is a key risk factor for COVID-19 mortality. Nat Rev Nephrol 16:705-706\n49. Looi MK (2023) What could the next pandemic be? Bmj 10.1136/bmj.p909\n50. Sousa PM et al (2022) Heat-related mortality amplified during the COVID-19 pandemic. Int J Biometeorol 66:457-468\n51. Thompson R et al (2022) Heatwave Mortality in Summer 2020 in England: An Observational Study. Int J Environ Res Public Health 19,\n52. Nottmeyer L et al (2023) The association of COVID-19 incidence with temperature, humidity, and UV radiation \u2013 A global multi-city analysis. Sci Total Environ 854,\n53. Smith TP et al (2021) Temperature and population density influence SARS-CoV-2 transmission in the absence of nonpharmaceutical interventions. Proc Natl Acad Sci U S A 118,"
+    },
+    {
+      "index": 49,
+      "text": "54. Sera F et al (2021) A cross-sectional analysis of meteorological factors and SARS-CoV-2 transmission in 409 cities across 26 countries. Nat Commun 1-11. 10.1038/s41467-021-25914-8\n55. Juni P et al (2020) Impact of climate and public health interventions on the COVID-19 pandemic: A prospective cohort study. CMAJ 192:E566-E573\n56. Tan L, Schultz DM (2023) Weather Effects on the Spread of COVID-19: Characteristics and Critical Analysis of the First and Second Years of Scientific Research. Bull Am Meteorol Soc 1-56. 10.1175/BAMS-D-23-0071.1\n57. Hollis D, McCarthy M, Kendon M, Legg T, Simpson I (2019) HadUK-Grid\u2014A new UK dataset of gridded climate observations. Geosci Data J 6:151-159\n58. Vicedo-Cabrera AM, Sera F, Gasparrini A (2019) Hands-on Tutorial on a Modeling Framework for Projections of Climate Change Impacts on Health. Epidemiology 30:321-329\n59. Gasparrini A et al (2015) Mortality risk attributable to high and low ambient temperature: a multicountry observational study. The Lancet 386:369-375\n60. Public Health England NHS (2018) The Cold Weather Plan for England Protecting health and reducing harm from cold weather. Department of Health Guidance 1-57"
+    },
+    {
+      "index": 50,
+      "text": "![img-0.jpeg](img-0.jpeg)\nFigures\n\n![img-1.jpeg](img-1.jpeg)\nFigure 1\n\nTime series of daily deaths attributable to non-optimal temperatures, COVID-19, and all causes in England and Wales for the same period. In both panels, red lines indicate the best estimate of heat-related deaths, with red shading indicating its  $95\\%$  confidence interval. Blue lines indicate the best estimate of cold-related deaths, with blue shading indicating its  $95\\%$  confidence interval. Purple lines indicate COVID-19 deaths as shown on death certificates. Black lines indicate the total number of deaths from all causes. In panel a, dotted vertical lines indicate the time of emergence of dominant COVID-19 variants in the UK during the study period of 30 January 2020 to 31 December 2022. The solid vertical line indicates the time around which  $50\\%$  of the population aged 12 or above have received two doses of COVID-19 vaccines in regions within England and Wales. The error bars in panel a indicate the range of heat-related, cold-related, and all-cause deaths in the period 1 January 2010 to 31 December 2019. In panel b, which zooms in on the July 2022 UK heatwave, the red arrow indicates the date on which  $40.3^{\\circ}\\mathrm{C}$  was recorded."
+    },
+    {
+      "index": 51,
+      "text": "![img-2.jpeg](img-2.jpeg)\na 30 Jan 2020 to 31 Dec 2022\n\n![img-3.jpeg](img-3.jpeg)\nb Heatwaves (70 days)"
+    },
+    {
+      "index": 52,
+      "text": "![img-4.jpeg](img-4.jpeg)\nc Cold snaps (70 days)\n\n![img-5.jpeg](img-5.jpeg)\nFigure 2\n\nMaps of the ratio of temperature-related deaths to COVID-19 deaths during extreme temperature events. Panel a shows regional ratios for the whole study period, i.e., 30 January 2020 to 31 December 2022. Panel b shows regional ratios on 70 heatwave days (in a total of 10 heatwaves) during the study period. Heatwaves are defined following the UKHSA definition. Panel c shows regional ratios on 70 cold snap days (in a total of 8 cold snaps) during the study period. Cold snaps are defined as days on which a Level 3 Cold Health Alert was issued for any region in England."
+    },
+    {
+      "index": 53,
+      "text": "![img-6.jpeg](img-6.jpeg)\nFigure 3\n\nMaps of the total number of deaths per 100,000 population from non-optimal temperatures and COVID-19 during extreme temperature events. Panels a and b show regional sums of temperature-related and COVID-19 deaths on 70 heatwave days (in a total of 10 heatwaves; panel a) and 70 cold snap days (in a total of 8 cold snaps; panel b), during the study period of 30 January 2020 to 31 December 2022. Panels c and d show regional numbers of temperature-related deaths on the same number of heatwave (panel c) and cold snap days (panel d), but from the period 2010-2019. The numbers in panels c and d are estimated from the average number of temperature-related deaths per heatwave or cold snap day in the period 2010-2019, multiplied by 70 days."
+    },
+    {
+      "index": 54,
+      "text": "![img-7.jpeg](img-7.jpeg)\nFigure 4\n\nAverage temperature-related deaths per 100,000 population per day versus the average temperature of individual heatwaves and cold snaps in 2016-2022. The markers indicate the regions. In panel a, grey markers indicate heatwaves in 2016-2019, whereas coloured markers indicate heatwaves in COVID-19 affected years: 2020 (pink), 2021 (red) and 2022 (dark red). In panel b, grey markers indicate cold snaps in 2016-2019, whereas coloured markers indicate cold snaps in COVID-19 affected years: 2020 (light blue), 2021 (blue) and 2022 (dark blue). In both panels, the grey dashed ellipses indicate the two standard deviation confidence of the covariance of mortality and temperature of all heatwaves or cold snaps in the non-COVID-19 period of 2016-2019. The black solid ellipses indicate the same but for the COVID-19 period of 2020-2022."
+    },
+    {
+      "index": 55,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- Lotempcovidpapersupplv2.docx"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "This paper addresses a timely question \u2014 the compound mortality burden of extreme temperatures and COVID-19 in England and Wales 2020-2022 \u2014 and produces useful regional estimates using established DLNM machinery. The empirical work is in principle sound and worth revising, but several findings are framed in ways that do not match what the analysis can actually support. Three concerns are central: (1) the headline \"compound mortality is ~2x previous decade\" comparison conflates the addition of COVID-19 deaths with a genuine increase in temperature mortality and is largely an artifact of comparing (heat+COVID) to heat-alone baselines under inconsistent event definitions; (2) the additive independence assumption underpinning the headline numbers is contradicted by the paper's own Figure 4 evidence of confounding, with no quantification of the resulting bias; (3) the DLNM is fit to all-cause-minus-COVID mortality over 1981-2022, which conditions on possibly endogenous cause-of-death coding only for 2020-2022 and produces estimates that may be miscalibrated for the pandemic period. These are substantive but fixable problems \u2014 better decomposition of compound effects, harmonized event definitions, and a sensitivity analysis using a COVID-period-only or COVID-adjusted DLNM would address most concerns without changing the qualitative conclusions.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Headline '~2 times higher than the previous decade' compares compound (heat+COVID) mortality to heat-only baseline",
+          "quote": "Combined, extreme temperatures and COVID-19 led to 19 (in North West England) to 24 (in Wales) excess deaths per 100,000 population during heatwaves, and 80 (in Yorkshire and the Humber) to 127 (in East of England) excess deaths per 100,000 population during cold snaps. These numbers are at least ~2 times higher than the previous decade.",
+          "explanation": "The Abstract attributes the 19-24/100k heat and 80-127/100k cold figures to compound (extreme temperatures + COVID-19) effects, then states they are '~2 times higher than the previous decade.' But the body text shows the comparison is between (heat+COVID) in 2020-2022 and (heat alone) in 2010-2019. Any non-trivial COVID-19 share alone produces a ratio >1 even if temperature mortality is unchanged. In Figure 2c (cold snaps), COVID-19 dominates: temperature-to-COVID ratios are 0.4-0.8, meaning 55-71% of the 80-127/100k cold-snap compound figure is actually COVID-19, not cold. The 1.7-3.8x heat fold-change and 2.1-3.5x cold fold-change therefore conflate two distinct effects (modest heat increase + addition of COVID-19) without decomposition. A reader naturally infers temperature mortality alone roughly doubled, which is not what the data show. A like-for-like decomposition is missing.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Independence assumption used to compute compound mortality is contradicted by the paper's own evidence of confounding",
+          "quote": "By adding temperature-related deaths (with COVID-19 deaths removed prior to calculation) and COVID-19 deaths together to estimate the compound mortality impact, we have assumed that they are independent of each other.",
+          "explanation": "All headline compound mortality figures (Figures 3a-b; abstract values) are computed under explicit additive independence. The Results then present Figure 4 and the Kolmogorov-Smirnov tests as evidence that 'COVID-19 may have impacted temperature-related mortality,' and the Discussion strengthens this to 'COVID-19 may have confounded with temperature-related mortality' and even asserts that mortality impacts are 'additive to the first order, are clear in this paper.' These positions are mutually inconsistent: if independence holds, the Figure 4 K-S evidence is misinterpreted; if it fails, the additive compound numbers are biased and the bias direction/magnitude must be quantified. Currently both narratives are presented as valid, which they cannot simultaneously be.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "DLNM fit on 1981-2022 mortality with COVID-19 deaths surgically removed creates structural bias and circular reasoning",
+          "quote": "Since the 2020--2022 mortality data include COVID-19 deaths, which we want to separate from temperature-related deaths in this study, we remove deaths with COVID-19 on the death certificate from the all-cause mortality data. We then derive the non-linear association between the temperature and mortality time series using quasi-Poisson regression with DLNMs, adapting the methods from previous studies^{58}.",
+          "explanation": "The dependent variable is conditioned on COVID-19 cause-of-death coding only for 2020-2022, creating a structural break unique to that period. Three problems follow: (i) deaths with COVID-19 'on the certificate' include cases where COVID-19 was incidental, while many true COVID-19 deaths in early 2020 were uncoded due to testing limitations; (ii) the temperature-mortality association estimated this way is contaminated by COVID-19 INDIRECT effects (e.g., disrupted healthcare causing excess CVD on hot days); (iii) the authors then interpret the residual as 'temperature-related' and treat distributional shifts in this residual as evidence of COVID-19 confounding (Figure 4) \u2014 circular. The Discussion's own recommendation to 'derive temperature-mortality associations using only data from the COVID-19 time period' implicitly concedes that pooling 1981-2019 with 2020-2022 (with COVID deaths removed) produces biased estimates for 2020-2022. A cleaner approach would be to either fit on 1981-2019 only and project, or include a COVID-19 indicator/spline in the model.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Heatwave and cold-snap definitions are inconsistent across the 2010-2015, 2016-2022, and 2020-2022 windows despite being claimed as 'same criteria'",
+          "quote": "Throughout this study, we focus on heatwaves and cold snaps when extreme temperatures have the largest mortality impacts. The dates of these events are extracted from the UKHSA Heatwave Mortality Reports and historical Level 3 Cold Health Alerts, as mentioned in the main text. However, these reports and the alerts record available to us only start in 2016, so we find the dates of heatwaves and cold snaps based on the same criteria for the period 2010--2015 for Figure 3.",
+          "explanation": "For 2016-2022, heatwaves come from UKHSA Heat Mortality Monitoring Reports and cold snaps from Level 3 Cold Health Alerts (a forecast-based trigger). For 2010-2015, heatwaves use 'Level 3 Heat Health Alert OR mean Central England Temperature >20\u00b0C plus 1-day buffer,' and cold snaps use 'any region <2\u00b0C for 2+ consecutive days.' The CET >20\u00b0C criterion uses a single Midlands-region temperature index to define heatwave days for all 10 regions, including Wales, which is outside the CET footprint. The 'any region' rule for cold snaps means days are counted as cold-snap days for regions that themselves were not below 2\u00b0C. These four definitions select different sets of days under different physical thresholds, undermining the headline '~2x previous decade' fold-change calculation in Figure 3 (a vs c, b vs d). The claim of 'same criteria' is incorrect.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 40
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "Asymmetric region-pooling rule for cold snaps inflates 'cold-snap days' relative to heatwaves",
+          "quote": "Figure 2c shows the corresponding results during eight cold snaps in the study period, which are defined here as days on which a Level 3 Cold Health Alert was issued by UKHSA for any region in England (also spanning 70 days; see Table S2).",
+          "explanation": "Cold snaps are defined as days when a Level 3 Cold Health Alert was issued for ANY region in England \u2014 meaning a region under no alert is still counted as a 'cold-snap' region for those days. There is no equivalent 'any region' rule applied to heatwaves. This asymmetry inflates the cold-snap denominator for less-affected regions, dilutes per-day cold-mortality estimates, and produces a non-comparable ratio against heatwaves. It also affects the per-100k compound mortality numbers in Figure 3b (cold) but not Figure 3a (heat), introducing a systematic bias into the central heat-vs-cold comparison.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 20
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "K-S tests in Figure 4 cannot separate COVID-19 confounding from sampling differences in event severity",
+          "quote": "Two-sample Kolmogorov--Smirnov tests confirm that the COVID-19 event distributions are significantly different from the non-COVID-19 distributions at the 5% significance level. These results suggest that COVID-19 may have impacted temperature-related mortality during extreme weather events.",
+          "explanation": "The K-S test detects a distributional shift but cannot distinguish (a) 'COVID-19 amplified mortality at given temperatures' from (b) '2020-2022 events were more extreme.' The text itself notes mean heatwave temperature shifted higher in 2020-2022 (consistent with the 40.3\u00b0C UK record being set then). With ~10 heatwaves and ~8 cold snaps in 2020-2022 versus ~4 years of pre-COVID events (2016-2019), per-region samples for the bivariate (mean temperature, mortality/day) comparison are very small. The K-S test as described is univariate; how it is applied to the bivariate space is not specified. Multiple-comparisons correction across regions and event types is not reported. Despite these limitations, the Discussion treats the result as a key piece of evidence for the 'COVID-19 as risk amplifier' hypothesis. The Discussion's own caveat ('the number of extreme temperature events sampled is limited by the short study period') does not appear at the point of the K-S claim in Results.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Paper holds prior weather-COVID literature to a methodological standard it does not apply to its own COVID-19 mortality claim",
+          "quote": "Recent research found that most of the studies about weather effects on COVID-19 spread that were published in 2020 and 2021, did not include a time lag between weather exposure and reported COVID-19 cases, did not properly account for seasonality or other confounding factors of disease transmission, or did not go through rigorous peer review^{56}. These aspects need to be thoroughly considered in future research, for the purpose of long-term planning and preparedness that are resilient to climate change.",
+          "explanation": "The paper approvingly cites Tan & Schultz (2023) for finding that prior weather-COVID studies failed to include a lag, account for seasonality, or control confounders. Yet the present paper's claim that 'extreme heat may have exacerbated COVID-19 mortality' (supported by '91 more daily COVID-19 deaths' on 19 July 2022 versus the 10-25 July 2022 mean, Figure 1b) uses zero-lag, single-day data with no statistical test, no seasonality control beyond a 2-week window, and no adjustment for day-of-week reporting effects in COVID-19 death certificates. The paper applies a stricter standard to others than to itself, weakening the credibility of its own causal claim.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 34
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "'Demand on regional health services was 1.7 to 3.8-fold' conflates mortality counts with service load",
+          "quote": "In other words, demand on regional health services was 1.7 (London) to 3.8-fold (North West England) when extreme heat coincided with COVID-19 in the study period, compared to the previous decade.",
+          "explanation": "Mortality counts are not a proxy for health-service demand. A typical COVID-19 death follows extended hospitalization (often ICU), while heat-related deaths are frequently acute cardiovascular events with shorter or absent hospitalization. Equating them implicitly assumes per-death service load is uniform, which is unsupported. The 1.7-3.8x figure thus does not measure what its label claims. This matters because the Discussion uses the figure to argue that NHS bed shortages compounded with these mortality numbers to overwhelm the system \u2014 an argument that requires a service-load metric, not a mortality metric. The paper should reframe the language as a mortality fold-change, not a demand fold-change, or supply data on per-death healthcare utilization.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 22
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "Headline cold-snap compound mortality (80-127/100k) is overwhelmingly driven by COVID-19, not cold",
+          "quote": "During the 70 cold snap days in the study period (30 January 2020 to 31 December 2022), regional compound (cold-related and COVID-19) mortality ranged from 80 per 100,000 people (95% confidence interval: 75--86) in Yorkshire and the Humber, to 127 deaths per 100,000 people (95% confidence interval: 123--132) in East of England (Figure 3b)",
+          "explanation": "Figure 2c shows that during cold snaps, the ratio of cold-related to COVID-19 deaths is 0.4 (East of England) to 0.8 (South West) \u2014 meaning COVID-19 contributes 56-71% of the compound figure. The framing as 'compound (cold-related and COVID-19) mortality' obscures that cold is the smaller share, not the dominant one. The cold/heat comparison ('cold-snap compound is 5-7x larger than heatwave compound') is therefore mostly a comparison of when COVID-19 mortality was high (winter) versus low (summer of 2022), not an extreme-temperature severity comparison. This asymmetry between the heat and cold regimes \u2014 heat compound numbers are dominated by heat (ratios 1.1-2.7 except NW), while cold compound numbers are dominated by COVID \u2014 is not made explicit anywhere in the paper.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Heatwave and cold-snap windows both span exactly 70 days \u2014 implausible coincidence with no methodological explanation",
+          "quote": "Figure 2b shows that during the ten heatwave episodes (spanning a total of 70 days; see Table S2)... Figure 2c shows the corresponding results during eight cold snaps in the study period, which are defined here as days on which a Level 3 Cold Health Alert was issued by UKHSA for any region in England (also spanning 70 days; see Table S2).",
+          "explanation": "Ten heatwaves under one definition and eight cold snaps under a different definition coincidentally span exactly the same number of days (70). The text gives no explanation. If one period was truncated to match the other for comparability, that truncation rule should be stated since cold snaps are typically several days long and the cutoff materially changes which days are counted. If the equality is coincidental, that should be noted. As written, this is an unjustified design choice that affects all per-100k compound mortality numbers in Figures 3a-b.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 20
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Number of heatwaves and cold snaps in the 2010-2019 reference is never stated",
+          "quote": "These compound mortality levels are put into context by comparing Figure 3a with Figure 3c, which shows the reference levels of heat-related mortality from 70 heatwave days, calculated from the average of all identified heatwaves in the ten years that preceded COVID-19 (i.e. 2010--2019; see Methods).",
+          "explanation": "The 2010-2019 reference uses 'the average of all identified heatwaves' scaled to 70 days, but the count of heatwaves and total heatwave-days in 2010-2019 is not given. A reader cannot evaluate whether the per-day average is stable, whether the 70-day extrapolation is dominated by a single event (e.g., the August 2003 or July 2018 heatwaves), or whether the same number of days were available for both periods. The same applies to cold snaps. This transparency gap directly affects the headline '~2x previous decade' comparison.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 22
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Selection of 8% exceedance in South West England as headline obscures that the other 9 regions are below 100%",
+          "quote": "We show that temperature-related mortality exceeded COVID-19 mortality by 8% in South West England.",
+          "explanation": "Of 10 regions, only South West crosses the 100% threshold. The body reports that other regions ranged from 58% (East Midlands) to 75% (London) of COVID-19 deaths. Highlighting the single region where exceedance occurred \u2014 without stating the range \u2014 risks creating an impression that this is a typical or near-universal pattern. A more accurate framing would convey the full distribution (ratios 0.58-1.08 across regions). Additionally, SW being roughly 1.5x London on this metric (108% / 75%) is a large discontinuity that the paper does not explain, leaving readers unable to evaluate whether the SW result is robust or driven by an idiosyncratic regional feature (e.g., relatively low COVID-19 burden combined with relatively warm climate).",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Discussion misuses cited UCL forecast (window: through May 2024) to support a '2 to 5 year' extrapolation, with supporting analysis 'not shown'",
+          "quote": "With the latest long-term forecasts of COVID-19 for the UK predicting a steady 95% effective population immunity and a reduced death rate until at least May 2024^{37}, it is probable that cumulative temperature-related deaths would exceed COVID-19 deaths in more regions than South West England (Figure 2) in the next 2 to 5 years (not shown).",
+          "explanation": "The cited COVID-19 forecast (ref 37) extends 'until at least May 2024,' a window of months. The Discussion extrapolates to '2 to 5 years' of dominance of temperature-related deaths. The supporting analysis is described only as '(not shown).' A forward-looking claim that drives a policy recommendation should not rest on (a) extrapolation well beyond the forecast horizon and (b) an unshown calculation. Either include the analysis or downgrade the claim.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Single-day anecdote (91 extra COVID-19 deaths on 19 July 2022) used as causal evidence with no statistical test",
+          "quote": "On the other hand, extreme heat may have exacerbated COVID-19 mortality in England and Wales too. This is evident on the hottest day ever recorded in the UK (19 July 2022), when the 91 more daily COVID-19 deaths occurred, compared to the average on days between 10 July and 25 July 2022 (Figure 1b).",
+          "explanation": "A single-day anomaly is presented as 'evident' support for a causal claim. Multiple alternative explanations are not addressed: (i) reporting/death-certificate timing artifacts, since reported deaths often correspond to deaths registered earlier; (ii) day-of-week effects in COVID death reporting; (iii) random variation in a noisy daily count. With no statistical test, no comparison to other heatwave days, and no consideration of reporting lag, the 'evident' framing is too strong. There is also a grammatical artifact ('the 91 more daily COVID-19 deaths') suggesting an editing slip.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 26
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Methods do not state how confidence intervals are computed for compound mortality (sum of temperature-related and COVID-19 deaths)",
+          "quote": "Their 95% empirical confidence intervals are estimated through Monte Carlo simulations of the spline model coefficients 100 times, assuming that the coefficients have a multivariate normal distribution.",
+          "explanation": "The Methods describe CIs for temperature-related mortality only. The compound mortality reported in Figure 3a-b (e.g., 19-24/100k heat) is presumably the sum of temperature-related deaths and COVID-19 deaths, but the paper does not state how the CI of the sum is computed. If COVID-19 death counts are treated as exact (no uncertainty), the compound CI inherits only DLNM uncertainty \u2014 appropriate only if ONS COVID-19 death certificate counts are treated as ground truth. The Discussion explicitly notes uncertainty in cause-of-death coding for COVID-19, which would propagate into the compound CI. As reported, the compound CIs in Figure 3a-b may be too narrow.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Only 100 Monte Carlo draws are used for 95% empirical CIs, well below the field standard",
+          "quote": "Their 95% empirical confidence intervals are estimated through Monte Carlo simulations of the spline model coefficients 100 times, assuming that the coefficients have a multivariate normal distribution.",
+          "explanation": "Empirical 95% CIs from 100 draws have substantial Monte Carlo error: the 2.5% and 97.5% quantiles correspond roughly to the 3rd and 98th order statistics with non-trivial sampling variability. The DLNM tutorial cited (ref 58, Vicedo-Cabrera et al. 2019) demonstrates with 1,000+ draws. This affects the reported CIs (e.g., 6,387-10,493 for 8,481 heat deaths) particularly at the bounds. Several headline claims depend on whether per-100k mortality CIs overlap between regions or between 2020-2022 and 2010-2019.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "MMT constraint to 2nd-98th percentile and asymmetric knot placement (10/75/90) are non-standard and unjustified",
+          "quote": "We constrain the MMT to the 2^{th} to 98^{th} percentiles of the 1981--2022 daily average temperature distribution of the region.",
+          "explanation": "Two related design choices in the DLNM specification go unjustified. First, the MMT is constrained to the 2nd-98th percentile of regional 1981-2022 temperature, while standard practice (e.g., Gasparrini et al. 2015, ref 27) uses 1st-99th. With more aggressive truncation, MMT can be pushed inward, miscategorizing borderline temperatures as 'heat' or 'cold' that would otherwise be optimal. Second, the spline knots at 10/75/90 percentile give more flexibility on the upper tail than on the lower tail, but the cold-mortality estimates (15x larger than heat) depend strongly on shape estimates well below the 10th percentile, where extrapolation is determined by knot placement and boundary conditions. Neither choice is justified, and no sensitivity analysis is reported. (Note: the printed '2^{th}' is also a typographical error.)",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 38
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Acknowledged contradiction with Thompson et al. 2022 (ref 51) is dismissed in one sentence without methodological reconciliation",
+          "quote": "On the contrary, another previous study found similar heatwave mortality in England in 2020 and the pre-pandemic period of 2016--2018, with no indication of more at-home heat-related deaths linked to COVID-19 social restrictions^{51}.",
+          "explanation": "The Discussion notes Thompson et al. 2022 (ref 51) found similar heatwave mortality in 2020 and 2016-2018, contradicting the present paper's confounding hypothesis. This is mentioned in one sentence without engaging with the methodological differences (model specification, geographic granularity, time window, mortality dataset version). Notably, ref 51 includes an author who is also cited (ref 23) as part of the modeling lineage that the present paper builds on. The discrepancy with overlapping prior work deserves more than a sentence; the failure to reconcile undermines the strength of the paper's contribution to the literature debate.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Novelty claim 'no study has quantified the compound health consequences' is contradicted by cited work (Sousa 2022, ref 50)",
+          "quote": "Until now, no study has quantified the compound health consequences of the co-occurrence of these crises.",
+          "explanation": "The Abstract claims novelty as the first quantification of compound climate-pandemic health consequences. But the paper itself cites Sousa et al. 2022 (ref 50), 'Heat-related mortality amplified during the COVID-19 pandemic' in Portugal, which already quantifies one dimension of compound effects. Lo et al. 2022 (ref 23) provides the modeling apparatus for E&W. Thompson et al. 2022 (ref 51) examines 2020 heatwave mortality in England relative to pre-pandemic. The novelty claim is therefore overstated. A more accurate statement would specify the novel scope (e.g., 'first to combine heat AND cold AND COVID-19 in regional E&W' or similar).",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Date errors in the discussion of the July 2022 heatwave",
+          "quote": "Although the UK Met Office and UK Health Security Agency (UKHSA) had issued Level 2 (yellow) and Level 3 (amber) Heat Health Alerts for all regions except North East England since 11 July 2021 to warn the public about this heatwave, which they subsequently raised to the highest Level 4 (red) alert for all regions on 18 July 2021 to trigger a national emergency response^{26}, peak heat-related mortality during this heatwave exceeded the maximum daily level from the previous ten years",
+          "explanation": "The text gives '11 July 2021' and '18 July 2021' for the alerts surrounding the 19 July 2022 record. The years should be 2022, not 2021 (UKHSA's first-ever Level 4 Heat Health Alert was declared 18 July 2022). A separate sentence contains 'highest daily mortality level being 1,382 deaths on 19 Janurary 2021' (typo for 'January'), and the placement of the dotted vertical line at 'the domination of the Alpha variant in December 2020' is questionable since Alpha became dominant in the UK in early 2021. These chronological errors undermine reader trust in the time-series narrative around the headline events.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 13
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "All-cause mortality comparison to '2010-2019' is not adjusted for population growth or aging",
+          "quote": "The co-occurrence of non-optimal temperatures and COVID-19 meant that all-cause mortality in England and Wales was, on average, higher in the study period than in the previous ten years (black line and bar in Figure 1a).",
+          "explanation": "The claim that all-cause mortality in 2020-2022 was higher than in 2010-2019 is made without specifying magnitude or controlling for demographic change. The over-65 population in England and Wales grew substantially over 2010-2022, and population aging alone increases all-cause mortality. The 2010-2019 baseline (used for the error bars in Figure 1a) is not explicitly age-standardized in the description. Without standardization, attributing the elevated all-cause mortality to compound impacts of temperatures+COVID-19 conflates the demographic trend with the pandemic/extreme-weather effect.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Cumulative ratio comparison is sensitive to study-window endpoints, but no sensitivity analysis is reported",
+          "quote": "Considering the whole study period of 30 January 2020 to 31 December 2022, cumulative temperature-related deaths exceeded cumulative COVID-19 deaths by 8% in South West England.",
+          "explanation": "The cumulative ratio over a 35-month window mixes the pre-vaccine pandemic (high COVID-19 mortality) with post-vaccine periods (low COVID-19 mortality). The ratio is highly sensitive to start and end dates: starting on 30 January 2020 captures the first wave at full force, while ending on 31 December 2022 includes a long post-vaccination tail of low COVID-19 mortality. The headline '8% exceedance in South West' is a single percentage point above 100% and could plausibly flip with small shifts in the window. No sensitivity analysis to study-period choice is reported.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Headline numbers stated without uncertainty in cold-snap compound figures' larger context",
+          "quote": "Over the study period, a total of 128,533 excess deaths (95% confidence interval: 107,430--153,642) were attributable to low temperatures, indicating a fifteen-fold larger cold than heat mortality burden.",
+          "explanation": "The 15-fold cold-vs-heat ratio is among the most policy-relevant findings in the paper but is buried in the body and does not appear in the Abstract. The Abstract leads with the heat-COVID comparison, which could leave a reader of just the abstract believing heat is the dominant temperature-related concern. The Discussion devotes more space to listing heat-mitigation interventions than cold-mitigation interventions, despite cold's 15x larger burden. The framing inversion across abstract, discussion of interventions, and policy implications should be corrected: cold deserves headline emphasis.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 14
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Code availability is contingent on publication, limiting reproducibility at peer review",
+          "quote": "All code used to process data and generate the figures and results in this study will be publicly available on GitHub at https://github.com/yteunicelo/EnglandWales_climate_vs_covid_paper, once this paper is published.",
+          "explanation": "The code is promised only after publication. Several methodological choices in this paper are non-standard or underspecified in text (knot placement, MMT constraint, Monte Carlo n=100, definition of 70-day windows, K-S test specifics). Without code at review, reviewers cannot verify the actual implementation of these choices. Releasing code at submission rather than at acceptance is increasingly the field standard for reproducibility-critical work.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 43
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "'Unprecedented' compound health impact is asserted without comparison to historical analogues",
+          "quote": "During extreme events, the health system needed to deal with an unprecedented compound health impact from both extreme weather and COVID-19.",
+          "explanation": "'Unprecedented' is a strong claim that requires a baseline of historical compound events. The 1918-1919 influenza pandemic coincided with multiple heatwaves; UK winters historically had peak respiratory-disease/cold-snap compound events (e.g., 'flu-cold' waves in the 1950s). The paper does not address such analogues. A qualifier like 'unprecedented in our study period' or 'the largest compound mortality impact recorded in modern UK data' would be defensible.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 21
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

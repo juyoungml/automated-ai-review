@@ -1,5 +1,8 @@
 papers
 
+# openaireview skill workspaces (intermediate artifacts; only commit *_skill.json viz outputs)
+review_results/*_review/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

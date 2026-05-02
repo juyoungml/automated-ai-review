@@ -1,0 +1,500 @@
+{
+  "slug": "paper66_skill",
+  "title": "Nano-spectroscopy of excitons in atomically thin transition metal dichalcogenides",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Nano-spectroscopy of excitons in atomically thin transition metal dichalcogenides\n\nShuai Zhang\nColumbia University"
+    },
+    {
+      "index": 1,
+      "text": "Baichang Li\nColumbia University https://orcid.org/0000-0002-2345-6735\n\nXinzhong Chen\nStony Brook University https://orcid.org/0000-0002-6103-3848"
+    },
+    {
+      "index": 2,
+      "text": "Francesco Ruta\nColumbia University\n\nYinming Shao\nColumbia University\n\nAaron Stembach\nColumbia University https://orcid.org/0000-0002-9464-889X"
+    },
+    {
+      "index": 3,
+      "text": "Alexander McLeod\nColumbia University https://orcid.org/0000-0002-5232-634X\n\nZhiyuan Sun\nColumbia University https://orcid.org/0000-0002-0342-6248"
+    },
+    {
+      "index": 4,
+      "text": "Lin Xiong\nColumbia University\n\nSamuel Moore\nColumbia University https://orcid.org/0000-0002-0306-2624"
+    },
+    {
+      "index": 5,
+      "text": "Xinyi Xu\nColumbia University\n\nWenjing Wu\nColumbia University\n\nSara Shabani\nColumbia University\n\nLin Zhou\nNanjing University"
+    },
+    {
+      "index": 6,
+      "text": "Zhiying Wang\nColumbia University\n\nFabian Mooshammer\nUniversity of Regensburg https://orcid.org/0000-0002-9744-2694"
+    },
+    {
+      "index": 7,
+      "text": "Essance Ray\n\nUniversity of Washington\n\nNathan Wilson\nUniversity of Washington\n\nP. Schuck\nColumbia University https://orcid.org/0000-0001-9244-2671"
+    },
+    {
+      "index": 8,
+      "text": "Cory Dean\nColumbia University https://orcid.org/0000-0003-2967-5960\n\nAbhay Pasupathy\nColumbia University https://orcid.org/0000-0002-2744-0634"
+    },
+    {
+      "index": 9,
+      "text": "Michal Lipson\nColumbia University https://orcid.org/0000-0003-2903-3765\n\nXiaodong Xu\nUniversity of Washington https://orcid.org/0000-0003-0348-2095"
+    },
+    {
+      "index": 10,
+      "text": "X-Y. Zhu\nColumbia University https://orcid.org/0000-0002-2090-8484\n\nAndrew Millis\nColumbia University"
+    },
+    {
+      "index": 11,
+      "text": "James Hone\nColumbia University https://orcid.org/0000-0002-8084-3301\n\nMengkun Liu\nStony Brook University https://orcid.org/0000-0002-3512-9133"
+    },
+    {
+      "index": 12,
+      "text": "Dimitri Basov ( db3056@columbia.edu )\nColumbia University https://orcid.org/0000-0001-9785-5387\n\nArticle"
+    },
+    {
+      "index": 13,
+      "text": "Keywords: nano-spectroscopy, excitons, s-SNOM\n\nPosted Date: August 13th, 2021\n\nDOI: https://doi.org/10.21203/rs.3.rs-775178/v1"
+    },
+    {
+      "index": 14,
+      "text": "License: \u00a9 \u2460 This work is licensed under a Creative Commons Attribution 4.0 International License.\n\nRead Full License"
+    },
+    {
+      "index": 15,
+      "text": "Version of Record: A version of this preprint was published at Nature Communications on January 27th, 2022. See the published version at https://doi.org/10.1038/s41467-022-28117-x."
+    },
+    {
+      "index": 16,
+      "text": "# Nano-spectroscopy of excitons in atomically thin transition metal dichalcogenides\n\nShuai Zhang$^{1}$, Baichang Li$^{2}$, Xinzhong Chen$^{3,4}$, Francesco L. Ruta$^{1,5}$, Yinming Shao$^{1}$, Aaron J. Sternbach$^{1}$, A. S. McLeod$^{1}$, Zhiyuan Sun$^{1}$, Lin Xiong$^{1}$, S. L. Moore$^{1}$, Xinyi Xu$^{2}$, Wenjing Wu$^{6}$, Sara Shabani$^{1}$, Lin Zhou$^{6}$, Zhiying Wang$^{2}$, Fabian Mooshammer$^{1}$, Essance Ray$^{7}$, Nathan Wilson$^{7}$, P.J Schuck$^{2}$, C. R. Dean$^{1}$, A. N. Pasupathy$^{1}$, Michal Lipson$^{8}$, Xiaodong Xu$^{7}$, Xiaoyang Zhu$^{6}$, A. J. Millis$^{1}$, Mengkun Liu$^{3,4}$, James C. Hone$^{2}$, D.N. Basov*$^{1}$"
+    },
+    {
+      "index": 17,
+      "text": "$^{1}$Department of Physics, Columbia University, New York, NY, 10027, USA\n$^{2}$Department of Mechanical Engineering, Columbia University, New York, NY, 10027, USA\n$^{3}$National Synchrotron Light Source II, Brookhaven National Laboratory, Upton, New York 11973, USA\n$^{4}$Department of Physics and Astronomy, Stony Brook University, Stony Brook, New York 11794, USA\n$^{5}$Department of Applied Physics and Applied Mathematics, Columbia University, New York, NY, 10027, USA\n$^{6}$Department of Chemistry, Columbia University, New York, NY, 10027, USA\n$^{7}$Department of Physics, University of Washington, Seattle, WA, 98195, USA\n$^{8}$Department of Electrical Engineering, Columbia University, New York, NY, 10027, USA"
+    },
+    {
+      "index": 18,
+      "text": "* Corresponding email: db3056@columbia.edu\n\n# Abstract\n\nExcitons play a dominant role in the optoelectronic properties of atomically thin van der Waals (vdW) semiconductors. These excitons are amenable to on-demand engineering with diverse controls, including dielectric screening, interlayer hybridization, and moir\u00e9 potentials. However, external stimuli frequently yield heterogeneous excitonic responses at the nano- and meso-scales, making their spatial characterization with conventional diffraction-limited optics a formidable task. Here, we use a scattering-type scanning near-field optical microscope (s-SNOM) to acquire exciton spectra in atomically thin transition metal dichalcogenide microcrystals with previously unattainable 20 nm resolution. Our nano-optical data revealed material- and stacking-dependent exciton spectra of  $\\mathrm{MoSe}_2$ ,  $\\mathrm{WSe}_2$ , and their heterostructures. Furthermore, we extracted the complex dielectric function of these prototypical vdW semiconductors. s-SNOM hyperspectral images uncovered how the dielectric screening modifies excitons at length scales as short as few nanometers. This work paves the way towards understanding and manipulation of excitons in atomically thin layers at the nanoscale."
+    },
+    {
+      "index": 19,
+      "text": "Introduction\n\nExcitons, bound electron-hole pairs, govern the optical properties of two-dimensional transition metal dichalcogenides (TMDs) over near-infrared (IR) and visible frequencies due to their large binding energy and prominent oscillator strength^{1}. Notably, all excitonic parameters in TMDs, including their resonance energies as well as both radiative and non-radiative lifetimes, can be manipulated on demand. Relevant control mechanisms include electric and magnetic fields, hetero-structuring, moir\u00e9 superlattice potentials^{2--5}, local strain^{6}, ultra-fast optical excitation^{7,8}, dielectric screening^{9}, among others. The vast majority of experimental studies of excitonic phenomena in TMDs have been carried out by far-field optical methods with wavelength-limited spatial resolution. Nanoscale probes of the engineered excitonic electrodynamics are required to explore heterogeneous features. Nano-probe experiments reported here have the potential to map out the spatial evolution of exciton resonance energies in structures with (spatially) controlled dielectric screening and interlayer hybridization. In addition, nano-spectroscopy can document the potential role of extrinsic factors, such as defects and impurities, especially wrinkles and contaminations common in atomically layered heterostructures. Finally, applications of TMDs in nanophotonics and optoelectronics will benefit from characterization of excitons in nano-devices with sub-diffractional feature sizes that we demonstrated in our study."
+    },
+    {
+      "index": 20,
+      "text": "A variety of scanning probe optical methods are in general suitable for the nanoscale characterization of the excitonic properties. Specifically, tip-enhanced photoluminescence (TEPL) studies have uncovered aspects of nanoscale excited state recombination in TMDs^{10--19}. Complementary to the TEPL, absorption spectra encode not"
+    },
+    {
+      "index": 21,
+      "text": "only the exciton resonance energy but also the oscillator strength and damping rate, offering additional detailed inquiry into the excitonic response. In principle, local absorption spectra acquired by scattering-type scanning near-field optical microscopy (s-SNOM) allow one to obtain the complex dielectric function $^{20}$, $\\varepsilon(\\omega) = \\varepsilon_{1}(\\omega) + i\\varepsilon_{2}(\\omega)$ and make it possible to probe the engineered excitons at the nanoscale. This latter capability has been extensively used to study plasmons and phonons in other classes of van der Waals (vdW) materials $^{21-23}$. However, formidable technical challenges so far precluded quantitative nano-spectroscopy of excitonic absorption by means of s-SNOM."
+    },
+    {
+      "index": 22,
+      "text": "Here, we coupled an ultra-stable and tunable continuous-wave Ti-sapphire laser (M squared) to a commercial s-SNOM (Neaspec GmbH) and investigated the nanoscale excitonic spectra in monolayer TMD semiconductors and heterostructures. The materials of interest are monolayers of $\\mathrm{WSe}_2$ and $\\mathrm{MoSe}_2$, $\\mathrm{MoSe}_2/\\mathrm{WSe}_2$ heterobilayers, as well as $\\mathrm{WSe}_2$ trilayers. The exciton resonance energy, radiative lifetime and the damping rate in vdW monolayers were extracted from the s-SNOM spectra with hitherto unattainable spatial resolution of $20\\,\\mathrm{nm}$. After documenting the ability of s-SNOM to probe excitons in atomically thin semiconductors with the nanoscale spatial resolution, we investigated heterostructures with lateral dimensions smaller than the diffraction limit of near-IR light. We show that intralayer excitons in $\\mathrm{MoSe}_2/\\mathrm{WSe}_2$ heterostructures red-shift relative to their counterparts in isolated monolayers due to the enhanced dielectric screening. The screening length is found to be shorter than the spatial resolution ($20\\,\\mathrm{nm}$) of our experiments and is attributed to the small radius of tightly bound excitons. The s-SNOM spectra were also applied to probe excitons altered by interlayer hybridization in a multi-layer $\\mathrm{WSe}_2$ crystal."
+    },
+    {
+      "index": 23,
+      "text": "## Experimental methods and samples preparation\n\nThe s-SNOM is based on a tapping mode atomic force microscope (AFM). A Pt-Ir coated AFM tip is illuminated by a focused near-IR beam from a tunable continuous-wave laser, as shown in Fig. 1a. An intense optical field forms in the vicinity of the tip apex and interacts with the TMD crystals underneath it. The light backscattered from the tip is registered by a silicon detector and then demodulated at the high harmonics of the tip-tapping frequency via the pseudo-heterodyne interferometric scheme. This demodulation method allows one to isolate the genuine near-field signals from the undesired far-field background$^{24}$. By scanning the tip on the sample, complex near-field signal is recorded with a resolution of $\\sim$20 nm (Fig. 1b and supplementary Fig. S1) and denoted as $se^{i\\varphi}$, where $s$ and $\\varphi$ are amplitude and phase, respectively. Atomically thin TMD monolayers and their heterostructures were prepared by mechanical exfoliation and stamped on a h-BN substrate. The spectral range used to investigate the samples is 1.50 - 1.75 eV, which covers the 1s exciton resonance energies of WSe$_2$ and MoSe$_2$ monolayers (see inset in Fig.1b). In this energy range, the near-field signal from h-BN is frequency-independent$^{25}$ and can be utilized as reference for spectroscopic data for TMD materials. The normalized near-field amplitude and phase at the $n$-th harmonic and energies $\\omega$ are denoted by $s_n(\\omega)/s_n(h\\text{-BN})$ and $\\varphi_n(\\omega) - \\varphi_n(h\\text{-BN})$, respectively. A combination of our ultra-stable laser and scanner system allowed us to demodulate the scattering signal at the fifth harmonic of the tapping amplitude; high harmonic data is imperative for obtaining genuine near-field contrast devoid of far-field artifacts."
+    },
+    {
+      "index": 24,
+      "text": "To display the excitonic responses in the near field, in Figs. 1c-e we show representative s-SNOM images for a sample with monolayers of MoSe$_2$ and WSe$_2$, MoSe$_2$/WSe$_2$ heterobilayer and unobscured h-BN all in the same field of view (FOV) of"
+    },
+    {
+      "index": 25,
+      "text": "our apparatus. An AFM topographic image is shown in Fig. 1c, where a substantial height variation from left to right is prompted by a terrace in the underlying h-BN substrate. Nevertheless, regions of monolayer, bilayer and multilayer TMDs can be readily identified by their topographic height. Our layer thickness assignment is further confirmed by the second harmonic generation (SHG) data (see supplementary Figs. S2 and S3). The collocated images of topography (Fig. 1c), near-field scattering amplitude (Fig. 1d), and phase (Fig. 1e) are all acquired simultaneously. The amplitude image (Fig. 1d) reveals nearly uniform signals collected within terraces demarcated by boundaries between the terraces. We acquired images in Figs. 1d,e by setting the excitation photon energy at  $1.68\\mathrm{eV}$ . At this energy, a strong phase contrast between the  $\\mathrm{WSe}_2$  monolayer and h-BN substrate is observed (Fig. 1e). On the contrary, no discriminable phase contrast is found for the  $\\mathrm{MoSe}_2$  monolayer. The observation is readily understood as the near-field phase is related to the absorption[26]. The different excitonic absorption characteristics of the TMDs can give rise to phase contrast. According to our hyperspectral data in Fig. 2, the photon energy of  $1.68\\mathrm{eV}$  is close to the exciton resonance in  $\\mathrm{WSe}_2$  monolayer and does not overlap with the excitonic band of  $\\mathrm{MoSe}_2$  centered at  $1.58\\mathrm{eV}$ . Our data reveals that the prominent nanooptical contrast in Fig. 1 is rooted in the local excitonic response of TMD monolayers."
+    },
+    {
+      "index": 26,
+      "text": "# Near-field nano-spectroscopy of excitons in WSe2 monolayer\n\nFor quantitative analysis of the  $\\mathrm{WSe}_2$  monolayer excitonic response, we carried out raster-scanned nano-imaging while varying the photon energy with a step size of  $\\sim 10\\mathrm{meV}$ . We have simultaneously collected topographic and near-field maps at each energy over the same FOV marked by the dashed rectangle in Fig. 1d. The topography image and height profile are shown in Fig. S3. The unobscured h-BN in the upper left corner of Fig. 2 is used"
+    },
+    {
+      "index": 27,
+      "text": "as a reference for normalization purposes. Representative maps of the normalized fifth-harmonic amplitude $s_5(\\omega)$ and phase $\\varphi_5(\\omega)$ are shown in Figs. 2a and b, respectively. In these images, both the amplitude and phase signals in WSe$_2$ monolayers vary systematically as a function of excitation energy. In particular, the phase images display a prominent contrast centered around 1.66 eV. Notably, we witness a highly uniform response within regions occupied by each of the TMD materials in Fig. 2. To quantify the excitonic response, we start our analysis by averaging the near-field signals over the entire region occupied by WSe$_2$ monolayer at each probing frequency. The net result is that each data point in spectra plotted in Figs. 2c,d is representative of the entire region imaged at the corresponding energy in Figs. 2a,b. The spectra derived from images show prominent resonance characteristics: the amplitude signal reveals a dispersive behavior around 1.66 eV, whereas the phase signal exhibits a peak centered at the same energy."
+    },
+    {
+      "index": 28,
+      "text": "We modeled experimental near-field spectra of WSe$_2$ in Fig. 2 with the Lorentzian form of the dielectric function$^{27-29}$:"
+    },
+    {
+      "index": 29,
+      "text": "$$\n\\varepsilon(\\omega) = \\varepsilon_{bg} - \\frac{c}{\\omega_0 d} \\frac{\\gamma_{r,0}}{\\omega - \\omega_0 + i \\left(\\frac{\\gamma_{nr}}{2} + \\gamma_d\\right)}, \\tag{1}\n$$"
+    },
+    {
+      "index": 30,
+      "text": "where $\\varepsilon_{bg}$ is the background dielectric constant, $c$ is the speed of light in vacuum, $\\omega_0$ is the exciton resonance energy, $d$ is the monolayer thickness, $\\gamma_{r,0}$, $\\gamma_{nr}$, $\\gamma_d$ are radiative, non-radiative, and dephasing decay rates, respectively. The oscillator strength of the Lorentzian in Eq.1 is related to the radiative rate $\\gamma_{r,0}$. We choose the point dipole model$^{30}$ to interpret the data as it is well documented to capture the response of atomically thin samples laid on thick substrates$^{30,31}$. As shown in Figs. 2c,d, the point dipole model with"
+    },
+    {
+      "index": 31,
+      "text": "Eq.1 as the input dielectric function provides an adequate fit to the data (see SOM for details on fitting)."
+    },
+    {
+      "index": 32,
+      "text": "Now we analyze the parameters inferred from the fitting procedure (Table 1). The obtained dielectric function is plotted in Fig. 2e. The radiative rate for monolayer $\\mathrm{WSe}_2$ is $1.4\\,\\mathrm{meV}$, which corresponds to the radiative lifetime $\\tau_0 = \\frac{\\hbar}{2\\gamma_r,0}$ of $\\sim 233$ fs. This latter finding is consistent with the first principles theoretical values$^{32}$ and experimental results derived from the ultrafast exciton 1s-2p transition, which reveal 150 fs radiative lifetime in $\\mathrm{WSe}_2$ monolayers$^{33}$. The shorter radiative lifetime compared to that of conventional semiconductors stems from the exceptionally large exciton oscillator strength in two-dimensional TMDs, evidenced by the high optical absorption in monolayer$^{34,35}$. We obtained the damping rate $\\frac{\\gamma_n r}{2} + \\gamma_d = 15\\,\\mathrm{meV}$. We remark that this substantial damping at room temperature inhibits the real dielectric function from crossing zero, and thus the exciton polariton regime cannot be reached. Recently, reflection measurements at cryogenic temperature demonstrated the negative real dielectric function in the vicinity of the excitonic line$^{36}$. Therefore, by reducing the damping rate, for example, through experiments conducted at cryogenic temperature$^{29,36}$, it may become possible to access the exciton polaritons in monolayer TMDs. So far, all experiments on exciton polaritons in TMDs conducted at ambient required integration of the active semiconductor in various forms of photonic cavities$^{37-39}$. A notable exception is an observation of the excited state Rydberg exciton polaritons demonstrated in pump-probe experiments for multilayer $\\mathrm{WSe}_2$ at room temperature$^{8}$."
+    },
+    {
+      "index": 33,
+      "text": "Next, we comment on the contributions of bright and dark excitons to the s-SNOM spectra. These two types of excitonic species result from the spin splitting of the conduction band edge and they obey different optical selection rules $^{40,41}$ . In TMD literature, excitons that can be excited by light with polarization in the sample plane, as in normal incidence experiments, are referred to as bright excitons. Excitons that can be activated only when light polarization is perpendicular to the sample plane, are referred to as dark excitons. Dark excitons can be visualized using TEPL for TMD samples on metallic substrates because the electric field strength perpendicular to the sample surface is drastically enhanced $^{12,19}$ . In contrast, the s-SNOM signal for atomically thin TMDs is governed by the in-plane dielectric function $^{30}$ , which arises from bright excitons (see SOM). To experimentally confirm the dominant role of bright excitons in our data, we compared the bright exciton resonance energy obtained from far-field PL spectra on the same sample $^{42}$  with the resonance energy in our s-SNOM spectra. The bright exciton resonance energy from PL (see supplementary Fig. S4) is about  $1.66\\mathrm{eV}$ , in close agreement with s-SNOM data. We therefore conclude that bright excitons dominate the s-SNOM response of monolayer and few-layer TMD crystals."
+    },
+    {
+      "index": 34,
+      "text": "Table 1. The parameters of Lorentz model used to describe TMD dielectric function as obtained from fitting s-SNOM spectra with the point dipole model."
+    },
+    {
+      "index": 35,
+      "text": "[tbl-0.md](tbl-0.md)\n\n|   | 1L WSe2 | 1L MoSe2 | MoSe2/WSe2 bilayer | 3L WSe2  |\n| --- | --- | --- | --- | --- |\n|  \u03b5bg | 9.7 \u00b1 0.5 | 15.6 \u00b1 0.7 | 13.6 \u00b1 0.7 | 13.8 \u00b1 0.8  |\n|  Exciton energy \u03c90 (meV) | 1660 \u00b1 2 | 1583 \u00b1 3 | 1573 \u00b1 5 (MoSe2) 1648 \u00b1 6 (WSe2) | 1639 \u00b1 3  |\n|  Radiative rate \u03b3r,0 (meV) | 1.4 \u00b1 0.2 | 1.7 \u00b1 0.3 | 0.9 \u00b1 0.5 (MoSe2) 2.1 \u00b1 0.6 (WSe2) | 5.4 \u00b1 0.7  |"
+    },
+    {
+      "index": 36,
+      "text": "[tbl-1.md](tbl-1.md)\n\n# Excitonic spectra of TMD monolayers\n\nBefore exploring the nanoscale response of heterostructures and multilayers, we take a closer look at the near-field response of the constituent monolayers. The spectra of the normalized amplitude and phase for  $\\mathrm{MoSe}_2$  are shown in the middle panels of Figs. 3a,b (See supplementary Fig. S5 for complete data sets). Each data point in these spectra is attained by averaging the near-field signal over the entire  $\\mathrm{MoSe}_2$  regions. The near-field spectra for  $\\mathrm{MoSe}_2$  are akin to those of  $\\mathrm{WSe}_2$  and exhibit nearly the same resonance features, manifesting as a derivative-type lineform of the amplitude and a peak in the phase. The resonance energy observed in  $\\mathrm{MoSe}_2$  using s-SNOM (1.583 eV) is consistent with the dominant peak in PL spectra $^{43}$  (see supplementary Fig. S4), supporting the notion of bright excitons. The radiative rate obtained by fitting the spectra for  $\\mathrm{MoSe}_2$  is as high as 1.7 meV and is slightly larger than that of  $\\mathrm{WSe}_2$  (see Table 1). In general, the prominent radiative rates stem from the two dimensional nature of excitons in TMDs, which are tightly bound to monolayers and have a small exciton radius $^{44}$ . Even though the spectral lineforms of excitonic lines in  $\\mathrm{MoSe}_2$  and  $\\mathrm{WSe}_2$  are nearly identical, the near-field amplitude detected for  $\\mathrm{MoSe}_2$  is considerably larger than that of  $\\mathrm{WSe}_2$  below the exciton resonance energies (top and middle panels of Fig. 3a). We also found that the magnitude of the real part of the dielectric function  $\\varepsilon_{1}$  at energies below the exciton resonance is enhanced in  $\\mathrm{MoSe}_2$  compared to that of  $\\mathrm{WSe}_2$ . This latter finding is consistent with the enhanced radiative rate in  $\\mathrm{MoSe}_2$ ."
+    },
+    {
+      "index": 37,
+      "text": "|  \u03b3nr/2+\u03b3d (meV) | 15 \u00b1 3 | 18 \u00b1 4 | 13 \u00b1 8 (MoSe2) 24 \u00b1 9 (WSe2) | 20 \u00b1 4  |\n| --- | --- | --- | --- | --- |"
+    },
+    {
+      "index": 38,
+      "text": "# $\\mathbf{MoSe}_2 / \\mathbf{WSe}_2$ heterobilayers and $\\mathbf{WSe}_2$ trilayers\n\nNow we turn to the spectra acquired for the $\\mathrm{MoSe_2 / WSe_2}$ heterostructures with the width of less than $1\\mu m$, as shown in the $s_5$ amplitude map (Fig. 3c, where HB denotes the heterobilayer region). The amplitude and phase spectra are displayed in the bottom panels in Figs. 3a and b, respectively. In these spectra, two resonances emerge at the energies close to the frequency positions of the excitonic bands in $\\mathrm{MoSe_2}$ and $\\mathrm{WSe_2}$ monolayers in Fig. 2 and Fig. S5, indicating a dominant contribution of intralayer bright excitons. The role of interlayer excitons remains to be negligible in the data plotted in Fig. 3. Indeed, the resonance energies of indirect excitons$^{4,45,46}$ ($\\sim 1.3 - 1.4\\mathrm{eV}$) fall outside the spectral range investigated in Fig. 3."
+    },
+    {
+      "index": 39,
+      "text": "We analyzed spectra of the $\\mathrm{MoSe_2 / WSe_2}$ heterostructure assuming that the dielectric function is given by the sum of two Lorentzians in Eq. 1. The fit with PDM shows that both the intralayer exciton resonance energies red-shift compared to their counterparts in monolayers (vertical dashed lines in Figs. 3a,b). Red-shift of the exciton resonance energies can also be clearly identified in the hyperspectral measurements of the amplitude $s_5$ and phase $\\varphi_5$ (in Figs. 3d and e, respectively) along the line trace in Fig. 3c. The frequency red-shift of the two exciton resonances is around $10\\mathrm{meV}$ compared to their monolayer counterparts (Table 1 and Figs. 3a,b)."
+    },
+    {
+      "index": 40,
+      "text": "To unravel the origin of the red-shifts, the twist angle of the two layers comprising our heterostructure was characterized by polarization-resolved SHG experiments. The SHG data show that the twist angle between layers is either 15 degrees or alternatively 45 degrees (see supplementary Fig. S2). Either of the two layer arrangements implies the misalignment between the Brillouin zones of monolayers$^{46,47}$ and therefore produce only"
+    },
+    {
+      "index": 41,
+      "text": "negligible hybridization between the two atomic planes. However, excitons in the heterostructure experience stronger dielectric screening compared to the isolated monolayers, because the dielectric function of TMDs is larger than that of h-BN (~4). Therefore, we conclude that, in heterostructures with a large twist angle, the redshift of intralayer exciton resonance energies mainly arises from dielectric self-screening^{9,47}."
+    },
+    {
+      "index": 42,
+      "text": "Although the effect of dielectric screening on excitons has been widely investigated, the screening length is difficult to infer from previous reports based on diffraction-limited far-field data^{9,48}. Here the screening length refers to the spatial span over which the exciton energies are altered by abrupt changes in the dielectric environment. s-SNOM experiments visualize the spatial evolution of the exciton lines across interfaces and thus can potentially quantify the screening length. Representative s-SNOM images in Figs. 4a,b show that the amplitude and phase contrasts abruptly change across the boundary between the monolayers and heterostructure. From the high-resolution images and the line profiles (Fig. 4c), one can see that the exciton resonance energy is altered over the length scale of about 20 nm, which is the spatial resolution of the s-SNOM. We conclude that our nano-IR scans yield only the upper bound estimate of this length scale limited by the spatial resolution of our method. Our estimate is consistent with the theoretically predicted value of about 10 nm (Ref.[^{9}])."
+    },
+    {
+      "index": 43,
+      "text": "In addition to the dielectric screening, interlayer hybridization also plays a role in controlling the excitonic properties of vdW materials. Our nano-IR data provides an experimental access to interlayer hybridization in trilayer WSe_{2} exfoliated from 2H-stacked crystal. We anticipate that in these crystals neighboring layers are twisted by an angle of 60 degrees. The amplitude and phase spectra acquired on the WSe_{2} trilayer are"
+    },
+    {
+      "index": 44,
+      "text": "shown in Figs. 4d and e, respectively, with fitting results presented in Table 1. These data show that the exciton resonance energy decreases from  $1.660\\mathrm{eV}$  in  $\\mathrm{WSe}_2$  monolayer (dashed vertical line in Fig. 4e) to  $1.639\\mathrm{eV}$  in the trilayer (solid vertical lines in Fig. 4e). Before discussing the origin of the observed redshift, we comment on the appearances of direct and indirect interband transitions in the s-SNOM spectra. The indirect transitions in few-layer TMD crystals have negligible oscillator strength, and thus make only a minute contribution to the dielectric function and/or to the s-SNOM signal. Therefore, the observed redshift of the exciton resonance energy originates from direct transitions. For trilayer  $\\mathrm{WSe}_2$  with twist angle of 60 degrees, interlayer electronic hybridization splits both conduction and valance band edges at the corner of the Brillouin zone, thus reducing the energy gap and the corresponding exciton resonance energy[47,49,50]. Therefore, the large shift observed here (21 meV) is likely to be caused by the interlayer hybridization. We note that the dielectric screening could also reduce the exciton resonance energy, but its effect is subtle ( $\\sim 10$  meV, as demonstrated in last section), compared to the interlayer hybridization."
+    },
+    {
+      "index": 45,
+      "text": "In summary, the bright excitonic responses of TMD monolayers were revealed by s-SNOM hyperspectral nano-imaging. New data allowed us to extract the exciton resonance energy, oscillator strength, and damping rate all with the nanometer resolution. Nano-IR spectra and images uncovered the spatial evolution of the dielectric screening and interlayer hybridization. We obtained the upper bound of the dielectric screening length of  $20\\mathrm{nm}$  limited by the spatial resolution of s-SNOM. Our results lay the groundwork for future spatio-temporal[35,53] studies of excitonic states, including moir\u00e9 excitons[2,51-53], exciton liquid[54], and exciton phase transitions[55] in a wide range of quantum materials."
+    },
+    {
+      "index": 46,
+      "text": "# References\n\n1 Wang, G. et al. Colloquium: Excitons in atomically thin transition metal dichalcogenides. Reviews of Modern Physics 90, 021001, doi:10.1103/RevModPhys.90.021001 (2018).\n2 Yu, H., Liu, G.-B., Tang, J., Xu, X. &amp; Yao, W. Moir\u00e9 excitons: From programmable quantum emitter arrays to spin-orbit-coupled artificial lattices. Science Advances 3, e1701696, doi:10.1126/sciadv.1701696 (2017).\n3 Tran, K. et al. Evidence for moir\u00e9 excitons in van der Waals heterostructures. Nature 567, 71-75, doi:10.1038/s41586-019-0975-z (2019).\n4 Seyler, K. L. et al. Signatures of moir\u00e9-trapped valley excitons in MoSe2/WSe2 heterobilayers. Nature 567, 66-70, doi:10.1038/s41586-019-0957-1 (2019).\n5 Jin, C. et al. Observation of moir\u00e9 excitons in WSe2/WS2 heterostructure superlattices. Nature 567, 76-80, doi:10.1038/s41586-019-0976-y (2019).\n6 Palacios-Berraquero, C. et al. Large-scale quantum-emitter arrays in atomically thin semiconductors. Nature Communications 8, 15093, doi:10.1038/ncomms15093 (2017).\n7 Mrejen, M., Yadgarov, L., Levanon, A. &amp; Suchowski, H. Transient exciton-polariton dynamics in WSe2 by ultrafast near-field imaging. Science Advances 5, eaat9618, doi:10.1126/sciadv.aat9618 (2019).\n8 Sternbach, A. J. et al. Programmable hyperbolic polaritons in van der Waals semiconductors. Science 371, 617, doi:10.1126/science.abe9163 (2021).\n9 Raja, A. et al. Coulomb engineering of the bandgap and excitons in two-dimensional materials. Nature Communications 8, 15251, doi:10.1038/ncomms15251 (2017).\n10 Bao, W. et al. Visualizing nanoscale excitonic relaxation properties of disordered edges and grain boundaries in monolayer molybdenum disulfide. Nature Communications 6, 7993, doi:10.1038/ncomms8993 (2015).\n11 Park, K.-D. et al. Hybrid Tip-Enhanced Nanospectroscopy and Nanoimaging of Monolayer WSe2 with Local Strain Control. Nano Letters 16, 2621-2627, doi:10.1021/acs.nanolett.6b00238 (2016).\n12 Park, K.-D., Jiang, T., Clark, G., Xu, X. &amp; Raschke, M. B. Radiative control of dark excitons at room temperature by nano-optical antenna-tip Purcell effect. Nature Nanotechnology 13, 59-64, doi:10.1038/s41565-017-0003-0 (2018).\n13 Xue, W. et al. Nano-optical imaging of monolayer MoSe2-WSe2 lateral heterostructure with subwavelength domains. Journal of Vacuum Science &amp; Technology A 36, 05G502, doi:10.1116/1.5035437 (2018).\n14 Tang, C. et al. Quantum plasmonic hot-electron injection in lateral WSe2/MoSe2 heterostructures. Physical Review B 98, 041402, doi:10.1103/PhysRevB.98.041402 (2018).\n15 He, Z. et al. Quantum plasmonic control of trions in a picocavity with monolayer WS2. Science Advances 5, eaau8763, doi:10.1126/sciadv.aau8763 (2019).\n16 Park, K.-D. et al. Tip-enhanced strong coupling spectroscopy, imaging, and control of a single quantum emitter. Science Advances 5, eaav5931, doi:10.1126/sciadv.aav5931 (2019).\n17 Lee, H. et al. Tip-enhanced photoluminescence nano-spectroscopy and nano-imaging. Nanophotonics 9, 3089-3110, doi:10.1515/nanoph-2020-0079 (2020).\n18 May, M. A. et al. Nanocavity Clock Spectroscopy: Resolving Competing Exciton Dynamics in WSe2/MoSe2 Heterobilayers. Nano Letters, doi:10.1021/acs.nanolett.0c03979 (2020)."
+    },
+    {
+      "index": 47,
+      "text": "19 Darlington, T. P. et al. Imaging strain-localized excitons in nanoscale bubbles of monolayer WSe2 at room temperature. Nature Nanotechnology 15, 854-860, doi:10.1038/s41565-020-0730-5 (2020).\n20 Chen, X. et al. Modern Scattering-Type Scanning Near-Field Optical Microscopy for Advanced Material Research. Advanced Materials 31, 1804774, doi:https://doi.org/10.1002/adma.201804774 (2019).\n21 Fei, Z. et al. Gate-tuning of graphene plasmons revealed by infrared nano-imaging. Nature 487, 82-85, doi:10.1038/nature11253 (2012).\n22 Chen, J. et al. Optical nano-imaging of gate-tunable graphene plasmons. Nature 487, 77-81, doi:10.1038/nature11254 (2012).\n23 Dai, S. et al. Tunable Phonon Polaritons in Atomically Thin van der Waals Crystals of Boron Nitride. Science 343, 1125, doi:10.1126/science.1246833 (2014).\n24 Ocelic, N., Huber, A. &amp; Hillenbrand, R. Pseudoheterodyne detection for background-free near-field spectroscopy. Applied Physics Letters 89, 101124, doi:10.1063/1.2348781 (2006).\n25 Caldwell, J. D. et al. Photonics with hexagonal boron nitride. Nature Reviews Materials 4, 552-567, doi:10.1038/s41578-019-0124-1 (2019).\n26 Govyadinov, A. A., Amenabar, I., Huth, F., Carney, P. S. &amp; Hillenbrand, R. Quantitative Measurement of Local Infrared Absorption and Dielectric Function with Tip-Enhanced Near-Field Microscopy. The Journal of Physical Chemistry Letters 4, 1526-1531, doi:10.1021/jz400453r (2013).\n27 Glazov, M. M. et al. Exciton fine structure and spin decoherence in monolayers of transition metal dichalcogenides. Physical Review B 89, 201302, doi:10.1103/PhysRevB.89.201302 (2014).\n28 Scuri, G. et al. Large Excitonic Reflectivity of Monolayer  $\\mathrm{MoSe}_2$  Encapsulated in Hexagonal Boron Nitride. Physical Review Letters 120, 037402, doi:10.1103/PhysRevLett.120.037402 (2018).\n29 Epstein, I. et al. Near-Unity Light Absorption in a Monolayer WS2 Van der Waals Heterostructure Cavity. Nano Letters 20, 3545-3552, doi:10.1021/acs.nanolett.0c00492 (2020).\n30 Fei, Z. et al. Infrared Nanoscopy of Dirac Plasmons at the Graphene-SiO2 Interface. Nano Letters 11, 4701-4705, doi:10.1021/nl202362d (2011).\n31 Zhang, L. M. et al. Near-field spectroscopy of silicon dioxide thin films. Physical Review B 85, 075419, doi:10.1103/PhysRevB.85.075419 (2012).\n32 Palummo, M., Bernardi, M. &amp; Grossman, J. C. Exciton Radiative Lifetimes in Two-Dimensional Transition Metal Dichalcogenides. Nano Letters 15, 2794-2800, doi:10.1021/nl503799t (2015).\n33 Poellmann, C. et al. Resonant internal quantum transitions and femtosecond radiative decay of excitons in monolayer WSe2. Nature Materials 14, 889-893, doi:10.1038/nmat4356 (2015).\n34 Robert, C. et al. Exciton radiative lifetime in transition metal dichalcogenide monolayers. Physical Review B 93, 205423, doi:10.1103/PhysRevB.93.205423 (2016).\n35 Moody, G. et al. Intrinsic homogeneous linewidth and broadening mechanisms of excitons in monolayer transition metal dichalcogenides. Nature Communications 6, 8315, doi:10.1038/ncomms9315 (2015).\n36 Epstein, I. et al. Highly confined in-plane propagating exciton-polaritons on monolayer semiconductors. 2D Materials 7, 035031, doi:10.1088/2053-1583/ab8dd4 (2020)."
+    },
+    {
+      "index": 48,
+      "text": "37 Basov, D. N., Asenjo-Garcia, A., Schuck, P. J., Zhu, X. &amp; Rubio, A. Polariton panorama. Nanophotonics 10, 549-577, doi:doi:10.1515/nanoph-2020-0449 (2021).\n38 Barachati, F. et al. Interacting polariton fluids in a monolayer of tungsten disulfide. Nature Nanotechnology 13, 906-909, doi:10.1038/s41565-018-0219-7 (2018).\n39 Bao, W. et al. Observation of Rydberg exciton polaritons and their condensate in a perovskite cavity. Proceedings of the National Academy of Sciences 116, 20274, doi:10.1073/pnas.1909948116 (2019).\n40 Wang, G. et al. In-Plane Propagation of Light in Transition Metal Dichalcogenide Monolayers: Optical Selection Rules. Physical Review Letters 119, 047401, doi:10.1103/PhysRevLett.119.047401 (2017).\n41 Zhang, X.-X. et al. Magnetic brightening and control of dark excitons in monolayer WSe2. Nature Nanotechnology 12, 883-888, doi:10.1038/nnano.2017.105 (2017).\n42 Zhang, X.-X., You, Y., Zhao, S. Y. F. &amp; Heinz, T. F. Experimental Evidence for Dark Excitons in Monolayer WSe2. Physical Review Letters 115, 257403, doi:10.1103/PhysRevLett.115.257403 (2015).\n43 Ross, J. S. et al. Electrical control of neutral and charged excitons in a monolayer semiconductor. Nature Communications 4, 1474, doi:10.1038/ncomms2498 (2013).\n44 Chernikov, A. et al. Exciton Binding Energy and Nonhydrogenic Rydberg Series in Monolayer WS2. Physical Review Letters 113, 076802, doi:10.1103/PhysRevLett.113.076802 (2014).\n45 Hsu, W.-T. et al. Negative circular polarization emissions from WSe2/MoSe2 commensurate heterobilayers. Nature Communications 9, 1356, doi:10.1038/s41467-018-03869-7 (2018).\n46 Nayak, P. K. et al. Probing Evolution of Twist-Angle-Dependent Interlayer Excitons in MoSe2/WSe2 van der Waals Heterostructures. ACS Nano 11, 4041-4050, doi:10.1021/acsnano.7b00640 (2017).\n47 Alexeev, E. M. et al. Resonantly hybridized excitons in moir\u00e9 superlattices in van der Waals heterostructures. Nature 567, 81-86, doi:10.1038/s41586-019-0986-9 (2019).\n48 Borghardt, S. et al. Engineering of optical and electronic band gaps in transition metal dichalcogenide monolayers through external dielectric screening. Physical Review Materials 1, 054001, doi:10.1103/PhysRevMaterials.1.054001 (2017).\n49 Arora, A. et al. Excitonic resonances in thin films of WSe2: from monolayer to bulk material. Nanoscale 7, 10421-10429, doi:10.1039/C5NR01536G (2015).\n50 Liu, K. et al. Evolution of interlayer coupling in twisted molybdenum disulfide bilayers. Nature Communications 5, 4966, doi:10.1038/ncomms5966 (2014).\n51 Tang, Y. et al. Simulation of Hubbard model physics in WSe2/WS2 moir\u00e9 superlattices. Nature 579, 353-358, doi:10.1038/s41586-020-2085-3 (2020).\n52 Shimazaki, Y. et al. Strongly correlated electrons and hybrid excitons in a moir\u00e9 heterostructure. Nature 580, 472-477, doi:10.1038/s41586-020-2191-2 (2020).\n53 Regan, E. C. et al. Mott and generalized Wigner crystal states in WSe2/WS2 moir\u00e9 superlattices. Nature 579, 359-363, doi:10.1038/s41586-020-2092-4 (2020).\n54 Stern, M., Umansky, V. &amp; Bar-Joseph, I. Exciton Liquid in Coupled Quantum Wells. Science 343, 55, doi:10.1126/science.1243409 (2014).\n55 Fogler, M. M., Butov, L. V. &amp; Novoselov, K. S. High-temperature superfluidity with indirect excitons in van der Waals heterostructures. Nature Communications 5, 4555, doi:10.1038/ncomms5555 (2014)."
+    },
+    {
+      "index": 49,
+      "text": "Li, Y. et al. Measurement of the optical dielectric function of monolayer transition-metal dichalcogenides: MoS2, MoSe2, WS2, WSe2. Physical Review B 90, 205422, doi:10.1103/PhysRevB.90.205422 (2014)."
+    },
+    {
+      "index": 50,
+      "text": "![img-0.jpeg](img-0.jpeg)\nFigures and figure captions\n\n![img-1.jpeg](img-1.jpeg)\n\n![img-2.jpeg](img-2.jpeg)\nFigure 1 Near-field nano-probing of excitons in atomically thin transition metal"
+    },
+    {
+      "index": 51,
+      "text": "dichalcogencies (TMDs). a, Schematic illustration of near-field measurement of excitons. The metallized AFM tip is illuminated by focused incident light and the tip-scattered light is collected. Pairs of electrons and holes with strong Coulomb interactions in atomically thin TMDs form excitons with large binding energies. The nanoscale response of excitons is extracted from the back-scattered light. b, Scanning the tip across the TMD sample allows one to investigate the excitonic response below the diffraction limit and extract the dielectric function at the nanometer scale. The inset shows the dielectric function of monolayer  $\\mathrm{WSe}_2$  from ref. $^{56}$  c, An AFM topographic image of the TMDs in this study. The height difference between the left and right regions is due to the h-BN terrace. d, e, Nearfield images of normalized scattering amplitude  $s_5$  and phase  $\\varphi_5$  on the same region of c."
+    },
+    {
+      "index": 52,
+      "text": "The excitation energy is  $1.68\\mathrm{eV}$ . The dashed bright and blue lines trace the edges of the different sample regions. The dashed rectangle marks the position of Fig. 2a."
+    },
+    {
+      "index": 53,
+      "text": "![img-3.jpeg](img-3.jpeg)\n\n![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)\nFigure 2 Evolution of the scattering amplitude and phase for the monolayer  $\\mathrm{WSe}_2$  as"
+    },
+    {
+      "index": 54,
+      "text": "![img-6.jpeg](img-6.jpeg)\n\n![img-7.jpeg](img-7.jpeg)\n\na function of the excitation energy. a, Representative near-field images of the normalized scattering amplitude  $s_5(\\omega) / s_5(h\\text{-BN})$ . The excitation energies are indicated in the images, which are acquired by scanning over a rectangular area marked with the dashed line in Fig. 1d. Boundaries of the monolayer WSe $_2$  region are displayed with black dashed lines. The area enclosed by blue lines in bottom left image was investigated in Fig. 4a. b, Near-field images of the normalized phase  $\\varphi_5(\\omega) - \\varphi_5(h\\text{-BN})$ . The images with the same excitation energy in a and b are acquired simultaneously. c and d, Normalized near-field amplitude  $s_5(\\omega) / s_5(h\\text{-BN})$  and phase  $\\varphi_5(\\omega) - \\varphi_5(h\\text{-BN})$  spectra for WSe $_2$  monolayer (data points). Fits to the spectra using the point dipole model (PDM) and a single Lorentz oscillator (Eq.1)"
+    },
+    {
+      "index": 55,
+      "text": "are shown as solid curves. The arrow in c marks the peak energy of PL spectra (Fig. S4).\n\ne, Dielectric function of  $\\mathrm{WSe}_2$  monolayer extracted from the fits with PDM in c, d."
+    },
+    {
+      "index": 56,
+      "text": "![img-8.jpeg](img-8.jpeg)\n\n![img-9.jpeg](img-9.jpeg)\n\n![img-10.jpeg](img-10.jpeg)\nFigure 3 Nano-spectroscopy of different types of excitons. a and b, Normalized"
+    },
+    {
+      "index": 57,
+      "text": "![img-11.jpeg](img-11.jpeg)\n\namplitude  $s_5(\\omega) / s_5(h\\text{-BN})$  and phase  $\\varphi_{5}(\\omega) - \\varphi_{5}(h\\text{-BN})$  spectra for different sample regions (data points). The near-field data is fitted by the point dipole model and Lorentz oscillators (solid curves). The vertical dashed lines are used to mark the exciton energies of WSe2 and MoSe2 extracted from the point dipole model. The arrows in a mark peak energies of the PL spectra (Fig. S4). c, Near-field image of the amplitude  $s_5$  taken at an excitation energy of 1.52 eV. HB: heterobilayer. d and e, Near-field amplitude  $s_5$  and phase  $\\varphi_{5}$  evolution along the line trace shown in c. The horizontal dashed lines in d and e denote the exciton energies extracted from the point dipole model."
+    },
+    {
+      "index": 58,
+      "text": "![img-12.jpeg](img-12.jpeg)\na\n\n![img-13.jpeg](img-13.jpeg)\n\n![img-14.jpeg](img-14.jpeg)\nb\n\n![img-15.jpeg](img-15.jpeg)\nd\nFigure 4 Screening length of excitons in heterostructure and the effect of"
+    },
+    {
+      "index": 59,
+      "text": "![img-16.jpeg](img-16.jpeg)\ne\n\nhybridization on exciton resonance in  $\\mathrm{WSe}_2$  trilayer. a and b, Near-field images of the normalized amplitude  $s_5(\\omega) / s_5(h\\text{-BN})$  and phase  $\\varphi_{5}(\\omega) - \\varphi_{5}(h\\text{-BN})$ . The images in the left and right panels were taken at  $1.68\\mathrm{eV}$  (around the monolayer  $\\mathrm{WSe}_2$  exciton resonance energy) and  $1.57\\mathrm{eV}$  (around monolayer  $\\mathrm{MoSe}_2$  exciton resonance energy), respectively. The scale bars indicate  $400\\mathrm{nm}$ . c, Line profiles of the normalized amplitude and phase across the monolayer and heterobilayer along the black lines in the right panels in a and b. d and e, Normalized scattering amplitude  $s_5(\\omega) / s_5(h\\text{-BN})$  and phase  $\\varphi_{5}(\\omega)$  spectra for  $\\mathrm{WSe}_2$  trilayer (data points). The near-field data are fitted by the point dipole model (solid curves). The vertical blue dashed and solid lines in e are used to mark the exciton energies of  $\\mathrm{WSe}_2$  monolayer and  $\\mathrm{WSe}_2$  trilayer extracted from the point dipole model, respectively."
+    },
+    {
+      "index": 60,
+      "text": "# Contributions\n\nS.Z. and D.N.B. designed the experiments. B.C.L., W.J.W., S.S., L.Z., Z.Y.W., E.R. and N.W. fabricated the devices. X.Y.X characterized the sample twist angle. S.Z. performed the experimental measurements with input from Y.M.S. and L.X.. S.Z. and D.N.B analyzed the experimental data. X.Z, M.K.L, F.L.R developed the theoretical model to analyze of the experimental data with input from A.J.S., A.S.M., Z.Y.S. and S.L.M.. S.Z. and D.N.B. co-wrote the manuscript with input from all co-authors. D.N.B. supervised the project. All authors contributed to the discussions."
+    },
+    {
+      "index": 61,
+      "text": "# Competing interests\n\nThe authors declare no competing interests.\n\n# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- TMDexcitonszSI.docx"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The core contribution -- using s-SNOM with a CW Ti-sapphire laser and a point-dipole-model fit to a Lorentzian dielectric function to extract local exciton parameters in TMD monolayers, heterobilayers, and trilayers at ~20 nm resolution -- is genuinely novel as a quantitative dielectric-function-extraction capability and is likely to be useful to the field. The paper is, however, undermined by three classes of problems that should be addressed before publication. First, several headline numbers are quantitatively at odds with the paper's own benchmarks: the WSe2 dielectric function disagrees with Ref. 56 (the inset comparator in Fig. 1b), the MoSe2 epsilon_bg of 15.6 is roughly 2x literature, and the 233 fs WSe2 radiative lifetime differs significantly from the cited 150 fs but is called 'consistent'. Second, the trilayer hybridization conclusion does not properly subtract dielectric self-screening (the screening contribution should scale with adjacent TMD layers), and the 20 nm screening-length 'upper bound' is just the spatial resolution itself rather than a deconvolved measurement. Third, the abstract overstates novelty ('previously unattainable 20 nm') and reach ('few nanometers' screening length) relative to the cited prior TEPL literature and the body's own acknowledgements. These issues are fixable through additional analysis, tightened claims, and disclosure of the substrate stack and fitting details currently hidden in the SOM, but they are substantive rather than cosmetic.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Trilayer hybridization conclusion does not properly subtract dielectric self-screening",
+          "quote": "Therefore, the large shift observed here (21 meV) is likely to be caused by the interlayer hybridization. We note that the dielectric screening could also reduce the exciton resonance energy, but its effect is subtle ($\\sim 10$ meV, as demonstrated in last section), compared to the interlayer hybridization.",
+          "explanation": "The paper's own logic on dielectric self-screening implies the trilayer redshift should be larger than the heterobilayer redshift even in the absence of hybridization. In the HB, replacing one h-BN-like environment (epsilon ~ 4) with a TMD layer (epsilon ~ 13-16 by their own Table 1) produces a ~10 meV redshift. In a 2H trilayer, the central WSe2 layer has *two* adjacent TMD layers (one on each face) where there were h-BN-like environments before, so by the same screening logic the dielectric shift should be approximately 2x the HB value, i.e., ~20 meV -- already accounting for most of the observed 21 meV shift. The paper, however, treats the screening contribution to the trilayer as still ~10 meV and assigns the residual ~11 meV (and effectively all of the 21 meV) to hybridization. This is the load-bearing argument for the trilayer interpretation and is not airtight. A more careful treatment would either (a) explicitly model the depth of the screening environment to show that screening saturates with one neighboring layer, or (b) admit that screening and hybridization contribute comparably and that the data cannot cleanly disentangle them.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 44
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "MoSe2 background dielectric epsilon_bg = 15.6 is roughly 2x the literature value cited by the paper itself",
+          "quote": "|  \u03b5bg | 9.7 \u00b1 0.5 | 15.6 \u00b1 0.7 | 13.6 \u00b1 0.7 | 13.8 \u00b1 0.8  |",
+          "explanation": "The reported background dielectric constants -- monolayer MoSe2 (15.6), MoSe2/WSe2 heterobilayer (13.6), and WSe2 trilayer (13.8) -- are roughly twice published far-field values. Li et al. (Phys. Rev. B 90, 205422 (2014)), the unnumbered final reference in the paper's own bibliography and the explicit benchmark plotted in Fig. 1b's inset, gives epsilon_bg(MoSe2) ~ 6-7 below the A-exciton and epsilon_1(WSe2) ~ 7 below 1.6 eV vs. the paper's 9.7. Within the same paper, monolayer WSe2 is 9.7 while WSe2 trilayer is 13.8 -- a 40 percent jump that is hard to reconcile with epsilon_bg being an intrinsic material constant. Together these patterns suggest that the PDM is absorbing geometric or substrate-related contributions into the fitted epsilon_bg, which would also propagate into systematic biases on gamma_{r,0} (oscillator strength) and on the absolute redshift values used to argue for screening vs. hybridization. The paper does not engage with this discrepancy at all.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 35
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "20 nm screening-length claim is the spatial resolution itself, not a deconvolved physical bound",
+          "quote": "From the high-resolution images and the line profiles (Fig. 4c), one can see that the exciton resonance energy is altered over the length scale of about 20 nm, which is the spatial resolution of the s-SNOM. We conclude that our nano-IR scans yield only the upper bound estimate of this length scale limited by the spatial resolution of our method.",
+          "explanation": "The screening length is a central physical claim of the paper (highlighted in the abstract, where it is even strengthened to 'few nanometers'). Yet the upper bound of 20 nm is simply the instrument resolution -- the measured profile width *is* the tip response width. To convert this into a real upper bound on a physical screening length, the measured edge profile must be deconvolved against an independently calibrated tip response function, and a chi-square analysis must rule out wider screening lengths beyond noise. The main text gives no such analysis: the line profile is shown qualitatively only, the resolution is quoted from a supplementary figure, and the deconvolution procedure (if any) is not described. The 20 nm 'upper bound' is therefore the limit of what the technique could possibly resolve, not a measurement of the screening length, and the abstract's 'few nanometers' phrasing is not supported anywhere in the body.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 42
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Lorentzian dielectric form (Eq. 1) is dimensionally and conventionally non-standard",
+          "quote": "$$\n\\varepsilon(\\omega) = \\varepsilon_{bg} - \\frac{c}{\\omega_0 d} \\frac{\\gamma_{r,0}}{\\omega - \\omega_0 + i \\left(\\frac{\\gamma_{nr}}{2} + \\gamma_d\\right)}, \\tag{1}\n$$",
+          "explanation": "Equation 1 has multiple issues that together prevent reproduction of the table values from the equation alone. (i) The standard 2D-exciton Lorentzian (e.g., Refs. 27, 29 cited by the authors) has an 'i' in the numerator coefficient and uses the running frequency omega rather than omega_0 in the prefactor; the form here lacks the 'i' and uses omega_0 instead. (ii) Units mix: omega and omega_0 must both be either rad/s or eV, but Table 1 reports them in meV and the prefactor c/(omega_0 d) is dimensionless only if omega_0 is in rad/s and d is in meters -- this conversion is never specified. (iii) The damping is reported as 'gamma_nr/2 + gamma_d' rather than the conventional gamma_r/2 + gamma_nr/2 + gamma_d, dropping the gamma_r/2 contribution to the optical-coherence dephasing. Combined, these issues mean a careful reader cannot independently verify whether the +/-0.2 meV uncertainty on gamma_{r,0} or the 233 fs lifetime follow from the equation or from a different form used in the SOM. The radiative-lifetime expression tau_0 = hbar/(2 gamma_{r,0}) also embeds a factor-of-2 convention not connected to the cited references' tau_0 = hbar/gamma_r convention.",
+          "comment_type": "presentation",
+          "severity": "major",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "Bright-exciton attribution is supported only by a single qualitative PL comparison with no Stokes-shift discussion",
+          "quote": "We therefore conclude that bright excitons dominate the s-SNOM response of monolayer and few-layer TMD crystals.",
+          "explanation": "The conclusion that bright excitons dominate the s-SNOM response rests on (a) an in-plane vs. out-of-plane symmetry argument from Ref. 30 (with details in the SOM) and (b) a single qualitative comparison: 'PL peak ~1.66 eV, in close agreement with s-SNOM data' for WSe2, with no quoted PL uncertainty. Two issues compound here. First, PL emission is typically Stokes-shifted from absorption by 5-20 meV at room temperature (depending on doping, exciton-phonon coupling, biexciton/trion content), so a tighter quantitative comparison than 'about 1.66 eV' is needed to establish meV-level agreement with s-SNOM (where omega_0 = 1660 +/- 2 meV). Second, the symmetry argument suppresses dark excitons but does not rule out trion or biexciton contributions, which are also bright and which can shift the apparent omega_0 by several meV at room temperature in MoSe2 (and somewhat differently in WSe2). Neither alternative interpretation is addressed in the main text, and the corresponding cross-check for MoSe2 (Section 5) cites a different gated sample (Ref. 43) rather than same-sample PL.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 33
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "WSe2 dielectric extracted by this work disagrees with Ref. 56, the paper's own benchmark",
+          "quote": "The inset shows the dielectric function of monolayer $\\mathrm{WSe}_2$ from ref. $^{56}$",
+          "explanation": "Fig. 1b is described as showing the dielectric function of monolayer WSe2 from Ref. 56 (Li et al., 2014). Li et al.'s result has epsilon_1 dropping from ~7 below 1.6 eV to negative values around 1.66 eV. The paper's own fit yields epsilon_bg = 9.7 -- a 30+ percent disagreement on the same material with the same far-field benchmark. Because the paper places Ref. 56 in Fig. 1b as a calibration target, the reader expects quantitative agreement; instead it is silently ~30 percent off. Compounding the issue, Ref. 56 is cited in the body but appears unnumbered at the very end of the bibliography (after the numbered list ends at Ref. 55), suggesting a bookkeeping error. The combination of citation issue and quantitative disagreement weakens the credibility of the absolute dielectric-function values.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 51
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "150 fs vs. 233 fs radiative lifetime discrepancy with Ref. 33 is described as 'consistent'",
+          "quote": "This latter finding is consistent with the first principles theoretical values$^{32}$ and experimental results derived from the ultrafast exciton 1s-2p transition, which reveal 150 fs radiative lifetime in $\\mathrm{WSe}_2$ monolayers$^{33}$.",
+          "explanation": "233 fs (this work) versus 150 fs (Ref. 33) is a 55 percent disagreement. Calling them 'consistent' is an overstatement: the +/-14 percent uncertainty on gamma_{r,0} maps to roughly 200-280 fs, which still does not include 150 fs. Either the systematic uncertainty bar should be widened (e.g., to acknowledge 2D-vs-quasi-2D corrections, substrate effects, and the unknown h-BN thickness) or the disagreement should be acknowledged. As written, the comparison is presented as confirmation of a result that actually differs significantly from the cited experimental benchmark.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "Heterobilayer redshift comparison does not specify whether the monolayer baseline is from the same field of view",
+          "quote": "The frequency red-shift of the two exciton resonances is around $10\\mathrm{meV}$ compared to their monolayer counterparts (Table 1 and Figs. 3a,b).",
+          "explanation": "The 10 meV redshift is calculated from HB resonances (1573 MoSe2, 1648 WSe2) versus monolayer values (1583 MoSe2, 1660 WSe2). It is not clear whether the monolayer reference values come from the *same* field of view (so the comparison is internal and self-consistent) or from a different FOV or sample (where 5-10 meV shifts from strain, doping, contamination, h-BN thickness, or terrace location are common). The redshift is only ~1.7 sigma significant given Table 1 uncertainties (sqrt(5^2 + 3^2) ~ 6 meV). For the central screening-length claim that follows, the baseline should be made explicit, and the same-sample monolayer measurement (which does exist in the same FOV per Fig. 1c) should be used.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "Strain at h-BN terrace is not considered as alternative explanation for spatial heterogeneity",
+          "quote": "An AFM topographic image is shown in Fig. 1c, where a substantial height variation from left to right is prompted by a terrace in the underlying h-BN substrate.",
+          "explanation": "TMD excitons redshift under tensile strain by ~50 meV/percent for WSe2. When a TMD lies across an h-BN terrace, bending over the step produces localized strain (a few-nm-wide step can yield strain of order 0.1 percent, i.e., ~5 meV shift). The paper attributes the spatial variation in exciton energy across the HB-monolayer interface (Fig. 4c) entirely to dielectric screening. The h-BN terrace happens to be in the same field of view as the screening-length measurement, so this alternative (and not unrelated) source of redshift must at minimum be considered and excluded -- e.g., by showing the line profile away from the terrace, or by checking whether the AFM topography is locally flat at the location of the screening-length cut.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Heterobilayer Lorentzian sum fit does not address possible interlayer coupling or fit degeneracies",
+          "quote": "We analyzed spectra of the $\\mathrm{MoSe_2 / WSe_2}$ heterostructure assuming that the dielectric function is given by the sum of two Lorentzians in Eq. 1.",
+          "explanation": "The HB fit assumes a simple sum of two independent Lorentzians, returning gamma_{r,0}(MoSe2) = 0.9 +/- 0.5 meV (60 percent uncertainty), gamma_{r,0}(WSe2) = 2.1 +/- 0.6 meV, and Gamma(WSe2) = 24 +/- 9 meV (40 percent uncertainty). With two Lorentzians ~75 meV apart but with widths summing to ~37 meV, the fit is partially degenerate: oscillator strength can be moved between peaks while shifting epsilon_bg with little change in the fit. Two consequences: (i) gamma_{r,0}(WSe2) jumping from 1.4 (1L) to 2.1 (HB) -- a 50 percent increase reported as if it were a real change -- could plausibly be a fit artifact, and (ii) charge-transfer or interlayer-exciton-mediated coupling between MoSe2 and WSe2 lines (which can produce non-Lorentzian / Fano features at the meV level) is not tested as an alternative. A 'two coupled oscillators' control fit would reassure readers that the 10 meV redshift survives model variation.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Abstract overstates novelty and capability relative to cited prior TEPL work and what was actually demonstrated",
+          "quote": "Here, we use a scattering-type scanning near-field optical microscope (s-SNOM) to acquire exciton spectra in atomically thin transition metal dichalcogenide microcrystals with previously unattainable 20 nm resolution.",
+          "explanation": "The paper's own Introduction acknowledges existing TEPL work on TMDs (Refs. 10-19) that achieves comparable or finer resolution -- Park et al. (Ref. 12) image dark excitons, Darlington et al. (Ref. 19) image strain-localized excitons in nanoscale bubbles, all at sub-20 nm scales. The 'previously unattainable 20 nm resolution' is therefore an overstatement; the actual novelty is the *combination* of nanoscale resolution with quantitative complex-dielectric-function extraction (epsilon_1 + i epsilon_2) for excitons, which TEPL does not provide. Separately, the conclusion claims this work 'lay[s] the groundwork for future spatio-temporal studies' of moire excitons and exciton phase transitions, but the work is purely CW and the 20 nm resolution is generally too coarse for the moire periodicities (~1-10 nm) the paper invokes. The abstract framing should be tightened to reflect the actual contribution.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Abstract claim of 'few nanometers' screening length is unsupported in the body",
+          "quote": "s-SNOM hyperspectral images uncovered how the dielectric screening modifies excitons at length scales as short as few nanometers.",
+          "explanation": "The body of the paper explicitly states that 'we conclude that our nano-IR scans yield only the upper bound estimate of this length scale limited by the spatial resolution of our method' (Section 6). The 'few nanometers' phrasing of the abstract has no support in the body -- the only number that appears is 20 nm (the resolution itself) or '~10 nm' from theoretical Ref. 9 (not measured in this work). This is a meaningful disagreement between abstract framing and what was measured: the abstract reads as if a length scale was determined, while the body acknowledges only an upper bound at the resolution.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Sample stack and h-BN thickness underspecified, blocking reproduction of the dielectric-function fits",
+          "quote": "Atomically thin TMD monolayers and their heterostructures were prepared by mechanical exfoliation and stamped on a h-BN substrate.",
+          "explanation": "The PDM inversion that yields all parameters in Table 1 depends on the substrate dielectric environment of the TMD: h-BN thickness, presence/absence of SiO2 beneath h-BN, the specific Si substrate, and any cap layer. None of these are specified. Standard PDM analysis (Refs. 30, 31 cited) was developed for graphene/SiO2 -- substrates much thicker than typical h-BN flakes. h-BN flakes in this kind of work are typically 20-50 nm thick on SiO2/Si, which is *not* in the 'thick substrate' limit and requires multilayer PDM. Whether a multilayer PDM was used, and what stack parameters entered the fit, is not stated. Without these details: (i) the fits in Table 1 are not reproducible; (ii) the +/-0.5 to +/-0.8 uncertainties on epsilon_bg cannot be evaluated against substrate-stack uncertainty; (iii) systematic differences from Ref. 56's far-field results (Issue: 'WSe2 dielectric vs. Ref. 56') cannot be attributed.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "h-BN reference normalization is asserted to be frequency-independent without quantitative bound or control",
+          "quote": "In this energy range, the near-field signal from h-BN is frequency-independent$^{25}$ and can be utilized as reference for spectroscopic data for TMD materials.",
+          "explanation": "The entire spectroscopic procedure normalizes by h-BN, so any residual frequency dependence of the h-BN near-field signal in 1.50-1.75 eV propagates directly into s_n(omega)/s_n(h-BN) and phi_n(omega) - phi_n(h-BN), and into the inferred dielectric function. Reference 25 is a general h-BN photonics review; the paper does not quote a measured upper bound on the h-BN signal variation across this band, nor does it report a control measurement (e.g., bare h-BN/SiO2 vs. photon energy on the actual sample). Without such a bound, claimed precisions of +/-2 to +/-6 meV on omega_0 and ~0.2-0.7 meV on the radiative rate are difficult to verify. Additionally, h-BN is anisotropic (epsilon_in-plane ~ 4.9, epsilon_out-of-plane ~ 3.0); the paper quotes a single value '~4' for screening arguments without specifying which component enters the analysis.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Spectra averaged over entire monolayer regions, in tension with the 20 nm resolution capability",
+          "quote": "we start our analysis by averaging the near-field signals over the entire region occupied by WSe$_2$ monolayer at each probing frequency.",
+          "explanation": "All headline parameter values in Table 1 are derived from area-averaged near-field signals over an entire monolayer region. The paper emphasizes 'highly uniform response within regions occupied by each of the TMD materials' but never quantifies that uniformity. If edges, wrinkles, or contamination contribute systematically (as the introduction itself flags), the area average is biased. The same dataset is then used to argue for spatial-resolution-limited (20 nm) screening lengths -- which directly relies on intra-region heterogeneity being resolvable. These two narratives are in tension: either the response is uniform (and the 20 nm resolution adds little to the parameter determination) or it is heterogeneous (and the area-averaged Table 1 entries are mixing inhomogeneous responses). The main text never shows the per-pixel spread of fitted omega_0 within a single monolayer region.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Spatial resolution of 20 nm is not operationally defined or characterized in main text",
+          "quote": "complex near-field signal is recorded with a resolution of $\\sim$20 nm (Fig. 1b and supplementary Fig. S1)",
+          "explanation": "The 20 nm figure is the central headline number (also driving the screening-length upper bound and the abstract's 'previously unattainable' claim) yet the main text gives no operational definition: 10-90 percent edge response? FWHM of a step convolution? Tip radius? It points only to a supplementary figure. Reusing this number as the screening-length upper bound means any ambiguity in how it was measured propagates into a physical claim. A standard 'edge response on a known sample' value, with the criterion stated in the main text, should be provided.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "Tip illumination angle, polarization, and incident power not specified",
+          "quote": "A Pt-Ir coated AFM tip is illuminated by a focused near-IR beam from a tunable continuous-wave laser, as shown in Fig. 1a.",
+          "explanation": "Quantitative recovery of the in-plane dielectric function from s-SNOM signals depends on the incidence angle, the s/p polarization mix at the tip, and the tip-tapping amplitude (which combined with harmonic order sets the demodulation kernel). None of these are stated. Incident CW power matters too because TMDs at room temperature can heat or photogenerate trions/biexcitons, which would shift apparent omega_0 or broaden gamma_d. Without these parameters, the +/-2-6 meV resonance precisions cannot be benchmarked against systematic effects.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Fitting procedure (cost function, joint vs. separate amplitude/phase, error definition) entirely delegated to SOM",
+          "quote": "As shown in Figs. 2c,d, the point dipole model with Eq.1 as the input dielectric function provides an adequate fit to the data (see SOM for details on fitting).",
+          "explanation": "All headline numbers depend on a non-trivial PDM-based inverse fit, but the main text relegates *all* details to the SOM. At minimum, the body should specify: (i) what is fit (amplitude only, phase only, or jointly), (ii) which substrate parameters are assumed, (iii) the cost function used, and (iv) whether the errors in Table 1 are statistical fit uncertainties, systematic uncertainties (e.g., substrate stack), or some combination. Without this minimum, a reader cannot evaluate whether +/-0.5 to +/-9 meV uncertainties are meaningful, and the very large fractional uncertainties on the HB damping (24 +/- 9 meV) and HB MoSe2 radiative rate (0.9 +/- 0.5 meV) raise the suspicion of fit degeneracies.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "PDM applicability to thin h-BN flakes (vs. thick SiO2 substrates) is not justified",
+          "quote": "We choose the point dipole model$^{30}$ to interpret the data as it is well documented to capture the response of atomically thin samples laid on thick substrates$^{30,31}$.",
+          "explanation": "References 30 and 31 develop the PDM for graphene/SiO2 and SiO2 thin films -- substrates much thicker than h-BN flakes used here. h-BN flakes for this kind of experiment are typically 20-50 nm thick on SiO2/Si, which is *not* in the 'thick substrate' limit. For h-BN of intermediate thickness, the underlying SiO2 (and even the Si reflection) contribute to the tip response. Whether a multilayer PDM was used, or whether the thick-h-BN approximation is justified for the actual sample stack, is not stated, and propagates into all extracted dielectric-function values.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 30
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Polariton-regime claim conflicts with cited Ref. 8 observation in WSe2",
+          "quote": "we remark that this substantial damping at room temperature inhibits the real dielectric function from crossing zero, and thus the exciton polariton regime cannot be reached. ... A notable exception is an observation of the excited state Rydberg exciton polaritons demonstrated in pump-probe experiments for multilayer $\\mathrm{WSe}_2$ at room temperature$^{8}$.",
+          "explanation": "The paper claims polaritons cannot be reached at room T because epsilon_1 does not cross zero in their data, but then cites Ref. 8 (Sternbach et al.) which DID observe polaritons in WSe2 at room T using pump-probe to access excited-state Rydberg excitons. The 'notable exception' framing hand-waves past the question of whether the present technique could reproduce that result, or whether room-temperature ground-state polaritons are intrinsically forbidden vs. simply outside the present S/N. Additionally, the supporting reference (Ref. 36) is for cryogenic WS2, not WSe2, so the claim that 'reducing the damping rate' would access polaritons in WSe2 is not directly supported by the cited experiment.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "MoSe2 epsilon_1 enhancement attributed to oscillator strength is largely driven by inflated epsilon_bg",
+          "quote": "we also found that the magnitude of the real part of the dielectric function $\\varepsilon_{1}$ at energies below the exciton resonance is enhanced in $\\mathrm{MoSe}_2$ compared to that of $\\mathrm{WSe}_2$. This latter finding is consistent with the enhanced radiative rate in $\\mathrm{MoSe}_2$.",
+          "explanation": "In a Lorentzian, off-resonance epsilon_1 is dominated by epsilon_bg plus the integrated oscillator weight (proportional to gamma_{r,0}/omega_0). In Table 1, gamma_{r,0}(MoSe2) = 1.7 +/- 0.3 meV vs. gamma_{r,0}(WSe2) = 1.4 +/- 0.2 meV is only a 20 percent increase with overlapping error bars, but epsilon_bg jumps from 9.7 (WSe2) to 15.6 (MoSe2). Therefore most of the apparent 'enhancement' of epsilon_1 below resonance in MoSe2 is driven by the (implausibly high) MoSe2 epsilon_bg, not by oscillator strength. Attributing the enhancement to gamma_{r,0} is misleading.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Heterobilayer twist angle has 30-degree degeneracy that is not resolved",
+          "quote": "The SHG data show that the twist angle between layers is either 15 degrees or alternatively 45 degrees (see supplementary Fig. S2). Either of the two layer arrangements implies the misalignment between the Brillouin zones of monolayers$^{46,47}$ and therefore produce only negligible hybridization between the two atomic planes.",
+          "explanation": "The paper accepts a 30-degree degeneracy (15 vs. 45 deg) because both are far from high-symmetry hybridization angles (0/60 deg). This is acceptable for arguing that interlayer hybridization is negligible in the HB. However, at 15 deg residual moire physics or weakly-coupled-K-point states could still be present, while at 45 deg the system is essentially decoupled. The paper does not consider whether the redshift could differ between these two cases, and the conclusion section explicitly invokes future moire-exciton work as an outgrowth of this technique -- where the precise twist angle would matter.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 40
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Trilayer radiative rate of 5.4 meV (~4x monolayer) is reported without commentary",
+          "quote": "|  Radiative rate \u03b3r,0 (meV) | 1.4 \u00b1 0.2 | 1.7 \u00b1 0.3 | 0.9 \u00b1 0.5 (MoSe2) 2.1 \u00b1 0.6 (WSe2) | 5.4 \u00b1 0.7  |",
+          "explanation": "Going from 1L to 3L WSe2, the radiative rate jumps from 1.4 to 5.4 meV (3.9x). With three layers contributing oscillators, one expects roughly 3x; the observed 4x is plausible but not free, especially since interlayer hybridization should redistribute oscillator strength between the (now) split bright and dark states. The paper's narrative implicitly assumes the indirect transitions in 3L have negligible oscillator strength, so the change comes from coupled-direct-transition oscillator strength being concentrated in the lowest direct exciton. This is plausible but unstated. A short discussion would prevent the reader from comparing 5.4 meV directly to the monolayer 1.4 meV as a like-for-like single-exciton oscillator strength.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 35
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "HB damping uncertainties of 50-70 percent invite questions about fit robustness",
+          "quote": "|  \u03b3nr/2+\u03b3d (meV) | 15 \u00b1 3 | 18 \u00b1 4 | 13 \u00b1 8 (MoSe2) 24 \u00b1 9 (WSe2) | 20 \u00b1 4  |",
+          "explanation": "Several reported uncertainties are 50-70 percent of the central value: 13 +/- 8 (HB MoSe2), 24 +/- 9 (HB WSe2). Such large fractional uncertainties allow the values to be statistically indistinguishable from each other and from the monolayer values. The paper makes qualitative statements (e.g., damping is 'substantial' and 'inhibits the real dielectric function from crossing zero') without acknowledging that those statements are sensitive to the model choice. This is at minimum a presentation issue and possibly evidence of fit degeneracy between epsilon_bg, gamma_{r,0}, and Gamma in the dual-Lorentzian HB fit.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 37
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Reference 56 cited in the body is unnumbered in the bibliography",
+          "quote": "Li, Y. et al. Measurement of the optical dielectric function of monolayer transition-metal dichalcogenides: MoS2, MoSe2, WS2, WSe2. Physical Review B 90, 205422, doi:10.1103/PhysRevB.90.205422 (2014).",
+          "explanation": "The bibliography ends with Ref. 55 (Fogler et al.), and the Li et al. entry then appears unnumbered. Yet the text cites '[56]' in Fig. 1b's caption. So Ref. 56 is a citation without a numbered bibliography entry -- a numbering disruption or bookkeeping bug. Fix is straightforward but should be made because the cited dielectric-function benchmark is consequential.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 49
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "No stated Limitations section despite known caveats",
+          "quote": "In summary, the bright excitonic responses of TMD monolayers were revealed by s-SNOM hyperspectral nano-imaging.",
+          "explanation": "The summary functions as the conclusion, but there is no Limitations section. Notable absences: (i) the room-temperature damping precludes polariton observation but does not bound how cleanly the technique resolves overlapping resonances; (ii) the PDM is acknowledged only as 'adequate', with no quantitative bounds on its known systematic biases (oscillator strength biases of order 20-50 percent for thin samples on thin substrates); (iii) the screening-length 'measurement' is admitted to be only an upper bound. A short paragraph collecting these would strengthen the paper's credibility rather than weaken it.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 45
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

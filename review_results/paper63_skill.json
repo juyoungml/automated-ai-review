@@ -1,0 +1,655 @@
+{
+  "slug": "paper63_skill",
+  "title": "Optical Neural Engine for Solving Scientific Partial Differential Equations",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Optical Neural Engine for Solving Scientific Partial Differential Equations\n\nWeilu Gao\n\nweilu.gao@utah.edu"
+    },
+    {
+      "index": 1,
+      "text": "The University of Utah https://orcid.org/0000-0003-3139-034X\n\nYingheng Tang\n\nLawrence Berkeley National Laboratory"
+    },
+    {
+      "index": 2,
+      "text": "Ruiyang Chen\n\nThe University of Utah https://orcid.org/0000-0002-1538-1702\n\nMinhan Lou\n\nThe University of Utah"
+    },
+    {
+      "index": 3,
+      "text": "Jichao Fan\n\nThe University of Utah\n\nCunxi Yu\n\nUniversity of Maryland, College Park\n\nAndy Nonaka\n\nLawrence Berkeley National Laboratory"
+    },
+    {
+      "index": 4,
+      "text": "Zhi Yao\n\nLawrence Berkeley National Laboratory\n\nArticle\n\nKeywords:\n\nPosted Date: September 30th, 2024"
+    },
+    {
+      "index": 5,
+      "text": "DOI: https://doi.org/10.21203/rs.3.rs-5061922/v1\n\nLicense: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 6,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on May 17th, 2025. See the published version at https://doi.org/10.1038/s41467-025-59847-3."
+    },
+    {
+      "index": 7,
+      "text": "# Optical Neural Engine for Solving Scientific Partial Differential Equations\n\nYingheng Tang^{1*\u2020}, Ruiyang Chen^{2\u2020}, Minhan Lou^{2}, Jichao Fan^{2},\nCunxi Yu^{3}, Andy Nonaka^{1}, Zhi (Jackie) Yao^{1*}, Weilu Gao^{2*}\n^{1}Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA.\n^{2}Department of Electrical and Computer Engineering, The University of Utah, Salt Lake City, UT 84112, USA.\n^{3}Department of Electrical and Computer Engineering, University of Maryland, College Park, MD 20742, USA."
+    },
+    {
+      "index": 8,
+      "text": "*Corresponding author(s). E-mail(s): ytang4@lbl.gov;\njackie_zhiyao@lbl.gov; weilu.gao@utah.edu;\n^{\u2020}These authors contribute equally"
+    },
+    {
+      "index": 9,
+      "text": "###### Abstract\n\nSolving partial differential equations (PDEs) is the cornerstone of scientific research and development. Data-driven machine learning (ML) approaches are emerging to accelerate time-consuming and computation-intensive numerical simulations of PDEs. Although optical systems offer high-throughput and energy-efficient ML hardware, there is no demonstration of utilizing them for solving PDEs. Here, we present an optical neural engine (ONE) architecture combining diffractive optical neural networks for Fourier space processing and optical crossbar structures for real space processing to solve time-dependent and time-independent PDEs in diverse disciplines, including Darcy flow equation, the magnetostatic Poisson\u2019s equation in demagnetization, the Navier-Stokes equation in incompressible fluid, Maxwell\u2019s equations in nanophotonic metasurfaces, and coupled PDEs in a multiphysics system. We numerically and experimentally demonstrate the capability of the ONE architecture, which not only leverages the advantages of high-performance dual-space processing for outperforming traditional PDE solvers and being comparable with state-of-the-art ML models but also can be implemented using optical computing hardware with unique features of low-energy and highly parallel constant-time processing irrespective of model scales and real-time reconfigurability for tackling multiple tasks with the same architecture. The demonstrated architecture offers a versatile and powerful platform for large-scale scientific and engineering computations."
+    },
+    {
+      "index": 10,
+      "text": "##\n\nIntroduction\n\nPartial differential equations (PDEs) derived from physical laws have been a powerful and faithful computational tool to accelerate the exploration and validation of scientific hypotheses instead of performing expensive and time-consuming real-world experiments *[1]*. Hence, numerically solving PDEs is essential for scientific research and development in nearly every scientific domain. For example, the interaction of electromagnetic waves with materials and engineered structures in broad applications such as communication, imaging, sensing, and quantum technologies is governed by Maxwell\u2019s equations *[2]*; automotive and flight aerodynamics for designing and manufacturing road vehicles and airplanes is determined by Navier-Stokes equation *[3]*; the Earth system including temperature, atmosphere, and ice sheets for understanding climate change and making policies is also described with a series of PDEs *[4]*. However, current numerical simulation methods to solve PDEs, such as finite difference/volume methods to solve Maxwell\u2019s and the Navier-Stokes equations, are costly in computing time and resources."
+    },
+    {
+      "index": 11,
+      "text": "Machine learning (ML) offers a new perspective on solving PDEs through data-driven approaches to enable fast and accurate simulations of many multiphysics and multiscale processes *[5, 6, 7]*. However, the ML model deployment on electronic computing hardware requires substantial computing resources and consumes substantial energy. In the foreseeable future, the fundamental quantum mechanics limit will lead to a bottleneck of further reducing the energy consumption and simultaneously increasing the integration density of electronic circuits to catch up with the increasing scale of ML models in demand for solving complex problems *[8, 9]*, thus urgently calling for new high-throughput and energy-efficient ML hardware accelerators. Recently, optical architectures, including photonic integrated circuits for matrix-vector multiplication (MVM) *[10, 11]*, for neuro-inspired spiking neural networks *[12, 13]*, and for photonic reservoir computing *[14, 15]*, and free-space optical systems for MVM *[16, 17, 18]* and diffractive optical neural networks (DONNs) *[19, 20, 21, 22]*, are emerging as high-performance ML hardware accelerators by leveraging different particles \u2013 photons \u2013 to break down electronic bottleneck thanks to high parallelism and low static energy consumption of photons *[23]*. However, to date, there is no deployment of any optical computing systems for solving PDEs in any scientific domain."
+    },
+    {
+      "index": 12,
+      "text": "Here, we present a fully reconfigurable and scalable optical neural engine (ONE) architecture that combines DONN systems for processing data in Fourier space and optical crossbar (XBAR) structures for processing data in real space to solve two-dimensional (2D) spatiotemporal profiles in time-independent and time-dependent PDEs. The ONE architecture not only leverages the advantages of high-performance dual-space processing *[24]*, but also can be implemented using optical computing hardware with unique features of low-energy and highly parallel constant-time processing irrespective of model scales, and real-time reconfigurability for tackling multiple tasks with the same architecture. We numerically and experimentally demonstrate the capability of the ONE architecture in solving a broad range of PDEs in diverse disciplines, including the Darcy flow equation in fluid dynamics, the magnetostatic Poisson\u2019s equation in micromagnetics, the Navier-Stokes equation in aerodynamics, Maxwell\u2019s equations in nanophotonics, and coupled electric current and heat transfer equations in"
+    },
+    {
+      "index": 13,
+      "text": "a multiphysics electrical heating problem. The ONE architecture not only outperforms traditional PDE solvers because of its data-driven nature, but also shows comparable and better performance with other ML models while with substantial hardware advantages because of its implementation in the optical domain. The demonstrated ONE architecture is versatile and can be tailored with different combinations of DONN and XBAR structures for solving various PDEs, offering a transformative universal solution for large-scale scientific and engineering computations."
+    },
+    {
+      "index": 14,
+      "text": "## Results\n\n### ONE Architecture\n\nFigure 1a illustrates the ONE architecture, which takes the spatiotemporal data of an input physical quantity $\\mathbf{U}$, described as a function $u(x,y,t)$ in terms of positions $x$ and $y$ and time $t$, to predict the spatiotemporal data of an output physical quantity $\\mathbf{G}$ described using a function $g(x,y,t)$. The input and output quantities $\\mathbf{U}$ and $\\mathbf{G}$ can be connected through either a single-physics PDE or coupled multiphysics PDEs. There are three branches inside the ONE architecture, including (i) Fourier space processing branch, (ii) real space processing branch, and (iii) physics parameter processing branch. The combination of both real and Fourier space processing has been proven fast, powerful, and efficient in solving PDEs *[24]*, and the incorporation of additional physics parameter processing enables the fusion of multimodal data for complex tasks *[25]*. More importantly, most operations in these branches can be deployed on optical computing hardware in both real and Fourier space, enabling solving PDEs in high-throughput and energy-efficient manners. The details of each branch are described below."
+    },
+    {
+      "index": 15,
+      "text": "In the first Fourier space processing branch, the core arithmetic operations are based on Fourier and inverse Fourier transformations to process input spatiotemporal data in the Fourier space. Their optical hardware implementations are mainly based on reconfigurable DONNs, which contain cascaded reconfigurable diffractive layers. Reconfigurable DONNs can be implemented in both integrated photonic chips *[26, 27]* and free space *[19, 20, 21]*; see Fig. 1b. There are two fundamental operations in DONNs \u2013 optical diffraction and spatial light modulation. For the optical diffraction operation, an optical field right after the $l$-th diffractive layer, $f_{l}$, diffracts to the front of $(l+1)$-th layer, whose optical field, $f_{\\mathrm{in},l+1}$, is a convolution of $f_{l}$ and the diffraction impulse function $h(x,y)$. Specifically, the complex-valued field at point $(x,y)$ on the input plane of $(l+1)$-th layer can be written as the convolution of all fields at the output plane of $l$-th layer as"
+    },
+    {
+      "index": 16,
+      "text": "$f_{\\mathrm{in},l+1}(x,y,z)=\\iint\\!f_{l}(x^{\\prime},y^{\\prime},0)h(x-x^{\\prime},y-y^{\\prime})dx^{\\prime}dy^{\\prime},$"
+    },
+    {
+      "index": 17,
+      "text": "where $z$ is the distance between two diffractive layers and $h(x,y)$ is the impulse response function of free space. By the convolution theorem, this 2D convolution can be efficiently calculated in Fourier space based on Fourier and inverse Fourier transformations. Specifically, the 2D Fourier transformation $\\mathcal{F}_{xy}$ of $f$ and $h$, $F$ and $H$, are"
+    },
+    {
+      "index": 18,
+      "text": "![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\nFig. 1 ONE architecture and hardware implementations. (a) Illustration of processing branches and flows in the ONE architecture to predict output spatiotemporal output physical quantities from corresponding input and solve PDEs involving single or multiple physics. Illustrations of integrated and free-space implementations of reconfigurable (b) DONN and (c) XBAR structures."
+    },
+    {
+      "index": 19,
+      "text": "![img-2.jpeg](img-2.jpeg)\n\nconnected through\n\n$$\n\\mathcal {F} _ {x y} \\left(f _ {\\text {i n}, l + 1} (x, y, z)\\right) = \\mathcal {F} _ {x y} \\left(f _ {l} (x, y, 0)\\right) \\mathcal {F} _ {x y} (h (x, y)),\n$$"
+    },
+    {
+      "index": 20,
+      "text": "$$\nF _ {\\text {i n}, l + 1} (\\alpha , \\beta , z) = F _ {l} (\\alpha , \\beta , 0) H (\\alpha , \\beta),\n$$"
+    },
+    {
+      "index": 21,
+      "text": "where  $\\alpha, \\beta$  are spatial domain indices. After diffraction, the 2D inverse Fourier transformation  $\\mathcal{F}_{xy}^{-1}$  of  $F_{\\mathrm{in},l + 1}(\\alpha ,\\beta ,z)$ ,  $f_{\\mathrm{in},l + 1}(x,y,z)$ , is then spatially modulated. Each diffraction pixel at location  $(x,y)$  has a complex-valued electric field transmission coefficient  $t(x,y,S)e^{\\phi (x,y,S)}$ , where  $t(x,y,S)$  ( $\\phi (x,y,S)$ ) is the amplitude (phase) response as a function of external stimuli  $S$ , such as voltages. The spatial light modulation operation is expressed as a pixel-wise multiplication"
+    },
+    {
+      "index": 22,
+      "text": "$$\nf _ {l + 1} (x, y, z) = \\mathcal {F} _ {x y} ^ {- 1} (F _ {\\mathrm {i n}, l + 1} (\\alpha , \\beta , z)) t (x, y, S) e ^ {\\phi (x, y, S)}\n$$"
+    },
+    {
+      "index": 23,
+      "text": "$f_{l+1}(x,y,z)$ is the near-field output field right after the $(l+1)$-th layer. More details can be found in Methods."
+    },
+    {
+      "index": 24,
+      "text": "Before and between DONN kernels, there is a linear transformation operation based on fully connected layers to scale up the number of channels and a channel mixing operation based on matrix multiplications *[24]*. The core arithmetic operations are based on MVM. Their optical hardware implementations are mainly based on reconfigurable optical XBAR structures, which encode element values of vector $\\mathbf{v}$ and matrix $\\mathbf{M}$ into light intensity through electro-optic modulators, perform multiplications through cascaded modulators, and add signals at the output detector array. The signals are routed to follow mathematical calculations in MVM so that the reading from the detector array represents the output vector $\\mathbf{o}=\\mathbf{M}\\times\\mathbf{v}$. Reconfigurable XBAR structures can also be implemented in both integrated photonic chips *[10, 11]* and free space *[16, 17, 18]*; see Fig. 1c. More details on the operation mechanism can be found in Methods and Supplementary Fig. 1."
+    },
+    {
+      "index": 25,
+      "text": "The second real space processing branch contains fully connected layers, whose operations are also based on MVM and implemented with optical XBAR structures. The output from the Fourier space branch, $\\bm{F}(u)$, and the output from the real space branch, $\\bm{R}(u)$ are added and further processed with a nonlinear operation. Note that the nonlinear operation is the only operation performed in electronic hardware in the ONE architecture. Moreover, this combination of real space, Fourier space, and nonlinear processing is scaled up, repeated four times, and cascaded in series. The third branch is to perform a linear transformation on other relevant physics parameters $d(t)$, which are time sequences instead of spatiotemporal data, based on fully connected layers. The obtained data $\\bm{T}(d)$ is multiplied and merged onto two other branches to have the final output $g(x,y,t)$. Hence, except nonlinear operations, all other operations can be done with DONN and optical XBAR systems. These two systems can be seamlessly assembled into a single integrated photonic chip or a single free-space optical system for all-optical operations without converting between optical and electronic hardware, fully leveraging the advantages of high throughput and high parallelism in optical computing systems. More details on the ONE architecture model are in Methods."
+    },
+    {
+      "index": 26,
+      "text": "### Darcy flow and magnetostatic Poisson\u2019s equations\n\nThe first PDE we solved with the ONE architecture is the Darcy flow equation in fluid dynamics physics. This PDE describes a fluid flow through a porous medium as shown in Fig. 2a. Specifically, the equation is"
+    },
+    {
+      "index": 27,
+      "text": "$-\\nabla\\cdot(k(x,y)\\nabla u(x,y))=f(x,y),$\n\nwhere $k(x,y)$ is the permeability field of the medium, $u(x,y)$ is the pressure field of the flow, and $f(x,y)$ is the force function. The ONE architecture was trained to learn the mapping from the 2D function $k(x,y)$ to function $u(x,y)$. More details about the equation dataset generation and training are in Methods. Figure 2b displays the training loss curves for inputs with different resolutions. The training loss"
+    },
+    {
+      "index": 28,
+      "text": "is generally low for all resolutions and slightly increases at the highest 421 resolution. Figure 2c shows the comparison of the training loss of our ONE architecture with other PDE solving models, including fully convolution networks (FCN) *[28]*, principal component analysis-based neural network (PCANN) *[29]*, reduced biased method (RBM) *[30]*, graph neural operator (GNO) *[31]*, low-rank kernel decomposition neural operator (LNO) *[25]*, multipole graph neural operator (MGNO) *[32]*, and Fourier neural operator (FNO) *[24]*. The performance of the ONE architecture is comparable with the state-of-the-art neural operators including GNO, LNO, MGNO, and FNO, and is better than FCN. Further, from the hardware perspective, the ONE architecture is constructed based on high-throughput optical computing hardware platforms so that all operations can be performed in parallel within a single clock cycle. In addition, the ONE architecture can be practically implemented on a large scale. For example, free-space reconfigurable DONNs *[20, 21, 33]* and optical MVM *[17]* are typically implemented using spatial light modulators (SLMs) with a scale $>1000\\times 1000$. Hence, the execution cost of solving PDEs with different scales and resolutions is invariant, meaning $\\mathcal{O}(1)$, if the scale of the optical hardware in the ONE architecture is large enough. Figure 2d displays the input permeability field $k(x,y)$, the expected ground truth of output pressure field $u(x,y)$, the predicted output pressure field, the absolute error between the expected and predicted outputs, and the relative error between the expected and predicted outputs, at the lowest 85 and the highest 421 resolutions, respectively. This visualization further validates the ONE architecture in solving PDEs. More data on other resolutions are shown in Supplementary Fig. 2."
+    },
+    {
+      "index": 29,
+      "text": "The second PDE we solved is the magnetostatic Poisson\u2019s equation of demagnetization in micromagnetics physics. This PDE calculates the demagnetizing field $\\mathbf{H}$ generated by the magnetization field $\\mathbf{M}$ as shown in Fig. 2e. Specifically, the equation is obtained from Maxwell\u2019s equation as"
+    },
+    {
+      "index": 30,
+      "text": "$\\nabla\\cdot\\mathbf{H}=-\\nabla\\cdot\\mathbf{M}.$\n\nBy defining an effective magnetic charge density $\\rho=-\\nabla\\cdot\\mathbf{M}$ and a magnetic scalar potential $\\Phi$ assuming there is no free current, we can express the demagnetizing field $\\mathbf{H}=-\\nabla\\Phi$ and rewrite the previous equation as a Poisson\u2019s equation"
+    },
+    {
+      "index": 31,
+      "text": "$\\nabla^{2}\\Phi=-\\rho.$\n\nSimilar to solving the Darcy flow equation, the ONE architecture was trained to learn the mapping from components of $\\mathbf{M}$ to $\\mathbf{H}$ vector fields. More details about the equation dataset generation and training are in Methods. Figure 2f shows the validation loss curve and Fig. 2g shows the input one component of $\\mathbf{M}$ field, the expected ground truth of output $H_{x}$ component of $\\mathbf{H}$ field, the predicted output $H_{x}$ component, the absolute error between the expected and predicted outputs, and normalized error between the expected and predicted outputs with respect to the maximum field strength in the ground truth. Both confirm a good performance of the ONE architecture in solving the magnetostatic Poisson\u2019s equation. More data on $H_{y}$ and $H_{z}$ components is shown in Supplementary Fig. 3."
+    },
+    {
+      "index": 32,
+      "text": "![img-3.jpeg](img-3.jpeg)\n\n![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)\n\n![img-6.jpeg](img-6.jpeg)"
+    },
+    {
+      "index": 33,
+      "text": "![img-7.jpeg](img-7.jpeg)\n\n![img-8.jpeg](img-8.jpeg)\nFig. 2 Solving Darcy flow and magnetostatic Poisson's equations. (a) Illustration of the Darcy flow equation describing a fluid flow through a porous medium. The ONE architecture learns the mapping between the permeability and pressure fields. (b) Training loss curves for input data with different resolutions. (c) Comparison of the training loss of different models at various resolutions. (d) Input permeability field, the expected ground truth of output pressure field, the predicted output pressure field, the absolute error between the expected and predicted outputs, and the relative error between the expected and predicted outputs, at 85 and 421 resolutions. (e) Illustration of the magnetostatic Poisson's equation calculating the demagnetizing field generated by the magnetization field. The ONE architecture learns the mapping between these two fields. (f) Validation loss curve for the ONE architecture solving the magnetostatic Poisson's equation and (g) corresponding input magnetization field, the expected ground truth of output demagnetizing field, the predicted output demagnetizing field, the absolute and normalized errors between the expected and predicted outputs."
+    },
+    {
+      "index": 34,
+      "text": "# Navier-Stokes and Maxwell's equations\n\nIn addition to steady-state Darcy flow and magnetostatic Poisson's equations without time evolution, we employed the ONE architecture to solve time-dependent PDEs, including the Navier-Stokes equation in fluid dynamics and Maxwell equations in electromagnetics and optics. In particular, the real-time reconfigurability of DONN and optical XBAR structures makes the ONE architecture suitable for such a purpose."
+    },
+    {
+      "index": 35,
+      "text": "Specifically, we solved a 2D Navier-Stokes equation for a viscous, incompressible fluid in vorticity form on the unit torus as shown in Fig. 3(a). This PDE calculates the time evolution of vorticity described as"
+    },
+    {
+      "index": 36,
+      "text": "$\\partial_{t}w(x,y,t)+u(x,y,t)\\cdot\\nabla w(x,y,t)=v\\Delta w(x,y,t)+f(x,y),$\n\nwhere $u$ is the velocity field, $w=\\nabla\\times u$ is the vorticity, $\\nu$ is the viscosity coefficient, $f$ is the forcing function. The ONE architecture was trained to learn the mapping from $w$ in a time range from $0$ to $t_{0}$ to $w$ in a time range from $t_{0}$ to $t_{1}$ ($t_{1}>t_{0}$). More details about the equation dataset generation and training are in Methods. Further, we also solved Maxwell\u2019s equations in a dielectric metasurface consisting of multiple cylindrical pillars in a unit cell of a periodic pattern as shown in Fig. 3(b) *[34]*. The general Maxwell\u2019s equations can calculate the time evolution of an electric field through the following equations"
+    },
+    {
+      "index": 37,
+      "text": "$\\nabla\\cdot\\mathbf{D}$ $=\\rho,$\n$\\nabla\\cdot\\mathbf{B}$ $=0,$\n$\\nabla\\times\\mathbf{E}$ $=-\\frac{\\partial\\mathbf{B}}{\\partial t},$\n$\\nabla\\times\\mathbf{H}$ $=\\mathbf{J}+\\frac{\\partial\\mathbf{D}}{\\partial t},$"
+    },
+    {
+      "index": 38,
+      "text": "where $\\mathbf{D}$ is the electric displacement field, $\\rho$ is the free charge density, $\\mathbf{B}$ is the magnetic flux density, $\\mathbf{E}$ is the electric field, $\\mathbf{H}$ is the magnetic field, and $\\mathbf{J}$ is the free current density. The ONE architecture was trained to learn the mapping from $\\mathbf{E}$ in a time range from $0$ to $t_{0}$ to $\\mathbf{E}$ in a time range from $t_{0}$ to $t_{1}$ ($t_{1}>t_{0}$). More details about the dataset generation and training are in Methods. Figure 3(c) displays the validation loss curve for solving the Navier-Stokes equation with $t_{0}=10$ and $t_{1}=20$. Figure 3(d) displays the validation loss curves for solving Maxwell\u2019s equations with $t_{0}=10$ and $t_{1}=20,30,40$, respectively. Moreover, Figure 3(e) and 3(f) show the expected ground truth of $w$ field and the $E_{x}$ component of the $\\mathbf{E}$ field at $t_{1}$, the corresponding predicted fields at $t_{1}$, and the absolute and relative errors between ground truth and prediction for the Navier-Stokes equation and Maxwell\u2019s equations, respectively. All confirm a good performance in solving time-dependent PDEs using the ONE architecture."
+    },
+    {
+      "index": 39,
+      "text": "### Multiphysics PDEs\n\nMoreover, we employed the ONE architecture to solve coupled PDEs involving two physics. Specifically, we solved an electrical heating problem to obtain a temperature profile at an intermediate time step $t_{n}$, $T(x,y,t_{n})$, in an electrical circuit when a time-dependent voltage signal was applied to the circuit pads, involving coupled electric current physics and heat transfer physics; see Fig. 4(a). Specifically, for the electrical current physics, the corresponding PDE is"
+    },
+    {
+      "index": 40,
+      "text": "$Q_{e}=d\\sigma\\nabla_{t}V(x,y,t),$\n\n![img-9.jpeg](img-9.jpeg)\n\n![img-10.jpeg](img-10.jpeg)\n\n![img-11.jpeg](img-11.jpeg)"
+    },
+    {
+      "index": 41,
+      "text": "![img-12.jpeg](img-12.jpeg)\n\n![img-13.jpeg](img-13.jpeg)\n\n![img-14.jpeg](img-14.jpeg)\n\n![img-15.jpeg](img-15.jpeg)"
+    },
+    {
+      "index": 42,
+      "text": "![img-16.jpeg](img-16.jpeg)\n\n![img-17.jpeg](img-17.jpeg)\nFig. 3 Solving time-dependent Navier-Stokes and Maxwell's equations. Illustrations of (a) Navier-Stokes equation for solving the time evolution of the vorticity field in a viscous, incompressible fluid in vorticity form on the unit torus and (b) Maxwell's equations for solving the time evolution of the electric field in a dielectric metasurface. Validation loss curves for (c) solving the Navier-Stokes equation and (d) Maxwell's equations using the ONE architecture. The expected ground truth field, the predicted field, and the absolute and relative errors between these two fields for (e) the Navier-Stokes equation and (f) Maxwell's equations, respectively."
+    },
+    {
+      "index": 43,
+      "text": "![img-18.jpeg](img-18.jpeg)\n\n![img-19.jpeg](img-19.jpeg)\n\n![img-20.jpeg](img-20.jpeg)\n\n$$\nV (x _ {0}, y _ {0}, t) = \\operatorname {r e c t} (\\mathrm {t}),\n$$"
+    },
+    {
+      "index": 44,
+      "text": "where  $Q_{e}$  is the heat rate per unit area from an electromagnetic heating source,  $d$  is the thickness of the heating layer,  $V(x,y,t)$  is the voltage profile in the circuit that is subjected to a voltage boundary condition defined in the pads  $V(x_0,y_0,t)$ , and  $V(x_0,y_0,t)$  is a pulse rectangular function  $\\mathrm{rect}(t)$  with pulse height and width. For the heat transfer physics, the corresponding PDE is"
+    },
+    {
+      "index": 45,
+      "text": "$$\n\\rho C _ {p} \\frac {\\partial T}{\\partial t} + \\rho C _ {p} \\mathbf {u} \\cdot \\nabla T - \\nabla \\cdot (k \\nabla T) = Q _ {e},\n$$"
+    },
+    {
+      "index": 46,
+      "text": "where  $\\rho$  is the mass density,  $C_p$  is the specific heat capacity,  $T$  is the absolute temperature, and  $k$  is the thermal conductivity. These two PDEs are connected through the quantity  $Q_{e}$ . The ONE architecture was trained to learn the mapping from  $V(x,y,t)$"
+    },
+    {
+      "index": 47,
+      "text": "in a time range spanning all time steps in input pulses to  $T(x,y,t_{n})$  at an intermediate pulse time step  $t_n$ . In contrast to previous examples, the pulse information, including pulse height and width, was processed through the physics parameter processing branch in the ONE architecture (Fig. 1a) and multiplied with the output from cascaded real space processing and Fourier space processing branches to yield the final output. More details about the dataset generation and training are in Methods. Figure 4b displays the validation loss curve and Fig. 4c shows a few representative input 2D data  $V(x,y,t)$  at various time steps. Figure 4d shows the expected ground truth of  $T(x,y,t_{n})$ , the corresponding predicted temperature profile, and the absolute and relative errors between ground truth and prediction. All confirm a good performance in solving multiphysics PDEs using the ONE architecture."
+    },
+    {
+      "index": 48,
+      "text": "![img-21.jpeg](img-21.jpeg)\n(a)\n\n![img-22.jpeg](img-22.jpeg)\n(b)\n\n![img-23.jpeg](img-23.jpeg)\n(c)\n\n![img-24.jpeg](img-24.jpeg)"
+    },
+    {
+      "index": 49,
+      "text": "![img-25.jpeg](img-25.jpeg)\n(d)\n\n![img-26.jpeg](img-26.jpeg)\nFig. 4 Solving multiphysics PDEs. (a) Illustration of solving coupled PDEs in an electrical heating problem involving electric current physics and heat transfer physics. (b) Validation loss curve. (c) A few representative 2D voltage profiles in the circuit. (d) The expected ground truth temperature profile, the predicted profile, and the absolute and relative errors between these two profiles."
+    },
+    {
+      "index": 50,
+      "text": "# Experimental demonstration\n\nFinally, to demonstrate the experimental feasibility of the ONE architecture, we constructed a free-space reconfigurable DONN setup and evaluated the performance of"
+    },
+    {
+      "index": 51,
+      "text": "solving the Darcy flow equation under different hardware noise levels in optical XBAR structures. Figure 5a displays a photo and schematic of the reconfigurable DONN setup, which contains a laser source, a reconfigurable input encoder, two reconfigurable diffractive layers, and a camera. The reconfigurable encoder and diffractive layers were built upon SLMs, which can modulate the amplitude and phase of transmitted light when applying voltage. Multiple light polarization components, including polarizers and half-wave plates, were also employed to manipulate polarization states to achieve large phase modulation ranges. More details on the experimental setup are in Methods."
+    },
+    {
+      "index": 52,
+      "text": "![img-27.jpeg](img-27.jpeg)\n(a)\n\n![img-28.jpeg](img-28.jpeg)\n(b)\n\n![img-29.jpeg](img-29.jpeg)\n(c)\nFig. 5 Experimental demonstration. (a) Photo and schematic of a reconfigurable DONN experimental setup consisting of a reconfigurable input encoder, two reconfigurable diffractive layers, and a camera. Polarization components were used to configure SLMs in the phase modulation mode. (b) Output 2D data in one DONN kernel of the Fourier space processing branch in the ONE architecture obtained from model calculations and experimental measurements. (c) Validation loss curves at different noise levels in optical XBAR structures and (d) the loss at the final epoch as a function of noise level."
+    },
+    {
+      "index": 53,
+      "text": "![img-30.jpeg](img-30.jpeg)\n(d)\n\nAs shown in Supplementary Fig. 4, the experimentally measured amplitude and phase modulation responses of all three SLMs are not only discrete with respect to grey levels but also coupled and dependent. To leverage the gradient-based ML training algorithm, we utilized the Gumbel-softmax reparameterization technique to approximate a discrete distribution to a continuous distribution *[21]*. More details are described in Methods. Moreover, the values of input 2D data span both negative and positive values and were encoded as the grey level of the SLM in the reconfigurable input encoder (SLM0 in Fig. 5a). We performed the encoding through linear mapping from minimum and maximum values of input data to a grey-level range in the SLM. More details are described in Methods. In addition, we precisely aligned all SLMs with respect to each other within a range of a few pixels on the order of hundreds of $\\mu$m; see Supplementary Fig. 5. Although the long optical path in the system makes the alignment sensitive to external variations, the system\u2019s full reconfigurability can enable fast adaptive pixel-by-pixel re-alignment. Figure 5b shows output 2D data in one DONN kernel of the Fourier space processing branch in the ONE architecture (Fig. 1a) obtained from model calculations and experimental measurements, showing good agreement and experimentally validating the feasibility of the ONE architecture in solving PDEs. More data is shown in Supplementary Fig. 6. There are some speckles in the background of measured images, which probably originate from high-order diffraction interference, leading to numerical errors in the ONE architecture for performing regression tasks. This discrepancy between models and experiments can be mitigated through hardware-software co-design, such as incorporating loss functions based on experimental results for gradient calculations as demonstrated in prior works *[20, 33, 35]*."
+    },
+    {
+      "index": 54,
+      "text": "We also evaluated the performance of the ONE architecture under different noise levels of optical XBAR structures. Specifically, we added random Gaussian noise with zero mean and varying standard deviation (Std) to the values obtained from matrix multiplications to represent hardware noise, such as shot noise in photodetectors *[36]*. The corresponding MVM results and histograms of different noise standard deviation values are shown in Supplementary Fig. 7, and more details can be found in Methods. As shown in Fig. 5c and Fig. 5d, the validation loss increases with the increasing noise standard deviation value. The current hardware implementation of optical XBAR structures with advanced components and calibration algorithms *[16, 17, 18]*, including the structure we demonstrated before *[36]*, can achieve quite a small noise level similar or below the noise level corresponding to 0.5 Std. Hence, the noise influence in optical XBAR structures on the performance of the ONE architecture is not substantial."
+    },
+    {
+      "index": 55,
+      "text": "We further estimated the potential throughput and power consumption of the ONE architecture implemented using optical computing hardware for inference. The throughput is mainly determined by the SLM refresh rate and camera frame rate. Current commercial SLMs and cameras can have rates $>1000$ Hz, meaning that the inference time for one instance is $<1$ ms. In contrast, it typically takes minutes to hours to numerically solve PDEs. Hence, the ONE architecture features $>10^{5}$ (five orders of magnitude) acceleration compared to typical PDE solvers. This throughput is also comparable to the state-of-art ML model, such as FNO with a 5 ms inference time *[24]*. Moreover, the system throughput can be substantially improved with device"
+    },
+    {
+      "index": 56,
+      "text": "innovation. For example, an electro-optic SLM based on organic molecules can achieve $>\\mathrm{GHz}$ switching speed *[37]*, and an ultrafast camera can achieve a trillion frames per second *[38]*. With these devices, the ONE architecture can achieve an inference time $<1$ ns. The power consumption is mainly determined by the leakage current of liquid crystal cells in SLMs. Because of the dielectric nature of liquid crystals and their high leakage resistance, the leakage current is typically $<1\\,\\mathrm{\\mu A}$. Hence, assuming a $10\\,\\mathrm{V}$ driving voltage, the static power consumption of SLMs is $\\sim 10\\,\\mathrm{\\mu W}$, which is nearly $10^{7}$ (seven orders of magnitude) smaller than typical GPU inference power $\\sim 100\\,\\mathrm{W}$."
+    },
+    {
+      "index": 57,
+      "text": "## Discussion\n\nWe have demonstrated the ONE architecture and validated its performance in solving a broad range of PDEs in diverse scientific domains. The ONE architecture is versatile and can be modified to reduce the interface and connection between DONN and optical XBAR structures and facilitate the hardware implementation of the whole system. Further, in a whole system, active learning and noise-aware training can be incorporated to mitigate the discrepancy between models and practical systems for accurate deployment. Moreover, in addition to solving PDEs, the ONE architecture can be tailored to accelerate ML models for other regression problems."
+    },
+    {
+      "index": 58,
+      "text": "## Methods\n\nDONN diffraction model \u2013 The diffraction impulse function $h(x,y)$ was described using the Fresnel equation as"
+    },
+    {
+      "index": 59,
+      "text": "$h(x,y)=\\frac{e^{ikz}}{i\\lambda z}e^{\\frac{ik}{2z}(x^{2}+y^{2})},$\n\nwhere $\\lambda$ is the wavelength, $k=2\\pi/\\lambda$ is the free-space wavenumber, $(x,y)$ are positions within a plane perpendicular to the wave propagation direction, $z$ is the distance along the propagation direction, and $i$ is the imaginary unit. The 2D Fourier transformation was directly performed on $h(x,y)$ for model training and evaluation. To match the experimental setup as described below, $h(x,y)$ was first discretized with respect to a defined rectangular mesh grid in the convolution calculation and then converted into the Fourier space through 2D Fourier transformation. More details can be found in our prior work *[21]*."
+    },
+    {
+      "index": 60,
+      "text": "The operation mechanism of optical XBAR structures \u2013 Supplementary Fig. 1a shows the detailed schematic of an integrated photonic XBAR structure. Specifically, the element values of a $n\\times 1$ input vector $\\mathbf{v}$ are represented by the intensities of light at input waveguides, $\\{I_{1},I_{2},I_{3},...,I_{n}\\}$, which can be implemented by modulating an equally distributed laser intensity through a $n\\times 1$ array of electro-optic modulators (red squares in Supplementary Fig. 1a) at input waveguides. The light on each row waveguide is then equally distributed to the column waveguides connected to that row waveguide and modulated through an electro-optic modulator on the coupled curved waveguide (yellow squares in Supplementary Fig. 1a). The element values of a $m\\times n$"
+    },
+    {
+      "index": 61,
+      "text": "matrix $\\mathbf{M}$ are represented by the transmittance of modulators on curved waveguides, $\\{T_{ij}\\},i\\in[1,m],j\\in[1,n]$. At the end of each column waveguide, a photodetector collects all light intensity passing through the column waveguide. The obtained photocurrents or photovoltages of a $m\\times 1$ photodetector array represent the summation of multiplied input vector light intensity and matrix modulator transmittance, and the element values of output vector $\\mathbf{o}$, $O_{j}=\\sum_{s=1}^{n}T_{js}I_{s},j\\in[1,m]$. Hence, this integrated photonic XBAR structure can implement MVM in the optical domain."
+    },
+    {
+      "index": 62,
+      "text": "Similarly, Supplementary Fig. 1(b) shows the detailed schematic of a free-space optical XBAR structure. Specifically, the element values of a $n\\times 1$ input vector $\\mathbf{v}$ are represented by the intensities of light, $\\{I_{1},I_{2},I_{3},...,I_{n}\\}$, which is implemented through a $n\\times 1$ array of free-space vector SLM. The output light is broadcast to a $m\\times n$ array of matrix SLM through lenses so that the light distribution from vector SLM is identical at each column of matrix SLM. The element values of a $m\\times n$ matrix $\\mathbf{M}$ are represented by the transmittance of matrix SLM, $\\{T_{ij}\\},i\\in[1,m],j\\in[1,n]$. Lenses are then used to focus the output light from each modulator on the same column of matrix SLM to a photodetector. The readings from a $m\\times 1$ photodetector array represent the element values of output vector $\\mathbf{o}$, $O_{j}=\\sum_{s=1}^{n}T_{js}I_{s},j\\in[1,m]$. Hence, this free-space optical XBAR structure can also implement MVM in the optical domain."
+    },
+    {
+      "index": 63,
+      "text": "ONE architecture model \u2013 The ONE architecture model was constructed with two main modules \u2013 the DONN module processing data in the Fourier space and the optical XBAR module processing linear operations. The mathematical operations in DONN and optical XBAR structures have been described before and their accurate models have been implemented in our prior works, closely matching experimental results *[21, 36]*. Briefly, the DONN module was modeled by combining the Fresnel free-space diffraction with phase-only spatial light modulation in a range of $[0,2\\pi]$ in the model and coupled spatial light modulation as shown in Supplementary Fig. 4; the optical XBAR module was represented as matrix multiplication incorporating measurement noise. Both modules were implemented under the PyTorch 1.12 framework with graphics processing unit (GPU)-accelerated parallel computation and gradient backpropagation for training. The GPU used in this work was an Nvidia RTX 6000 card."
+    },
+    {
+      "index": 64,
+      "text": "Darcy flow equation dataset and training \u2013 A 2D Darcy flow equation on the unit box was employed as described in detail in Ref. *[24]*. The corresponding PDE is a second-order, linear, elliptic PDE as"
+    },
+    {
+      "index": 65,
+      "text": "$-\\nabla\\cdot(k(x,y)\\nabla u(x,y))$ $=f(x,y),$ $x\\in(0,1),y\\in(0,1),$\n$u(x)$ $=0,$ $x\\in\\partial(0,1),y\\in\\partial(0,1)$"
+    },
+    {
+      "index": 66,
+      "text": "with a Dirichlet boundary condition. We used the Darcy flow dataset from the existing dataset in Ref. *[24]* with a boundary condition $u(x,y)=0$ on domain edges. The coefficient $k(x,y)$ was generated based on a specific distribution with the value $12$ for positive inputs and $3$ for negative inputs. The forcing term was fixed at $f(x,y)=1$. The solution $u(x,y)$ was computed using a second-order finite difference method on a $421\\,\\times\\,421$ grid, and other resolutions were obtained with downsampling. We used a $10:1$ ratio for the numbers of data in the training set and validation set, respectively."
+    },
+    {
+      "index": 67,
+      "text": "The model was trained with a total of 600 epochs and a batch size of 40. The learning rate was 0.1 for the trainable parameters in DONNs and 0.001 for all other trainable parameters with the Adam optimizer."
+    },
+    {
+      "index": 68,
+      "text": "Magnetostatic Poisson\u2019s equation dataset and training \u2013 The demagnetizing field $\\mathbf{H}$ originates from the magnetization within the material itself, which can be calculated as the convolution of $\\mathbf{M}$ with the demagnetization tensor $\\mathbf{N}$ as"
+    },
+    {
+      "index": 69,
+      "text": "$\\mathbf{H}(\\mathbf{r})=\\int\\mathbf{N}(\\mathbf{r}-\\mathbf{r}^{\\prime})\\mathbf{M}(\\mathbf{r}^{\\prime})d\\mathbf{r}^{\\prime}.$"
+    },
+    {
+      "index": 70,
+      "text": "This convolution was computed through Fourier space representations of fields. Specifically, to create the dataset, we utilized the MagneX solver *[39]* to simulate the time evolution of magnetization in a thin magnetic film with dimensions of $500\\times 125\\times 3.125$ nm. The modeling incorporated both demagnetization and exchange interactions. Initially, we relaxed the magnetic field into a stable S-state before subjecting the system to varying external magnetic fields in different scenarios. We uniformly sampled 8 bias $\\mathbf{H}$ fields in the $x$ and $y$ directions, each with a magnitude of 19872 A/m. The system evolved for 1 ns, during which we collected paired data of $\\mathbf{M}$ and $\\mathbf{H}$ fields. Each field was represented by three channels corresponding to the field components in $x$, $y$, and $z$ directions. The dataset was divided into training and testing sets with an $8:2$ ratio. The training was conducted over 500 epochs with a batch size of 128. The learning rate was set to 1.0 for the trainable parameters in DONNs and 0.001 for all other trainable parameters with the Adam optimizer."
+    },
+    {
+      "index": 71,
+      "text": "Navier-Stokes equation dataset and training \u2013 A 2D Navier-Stokes equation for a viscous, incompressible fluid in vorticity form on the unit torus was used to generate spatiotemporal data for training the ONE architecture. The details are described in Ref. *[24]*. Specifically, the PDEs are"
+    },
+    {
+      "index": 72,
+      "text": "$\\partial_{t}w(x,y,t)+u(x,y,t)\\cdot\\nabla w(x,y,t)$ $=v\\Delta w(x,y,t)+f(x,y),$ $x\\in(0,1),y\\in(0,1),t\\in(0,T]$\n$\\nabla\\cdot u(x,y,t)$ $=0,$ $x\\in(0,1),y\\in(0,1),t\\in(0,T]$\n$w(x,y,0)$ $=w_{0}(x,y),$ $x\\in(0,1),y\\in(0,1),$"
+    },
+    {
+      "index": 73,
+      "text": "where $w_{0}(x,y)$ is the initial vorticity and boundary conditions were used. We utilized the existing dataset with the viscosity coefficient $v=10^{-3}$ from Ref. *[24]* for training and inference. The samples in the dataset were recorded with a time step of $10^{-4}$ s. We used 1000 data as the training set and 100 data as the validation set. We trained the ONE architecture model with the first 10 vorticity fields ($w(x,y,t)$) to predict the time evolution of the next 10 vorticity fields. The model was trained with a total of 600 epochs and a batch size of 40. The learning rate was 0.1 for the trainable parameters in DONNs and 0.001 for all other trainable parameters with the Adam optimizer."
+    },
+    {
+      "index": 74,
+      "text": "Maxwell\u2019s equations dataset and training \u2013 We employed commercial Ansys Lumerical finite-difference-time-domain simulation software to generate an electric field dataset by solving Maxwell\u2019s equations in dielectric metasurfaces. Specifically, the dielectric metasurface had a periodic pattern and we used four silicon cylindrical rods as the unit cell and periodic boundary condition. Data were generated by randomly"
+    },
+    {
+      "index": 75,
+      "text": "selecting the radii of four cylindrical rods. The radius was chosen from 39.5 $\\mu$m to 44.5 $\\mu$m with a step of 0.25 $\\mu$m. The simulation time was set as 300000 fs. We generated a total of 1200 data and used 1000 as the training set and the rest 200 as the validation set. The model was trained in an auto-regressive style for the $E_{x}$ component processing. The $E_{x}$ field data between 300000 fs to 160000 fs was backward fed into to the model to predict the next 40000 fs $E_{x}$ field data. The model was trained with a total of 500 epochs and a batch size of 20. The learning rate was 0.1 for the trainable parameters in DONNs and 0.001 for all other trainable parameters with the Adam optimizer."
+    },
+    {
+      "index": 76,
+      "text": "Multiphysics dataset and training \u2013 We employed commercial COMSOL Multiphysics finite-element simulation software to generate a temperature profile dataset by solving coupled electric current and heat transfer PDEs in an electrical heating circuit. The circuit details can be found in Ref. *[40]*. Concisely, the circuit contained a serpentine-shaped Nichrome resistive layer with 10 $\\mu$m thick and 5 mm wide on top of a glass plate. A silver contact pad with a dimension 10 mm $\\times$ 10 mm $\\times$ 10 $\\mu$m was attached at each end. The deposited side of the glass plate was in contact with the surrounding air at 293.15 K and the back side was in contact with the heated fluid at 353 K. Two coupled physics modules, electrical current in layered shells and heat transfer in layered shells, were used in COMSOL simulations. The input voltage pulse height was set from 5 to 25 V with a step of 1 V and the pulse width was set from 20 to 60 s with a step of 1 s. The simulation time range was from 0 to 110 s. We generated a total number of 861 data and divided the data into training and testing set with the splitting ratio of $8:2$. The ONE architecture took the electric current layer data as the input spatiotemporal data and the input voltage pulse information was fed into the physics parameter data processing branch to predict temperature field data at 55 s. The model was trained with a total of 100 epochs and a batch size of 40. The learning rate for the trainable parameters in DONNs was 0.1 and the learning rate for all other trainable parameters was 0.001 with the Adam optimizer."
+    },
+    {
+      "index": 77,
+      "text": "DONN experimental setup and alignment \u2013 The photo and schematic diagram of the DONN experimental setup are displayed in Fig. 5a. The laser diode with a center wavelength 532 nm (CPS532 from Thorlabs, Inc.) was used as a source. The distance between SLMs and between the last SLM and camera was set as 25.4 cm. The polarizers and half-wave plates before and after each SLM were configured so that each SLM operated with a strong modulation of the transmitted electric field phase (phase mode) together with a moderate modulation of light amplitude. The experimentally measured amplitude and phase modulation responses of three SLMs are shown in Supplementary Fig. 4. All transmissive SLMs are the LC 2012 model from HOLOEYE Photonics AG with a refresh rate of 60 Hz. The analog-to-digital converter has 8-bit precision for liquid crystal driving voltage, so that the grey level of SLMs is from 0 to 255. The pixel size of SLMs is 36 $\\mu$m$\\times$36 $\\mu$m. The output data was captured on a CMOS camera with a frame rate of 34.8 frames per second (CS165MU1 from Thorlabs, Inc.)."
+    },
+    {
+      "index": 78,
+      "text": "We aligned the DONN setup by loading standard images on SLMs and comparing experimental results with simulation. Specifically, as shown in Supplementary Fig. 5a, standard Gaussian images, which were centered with a peak at 255 grey level and with a standard deviation of 6 pixels, were loaded in the input SLM and two diffractive"
+    },
+    {
+      "index": 79,
+      "text": "SLMs. Supplementary Fig. 5b displays the simulation pattern for the perfectly aligned setup. During the alignment process, loaded images were moved up, down, left, and right pixel-by-pixel to match the captured images by the camera with the simulation pattern. Supplementary Fig. 5c displays the matched experimental diffraction pattern when the optical setup was aligned, while Supplementary Fig. 5d shows misaligned patterns when there was five-pixel misalignment in vertical and horizontal directions, respectively."
+    },
+    {
+      "index": 80,
+      "text": "DONN experimental training with reparameterization \u2013 The discrete look-up tables of device responses shown in Supplementary Fig. 4 break the gradient backpropagation in the ML training process in PyTorch. To solve this challenge, we utilized a differentiable reparameterization Gumbel-softmax technique, which was first introduced in Ref. *[41]* and demonstrated in our prior work *[21]*. Specifically, continuous noise from the Gumbel distribution was added to the discrete distribution. The argmax function was then used to find the optimized sample. The training problem after this Gumbel-argmax process is mathematically equivalent to the original training problem under one-hot representation *[41]*. Since the argmax function still breaks the gradient chain, it was replaced with the softmax function to enable differentiability. Hence, this Gumbel-softmax technique, which is also available in PyTorch, offers continuous and differentiable approximation to discrete distributions and the gradient can backpropagate to reduce the loss function."
+    },
+    {
+      "index": 81,
+      "text": "DONN experimental grey-level encoding \u2013 The global minimum and maximum values in input 2D data were calculated as $d_{\\min}$ and $d_{\\max}$. A grey level range from 130 to 255 in the input encoder SLM was selected for a relatively large amplitude modulation range to have enough contrast. Hence, any value $d$ in the input 2D data was converted into a grey level through a linear mapping as"
+    },
+    {
+      "index": 82,
+      "text": "$d=\\text{int}\\left(\\frac{255-130}{d_{\\max}-d_{\\min}}+130\\right),$\n\nwhere the $\\text{int}(\\cdot)$ operation rounded the expression to the nearest integer since the SLM grey level must be an integer."
+    },
+    {
+      "index": 83,
+      "text": "Optical XBAR noise \u2013 The MVM results from an optical XBAR structure were uniformly randomly generated in a range of $-15$ to $15$, which was the value range in the ONE architecture for solving the Darcy flow equation. The expected number $o$ was then added with a randomly generated noise from a Gaussian distribution with a zero average and varying standard deviation. The noise-dressed number $\\tilde{o}$ was used in ONE architecture calculations. Under different noise standard deviation levels, Supplementary Fig. 7a demonstrates $\\tilde{o}$ with respect to $o$ and Supplementary Fig. 7b displays histograms of $\\tilde{o}-o$."
+    },
+    {
+      "index": 84,
+      "text": "## Data availability\n\nUpon publication, all data that support the plots within this paper and other findings of this study will be available on a public GitHub repository."
+    },
+    {
+      "index": 85,
+      "text": "##\n\nCode availability\n\nUpon publication, all codes that support the plots within this paper and other findings of this study will be available on a public GitHub repository."
+    },
+    {
+      "index": 86,
+      "text": "## Acknowledgements\n\nR.C., C.Y., and W.G. acknowledge support from the National Science Foundation through Grants No. 2235276, No. 2316627, and No. 2428520. M.L., J.F., and W.G. also acknowledge support from the University of Utah start-up fund. Y.T., Z.Y., and A.N. were supported by Laboratory Directed Research and Development (LDRD) funding from Berkeley Lab, provided by the Director, Office of Science, of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231. This research used resources of the National Energy Research Scientific Computing Center (NERSC), a DOE Office of Science User Facility supported by the Office of Science of the U.S. Department of Energy under Contract No. DE-AC02-05CH11231 and under NERSC GenAI award under No. DDR-ERCAP0030541."
+    },
+    {
+      "index": 87,
+      "text": "## Author Contributions Statement\n\nY.T. and W.G. conceived the idea and W.G. supervised the project. Y.T. constructed models and performed machine learning calculations with the help of M.L., J.F., and C.Y and under the support of A.N., Z.Y, and W.G. R.C constructed an optical experimental setup, performed experiments, and performed numerical calculations under the supervision of W.G. Y.T. and W.G. wrote the manuscript."
+    },
+    {
+      "index": 88,
+      "text": "## Competing Interests Statement\n\nThe authors declare no competing interests.\n\n## References\n\n- [1] Azizzadenesheli, K., Kovachki, N., Li, Z., Liu-Schiaffini, M., Kossaifi, J., Anandkumar, A.: Neural operators for accelerating scientific simulations and design. Nat. Rev. Phys., 1\u20139 (2024)\n- [2] Griffiths, D.J.: Introduction to Electrodynamics. Cambridge University Press, New York (2023)\n- [3] Batchelor, G.K.: An Introduction to Fluid Dynamics. Cambridge University Press, New York (2000)\n- [4] Goosse, H.: Climate System Dynamics and Modeling. Cambridge University Press, New York (2015)\n- [5] Jiang, J., Chen, M., Fan, J.A.: Deep neural networks for the evaluation and design of photonic devices. Nat. Rev. Mater., 1\u201322 (2020)\n-"
+    },
+    {
+      "index": 89,
+      "text": "- [6] Zobeiry, N., Humfeld, K.D.: A physics-informed machine learning approach for solving heat transfer equation in advanced manufacturing and engineering applications. Eng. Appl. Artif. Intell. 101, 104232 (2021)\n- [7] Vinuesa, R., Brunton, S.L.: Enhancing computational fluid dynamics with machine learning. Nat. Comput. Sci. 2(6), 358\u2013366 (2022)\n- [8] Theis, T.N., Wong, H.-S.P.: The end of moore\u2019s law: A new beginning for information technology. Computing in Science & Engineering 19(2), 41\u201350 (2017) https://doi.org/10.1109/MCSE.2017.29\n- [9] Leiserson, C.E., Thompson, N.C., Emer, J.S., Kuszmaul, B.C., Lampson, B.W., Sanchez, D., Schardl, T.B.: There\u2019s plenty of room at the top: What will drive computer performance after moore\u2019s law? Science 368(6495), 9744 (2020) https://doi.org/10.1126/science.aam974\n- [10] Shen, Y., Harris, N.C., Skirlo, S., Prabhu, M., Baehr-Jones, T., Hochberg, M., Sun, X., Zhao, S., Larochelle, H., Englund, D., et al.: Deep learning with coherent nanophotonic circuits. Nat. Photonics 11(7), 441 (2017) https://doi.org/10.1038/nphoton.2017.93\n- [11] Feldmann, J., Youngblood, N., Karpov, M., Gehring, H., Li, X., Stappers, M., Le Gallo, M., Fu, X., Lukashchuk, A., Raja, A., et al.: Parallel convolutional processing using an integrated photonic tensor core. Nature 589(7840), 52\u201358 (2021) https://doi.org/10.1038/s41586-020-03070-1\n- [12] Feldmann, J., Youngblood, N., Wright, C.D., Bhaskaran, H., Pernice, W.H.: All-optical spiking neurosynaptic networks with self-learning capabilities. Nature 569(7755), 208\u2013214 (2019)\n- [13] Jha, A., Huang, C., Peng, H.-T., Shastri, B., Prucnal, P.R.: Photonic spiking neural networks and graphene-on-silicon spiking neurons. J. Light. Technol. 40(9), 2901\u20132914 (2022)\n- [14] Vandoorne, K., Mechet, P., Van Vaerenbergh, T., Fiers, M., Morthier, G., Verstraeten, D., Schrauwen, B., Dambre, J., Bienstman, P.: Experimental demonstration of reservoir computing on a silicon photonics chip. Nat. Commun. 5(1), 3541 (2014)\n- [15] Sande, G., Brunner, D., Soriano, M.C.: Advances in photonic reservoir computing. Nanophotonics 6(3), 561\u2013576 (2017)\n- [16] Hamerly, R., Bernstein, L., Sludds, A., Solja\u010di\u0107, M., Englund, D.: Large-scale optical neural networks based on photoelectric multiplication. Phys. Rev. X 9(2), 021032 (2019) https://doi.org/10.1103/PhysRevX.9.021032\n- [17] Wang, T., Ma, S.-Y., Wright, L.G., Onodera, T., Richard, B.C., McMahon, P.L.:"
+    },
+    {
+      "index": 90,
+      "text": "An optical neural network using less than 1 photon per multiplication. Nat. Commun. 13, 123 (2022) https://doi.org/10.1038/s41467-021-27774-8\n- [18] Chen, Z., Sludds, A., Davis III, R., Christen, I., Bernstein, L., Ateshian, L., Heuser, T., Heermeier, N., Lott, J.A., Reitzenstein, S., et al.: Deep learning with coherent vcsel neural networks. Nat. Photonics 17(8), 723\u2013730 (2023)\n- [19] Lin, X., Rivenson, Y., Yardimci, N.T., Veli, M., Luo, Y., Jarrahi, M., Ozcan, A.: All-optical machine learning using diffractive deep neural networks. Science 361(6406), 1004\u20131008 (2018) https://doi.org/10.1126/science.aat8084\n- [20] Zhou, T., Lin, X., Wu, J., Chen, Y., Xie, H., Li, Y., Fan, J., Wu, H., Fang, L., Dai, Q.: Large-scale neuromorphic optoelectronic computing with a reconfigurable diffractive processing unit. Nat. Photonics 15(5), 367\u2013373 (2021) https://doi.org/10.1038/s41566-021-00796-w\n- [21] Chen, R., Li, Y., Lou, M., Fan, J., Tang, Y., Sensale-Rodriguez, B., Yu, C., Gao, W.: Physics-aware machine learning and adversarial attack in complex-valued reconfigurable diffractive all-optical neural network. Laser Photonics Rev., 2200348 (2022) https://doi.org/10.1002/lpor.202200348\n- [22] Hu, J., Mengu, D., Tzarouchis, D.C., Edwards, B., Engheta, N., Ozcan, A.: Diffractive optical computing in free space. Nat. Commun. 15(1), 1525 (2024)\n- [23] Wetzstein, G., Ozcan, A., Gigan, S., Fan, S., Englund, D., Solja\u010di\u0107, M., Denz, C., Miller, D.A., Psaltis, D.: Inference in artificial intelligence with deep optics and photonics. Nature 588(7836), 39\u201347 (2020) https://doi.org/10.1038/s41586-020-2973-6\n- [24] Li, Z., Kovachki, N., Azizzadenesheli, K., Liu, B., Bhattacharya, K., Stuart, A., Anandkumar, A.: Fourier neural operator for parametric partial differential equations. arXiv preprint arXiv:2010.08895 (2020)\n- [25] Lu, L., Jin, P., Karniadakis, G.E.: Deeponet: Learning nonlinear operators for identifying differential equations based on the universal approximation theorem of operators. arXiv preprint arXiv:1910.03193 (2019)\n- [26] Wang, Z., Chang, L., Wang, F., Li, T., Gu, T.: Integrated photonic metasystem for image classifications at telecommunication wavelength. Nat. Commun. 13, 2131 (2022) https://doi.org/10.1038/s41467-022-29856-7\n- [27] Zhu, H., Zou, J., Zhang, H., Shi, Y., Luo, S., Wang, N., Cai, H., Wan, L., Wang, B., Jiang, X., et al.: Space-efficient optical computing with an integrated chip diffractive neural network. Nat. Commun. 13, 1044 (2022) https://doi.org/10.1038/s41467-022-28702-0\n- [28] Zhu, Y., Zabaras, N.: Bayesian deep convolutional encoder\u2013decoder networks for"
+    },
+    {
+      "index": 91,
+      "text": "surrogate modeling and uncertainty quantification. J. Comput. Phys. 366, 415\u2013447 (2018)\n- [29] Bhattacharya, K., Hosseini, B., Kovachki, N.B., Stuart, A.M.: Model reduction and neural networks for parametric pdes. The SMAI journal of computational mathematics 7, 121\u2013157 (2021)\n- [30] DeVore, R.A.: The Theoretical Foundation of Reduced Basis Methods vol. 15. Society for Industrial and Applied Mathematics Philadelphia, PA, ??? (2017)\n- [31] Li, Z., Kovachki, N., Azizzadenesheli, K., Liu, B., Bhattacharya, K., Stuart, A., Anandkumar, A.: Neural operator: Graph kernel network for partial differential equations. arXiv preprint arXiv:2003.03485 (2020)\n- [32] Li, Z., Kovachki, N., Azizzadenesheli, K., Liu, B., Stuart, A., Bhattacharya, K., Anandkumar, A.: Multipole graph neural operator for parametric partial differential equations. Advances in Neural Information Processing Systems 33, 6755\u20136766 (2020)\n- [33] Chen, Y., Nazhamaiti, M., Xu, H., Meng, Y., Zhou, T., Li, G., Fan, J., Wei, Q., Wu, J., Qiao, F., et al.: All-analog photoelectronic chip for high-speed vision tasks. Nature 623(7985), 48\u201357 (2023)\n- [34] Tang, Y., Fan, J., Li, X., Ma, J., Qi, M., Yu, C., Gao, W.: Physics-informed recurrent neural network for time dynamics in optical resonances. Nat. Comput. Sci. 2(3), 169\u2013178 (2022)\n- [35] Wright, L.G., Onodera, T., Stein, M.M., Wang, T., Schachter, D.T., Hu, Z., McMahon, P.L.: Deep physical neural networks trained with backpropagation. Nature 601(7894), 549\u2013555 (2022) https://doi.org/10.1038/s41586-021-04223-6\n- [36] Fan, J., Tang, Y., Gao, W.: Universal approach for calibrating large-scale electronic and photonic crossbar arrays. Advanced Intelligent Systems 5(10), 2300147 (2023)\n- [37] Benea-Chelmus, I.-C., Mason, S., Meretska, M.L., Elder, D.L., Kazakov, D., Shams-Ansari, A., Dalton, L.R., Capasso, F.: Gigahertz free-space electro-optic modulators based on mie resonances. Nat. Commun. 13(1), 1\u20139 (2022)\n- [38] Kim, T., Liang, J., Zhu, L., Wang, L.V.: Picosecond-resolution phase-sensitive imaging of transparent objects in a single shot. Sci. Adv. 6(3), 6200 (2020)\n- [39] Yao, Z., Kumar, P., Lepelch, J., Nonaka, A.: Code Repository for \u201cMagneX\u201d: https://github.com/AMReX-Microelectronics/MagneX\n- [40] COMSOL Tutorial Model of a Heating Circuit. https://comsol.com/model/heating-circuit-465/"
+    },
+    {
+      "index": 92,
+      "text": "[41] Jang, E., Gu, S., Poole, B.: Categorical reparameterization with gumbel-softmax. arXiv preprint arXiv:1611.01144 (2016)"
+    },
+    {
+      "index": 93,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- SIFinal.pdf"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The paper proposes an interesting Optical Neural Engine (ONE) that combines diffractive optical neural networks with optical crossbar MVM modules to solve a range of 2D PDEs, and the underlying neural-operator-style architecture is plausible and mostly well motivated. However, the central evidence base is substantially weaker than the abstract claims: the only head-to-head accuracy comparison (Fig. 2c, Darcy) plots training loss rather than test loss, no quantitative accuracy numbers are given for any PDE, and four of the five PDE demonstrations have no baseline at all. The \"experimental demonstration\" measures only one DONN diffraction stage on Darcy, while the headline >1e5 throughput and ~1e7 power-advantage claims are projections built on hypothetical >1000 Hz SLMs and SLM-leakage-only power, not on the demonstrated 60 Hz hardware or any end-to-end energy budget. Several individual results are also overstated \u2014 Maxwell trains only on E_x with an internally inconsistent time window, and the \"multiphysics\" task is a single-snapshot regression \u2014 and key methods details (architecture size, channel mixing, encoder formula, branch combination operator) are missing or incorrect as written. The core idea is sound and the issues are largely fixable through a controlled re-evaluation with matched test-loss metrics, full-pipeline experimental measurements, and a realistic energy/throughput accounting, but as written the paper's main claims outrun its evidence.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Headline 'comparable to FNO/MGNO/LNO/GNO' claim is supported by training loss, not test loss",
+          "quote": "Figure 2c shows the comparison of the training loss of our ONE architecture with other PDE solving models, including fully convolution networks (FCN) *[28]*, principal component analysis-based neural network (PCANN) *[29]*, reduced biased method (RBM) *[30]*, graph neural operator (GNO) *[31]*, low-rank kernel decomposition neural operator (LNO) *[25]*, multipole graph neural operator (MGNO) *[32]*, and Fourier neural operator (FNO) *[24]*.",
+          "explanation": "The single head-to-head comparison in the paper (Fig. 2c) plots training loss across models. Training loss is dominated by capacity, optimizer, and number of epochs and is not a meaningful cross-model accuracy metric \u2014 the standard FNO benchmark protocol from [24] reports relative L2 test error on a held-out set. The Methods section also describes the training procedure only for ONE; it never specifies how the FCN/PCANN/RBM/GNO/LNO/MGNO/FNO baselines were re-trained, on what splits, or to what optimum. Combined with the inconsistency that other PDEs in the paper plot validation loss (Figs. 2f, 3c, 3d, 4b) while only Darcy uses training loss, this undermines the central 'comparable performance' claim. Without test/validation numbers and matched baseline protocols the comparison is not interpretable.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Experimental demonstration covers only a single DONN diffraction stage on Darcy \u2014 abstract's 'experimentally demonstrate' is overstated",
+          "quote": "Figure 5b shows output 2D data in one DONN kernel of the Fourier space processing branch in the ONE architecture (Fig. 1a) obtained from model calculations and experimental measurements, showing good agreement and experimentally validating the feasibility of the ONE architecture in solving PDEs.",
+          "explanation": "The abstract claims 'we numerically and experimentally demonstrate the capability of the ONE architecture' across five PDEs. The actual experimental measurement is the output of one DONN kernel of one branch, on Darcy data \u2014 not a full DONN, not the cascaded 4x (real-space + Fourier-space + nonlinearity) blocks, no end-to-end PDE prediction, and zero experimental work for magnetostatic, Navier-Stokes, Maxwell, or multiphysics PDEs. All headline accuracy results came from PyTorch simulation on an Nvidia RTX 6000 GPU. The claim 'experimentally validating the feasibility of the ONE architecture in solving PDEs' is a substantial leap from a single optical diffraction stage to end-to-end PDE solving on optical hardware.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 53
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "Throughput claim of >1e5 acceleration relies on hypothetical >1000 Hz SLMs \u2014 actual hardware is 60 Hz",
+          "quote": "Current commercial SLMs and cameras can have rates $>1000$ Hz, meaning that the inference time for one instance is $<1$ ms. In contrast, it typically takes minutes to hours to numerically solve PDEs. Hence, the ONE architecture features $>10^{5}$ (five orders of magnitude) acceleration compared to typical PDE solvers.",
+          "explanation": "The demonstrated DONN setup uses HOLOEYE LC 2012 SLMs at 60 Hz refresh and a Thorlabs CS165MU1 camera at 34.8 fps \u2014 at minimum ~17 ms per instance, before counting the four cascaded blocks. The >1e5 speedup is computed by substituting hypothetical >1000 Hz SLMs/cameras and comparing to an unspecified 'minutes to hours' classical solver baseline. No per-PDE solver, hardware, resolution, or accuracy target is specified for the comparison. The 5 ms FNO inference time used as the 'state-of-the-art ML' comparator is also taken from [24] without matching configuration. Net effect: a projected-hardware-vs-arbitrary-solver number is presented as an achieved speedup. The actual demonstrated system has not been measured for inference latency anywhere in the paper.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 55
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "1e7 power-advantage claim ignores laser, ADC/DAC, photodetector amplifiers, electronic nonlinearity, and full inference dynamic energy",
+          "quote": "the static power consumption of SLMs is $\\sim 10\\,\\mathrm{\\mu W}$, which is nearly $10^{7}$ (seven orders of magnitude) smaller than typical GPU inference power $\\sim 100\\,\\mathrm{W}$.",
+          "explanation": "The 10 uW per-SLM number is the leakage current of liquid-crystal cells alone \u2014 i.e., static idle power for one SLM. It excludes (i) the laser source power (CPS532 diodes are typically hundreds of mW), (ii) every analog-to-digital and digital-to-analog conversion at the input encoder and camera readout, (iii) photodetector amplifier power, (iv) the electronic processing and O/E/O conversion required between every one of the four cascaded blocks for the nonlinearity, (v) the GPU/CPU executing the nonlinearity and physics-parameter branch, and (vi) the SLM driver electronics and FPGAs that load each frame. A true energy-per-inference number for ONE is never computed. Comparing one component's idle leakage to a GPU's total inference power yields a 7-order-of-magnitude advantage that is not a like-for-like comparison.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "Maxwell's-equations claim is supported only by single-component (E_x) auto-regressive prediction with an internally inconsistent time window",
+          "quote": "The $E_{x}$ field data between 300000 fs to 160000 fs was backward fed into to the model to predict the next 40000 fs $E_{x}$ field data.",
+          "explanation": "Two compounding problems undermine the Maxwell demonstration. First, the network is trained only on E_x \u2014 one of six coupled Maxwell field components (E_x, E_y, E_z, H_x, H_y, H_z) \u2014 so the divergence/curl coupling that defines Maxwell's equations is never enforced in training. The abstract and Results frame this as 'solving Maxwell's equations', which is a substantial overstatement of single-component time-series prediction in a periodic dielectric metasurface. Second, the time window 'between 300000 fs to 160000 fs' has a start later than its end, and 'backward fed' is not defined; the reader cannot determine whether the network is forward or time-reversed propagating, nor where the predicted 40000 fs window starts. Together these make the Maxwell result both narrower than claimed and not reproducible.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 75
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "'Multiphysics' demonstration is single-time-step regression from one physics field, not coupled-PDE solving",
+          "quote": "The ONE architecture took the electric current layer data as the input spatiotemporal data and the input voltage pulse information was fed into the physics parameter data processing branch to predict temperature field data at 55 s.",
+          "explanation": "The Multiphysics PDEs section frames the task as solving the coupled electric-current and heat-transfer PDEs and is invoked in the abstract as 'coupled PDEs in a multiphysics system'. But (i) the network input is only the electric current layer (one physics field), not both V(x,y,t) and T(x,y,t), and (ii) the network output is the temperature at a single fixed time step (t=55 s), not a time-evolving solution. The result is a static, single-snapshot regression rather than a coupled time-dependent PDE solve; no validation is performed at other t_n, with other pulse shapes, or with the coupling residual. The claim that ONE solves multiphysics PDEs is therefore weaker than presented.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 76
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Optical end-to-end implementability is overclaimed \u2014 channel mixing, four cascaded blocks, and electronic nonlinearity require unmeasured O/E/O conversions",
+          "quote": "Note that the nonlinear operation is the only operation performed in electronic hardware in the ONE architecture.",
+          "explanation": "The architecture has four cascaded (Fourier + real + nonlinear) blocks. Because the nonlinearity is electronic, every block boundary requires opto-electronic conversion, electronic processing, and re-encoding onto the next SLM. These conversions have latency, energy, ADC noise, and bit-precision constraints that dominate real photonic accelerators and are entirely omitted from both the throughput and energy claims. Separately, the channel-mixing operation between DONN kernels is referenced only by citing [24] (FNO uses 1x1 channel convolutions) and is never specified in optical-hardware terms \u2014 the number of channels, encoding scheme, and SLM/photodetector mapping are not given. Both gaps mean the 'all-optical except nonlinearity' claim is materially incomplete.",
+          "comment_type": "missing_information",
+          "severity": "major",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "Hardware-noise robustness is shown only in simulation \u2014 no measured noise from the actual XBAR pipeline",
+          "quote": "we added random Gaussian noise with zero mean and varying standard deviation (Std) to the values obtained from matrix multiplications to represent hardware noise, such as shot noise in photodetectors *[36]*.",
+          "explanation": "The noise study (Fig. 5c-d) injects zero-mean i.i.d. Gaussian noise on simulated MVM outputs. Real photonic XBARs produce noise that is signal-dependent (shot noise scales as sqrt(I)), correlated across detector elements, and includes thermal/Johnson noise at the transimpedance amplifier \u2014 all unmodeled here. The claim 'the noise influence ... is not substantial' rests on transferring the noise floor of a *prior, separate* calibrated XBAR [36] onto the present ONE result; the present optical XBAR was not built. Furthermore, the Discussion concedes that 'noise-aware training can be incorporated to mitigate the discrepancy between models and practical systems', acknowledging that the present results were not obtained with such mitigations. The robustness conclusion is therefore a projection, not a measurement.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 54
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "No baselines for Navier-Stokes, Maxwell, magnetostatic, or multiphysics \u2014 selective comparison",
+          "quote": "All confirm a good performance in solving time-dependent PDEs using the ONE architecture.",
+          "explanation": "The Darcy section contains an explicit Fig. 2c head-to-head against FCN/PCANN/RBM/GNO/LNO/MGNO/FNO. The other four PDE sections (magnetostatic, Navier-Stokes, Maxwell, multiphysics) show only ONE's own validation curves with no baseline. The Navier-Stokes dataset is reused from FNO [24], so an FNO baseline is straightforward; its absence \u2014 coupled with the inclusion of baselines only on Darcy where the curves overlap \u2014 gives the appearance of selective reporting. The reader cannot evaluate the 'comparable to state-of-the-art ML' claim for any PDE besides Darcy.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 38
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Encoder grey-level mapping formula contains the input-data symbol only on the LHS \u2014 formula as stated cannot encode the input",
+          "quote": "$d=\\text{int}\\left(\\frac{255-130}{d_{\\max}-d_{\\min}}+130\\right),$",
+          "explanation": "As written, the right-hand side has no dependence on d, so every input value would be assigned the same grey level. The intended formula is presumably d_grey = int( (d - d_min) * (255 - 130) / (d_max - d_min) + 130 ), i.e., a missing (d - d_min) factor. Since this formula governs how all input 2D data are loaded onto SLM0 in the experimental Darcy demonstration, the methods description is incorrect, and a reader cannot reproduce the encoding without guessing the correct expression.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 82
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Spatial-light-modulation equation drops the imaginary unit from the phase factor",
+          "quote": "$f _ {l + 1} (x, y, z) = \\mathcal {F} _ {x y} ^ {- 1} (F _ {\\mathrm {i n}, l + 1} (\\alpha , \\beta , z)) t (x, y, S) e ^ {\\phi (x, y, S)}$",
+          "explanation": "The transmission coefficient is defined two equations earlier as t(x,y,S) e^{i*phi(x,y,S)}. In this final modulation equation the i is missing \u2014 the exponent reads e^{phi(x,y,S)}, which is a real-valued amplitude factor rather than the intended complex phase modulation. Either a typo or a notational inconsistency, but as stated the equation does not describe phase modulation.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 22
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "DONN model is described as both 'phase-only' and 'coupled' simultaneously \u2014 which simulation produced the figures is unclear",
+          "quote": "the DONN module was modeled by combining the Fresnel free-space diffraction with phase-only spatial light modulation in a range of $[0,2\\pi]$ in the model and coupled spatial light modulation as shown in Supplementary Fig. 4",
+          "explanation": "The Methods description is internally contradictory: 'phase-only spatial light modulation in [0, 2pi]' and 'coupled spatial light modulation' are different physical models. The Gumbel-softmax training was specifically introduced because real SLM amplitude/phase response is discrete and coupled. It is not stated whether Figs. 2-4 (the headline accuracy results) used the idealized phase-only model or the coupled discrete-table model. If they used the idealized model, the comparison to FNO is on a network that cannot be physically realized; if they used the coupled model, no measurement has been made of the gap between the two.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 63
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Branch-combination operator (sum + product) and broadcasting rule for the physics-parameter branch are under-specified",
+          "quote": "The output from the Fourier space branch, $\\bm{F}(u)$, and the output from the real space branch, $\\bm{R}(u)$ are added and further processed with a nonlinear operation.",
+          "explanation": "The text says F(u) and R(u) are added and the physics-parameter branch output T(d) is 'multiplied and merged onto two other branches to have the final output g(x,y,t)'. It is not specified whether T(d) multiplies F(u)+R(u) or each branch separately, whether the multiplication is element-wise, broadcast across spatial coordinates, or a tensor product. Because T(d) encodes pulse height/width (scalars in time only), the broadcasting rule materially determines the model's expressivity in the multiphysics task. The reader cannot reproduce the network from this prose.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Architecture size (channels, layers per block, parameter count) is never reported",
+          "quote": "this combination of real space, Fourier space, and nonlinear processing is scaled up, repeated four times, and cascaded in series.",
+          "explanation": "Four cascaded blocks is the only architecture-scale hyperparameter mentioned. The Methods report learning rates and epoch counts but never report channel widths, number of DONN layers per block, MVM matrix sizes, or total parameter count. The comparison in Fig. 2c against FNO/MGNO/etc. therefore has no parameter-budget axis: the reader cannot tell whether ONE matches FNO with similar or vastly different parameter counts. This is essential for any 'comparable performance' claim.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Darcy permeability is binary {3, 12} \u2014 likely simpler than the standard FNO Gaussian-random-field benchmark",
+          "quote": "The coefficient $k(x,y)$ was generated based on a specific distribution with the value $12$ for positive inputs and $3$ for negative inputs.",
+          "explanation": "The standard Darcy benchmark in [24] uses a continuous log-Gaussian-random-field permeability, which is significantly harder than a binary {3, 12} field. The Methods cite [24] for the dataset but the prose describes a binary k(x,y). If the Fig. 2c baselines (GNO, LNO, MGNO, FNO) report their numbers on the continuous-field version while ONE reports on the binary version, the comparison is not on equal footing. The paper does not clarify which version of the dataset is used, and the binary case is uncharacteristically simple for this benchmark family.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 66
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Magnetostatic dataset spans only 8 bias-field samples \u2014 generalization claim rests on a tiny manifold",
+          "quote": "We uniformly sampled 8 bias $\\mathbf{H}$ fields in the $x$ and $y$ directions, each with a magnitude of 19872 A/m.",
+          "explanation": "The magnetostatic Poisson training distribution is generated from only 8 bias-field directions at a fixed magnitude, evolved for 1 ns. The resulting (M, H) pairs lie on a low-dimensional manifold determined by these 8 starting conditions, and the network can effectively memorize the trajectories. Since the magnetostatic Poisson equation is linear and has a closed-form Green's-function solution, 'good performance' on this narrow distribution is weak evidence that ONE has learned the operator. The paper does not report performance on unseen bias directions or magnitudes.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 70
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "Magnetostatic learning rate of 1.0 for DONN parameters is unusually high and unexplained",
+          "quote": "The learning rate was set to 1.0 for the trainable parameters in DONNs and 0.001 for all other trainable parameters with the Adam optimizer.",
+          "explanation": "Adam learning rates of 1.0 are more than two orders of magnitude higher than typical (1e-3 to 1e-4) and would normally cause divergence. The other PDE tasks in the paper use 0.1 for DONN parameters. The paper offers no explanation for why magnetostatic uses 1.0; it is plausibly a typo, but if intentional it suggests the DONN parameterization is unusual (e.g., a Gumbel-softmax temperature). Lacking the rationale, this hyperparameter is not reproducible.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 70
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Maxwell metasurface dataset (1200 samples from a ~195k-point 4-parameter grid) gives sparse coverage with no test-distance analysis",
+          "quote": "We generated a total of 1200 data and used 1000 as the training set and the rest 200 as the validation set.",
+          "explanation": "Each Lumerical FDTD simulation is parameterized by four pillar radii in [39.5, 44.5] um with step 0.25 um, giving 21^4 = 194,481 possible configurations. With 1200 random samples (~0.6% coverage), the validation set's 200 designs may be near-neighbors of training designs. Without an analysis of how validation accuracy depends on parameter-space distance from training, 'good performance' may reflect interpolation between near-identical metasurfaces rather than learning of the underlying operator.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 75
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Navier-Stokes 10-step rollout (1 ms at dt=1e-4 s) is short relative to the FNO benchmark and the eddy turnover time",
+          "quote": "We trained the ONE architecture model with the first 10 vorticity fields ($w(x,y,t)$) to predict the time evolution of the next 10 vorticity fields.",
+          "explanation": "10 timesteps at dt=1e-4 s is a 1 ms horizon \u2014 orders of magnitude shorter than the eddy turnover time of viscous turbulent flow at v=1e-3, and short relative to standard FNO Navier-Stokes benchmarks (e.g., t=1 to t=20 in [24]). No rollout-error growth analysis is shown. Reporting this as 'solving the Navier-Stokes equation' overstates the demonstration; it is a short-horizon vorticity prediction, not a time-integration solver.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 73
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Quantitative loss/error numbers are absent \u2014 comparisons rely entirely on overlapping curves",
+          "quote": "Figure 2c shows the comparison of the training loss of our ONE architecture with other PDE solving models",
+          "explanation": "No numerical accuracy or loss value is stated for any model on any task anywhere in the paper. 'Comparable to FNO/GNO/MGNO/LNO' is supported only by visually overlapping curves on a log-scale plot, with no error bars and no stated test-error number. This is well below the norm of the neural-operator literature this paper claims to compete with, and prevents future work from benchmarking against the present results.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Error metric is inconsistent across PDE tasks \u2014 absolute, relative, normalized-by-max \u2014 without justification",
+          "quote": "the absolute error between the expected and predicted outputs, and normalized error between the expected and predicted outputs with respect to the maximum field strength in the ground truth.",
+          "explanation": "Across the five PDE tasks the metric varies: 'training loss' (Darcy), 'validation loss' (others), pixelwise 'absolute error' and 'relative error' (Darcy, Navier-Stokes, Maxwell, multiphysics), and 'normalized error with respect to maximum field strength in the ground truth' (magnetostatic). These metrics are not interchangeable \u2014 max-normalization can hide large fractional errors in low-magnitude regions. A reader cannot compare ONE's accuracy across tasks, nor verify the 'comparable performance' claim per PDE.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Speckle and alignment errors are acknowledged but the offered mitigations (in-loop hardware training, adaptive realignment) are not performed",
+          "quote": "There are some speckles in the background of measured images, which probably originate from high-order diffraction interference, leading to numerical errors in the ONE architecture for performing regression tasks. This discrepancy between models and experiments can be mitigated through hardware-software co-design, such as incorporating loss functions based on experimental results for gradient calculations as demonstrated in prior works *[20, 33, 35]*.",
+          "explanation": "Two key sources of model-vs-experiment error are explicitly identified \u2014 speckle from high-order diffraction interference and alignment sensitivity to external variations \u2014 and in both cases the proposed mitigations (in-loop hardware training, adaptive pixel-by-pixel re-alignment) are referenced from prior works but not performed in this work. For a regression-based PDE solver, even small field-level errors can dominate the final output. The text concedes that errors are present 'for performing regression tasks' but provides no quantitative error budget or measured end-to-end Darcy prediction loss on the optical setup.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 53
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Sign information cannot be encoded by [130, 255] amplitude grey-level mapping \u2014 relevant for time-dependent PDE inputs",
+          "quote": "Moreover, the values of input 2D data span both negative and positive values and were encoded as the grey level of the SLM in the reconfigurable input encoder (SLM0 in Fig. 5a).",
+          "explanation": "SLM grey levels [130, 255] modulate the amplitude of light, which is non-negative. Mapping a signed input (e.g., vorticity, electric field, magnetization components) into a non-negative amplitude makes the sign recoverable only through spatial context, not directly. The Darcy permeability is non-negative, so this is not an issue there, but the prose explicitly says input data 'span both negative and positive values' and the architecture is later applied to vorticity, E_x, and M components. The encoder's inability to represent sign is a structural limitation of the experimental setup that is not flagged.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 53
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Discussion is ~3 sentences and omits major limitations evident in the body",
+          "quote": "We have demonstrated the ONE architecture and validated its performance in solving a broad range of PDEs in diverse scientific domains. The ONE architecture is versatile and can be modified to reduce the interface and connection between DONN and optical XBAR structures and facilitate the hardware implementation of the whole system.",
+          "explanation": "The Discussion only identifies positive future work (active learning, noise-aware training, regression beyond PDEs). It does not acknowledge: only Darcy was partially experimentally validated; Maxwell training only learns one of six field components; Navier-Stokes is a 10-step rollout; multiphysics is single-snapshot regression; the encoder cannot represent sign directly; throughput and energy claims are projections; channel mixing is not specified for optical hardware. A standard limitations paragraph in this domain would acknowledge most of these.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 57
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "'Constant-time irrespective of model scales' applies to a single diffractive layer, not to the four-block cascaded ONE pipeline",
+          "quote": "low-energy and highly parallel constant-time processing irrespective of model scales",
+          "explanation": "Free-space diffraction of a single SLM-encoded wavefront through one diffractive layer can be approximately constant-time as long as the SLM is large enough. But the ONE pipeline has four cascaded blocks each containing a DONN module, an XBAR module, and an electronic nonlinearity. End-to-end latency therefore scales with the number of blocks plus all opto-electronic conversions; it is not constant-time in 'model scale' (depth). The abstract phrasing implies the latter.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 9
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "DONN is not an explicit optical Fourier transform \u2014 'dual-space processing' framing conflates numerics and optics",
+          "quote": "By the convolution theorem, this 2D convolution can be efficiently calculated in Fourier space based on Fourier and inverse Fourier transformations.",
+          "explanation": "Free-space diffraction physically performs the convolution; the explicit 2D Fourier and inverse-Fourier transforms are only used in the numerical simulation of the diffraction. There is no optical FFT operation in the actual hardware. Yet the 'Fourier-space processing branch' framing suggests an explicit optical Fourier-space stage. The conflation between 'computed in Fourier space numerically' and 'physically performs a Fourier transform optically' is mild but recurs throughout the architecture description.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "Novelty claim 'no demonstration of utilizing optical systems for solving PDEs' overstates against prior optical-domain physics-learning works",
+          "quote": "Although optical systems offer high-throughput and energy-efficient ML hardware, there is no demonstration of utilizing them for solving PDEs.",
+          "explanation": "Free-space DONNs and photonic accelerators have been used for various physics-related regression tasks. The authors' own [34] is an optical-domain time-dynamics learning paper. A more accurate framing is 'no full neural-operator-style PDE solver has been built optically end-to-end'. The current phrasing is harsher than the literature supports.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 9
+        },
+        {
+          "id": "openaireview__claude_27",
+          "title": "Train/validation splits vary between 5:1 and 8:2 across PDEs without justification or seed averaging",
+          "quote": "We used a $10:1$ ratio for the numbers of data in the training set and validation set, respectively.",
+          "explanation": "Different PDEs use different splits \u2014 Darcy 10:1, magnetostatic 8:2, Navier-Stokes 1000:100 (10:1), Maxwell 1000:200 (5:1), multiphysics 8:2 \u2014 without justification. Smaller validation sets give noisier loss curves; combined with no error bars or seed averaging on any plot, small differences between models in Fig. 2c may be below the validation-noise floor.",
+          "comment_type": "methodology",
+          "severity": "minor",
+          "paragraph_index": 66
+        },
+        {
+          "id": "openaireview__claude_28",
+          "title": "Darcy training loss 'slightly increases' at the highest 421 resolution \u2014 no explanation",
+          "quote": "The training loss is generally low for all resolutions and slightly increases at the highest 421 resolution.",
+          "explanation": "Training loss should be approximately non-increasing in resolution if the model has enough capacity (each higher resolution gives more degrees of freedom and finer-grained gradients). An increase at the highest resolution suggests capacity bottleneck, normalization interaction, or optimizer instability. No explanation is offered, weakening the resolution-invariance ('execution cost ... is invariant, meaning O(1)') framing.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 28
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

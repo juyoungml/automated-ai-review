@@ -1,0 +1,527 @@
+{
+  "slug": "paper67_skill",
+  "title": "Type-printable photodetector arrays for multichannel meta-infrared imaging",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Type-printable photodetector arrays for multichannel meta-infrared imaging\n\nJunxiong Guo\n\nguojunxiong@cdu.edu.cn"
+    },
+    {
+      "index": 1,
+      "text": "guojunxiong@cdu.edu.cn https://orcid.org/0000-0002-0071-1086\n\nShuyi Gu\n\nChengdu University\n\nLin Lin\n\nUniversity of Electronic Science and Technology of China"
+    },
+    {
+      "index": 2,
+      "text": "Yu Liu\n\nTsinghua University\n\nJi Cai\n\nChengdu University\n\nHongyi Cai\n\nChengdu University\n\nYu Tian\n\nBeijing Normal University"
+    },
+    {
+      "index": 3,
+      "text": "Yuelin Zhang\n\nBeijing Normal University\n\nQinghua Zhang\n\nChinese Academy of Science\n\nZe Liu\n\nChengdu University"
+    },
+    {
+      "index": 4,
+      "text": "Yafei Zhang\n\nChengdu University\n\nXiaosheng Zhang\n\nUniversity of Electronic Science and Technology of China"
+    },
+    {
+      "index": 5,
+      "text": "Yuan Lin\n\nUniversity of Electronic Science and Technology of China https://orcid.org/0000-0002-9879-4341"
+    },
+    {
+      "index": 6,
+      "text": "Wen Huang\n\nUniversity of Electronic Science and Technology of China\n\nLin GU\n\nhttps://orcid.org/0000-0002-7504-031X"
+    },
+    {
+      "index": 7,
+      "text": "Jinxing Zhang\n\n# Article\n\nKeywords: multichannel infrared imaging, meta-imaging, ferroelectric superdomain, deep learning, edge detection"
+    },
+    {
+      "index": 8,
+      "text": "Posted Date: March 18th, 2024\n\nDOI: https://doi.org/10.21203/rs.3.rs-3929576/v1\n\nLicense: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 9,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on June 18th, 2024. See the published version at https://doi.org/10.1038/s41467-024-49592-4."
+    },
+    {
+      "index": 10,
+      "text": "Type-printable photodetector arrays for multichannel meta-infrared imaging\n\nJunxiong Guo^{1,2,#,*}, Shuyi Gu^{1,#}, Lin Lin^{2,#}, Yu Liu^{3,4*}, Ji Cai^{1}, Hongyi Cai^{1}, Yu Tian^{5}, Yuelin Zhang^{5}, Qinghua Zhang^{6}, Ze Liu^{1}, Yafei Zhang^{1}, Xiaosheng Zhang^{2}, Yuan Lin^{2}, Wen Huang^{2,*}, Lin Gu^{7}, and Jinxing Zhang^{5,*}"
+    },
+    {
+      "index": 11,
+      "text": "^{1} School of Electronic Information and Electrical Engineering, Institute of Advanced Study, Chengdu University, Chengdu 610106, China"
+    },
+    {
+      "index": 12,
+      "text": "^{2} School of Integrated Circuit Science and Engineering, National Exemplary School of Microelectronics, University of Electronic Science and Technology of China, Chengdu 610054, China"
+    },
+    {
+      "index": 13,
+      "text": "^{3} School of Integrated Circuits, Tsinghua University, Beijing 100084, China\n\n^{4} The College of Integrated Circuit Science and Engineering, National and Local Joint Engineering Laboratory for RF Integration and Micro-Packing Technologies, Nanjing University of Posts and Telecommunications, Nanjing 210023, China"
+    },
+    {
+      "index": 14,
+      "text": "^{5} Department of Physics, Beijing Normal University, Beijing 100875, China\n\n^{6} Institute of Physics, Chinese Academy of Science, Beijing National Laboratory of Condensed Matter Physics, Beijing 100190, China"
+    },
+    {
+      "index": 15,
+      "text": "^{7} School of Materials Science and Engineering, Tsinghua University, Beijing 100084, China\n\n^{#} These authors contributed equally: Junxiong Guo, Shuyi Gu, and Lin Lin"
+    },
+    {
+      "index": 16,
+      "text": "* Corresponding authors\n\nE-mail addresses: guojunxiong@cdu.edu.cn (J.X. Guo), y-liu-17@tsinghua.org.cn (Y. Liu), uestchw@uestc.edu.cn (W. Huang), and jxzhang@bnu.edu.cn (J.X. Zhang)"
+    },
+    {
+      "index": 17,
+      "text": "# Abstract\n\nMultichannel meta-imaging, inspired by the parallel-processing capability of neuromorphic computing, offers significant advancements in resolution enhancement and edge discrimination in imaging systems, extending even into the mid- to far-infrared spectrum. Currently, high-performance multichannel infrared imaging systems typically consist of separate detector arrays and gratings or multi-camera integration, which require complex circuit design and heavy power consumption, hindering the implementation of advanced human-eye-like imagers. Here, we present a novel approach for printable graphene plasmonic photodetector arrays with zero-bias operation driven by a ferroelectric superdomain for multichannel meta-infrared imaging with enhanced edge discrimination. The fabricated photodetectors exhibited multiple spectral responses by directly rescaling the ferroelectric superdomain instead of reconstructing the gratings. We also demonstrated enhanced and faster shape classification (98.1%) and edge detection (98.2%) using our multichannel infrared images compared with single-channel detectors. Our proof-of-concept photodetector arrays simplify multichannel infrared imaging systems and hold great potential for applications in efficient edge detection in human-brain-type machine vision."
+    },
+    {
+      "index": 18,
+      "text": "Keywords: multichannel infrared imaging, meta-imaging, ferroelectric superdomain, deep learning, edge detection"
+    },
+    {
+      "index": 19,
+      "text": "Infrared imaging systems can convert infrared radiation into human-eye-recognizable pseudoviews and are used in diverse applications, including security, surveillance, environmental monitoring, industrial inspections, and medical and health diagnoses^{1--4}. Current advanced infrared imaging systems are typically based on focal plane array (FPA) infrared sensors and have shown great potential for target perception^{5}. However, fundamental challenges remain in achieving ultra-high resolution beyond the optical diffraction limit and in bias operation with low power consumption for hardware implementation. The human visual system can excel at rapidly and accurately identifying objective features, such as color, depth, and edges, in complex environments through the parallel processing of input light signals (Fig. 1a), and has allowed for the future manufacturing of artificial vision^{6--9}. Inspired by this, recent efforts have been devoted to collecting multichannel information in terms of hardware, such as heat-assisted detection and ranging (HADAR) and meta-imagers, to enhance infrared image resolution and recognition efficiency^{10, 11}. This inevitably faces common limitations in addition to separating grating or sensor components, which necessitates a complex circuit design."
+    },
+    {
+      "index": 20,
+      "text": "Regarding the smart perception of future infrared imaging development, graphene plasmonic photodetectors have become a promising candidate for large-scale integration into optoelectronic networks, as they directly detect infrared light with a tunable spectral response and make possible multipixel read-out circuits. Previous experiments demonstrated the excitation and tuning of plasmons in patterned graphene using traditional electrostatic gating techniques, resulting in infrared light detection with a tunable and selective response^{12--15}. However, achieving high-quality patterned graphene remains a challenge because of the inevitable edge disorder and amorphization that occur during the patterning process using standard techniques such as chemical vapor deposition (CVD) growth, lithography, and ion/chemical etching^{16--18}. Although alternative approaches have shown promise for modulating surface plasmons in continuous graphene through substrate patterning or metal gratings^{19--21}, precise spatial modulation of the charge carrier density of graphene for tunable infrared light detection has remained challenging. Furthermore, current graphene plasmonic photodetectors employing top- or back-gate layers face common limitations in terms of complex fabrication of contact electrodes and high power consumption^{16, 22, 23}."
+    },
+    {
+      "index": 21,
+      "text": "Ferroelectric superdomains, characterized by nanoscale domains with alternating up/downward polarization arrays, have the advantage of spatially manipulating the graphene carrier density at nanoscale resolution to construct nonuniform conductivity patterns, thereby confining graphene"
+    },
+    {
+      "index": 22,
+      "text": "plasmons for enhanced infrared detection with a tunable spectral response $^{24-26}$ , suggesting its unique potential for nanophotonic applications. In this study, we designed a simple two-terminal zero-bias multichannel array (MCA) detector by artificially type-printing graphene carrier density using  $\\mathrm{BiFeO_3}$  (BFO) superdomains with hundreds-nanoscale-wide stripes for a meta-infrared imaging application. Raman signal-based spatial monitoring of the carrier density indicates that non-uniform patterning of graphene conductivity can be achieved by reconfiguring the ferroelectric superdomain. When operating at zero-bias voltage and room temperature, our device array exhibited tunable transmission spectra and selective responsivity in the mid-infrared region. Importantly, we demonstrate the integration of MCA photodetectors for infrared imaging applications, showing enhanced recognition accuracy for both overall target shapes and edge detection, along with faster training and recognition speeds compared to single-channel array (SCA) detectors."
+    },
+    {
+      "index": 23,
+      "text": "# Conceptual design of multichannel meta-infrared-imaging\n\nConventional infrared imaging using SCA sensors (Fig. S1a, Supporting Information), which uses a linear response to map the incident intensity, faces the fundamental challenge of achieving ultrahigh spatial resolution beyond the optical diffraction limit. Consequently, textureless images famously known as the \"ghosting effect\" are produced. Recent developments in multichannel imagers have demonstrated their ability to enhance imaging resolution. For example, the integration of different types of sensors (e.g., HADAR) allows an imaging system to mimic the parallel processing functions of the human eye. Recently, an alternative approach using multichannel meta-imagers with external angular gratings (Fig. S1b) was developed to accelerate the machine vision. However, both have complex spatial layouts; in particular, different devices require different bias voltages to drive, which significantly hinders the goal of achieving high energy efficiency."
+    },
+    {
+      "index": 24,
+      "text": "The scheme of the multichannel meta-infrared imaging technique using ferroelectric superdomain-printed photodetectors is illustrated in Fig. 1b. Unlike the integration of diverse cameras, the pixel points of our meta-imaging were engineered to achieve a parallel multichannel using a single aperture implemented with type-printing detectors. To ensure that the photodetector can provide selective photocurrents along with a multispectral response, we optimized the plasmonic sensing layer by rescaling the geometric shape of the ferroelectric superdomain into a 6-channel-pixel at an imaging point to avoid externally separated grating layouts. This approach can recognize a curled thumb (Fig. 1b and Fig. S1b), whereas the conventional approach using SCA detectors cannot (Fig. S1a)."
+    },
+    {
+      "index": 25,
+      "text": "![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\nFig. 1. Infrared imaging using type-printing multi-channel photodetector array."
+    },
+    {
+      "index": 26,
+      "text": "(a) Illustration of the human visual system. The optical pathways are depicted in the top and lateral views in the left and middle panels, demonstrating the components of the human visual system, including the eyes, connecting pathways to the visual cortex, and other regions of the brain. The schematic diagram of the retina in the right panel highlights its remarkable ability to process various types of input light information in parallel. (b) Schematic of the meta-infrared using type-printing photodetectors. The integrated sensing layer enables selective light detection with a multi-spectral response, which avoids externally separated grating filters."
+    },
+    {
+      "index": 27,
+      "text": "# Type-printing of photodetector\n\nAs early as the Qingli period of the Song Dynasty (1041-1048 AD), China's Bi Sheng (970-1051 AD) invented the clay type, marking the birth of the movable-type printing technique. Movable"
+    },
+    {
+      "index": 28,
+      "text": "printing is divided into the engraving, typesetting, and printing processes. Figure 2a illustrates the fabrication process and structure of the photodetector designed using the type-printing technique employed in this study (see Methods). Here, we used a conductive atomic force microscopy (AFM) probe (Bruker) with a platinum coating to create a ferroelectric superdomain, where the epitaxial ferroelectric BFO thin film was periodically switched to an adjacent up- and downward-striped domain array (step 1 corresponds to the engraving process of the type-printing technique). Additionally, the large-scale switching of ferroelectric superdomains was experimentally demonstrated in our previous study using a water-printing technique $^{27}$ . The crystal structure of the BFO thin film is depicted in Figs. 2b and c, obtained using annular bright-field (ABF) high-resolution scanning transmission electron microscopy (STEM). Under the microscope, the iron atoms (depicted as yellow spheres) shifted dramatically in the upward or downward domains, indicating a reversal in the direction of ferroelectric polarization. The phase difference between the adjacent domains was  $180^{\\circ}$ , as characterized by piezoelectric force microscopy (PFM) (Fig. 2d). The period of polarized strips ( $W$ , length of adjacent up- and downward domains) was controlled from  $200\\mathrm{nm}$  to  $1\\mu \\mathrm{m}$  within the same BFO film. The widths of the upward and downward domains were equal within each period, that is, the width of the ferroelectric domain stripes ( $w$ ) ranged from 100 to  $500\\mathrm{nm}$ ."
+    },
+    {
+      "index": 29,
+      "text": "Next, we transferred the CVD-grown single-layer graphene onto the BFO film (Step 2, corresponding to the printing process of the type-printing technique) using the wet transfer method $^{28}$ . Subsequently, we employed a noncontact Raman spectroscopy monitoring technique to evaluate the doping level of graphene induced by the electrostatic effect of remnant polarization in the ferroelectric domains. The spatially resolved Raman G-band frequency shifts were used as probes for detecting the graphene carrier density $^{29}$ . In Fig. 2e, Raman G-band frequency mapping revealed periodic stripes with lower and higher frequencies, corresponding to the upward and downward domains, respectively. Additionally, Raman shift analysis (Fig. S2) showed a high 2D-to-G peak intensity ratio  $(I_{\\mathrm{2D}} / I_{\\mathrm{G}} = 2.15)$  and a low D-band intensity, confirming the high-quality and single-layer characteristics of the transferred graphene. Furthermore, comparative analysis of the Raman G-band for graphene on various BFO substrates (Fig. S3a) demonstrated that the behavior of graphene on BFO with an upward domain is similar to that of a pristine BFO film, whereas the behavior differs significantly in the downward domain."
+    },
+    {
+      "index": 30,
+      "text": "To facilitate photocurrent collection and reduce contact resistance, source/drain electrodes were deposited on the graphene sheet (step 3). Typically, if the source/drain electrodes are made of the"
+    },
+    {
+      "index": 31,
+      "text": "same metal, the device exhibits an overall zero photocurrent. In this study, we employed an asymmetric metal-doping scheme to disrupt the symmetric built-in electric field profile in the graphene channel, following a previous study on metal-graphene-metal operation at zero bias between the source and drain $^{30}$ . Specifically, we deposited 20-nm-thick layers of palladium (Pd) and titanium (Ti) onto a graphene sheet and covered it with an 80-nm-thick layer of gold (Au) on the contact electrodes. A magnified scanning electron microscopy (SEM) image of the active region of the as-fabricated device is presented in Fig. 2f, and the raw SEM image is shown in Fig. S4."
+    },
+    {
+      "index": 32,
+      "text": "Figure 2g shows the average Raman G-band frequency of graphene on BFO with a striped domain width of  $500\\mathrm{nm}$ . The peak position of the G-band (POG) in Raman shift for graphene on upward and downward domains were 1,586 and  $1,597\\mathrm{cm}^{-1}$  respectively. The periodic Raman frequency shifted from lower to higher frequencies, suggesting that graphene experienced a sharp transition from lower to higher carrier concentrations at the edges of the upward/downward domains[19, 20], confirming the feasibility of spatial printing of graphene carrier density without patterning of graphene sheets. Periodic patterns of graphene carrier-density modulation offer a novel approach for type-printing multiple parallel p-i junctions in a continuous graphene sheet without destroying the graphene sheet or applying complex gating electrodes (Fig. 2h). Owing to the reversible and nonvolatile characteristics and nanoscale size of the ferroelectric domain, this strategy of integrating continuous graphene with a ferroelectric superdomain provides a novel approach for printing graphene carrier density into desired patterns, enabling graphene plasmonic resonance and enhancing the photocurrent in the mid- to far-infrared ranges."
+    },
+    {
+      "index": 33,
+      "text": "To better understand our goal to achieve selective light detection beyond broadband wavelength response in the designed device, we introduced a plasmonic resonance model (Fig. 2i) in a graphene/BFO superdomain hybrid structure with electromagnetic field simulation using finite element analysis. Figures 2j and k illustrate the simulated cross-sections of the electric field intensity in our device, and detailed numerical simulation procedures are presented in Supplementary sections S1-S3. In this scenario, we set the chemical potential  $(\\mu_{\\mathrm{c}} = E_{\\mathrm{F}})$  of graphene doping by upward and downward domains with a width of  $500~\\mathrm{nm}$  as  $+121\\mathrm{meV}$  and  $-448\\mathrm{meV}$ , respectively. Here, it follows the formula of  $\\hbar \\Delta \\omega = \\alpha^{\\prime}|E_{\\mathrm{F}}|$  (ref. 29) as shown in Supplementary section S1, where  $\\hbar \\Delta \\omega$  and  $\\alpha^{\\prime}$  are the POG shift of graphene and the integral constant, respectively. The energy of the transverse-magnetic (TM) mode is strongly confined at the graphene/ferroelectric interface with ultra-"
+    },
+    {
+      "index": 34,
+      "text": "high enhanced electric field intensity. Although the energy flow enters the graphene structure on the upward ferroelectric domain, it is almost perfectly absorbed. This phenomenon might contribute to the electronic behavior near the upward and downward domains of doping graphene junctions. Importantly, for our designed plasmonic device, the resonance frequency  $(\\omega_{\\mathrm{spr}})$  could be easily regulated by rescaling the ferroelectric superdomain width  $(d)$  which follows eqn. (1),"
+    },
+    {
+      "index": 35,
+      "text": "$$\n\\omega_ {\\mathrm {s p r}} = \\left(\\frac {e ^ {2} E _ {\\mathrm {F}}}{2 \\pi \\hbar^ {2} \\varepsilon_ {0} \\varepsilon_ {\\mathrm {r}}} \\left(q _ {0} \\pm N \\frac {\\pi}{d}\\right)\\right) ^ {\\frac {1}{2}} \\tag {1}\n$$"
+    },
+    {
+      "index": 36,
+      "text": "where  $e, \\hbar, \\varepsilon_0, \\varepsilon_{\\mathrm{r}}$ , and  $q_{0}$  represent the element charge, reduced Planck constant, vacuum dielectric constant, relative dielectric constant of BFO, free space wave vector of incident light, and  $N = 1, 2, 3, \\ldots$ , respectively. A detailed derivation of the formula is provided in Supplementary section S4."
+    },
+    {
+      "index": 37,
+      "text": "![img-2.jpeg](img-2.jpeg)\n\n![img-3.jpeg](img-3.jpeg)\n\n![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)"
+    },
+    {
+      "index": 38,
+      "text": "![img-6.jpeg](img-6.jpeg)\n\n![img-7.jpeg](img-7.jpeg)\n\nFig. 2. Fabrication and architecture of graphene/BFO superdomain-based plasmonic photodetector."
+    },
+    {
+      "index": 39,
+      "text": "![img-8.jpeg](img-8.jpeg)\n\n![img-9.jpeg](img-9.jpeg)\n\n![img-10.jpeg](img-10.jpeg)\n\n![img-11.jpeg](img-11.jpeg)"
+    },
+    {
+      "index": 40,
+      "text": "(a) Schematic of the experimental setup for printing graphene/BFO superdomain-based plasmonic photodetector. The BFO film epitaxial growth on an STO substrate with a covering LSMO  $(\\mathrm{La}_x\\mathrm{Sr}_{1 - x}\\mathrm{MnO}_3)$  electrode layer. Cross-sectional view of transmission electron microscopy images of the downward domain (b) and upward domain (c) in BFO thin film, with a scale bar of  $5\\mathrm{nm}$ . (d) PFM phase image of BFO superdomain, showing the periodical ribbons patterned adjacent to upward and downward domains. (e) G-band frequency mapping for graphene on BFO superdomain with a"
+    },
+    {
+      "index": 41,
+      "text": "period of $1\\,\\mu\\mathrm{m}$. (f) SEM image of the active area of the fabricated graphene/BFO device. The fake color focuses on the graphene on the BFO film. (g) Averaged Raman frequencies for graphene on upward and downward domains, with solid lines representing the Lorentz fitting results. (h) Schematic of the device focusing on the graphene/BFO interface, illustrating the p-doped and near-intrinsic graphene behaviors on downward and upward domains, respectively. (i) Schematic of the graphene plasmon resonator architecture for a plane wave normally infrared incidence. GSPP represents graphene surface plasmon polaritons. (j, k) Simulated electric field intensity for graphene plasmon resonator by a three-dimensional model (j) and corresponding two-dimensional model (k). The excited GSPP is highly confining in the borders of upward/downward domains at the graphene/BFO interface. SLG denotes single-layer graphene."
+    },
+    {
+      "index": 42,
+      "text": "## Rescaling ferroelectric superdomain for multi-spectral response\n\nTo validate the performance of this printable architecture, we fabricated a device array on the same BFO thin film by rescaling the ferroelectric domain width (corresponding to the type-printing process). Two types of device arrays were fabricated (Fig. S5) to facilitate the optical (sample size of $5\\,\\mathrm{mm} \\times 5\\,\\mathrm{mm}$) and photoelectric (sample size of $10\\,\\mathrm{mm} \\times 10\\,\\mathrm{mm}$) measurements. Each unit contained six BFO stripes with domain widths ranging from 100 to $500\\,\\mathrm{nm}$. The optical and corresponding PFM phase images of the fabricated device array are shown in Fig. 3a. The AFM Raman images (Fig. 3b) and corresponding POG peaks (Fig. S3b) strongly support our idea of type-printing desired graphene carrier patterns by resetting the ferroelectric domain width."
+    },
+    {
+      "index": 43,
+      "text": "We then focused on the spectral response of graphene to the BFO superdomains of different widths. To achieve this, we used an AFM probe to direct incident light precisely to specific microregions. The transmission measurements are schematically illustrated in the inset of Fig. 3c, where $T$ and $T_0$ correspond to the transmission values of the BFO film epitaxially grown on the $\\mathrm{SrTiO_3}$ (STO) substrate with and without graphene, respectively. The measured extinction spectra of the graphene/BFO hybrid structures are shown in Fig. 3c. Within the periodically printed graphene stripes on the BFO superdomains, we observed two notable features. First, a remarkably selective resonant peak appeared with domain widths ranging from 100 to $500\\,\\mathrm{nm}$. Second, the resonant peaks shifted from low frequency ($1084\\,\\mathrm{cm}^{-1}$) to high frequency ($1292\\,\\mathrm{cm}^{-1}$) with a decreasing domain period. The coincidence between the blue-shift phenomenon and Equation (1) can be attributed to the matching of the wave vector of the incident wave in free space and the wave vector of the excited GSPP, thereby forming a resonant coupling effect."
+    },
+    {
+      "index": 44,
+      "text": "The photocurrent of the device array was measured using an automated wavelength-tuning laser to generate incident signals that were added to the graphene sheet at a $90^{\\circ}$ angle (in the vertical"
+    },
+    {
+      "index": 45,
+      "text": "direction) with a zero-bias voltage. All the photocurrents were obtained by averaging the peak values from 12 points under illumination at different wavelengths. The highest photocurrent in each cell was achieved near the resonant wavelength (Fig. 3d). Additionally, we investigated the photoresponsivity using  $R = I_{\\mathrm{ph}} / P_{\\mathrm{in}}$ , where  $I_{\\mathrm{ph}}$  and  $P_{\\mathrm{in}}$  represent the photocurrent and incident laser power, respectively. The plots in Fig. 3d demonstrate that our device array exhibits a significantly selective detection factor  $\\beta$ , which is the ratio of the highest and lowest photoresponsivity values in each cell."
+    },
+    {
+      "index": 46,
+      "text": "We then discussed the performances of typical infrared photodetectors based on emerging materials operating at room temperature, as shown in Fig. 3e. Compared to previously reported metal plasmon-enhanced graphene photodetectors, such as metal-graphene-metal structure $^{30}$ , the intrinsic plasmons in patterned graphene offer an incomparable advantage in the mid-infrared range. Its surface plasmons can be used to resonantly enhance the absorption for tunable photodetection controlled by the grating effect, providing appealing spectral selectivity with ultra-high tunability $^{15}$ . For the photodetector demonstrated herein, it achieved an enhanced photoresponsivity of approximately 30 mA W $^{-1}$ . While this photoresponsivity was not the highest recorded among current infrared photodetectors using emerging materials $^{31}$ , it was comparable to that of conventional graphene plasmonic devices for mid-infrared detection based on nanopatterned graphene photograting structures $^{31-34}$ . This can be attributed to the effective plasmon excitations and perfect crystallinity of the graphene sheet, with the latter effectively reducing light scattering compared to nanopatterned graphene. Another interesting phenomenon is that the device we designed can operate at zero bias voltage, with its detection range within the IR-C band (3 \u03bcm to 1 mm, CIE 17-21-004, https://cie.co.at/eilvterm/17-21-004). This coincided with the biological thermal radiation, particularly the fact that over 50% of the energy emitted by the human body was concentrated in the range of 8 to 14 \u03bcm, which our device could handle. Furthermore, the convenience of printing graphene carrier-density patterns by switching ferroelectric domains at the nanoscale without the need for complex nanofabrication, as seen in conventional graphene plasmonic devices, allows for a remarkably selective response over broadband wavelengths and features a simple multi-channel array integration for light detection in the infrared region. The characteristics exhibited by our device provide a promising route for advanced multi-channel infrared imaging that combines low power consumption with high recognition capability, as mentioned earlier."
+    },
+    {
+      "index": 47,
+      "text": "![img-12.jpeg](img-12.jpeg)\n\n![img-13.jpeg](img-13.jpeg)\n\n![img-14.jpeg](img-14.jpeg)\n\nFig. 3. Characterization of type-printing detector array.\n![img-15.jpeg](img-15.jpeg)\n(a) Integrating graphene photodetector array onto BFO film. The middle column is the optical image of the fabricated device array with a ferroelectric domain width ranging from 100 to  $500\\mathrm{nm}$ . The top and bottom columns are the PFM phase images of the corresponding BFO superdomains. (b) AFM-Raman mapping images for graphene carrier density printed by rescaling BFO superdomain. (c) Tunable transmission extinction spectra  $(1 - T / T_0)$  for graphene by rescaling BFO superdomain. (d) Photocurrent and normalized responsivity  $(R_{\\mathrm{max}} / R_{\\mathrm{min}})$  as functions of incident wavelength depending on the width of the BFO superdomain. (e) Comparison of responsivity with typical types of infrared photodetectors using metal-semiconductor-metal structure working at room temperature. The data were collected from refs. 31-34."
+    },
+    {
+      "index": 48,
+      "text": "![img-16.jpeg](img-16.jpeg)\n\n# Multichannel infrared imaging for enhancing edge detection\n\nTo evaluate the imaging capability of the fabricated array of infrared photodetectors, we used the OPENZYNQ open-source project (https://github.com/openzynqhardware/openzynq.git) to simulate the process. A schematic of the simulation procedure is shown in Fig. S6. For data collection, we employed a commercial Melexis infrared camera with  $192 \\times 144$  pixels to capture the desired temperature. The simulations have already been demonstrated for both the SCA with a ferroelectric"
+    },
+    {
+      "index": 49,
+      "text": "domain width of  $500\\mathrm{nm}$  and MCA with ferroelectric domain widths ranging from 100 to  $500\\mathrm{nm}$  (Fig. 4a and Figs. S7-S9). We observed that MCA detectors excel at recognizing inner edge profiles such as curled fingers and overlapped leaves, whereas SCA detectors fall short in this regard. The images generated by the MCA showed a more pronounced temperature difference between the regions of the fingers and palms, indicating that the MCA can identify more complex edge features of the targets when processing images."
+    },
+    {
+      "index": 50,
+      "text": "An off-chip learning task involving the classification of gesture images (0-5, as shown in Fig. 4a) was conducted to evaluate the learning capability of the MCA detectors in infrared imaging. The training accuracies for gesture recognition were  $99.2\\%$  and  $100\\%$  based on the SCA and MCA detectors, respectively, after 3,600 iterations (Fig. 4b). The MCA detectors exhibited a significantly faster training speed than the SCA detectors because of the intrinsic differences between the edge profiles. However, we analyzed the changes in classification accuracy over 100 epochs for gesture recognition, with each epoch consisting of 3,600 iterations. Figure 4c reveals two key findings. First, when dealing with a small sample size, the MCA performs better than the SCA in gesture recognition accuracy. For example, at 10 epochs, the recognition accuracies of the MCA-based- and SCA-based detectors were  $96.7\\%$  and  $63.7\\%$ , respectively. At 40 epochs, they reach  $97.8\\%$  and  $88.9\\%$ , respectively. Second, when faced with a large sample size, the difference in gesture recognition accuracies between the two methods became small. For example, at 100 epochs, the recognition accuracies of the MCA and SCA were  $98.1\\%$  and  $93.2\\%$ , respectively."
+    },
+    {
+      "index": 51,
+      "text": "The second important application of MCA detectors is enhanced edge detection, which was demonstrated using an off-chip learning task involving the recognition of curled fingers. As shown in Fig. 4a, the curled finger edges extracted from the infrared images using the MCA method are much more distinct than the SCA, which failed to capture them. The same trend was observed in the images of the overlapped leaves (Fig. S7). The results of training in the presence and absence of curled fingers showed that the MCA and SCA methods had training accuracies of  $76.3\\%$  and  $99.8\\%$ , respectively (Fig. 4d). This difference was much larger than that of the gesture training, with the discrepancies decreasing from  $0.8\\%$  to  $23.5\\%$ . Similar to gesture training, the MCA detectors exhibited a significantly faster training speed than the SCA detectors for curled fingers. More importantly, during curled finger recognition, after 100 epochs, the recognition accuracy of the MCA approach reached a high level of  $98.2\\%$ , whereas that of the SCA remained at approximately  $69.7\\%$  (Fig. 4e). These results further demonstrate that the MCA method can significantly improve the accuracy of target"
+    },
+    {
+      "index": 52,
+      "text": "recognition in infrared imaging at the hardware level, particularly by enhancing the edge detection accuracy in complex environments."
+    },
+    {
+      "index": 53,
+      "text": "![img-17.jpeg](img-17.jpeg)\nFig. 4. Applications of type-printing detectors in gesture infrared imaging and recognition."
+    },
+    {
+      "index": 54,
+      "text": "![img-18.jpeg](img-18.jpeg)\n\n![img-19.jpeg](img-19.jpeg)\n\n![img-20.jpeg](img-20.jpeg)\n\n![img-21.jpeg](img-21.jpeg)"
+    },
+    {
+      "index": 55,
+      "text": "(a) Infrared imaging for different gestures with single- and multi-channel array of type-printing photodetectors. (b, c) Evolution of classification accuracy over 100 epochs for gesture recognition, with each epoch consisting of 1,000 iterations. (d, e) Changes in the classification accuracy over 100 epochs for curled finger recognition, with each epoch including 1,000 iterations."
+    },
+    {
+      "index": 56,
+      "text": "# Conclusions\n\nWe developed a printable photodetector array by integrating monolayer graphene with a BFO thin film that features a nanoscale-wide stripe superdomain and demonstrated that this type of device array is designed for multichannel meta-infrared imaging applications and offers significant enhancement of edge detection. Graphene was monitored non-contactfully for dopants using Raman shifts, and doping patterns on ferroelectric superdomains were observed at the nanoscale. The printable photodetectors operated at a zero-bias voltage and exhibited a high photoresponsivity of approximately  $30\\mathrm{mA}\\mathrm{W}^{-1}$  at room temperature. This can be attributed to the resonant coupling of graphene plasmons with incident light. Moreover, the device arrays exhibited a selective response in the mid-infrared region through direct rescaling of the BFO superdomain width under ambient conditions. This work demonstrates the precise spatial control of graphene carrier density by reversing the ferroelectric domains at the nanoscale. The excellent compatibility of graphene sheets with different substrates offers several advantages over conventional devices that rely on complex"
+    },
+    {
+      "index": 57,
+      "text": "nanofabrication techniques. Additionally, we proved that multichannel array detectors can enhance shape and edge detection in infrared imaging. These features allow for future integrated optoelectronic platforms with simple circuit designs and low power consumption."
+    },
+    {
+      "index": 58,
+      "text": "## Methods\n\n### BFO film epitaxial growth\n\nBFO thin films were epitaxially grown on (001)-oriented STO substrates with LSMO as the bottom electrode using pulsed laser deposition. For the deposition of both LSMO and BFO films, a KrF excimer laser, with 248 nm wavelength, 5 Hz repetition rate, and ~1.5 J cm^{-2} energy density, was employed. The films were grown in an atmosphere of 0.2 mbar oxygen pressure at 700 \u00b0C. The thicknesses of the films were maintained at approximately 25 nm."
+    },
+    {
+      "index": 59,
+      "text": "### Device fabrication\n\nFor ferroelectric polarization switching, the upward and downward domains were switched by scanning the surface with a nanotip under a +12 V (-12 V) bias exceeding the coercive voltage (Fig. 1a, step 1). For the convenience of guiding the incident light to specific areas and fixing the active illuminating regions, the BFO film was patterned into an array with a fixed area, and the etched depth was controlled at approximately 10 nm in each unit using reactive ion etching (RIE) before polarization."
+    },
+    {
+      "index": 60,
+      "text": "Single-layer graphene was transferred onto a BFO film using an improved wet method [28] (Fig. 1a, step 2). Briefly, the polymethyl methacrylate (PMMA, Aladdin) solution (20 mg mL^{-1}) was spin-coated on CVD-grown monolayer graphene/copper foils (SixCarbon Technology Shenzhen) at 3,000 rpm for 30 s and dried at 120 \u00b0C for 90 s in air. Ammonium persulfate (0.1 M) was used to etch the copper substrate, and the PMMA/graphene film was washed several times with deionized water to remove the etchant residue. The prepolarized BFO film was then placed in water at a tilting angle underneath the PMMA/graphene film to support it. After drying in air, the PMMA was removed with an acetone bath at 50 \u00b0C and washed with ethanol. The monolayer graphene was etched to the same area as the marked BFO using oxygen plasmons. Subsequently, the Au/Ti and Au/Ni source and drain electrodes were deposited on the border of the graphene to fabricate the device (Fig. 1a, step 3). The thicknesses of the Au layer and Ti and Pd layers were 80 and 20 nm, respectively."
+    },
+    {
+      "index": 61,
+      "text": "### Measurements\n\nPFM experiments were performed under ambient conditions at room temperature using an Infinity Asylum Research AFM instrument. The crystal structures of BFO were determined using TEM (JEOL 2100F) operated at 200 keV and equipped with a probe aberration"
+    },
+    {
+      "index": 62,
+      "text": "corrector (CEOS) and double spherical aberration (Cs) correctors. The spatial resolution of the microscope reached 90 pm at an incident semiangle of 20 mrad. Subsequently, a fast Fourier transform multislice approach was used for the STEM configuration. Raman-AFM mapping images and the corresponding spectral data in the same region were acquired using a fully integrated system based on the Smart SPM state-of-the-art scanning probe microscope and XploRA Raman microspectrometer (HORIBA). In all cases, 532 nm laser excitation and tip-enhanced Raman spectroscopic resolution were used. The transmission spectra were collected using a Spotlight 200i FT-IR Microscopy System (PerkinElmer Inc.) with a spot resolution better than 10 \u03bcm. The photocurrents were performed using a Keithley 4200A-SCS Parameter Analyzer (Tektronix), and the incident source was produced by a tunable laser (EKSPLA, 2.3\u201310 \u03bcm), at zero bias voltage between the contact electrodes. The laser intensities, including the Raman and electrical measurements, were set below 1 mW to avoid artifacts caused by laser-induced heating. All measurements were performed in ambient air at room temperature."
+    },
+    {
+      "index": 63,
+      "text": "Numerical simulations. The electrical properties of graphene were calculated using random phase approximation (RPA), and the dynamic optical response of graphene was derived from the Kubo formula (Supplementary Section S2) (ref. 35, 36). Electromagnetic field simulation was performed using the finite element method (Supplementary Section S3). Infrared imaging simulations were performed using an open-resource project, and the details are shown in Supplementary Section S5."
+    },
+    {
+      "index": 64,
+      "text": "## Acknowledgments\n\nThe authors thank Ms. Xiaoxu Lai and Prof. Ronghui Guo from Sichuan University for their support with the Raman mapping and photocurrent measurements. We also thank Dr. Prof. Lei Bi from the University of Electronic Science and Technology of China for discussions on spectral response. This work was financially supported by the National Natural Science Foundation of China (Grant Nos. 62371095, 62201096, and 62074029), National Key Research and Development Program of China (Grant No. 2022YFB3206100), Key R&amp;D Program of Sichuan Province (Grant Nos. 2022ZHCG0041, 2022JDTD0020, and 2022YFG0163), Natural Science Foundation of Sichuan Province (Grant Nos. 24NSFSC0409 and 2022NSFSC0652), and Aeronautical Science Foundation (Grant No. 20200024080001)."
+    },
+    {
+      "index": 65,
+      "text": "# Author contributions\n\nJ. G., Y. L., W. H., and J. Z. conceived and designed the experiments. Y.T., Y.Z., and J.Z. provided the epitaxially grown BFO films. Y.T. and Y.Z. wrote the ferroelectric superdomain using a type-printing technique and characterized the PFM images. J. G., Y. L., and L. L. fabricated the devices. Q. Z. and L. G. conducted high-resolution TEM characterization. L. L. conducted SEM characterization. J. G. and L. L. conducted the Raman characterization and optical transmission measurements. J. G. and L. L. conducted the photodetection experiments. J. G., Y. L., L. L., J. C., Z. L., and Y. Z. performed the theoretical models and calculations for the electromagnetic field simulations. J. G., S. G., Y. L., and H. C. designed and performed the infrared imaging and deep learning. J. G., Y. L., X. Z., Yuan. L., W. H., and J. Z. analyzed the data. J. G., Y. L., W. H., and J. Z. supervised the experiments. J. G. and Y. L. wrote the paper and Supporting Information. All authors participated in the data analysis and discussion of this work."
+    },
+    {
+      "index": 66,
+      "text": "# Competing interests\n\nThe authors declare no competing interests.\n\n# Data availability\n\nData supporting the findings of this study are available from the corresponding authors upon request."
+    },
+    {
+      "index": 67,
+      "text": "# Additional information\n\n## Supporting information\n\nSupplementary sections S1-S6 and Figs. S1-S9.\n\n# References"
+    },
+    {
+      "index": 68,
+      "text": "1. Ding Y.C., et al. Uncooled self-powered hemispherical biomimetic pit organ for mid- to long-infrared imaging. Sci Adv. 8, eaba8432 (2022).\n2. Zhao Y., et al. High-speed scanless entire bandwidth mid-infrared chemical imaging. Nat Commun. 14, 3929 (2023).\n3. He H.J., et al. Mapping enzyme activity in living systems by real-time mid-infrared photothermal imaging of nitrile chameleons. Nat Methods. https://doi.dx.org/10.1038/s41592-41023-02137-x (2024).\n4. Rodrigo D., et al. Mid-infrared plasmonic biosensing with graphene. Science. 349, 165-168 (2015).\n5. Martyniuk P., et al. New concepts in infrared photodetector designs. Applied Physics Reviews. 1, (2014).\n6. Mennel L., et al. Ultrafast machine vision with 2D material neural network image sensors. Nature. 579, 62-66 (2020).\n7. Jordan M.I., Mitchell T.M. Machine learning: Trends, perspectives, and prospects. Science. 349, 255-260 (2015).\n8. Hippalgaonkar K., et al. Knowledge-integrated machine learning for materials: lessons from gameplaying and robotics. Nat Rev Mater. 8, 241-260 (2023).\n9. Rahwan I., et al. Machine behaviour. Nature. 568, 477-486 (2019)."
+    },
+    {
+      "index": 69,
+      "text": "10. Bao F., et al. Heat-assisted detection and ranging. Nature. 619, 743-748 (2023).\n11. Zheng H., et al. Multichannel meta-imagers for accelerating machine vision. Nat Nanotechnol. http://dx.doi.org/10.1038/s41565-41023-01557-41562 (2024).\n12. Freitag M., et al. Photocurrent in graphene harnessed by tunable intrinsic plasmons. Nat Commun. 4, 1951 (2013).\n13. Yan H., et al. Damping pathways of mid-infrared plasmons in graphene nanostructures. Nat Photonics. 7, 394 (2013).\n14. Yan H., et al. Tunable infrared plasmonic devices using graphene/insulator stacks. Nat Nanotechnol. 7, 330-334 (2012).\n15. Guo Q., et al. Efficient electrical detection of mid-infrared graphene plasmons at room temperature. Nat Mater. 17, 986 (2018).\n16. Low T., Avouris P. Graphene plasmonics for terahertz to mid-infrared applications. ACS Nano. 8, 1086-1101 (2014).\n17. Novoselov K.S., et al. A roadmap for graphene. Nature. 490, 192-200 (2012).\n18. Ferrari A.C., et al. Science and technology roadmap for graphene, related two-dimensional crystals, and hybrid systems. Nanoscale. 7, 4598-4810 (2015).\n19. Echtermeyer T.J., et al. Strong plasmonic enhancement of photovoltage in graphene. Nat Commun. 2, 458 (2011).\n20. Fang Z.Y., et al. Plasmon-induced doping of graphene. ACS Nano. 6, 10222-10228 (2012).\n21. Poumirol J.-M., et al. Electrically controlled terahertz magneto-optical phenomena in continuous and patterned graphene. Nat Commun. 8, 14626 (2017).\n22. Koppens F.H., et al. Photodetectors based on graphene, other two-dimensional materials and hybrid systems. Nat Nanotechnol. 9, 780-793 (2014).\n23. Long M., et al. Progress, challenges, and opportunities for 2D material based photodetectors. Adv Funct Mater. 29, 1803807 (2019).\n24. Spaldin N.A., Ramesh R. Advances in magnetoelectric multiferroics. Nat Mater. 18, 203-212 (2019).\n25. Baek S.H., et al. Ferroelastic switching for nanoscale non-volatile magnetoelectric devices. Nat Mater. 9, 309-314 (2010).\n26. Langenberg E., et al. Strain-engineered ferroelastic structures in  $\\mathrm{PbTiO_3}$  Films and their control by electric fields. ACS Appl Mater Inter. 12, 20691-20703 (2020).\n27. Tian Y., et al. Water printing of ferroelectric polarization. Nat Commun. 9, 3809 (2018).\n28. Suk J.W., et al. Transfer of CVD-grown monolayer graphene onto arbitrary substrates. ACS Nano. 5, 6916-6924 (2011).\n29. Pisana S., et al. Breakdown of the adiabatic Born-Oppenheimer approximation in graphene. Nat Mater. 6, 198-201 (2007).\n30. Mueller T., et al. Graphene photodetectors for high-speed optical communications. Nat Photonics. 4, 297-301 (2010).\n31. Liu C., et al. Silicon/2D-material photodetectors: from near-infrared to mid-infrared. Light Sci Appl. 10, 123 (2021).\n32. Goldstein J., et al. Waveguide-integrated mid-infrared photodetection using graphene on a scalable chalcogenide glass platform. Nat Commun. 13, 3915 (2022).\n33. Liu W., et al. Graphene charge-injection photodetectors. Nat Electron. 5, 281-288 (2022).\n34. Guo Q., et al. Efficient electrical detection of mid-infrared graphene plasmons at room temperature. Nat Mater. 17, 986-992 (2018).\n35. Hwang E., et al. Carrier transport in two-dimensional graphene layers. Phys Rev Lett. 98, 186806 (2007).\n36. Stauber T. Plasmonics in Dirac systems: from graphene to topological insulators. J Phys-Condens Mat. 26, 123201 (2014)."
+    },
+    {
+      "index": 70,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- supplementaryinformationv2.pdf"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The paper introduces a genuinely interesting idea \u2014 using BFO ferroelectric superdomains to type-print graphene carrier-density patterns and so build a zero-bias multichannel mid-infrared photodetector \u2014 and the core device-physics story (Raman G-band mapping, eqn (1) plasmon dispersion, ~30 mA/W at room temperature) is plausible and worth revising. The most serious concerns are not about the materials platform but about the imaging-application claims: the headline 98.1% / 98.2% numbers are obtained on a commercial Melexis FPA with two software pipelines simulating MCA vs SCA, the MCA-vs-SCA comparison does not control for the fact that the classifier sees 6x more input features in the MCA case, the curled-finger 'training accuracies' look label-swapped, and key reproducibility details (dataset, classifier, RPA/FEM parameters, alpha' constant, contact-metal identity) are missing from the main text. Notation (W vs w vs d, Pd vs Ti vs Ni, IR-C vs mid-IR, 1,000 vs 3,600 iterations per epoch) is internally inconsistent. These issues are fixable through clearer reporting, an input-dimensionality control, and either a passive-thermal demonstration or softer language around 'human-eye-like' and IR-C operation; none of them threaten the underlying device contribution.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Curled-finger training accuracies are inverted between MCA and SCA, contradicting the rest of the paper",
+          "quote": "The results of training in the presence and absence of curled fingers showed that the MCA and SCA methods had training accuracies of $76.3\\%$ and $99.8\\%$ , respectively (Fig. 4d).",
+          "explanation": "Throughout the paper MCA is presented as superior to SCA (gesture training: MCA 100% vs SCA 99.2%; curled-finger 100-epoch recognition: MCA 98.2% vs SCA 69.7%). Yet on the same curled-finger task, training accuracies are reported as MCA 76.3% and SCA 99.8% \u2014 the opposite ordering. The very next sentence ('the discrepancies decreasing from 0.8% to 23.5%') is consistent with MCA leading by 23.5 pp (99.8-76.3), which strongly suggests the labels in the previous sentence are swapped. Furthermore, '0.8% to 23.5%' is described as 'decreasing' even though 23.5 > 0.8, compounding the editorial confusion. Because this passage is the headline edge-detection evidence, the inversion materially affects how a reader interprets the central application claim and must be corrected.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 51
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Imaging benchmark uses a commercial Melexis FPA, not the fabricated MCA detector \u2014 the headline 98.1% / 98.2% gains are software-vs-software comparisons",
+          "quote": "For data collection, we employed a commercial Melexis infrared camera with $192 \\times 144$ pixels to capture the desired temperature. The simulations have already been demonstrated for both the SCA with a ferroelectric domain width of $500\\mathrm{nm}$ and MCA with ferroelectric domain widths ranging from 100 to $500\\mathrm{nm}$ (Fig. 4a and Figs. S7-S9).",
+          "explanation": "Section 'Multichannel infrared imaging' presents Fig 4 as evidence that the printable MCA enhances edge detection, and the abstract says 'shape classification (98.1%) and edge detection (98.2%) using our multichannel infrared images compared with single-channel detectors'. But the actual scenes are captured by a commercial Melexis 192x144 FPA, and the MCA / SCA outputs are then synthesized in OPENZYNQ from per-channel responsivity models. So the 98.1% / 98.2% numbers are obtained by two software pipelines on top of the same FPA, not by running the fabricated MCA against a fabricated SCA. The abstract and introduction phrasing leads readers to infer a hardware demonstration that did not happen, and any claim of 'faster training' carries the same caveat. This needs explicit acknowledgement in the abstract, results, and conclusions.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 48
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "Comparison between MCA and SCA does not control for input-dimensionality, confounding 'spectral channels' with 'wider classifier input'",
+          "quote": "First, when dealing with a small sample size, the MCA performs better than the SCA in gesture recognition accuracy. For example, at 10 epochs, the recognition accuracies of the MCA-based- and SCA-based detectors were $96.7\\%$ and $63.7\\%$ , respectively.",
+          "explanation": "MCA feeds a 6-channel-per-pixel tensor into the classifier; SCA feeds 1 channel per pixel. The classifier therefore sees 6x more features per spatial location with MCA, which alone explains faster convergence and higher small-sample accuracy even if every MCA channel were spectrally redundant. The standard control \u2014 replicating the SCA channel six times, or projecting MCA back to a single channel by averaging \u2014 is not run. Without this control, the gap (e.g., 33 pp at 10 epochs, 5 pp at 100 epochs) cannot be attributed to genuine spectral diversity. This confound undermines the central claim that the device's 'parallel processing' is what improves recognition, and it contaminates every numerical comparison in Fig 4 and the conclusions.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Imaging / simulation pipeline is described in two sentences; classifier architecture, dataset size, splits, and forward model are absent",
+          "quote": "we used the OPENZYNQ open-source project (https://github.com/openzynqhardware/openzynq.git) to simulate the process. A schematic of the simulation procedure is shown in Fig. S6.",
+          "explanation": "The strongest application claim depends entirely on the imaging simulation, yet the main text gives no information about: (i) the classifier (architecture, depth, loss, optimizer, regularization, learning rate); (ii) the dataset (number of gesture images per class, number of curled-finger images, total size, class balance, subject hold-out); (iii) the train/val/test split; (iv) the forward model that converts a Melexis frame into per-channel MCA outputs (which channel-response curves are used? do they include device-to-device variability or only the average curve?); and (v) the OPENZYNQ commit / configuration. Combined with the missing dataset and code (see the data-availability comment), the 98.1% / 98.2% numbers are not independently reproducible.",
+          "comment_type": "missing_information",
+          "severity": "major",
+          "paragraph_index": 48
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "Detection-band claim ('IR-C band, 3 microns to 1 mm') overstates the demonstrated operating window; biological-thermal claim has no passive measurement",
+          "quote": "Another interesting phenomenon is that the device we designed can operate at zero bias voltage, with its detection range within the IR-C band (3 \u03bcm to 1 mm, CIE 17-21-004, https://cie.co.at/eilvterm/17-21-004). This coincided with the biological thermal radiation, particularly the fact that over 50% of the energy emitted by the human body was concentrated in the range of 8 to 14 \u03bcm, which our device could handle.",
+          "explanation": "Two compounding problems. (1) The phrase 'detection range within the IR-C band (3 \u03bcm to 1 mm)' is technically true (the operating window is a subset of IR-C), but reads as if the device covers the full band. The device's measured plasmon resonance peaks span ~1084-1292 cm^-1, i.e. ~7.7-9.2 microns; the laser used (Methods 'Measurements') tunes only 2.3-10 microns. (2) The text immediately leverages this to claim relevance to human thermal radiation in 8-14 microns, but no passive measurement (e.g., a warm body in front of the device with no laser) is reported; the photocurrent characterization always uses an active laser source < 1 mW. The pivot from 'this band overlaps biological thermal radiation' to 'our device can handle it' is therefore an inferential leap unsupported by the experiments shown.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 46
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "'Epoch' is defined inconsistently: results paragraph says 3,600 iterations, Fig 4 captions say 1,000",
+          "quote": "we analyzed the changes in classification accuracy over 100 epochs for gesture recognition, with each epoch consisting of 3,600 iterations.",
+          "explanation": "The body of Section 'Multichannel infrared imaging' says each epoch is 3,600 iterations (and that gesture training reached its plateau 'after 3,600 iterations'). Fig 4 captions, however, state '100 epochs ... with each epoch consisting of 1,000 iterations' for both the gesture experiment (b, c) and the curled-finger experiment (d, e). Total training compute therefore differs by a factor of 3.6 depending on which definition is used, and the 'faster training speed' claim is unanchored. Either the body or the captions must be corrected.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Asymmetric contact-metal scheme is named inconsistently (Pd/Ti vs Au/Ti and Au/Ni) and the metals determine the zero-bias claim",
+          "quote": "Subsequently, the Au/Ti and Au/Ni source and drain electrodes were deposited on the border of the graphene to fabricate the device (Fig. 1a, step 3). The thicknesses of the Au layer and Ti and Pd layers were 80 and 20 nm, respectively.",
+          "explanation": "Section 'Type-printing' says the asymmetric contacts are 20 nm Pd and 20 nm Ti capped with 80 nm Au. Methods 'Device fabrication' instead names 'Au/Ti and Au/Ni' as the source and drain in one sentence, then names 'Ti and Pd layers' in the very next sentence \u2014 three different metals (Ti, Ni, Pd) within one paragraph. The work-function asymmetry between source and drain is the physical origin of the zero-bias photocurrent, so the choice (Pd/Ti ~5.2/4.3 eV vs Ti/Ni ~4.3/5.0 eV) materially affects the central claim. The reader cannot determine which configuration was actually fabricated and characterized.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 60
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "Stripe geometry: W (period), w (single-domain width), and d (in eqn 1) are used interchangeably across sections",
+          "quote": "The period of polarized strips ( $W$ , length of adjacent up- and downward domains) was controlled from $200\\mathrm{nm}$ to $1\\mu \\mathrm{m}$ within the same BFO film. The widths of the upward and downward domains were equal within each period, that is, the width of the ferroelectric domain stripes ( $w$ ) ranged from 100 to $500\\mathrm{nm}$ .",
+          "explanation": "Section 'Type-printing' defines W = period (200 nm-1 \u03bcm) and w = single-domain width (100-500 nm), with W = 2w. Eqn (1) uses a third variable d for 'ferroelectric superdomain width'. Fig 3a and Section 'Multichannel infrared imaging' both refer to 'a ferroelectric domain width' ranging '100 to 500 nm' for the MCA and 500 nm for the SCA \u2014 values that match w, not W. Because eqn (1) uses q ~ N pi/d, whether d is the period or the single-domain width changes predicted plasmon frequencies by a factor of ~2. The notation must be reconciled across the paper.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "POG-to-E_F conversion (mu_c = +121 meV upward, -448 meV downward) is asserted with no value of alpha' or pristine baseline",
+          "quote": "we set the chemical potential $(\\mu_{\\mathrm{c}} = E_{\\mathrm{F}})$ of graphene doping by upward and downward domains with a width of $500~\\mathrm{nm}$ as $+121\\mathrm{meV}$ and $-448\\mathrm{meV}$ , respectively. Here, it follows the formula of $\\hbar \\Delta \\omega = \\alpha^{\\prime}|E_{\\mathrm{F}}|$ (ref. 29)",
+          "explanation": "These chemical potentials drive the FEM simulation in Fig 2j-k and the predicted spectrum from eqn (1). They are derived from POG values 1586 cm^-1 (upward) and 1597 cm^-1 (downward), an 11 cm^-1 splitting. Converting that to E_F requires the integral constant alpha'; ref 29 gives a specific numerical value but the paper neither states alpha' nor identifies the pristine-graphene reference POG. The asymmetry |+121|:|-448| ~ 1:3.7 implies a substantial baseline shift between 'upward' and 'pristine' graphene, but that baseline is never stated in the main text. Without alpha' and the reference POG, the chemical potentials \u2014 and the simulation built on them \u2014 cannot be reproduced.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 33
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Photoresponsivity '~30 mA/W' is reported without wavelength, illumination intensity, device area, or per-cell breakdown",
+          "quote": "it achieved an enhanced photoresponsivity of approximately 30 mA W $^{-1}$ . While this photoresponsivity was not the highest recorded among current infrared photodetectors using emerging materials",
+          "explanation": "Responsivity for graphene plasmonic detectors depends sensitively on wavelength, illumination intensity (laser spot vs uniform flood), device active area, and operating temperature. The text reports a single rounded value, doesn't say which of the six MCA cells produced it, doesn't give the spot size (only that laser power < 1 mW), and doesn't normalize for area. Comparison plots in Fig 3e against refs 31-34 \u2014 including waveguide-integrated graphene detectors with multi-A/W responsivities \u2014 therefore cannot be evaluated for fairness. The conclusions section then drops the 'comparable, not highest' qualifier and calls 30 mA/W 'high', which compounds the issue.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 46
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Number of usable spectral channels is unclear; six cells share only ~200 cm^-1 of tuning with no FWHM or cross-talk reported",
+          "quote": "First, a remarkably selective resonant peak appeared with domain widths ranging from 100 to $500\\,\\mathrm{nm}$ . Second, the resonant peaks shifted from low frequency ($1084\\,\\mathrm{cm}^{-1}$) to high frequency ($1292\\,\\mathrm{cm}^{-1}$) with a decreasing domain period.",
+          "explanation": "The MCA pixel is described as 6-channel, but six resonance peaks span only 1084-1292 cm^-1 (~16% relative tuning). Typical graphene plasmonic linewidths in this regime are 50-100 cm^-1 (refs 13, 15), so adjacent peaks likely overlap heavily. The paper reports neither per-channel FWHM nor a measured cross-talk matrix. Because the 'six channels per pixel' framing supports the claim of replacing multi-grating / multi-camera systems, the practical channel count needs explicit characterization.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 43
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Numerical-simulations Methods paragraph defers all configuration details (RPA gamma, FEM mesh, BFO eps_r, OPENZYNQ classifier) to the supplement",
+          "quote": "Numerical simulations. The electrical properties of graphene were calculated using random phase approximation (RPA), and the dynamic optical response of graphene was derived from the Kubo formula (Supplementary Section S2) (ref. 35, 36). Electromagnetic field simulation was performed using the finite element method (Supplementary Section S3). Infrared imaging simulations were performed using an open-resource project, and the details are shown in Supplementary Section S5.",
+          "explanation": "Three different simulation chains are central to the paper's results. The Methods main-text covers them in three sentences and refers all parameters to supplementary sections: RPA scattering rate / temperature / Fermi velocity, FEM mesh resolution, BFO permittivity (eps_r), substrate boundary conditions, OPENZYNQ classifier architecture and training hyperparameters. Even acknowledging that supplements exist, key parameters that materially shift omega_spr (eps_r, gamma) and the test accuracies (classifier choice) belong in the main text given how prominently the simulation results are featured.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 63
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Dataset, code, and trained-model availability is too thin to support reproducibility of ML claims",
+          "quote": "Data supporting the findings of this study are available from the corresponding authors upon request.",
+          "explanation": "The paper points to a public OPENZYNQ repo for the simulation framework but does not link a specific commit, the gesture/curled-finger image dataset, the trained-model weights, or the training scripts. A 'Nature Communications'-class paper that reports headline ML accuracies (98.1% / 98.2%) and uses those numbers in the abstract should make the dataset and pipeline available. As described, the central application result cannot be independently reproduced.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 66
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Photocurrent measurements 'averaged from 12 points' with no error bars or device-to-device statistics",
+          "quote": "All the photocurrents were obtained by averaging the peak values from 12 points under illumination at different wavelengths.",
+          "explanation": "Twelve sample points per wavelength are averaged, but neither standard deviation nor inter-device reproducibility is reported. Given that the fabrication relies on AFM-tip-written stripes from 100 nm-1 \u03bcm, stripe-width variability and ferroelectric-polarization inhomogeneity are obvious reproducibility threats. Without error bars on Fig 3d, claims of 'remarkably selective' resonance and 'enhanced' photoresponsivity rest on a single curve per cell.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 45
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Selective detection factor beta is defined but never reported numerically",
+          "quote": "The plots in Fig. 3d demonstrate that our device array exhibits a significantly selective detection factor $\\beta$ , which is the ratio of the highest and lowest photoresponsivity values in each cell.",
+          "explanation": "Beta is presented as the figure of merit for spectral selectivity but no per-cell numerical value is given. Since spectral selectivity is the main differentiator versus broadband detectors (refs 30-34), an explicit beta per cell is the natural way to support the 'selective' framing and the 6-channel claim. Currently it is asserted qualitatively from Fig 3d.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 45
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Edge-detection 'gesture' and 'curled-finger' datasets: size, class balance, source, and split unspecified",
+          "quote": "An off-chip learning task involving the classification of gesture images (0-5, as shown in Fig. 4a) was conducted to evaluate the learning capability of the MCA detectors in infrared imaging.",
+          "explanation": "The number of training images per class, total dataset size, train/val/test split, and whether subjects/scenes were held out are not stated. Image collection method ('Melexis 192x144 IR camera') is described only at the system level. Standard ML reporting requires these basic statistics; without them it is impossible to judge whether 98.1% / 98.2% indicate genuine generalization or memorization of a small dataset.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "AFM type-printing throughput, yield, and write-time over 5 mm x 5 mm / 10 mm x 10 mm samples are not reported",
+          "quote": "we used a conductive atomic force microscopy (AFM) probe (Bruker) with a platinum coating to create a ferroelectric superdomain, where the epitaxial ferroelectric BFO thin film was periodically switched to an adjacent up- and downward-striped domain array (step 1 corresponds to the engraving process of the type-printing technique).",
+          "explanation": "AFM-tip writing of 100 nm stripes over the 5 mm x 5 mm or 10 mm x 10 mm samples described in Section 'Rescaling' is, in principle, an extremely slow serial process. The paper alludes to a 'water-printing' alternative (ref 27, Tian 2018) without saying which technique was used for which device, what the per-mm^2 write time is, or how stripe uniformity was verified. Because 'printable' / 'simple fabrication' is a headline benefit, this is a methodology gap that bears directly on the central scalability claim.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Pristine-graphene Raman baseline is qualitatively described but the POG value is in the supplement",
+          "quote": "comparative analysis of the Raman G-band for graphene on various BFO substrates (Fig. S3a) demonstrated that the behavior of graphene on BFO with an upward domain is similar to that of a pristine BFO film, whereas the behavior differs significantly in the downward domain.",
+          "explanation": "The asymmetric chemical-potential assignment (+121 / -448 meV) implicitly pegs the upward domain to a 'pristine' baseline, but the pristine POG value is not in the main text. Including it would let readers verify the conversion to E_F and would resolve why the asymmetry is so large. As written, this is a presentation oversight rather than an outright error.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Mid-IR / mid-to-far-IR / IR-C terminology is used interchangeably across sections",
+          "quote": "providing graphene plasmonic resonance and enhancing the photocurrent in the mid- to far-infrared ranges.",
+          "explanation": "The paper alternates between 'mid-infrared region' (Section 'Type-printing'), 'mid- to far-infrared ranges' (same section, near eqn (1)), and 'IR-C band (3 microns to 1 mm)' (Section 'Rescaling'). Mid-IR usually means ~3-8 microns, far-IR ~15-1000 microns, and IR-C is the CIE name spanning 3 microns-1 mm. The actual measured operating range is ~7.7-9.2 microns. Standardizing on a single phrase ('long-wave IR') tied to the demonstrated micron range would resolve the impression of a broader operating regime than was shown.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Equation (1): polarity sign in (q0 +/- N pi/d) and the role of N are not explained in the main text",
+          "quote": "$$\n\\omega_ {\\mathrm {s p r}} = \\left(\\frac {e ^ {2} E _ {\\mathrm {F}}}{2 \\pi \\hbar^ {2} \\varepsilon_ {0} \\varepsilon_ {\\mathrm {r}}} \\left(q _ {0} \\pm N \\frac {\\pi}{d}\\right)\\right) ^ {\\frac {1}{2}} \\tag {1}\n$$",
+          "explanation": "The dispersion form (omega ~ sqrt(E_F * q)) matches the standard 2D-plasmon literature (refs 12-15, 36). However, the main text does not say which sign is taken for upward vs downward domains, nor why only N=1 appears to dominate the data in Fig 3c. Higher harmonics N=2, 3 should give additional peaks; their absence (or suppression) deserves a sentence. As-is, eqn (1) has multiple branches and the reader cannot select the right one without Supplementary S4.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 35
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Edge-disorder advantage over patterned graphene is asserted without a side-by-side measurement",
+          "quote": "This can be attributed to the effective plasmon excitations and perfect crystallinity of the graphene sheet, with the latter effectively reducing light scattering compared to nanopatterned graphene.",
+          "explanation": "The paper supports the 'crystallinity beats nanopatterned graphene' claim only with a 2D/G ratio of 2.15 and a low D-band intensity in unpatterned graphene. There is no comparable Raman characterization on a CVD graphene sheet that has been lithographically patterned with the same period for a side-by-side comparison, and no measurement of plasmon Q-factor narrower than refs 13-15. The advantage is plausible but, as presented, the claim runs ahead of the evidence.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 46
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Conceptual section criticizes baselines (HADAR, meta-imager) qualitatively without metrics",
+          "quote": "Recently, an alternative approach using multichannel meta-imagers with external angular gratings (Fig. S1b) was developed to accelerate the machine vision. However, both have complex spatial layouts; in particular, different devices require different bias voltages to drive, which significantly hinders the goal of achieving high energy efficiency.",
+          "explanation": "HADAR (ref 10) and meta-imagers (ref 11) are dismissed on grounds of 'complex spatial layouts' and 'different bias voltages' without any system-level number (e.g., mW per pixel, footprint, channel count). The proposed device's later comparison (Fig 3e) is to other graphene plasmonic detectors on responsivity alone \u2014 not on system-level energy efficiency. A quantitative comparison would tighten the framing without changing the contribution.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "'Human-eye-like' / 'human-brain-type machine vision' framing is not operationally evaluated",
+          "quote": "Our proof-of-concept photodetector arrays simplify multichannel infrared imaging systems and hold great potential for applications in efficient edge detection in human-brain-type machine vision.",
+          "explanation": "The framing recurs from abstract to conclusions but the operational realization is a 6-channel single-aperture detector plus a CNN \u2014 structurally similar to any multispectral imaging pipeline. No biologically grounded benchmark (contrast-sensitivity function, response to natural scene statistics, retina-like latency) is reported. As an introduction motif this is acceptable; in the conclusions it edges into mild overclaim.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Conclusion's '30 mA/W ... high photoresponsivity' contradicts the body's 'not the highest, comparable to' wording",
+          "quote": "The printable photodetectors operated at a zero-bias voltage and exhibited a high photoresponsivity of approximately $30\\mathrm{mA}\\mathrm{W}^{-1}$ at room temperature.",
+          "explanation": "Section 'Rescaling' explicitly states 30 mA/W is 'not the highest recorded among current infrared photodetectors' and only 'comparable to' nanopatterned graphene plasmonic detectors. The conclusions drop that qualifier and call it 'high'. This is a localized internal contradiction; the conclusion should mirror the calibrated phrasing of the body.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 56
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Abstract numbers (98.1%, 98.2%) lack qualifiers about evaluation regime and gain over baseline",
+          "quote": "We also demonstrated enhanced and faster shape classification (98.1%) and edge detection (98.2%) using our multichannel infrared images compared with single-channel detectors.",
+          "explanation": "The abstract picks two numbers without clarifying that they are 100-epoch *recognition* (test) accuracies on the authors' simulated MCA outputs, that they are obtained from a Melexis-FPA-fed pipeline, and that the absolute gain over SCA is roughly 5 pp on shape classification (vs ~28 pp on curled-finger edge detection). Adding the SCA reference numbers in the abstract would let readers calibrate the gain.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 17
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

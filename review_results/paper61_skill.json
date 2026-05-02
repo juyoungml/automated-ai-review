@@ -1,0 +1,826 @@
+{
+  "slug": "paper61_skill",
+  "title": "Population aging challenge future mitigation of deaths attributable to PM2.5 pollution in China",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Population aging challenge future mitigation of deaths attributable to PM2.5 pollution in China\n\nFangjin Xu"
+    },
+    {
+      "index": 1,
+      "text": "Beijing Normal University\n\nQingxu Huang ( qxhuang@bnu.edu.cn )\n\nBeijing Normal University https://orcid.org/0000-0003-4902-716X"
+    },
+    {
+      "index": 2,
+      "text": "Huanbi Yue\n\nOcean University of China\n\nXingyun Feng\n\nBeijing Normal University\n\nHaoran Xu\n\nBeijing Normal University"
+    },
+    {
+      "index": 3,
+      "text": "Chunyang He\n\nBeijing Normal University https://orcid.org/0000-0002-8440-5536\n\nPeng Yin\n\nThe National Center for Chronic and Noncommunicable Disease Control and Prevention"
+    },
+    {
+      "index": 4,
+      "text": "Brett Bryan\n\nDeakin University https://orcid.org/0000-0003-4834-5641\n\n# Article\n\nKeywords: PM2.5 pollution, population aging, CMIP6, shared socioeconomic pathways, representative concentration pathways, public health"
+    },
+    {
+      "index": 5,
+      "text": "Posted Date: May 20th, 2022\n\nDOI: https://doi.org/10.21203/rs.3.rs-1618374/v1\n\nLicense: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 6,
+      "text": "Population aging challenge future mitigation of deaths attributable to\nPM\u2082.\u2085 pollution in China\n\nFangjin Xu\u00b9,\u00b2, Qingxu Huang\u207a,\u00b9,\u00b2, Huanbi Yue\u00b3, Xingyun Feng\u00b9,\u00b2, Haoran Xu\u00b9,\u00b2, Chunyang He\u00b9,\u2074,\u2075, Peng Yin\u2076, Brett A. Bryan\u2077"
+    },
+    {
+      "index": 7,
+      "text": "1 State Key Laboratory of Earth Surface Processes and Resource Ecology, Beijing Normal University, Beijing, 100875, China\n2 School of Natural Resources, Faculty of Geographical Science, Beijing Normal University, Beijing, 100875, China\n3 School of International Affairs and Public Administration, Ocean University of China, Qingdao, 266100, China\n4 Key Laboratory of Environmental Change and Natural Disasters, Ministry of Education, Beijing Normal University, Beijing 100875, China\n5 Academy of Disaster Reduction and Emergency Management, Ministry of Emergency Management and Ministry of Education, Beijing 100875, China\n6 National Center for Chronic and Non-communicable Disease Control and Prevention, Chinese Center for Disease Control and Prevention, Beijing 100050, China\n7 Centre for Integrative Ecology, Deakin University, Melbourne, VIC3125, Australia"
+    },
+    {
+      "index": 8,
+      "text": "* Corresponding author at:\n\nState Key Laboratory of Earth Surface Processes and Resource Ecology, Beijing Normal University, 19 Xinjiekouwai Street, Beijing, 100875, China. E-mail: qxhuang@bnu.edu.cn."
+    },
+    {
+      "index": 9,
+      "text": "Population aging challenge future mitigation of death attributable to PM\u2082.\u2085 pollution in China\n\nAbstract: Estimating the health burden of air pollution in China against the background of population aging is of great significance for the well-being of elderly individuals and achieving the United Nations Sustainable Development Goals (SDGs). Since previous studies did not fully consider the differences on drivers of deaths attributable to PM\u2082.\u2085 pollution (DAPP) (i.e., socioeconomic factors, climate factors, and disease mortalities) among provinces in China, the impact of future population aging on DAPP cannot be comprehensively and objectively estimated. In this study, we estimated and verified the spatiotemporal changes of DAPP in China from 2005 to 2017 based on a risk assessment framework. Then, using the latest climate projections, we estimated the changes and drivers in DAPP under four scenarios in China from 2018 to 2035 based on decomposition analysis. The results show that from 2017 to 2035, DAPP in China will decrease between 31.9 (26.6-45.6) thousand and 178.8 (152.5-210.5) thousand across three scenarios (sustainable development (SSP1-2.6), business as usual (SSP2-4.5), and fossil fuel development (SSP5-8.5). We found that population aging will be the leading driver contributing to the increase in DAPP and offset the positive gains achieved by improvement in air pollution and healthcare. In the future, reducing the exposure to air pollution and improving healthcare of the elderly is necessary to mitigate the global health burden of air pollution and this requires mutual cooperation and long-term efforts among countries worldwide."
+    },
+    {
+      "index": 10,
+      "text": "Key words: PM\u2082.\u2085 pollution, population aging, CMIP6, shared socioeconomic pathways; representative concentration pathways; public health"
+    },
+    {
+      "index": 11,
+      "text": "1. Introduction\n\nRecently, air pollution caused by particulate matter with a diameter of 2.5 \u03bcm or less (i.e., PM\u2082.\u2085) has increased dramatically\u00b9. Exposure to PM\u2082.\u2085 pollution has adverse effects on human health, such as premature death and pulmonary and cardiovascular disease\u00b2,\u00b3. Consequently, the number of deaths attributable to PM\u2082.\u2085 pollution (DAPP) globally has also increased rapidly, from 1.14 million to nearly 3 million between 2005 and 2017\u2074, becoming the fifth-leading mortality risk factor\u2075. In parallel, the world's population is aging which is further exacerbating the negative health effects of air pollution\u2076\u207b\u2078. From 2005 to 2017, the proportion of elderly population (i.e., those aged 65 and older) rose from 7.3% to 8.6% globally, making it the fastest growing age group\u2079. It is estimated that in 2016, 69% of global air pollution-related deaths were among the elderly\u00b9\u2070. In the future, the proportion of elderly population is expected to rise to 19% by 2050\u00b9\u00b9."
+    },
+    {
+      "index": 12,
+      "text": "China is experiencing particularly acute population aging, with the proportion of elderly growing from 7.0% to 12.6% from 2000-2019. It is expected that by 2030 and 2050, this proportion will increase to 17.1% and 26.3%, respectively\u00b9\u00b9, peaking at 437 million people by 2051\u00b9\u00b2. The United Nations Sustainable Development Goal (SDG) 3 states that \u201cpeople of all ages need to live"
+    },
+    {
+      "index": 13,
+      "text": "healthy lives and that a substantial reduction in air pollution-related deaths needs to be achieved by 2030\u201d13. Understanding the health effects of air pollution in the context of population aging in China is of great significance for promoting the well-being of elderly people and the insights gained can help other countries deal with the health burden of air pollution in the context of population aging, promoting global progress towards the SDGs."
+    },
+    {
+      "index": 14,
+      "text": "Currently, some studies have quantified DAPP in China and focused on the impact of population aging on DAPP7^{,}14. In addition to the age structure of the population, DAPP is also affected by other socioeconomic development factors (e.g. medical conditions, and air pollution emissions) and climate change (e.g. transformation and diffusion of air pollution)15^{,}16. Many studies have estimated the changes of DAPP in the future considering the change of socioeconomic development or climate change17^{,}18. However, we still have a limited understanding of the future dynamics of DAPP for at least two reasons. First, from the perspective of scenario setting, most studies mainly focus on the changes in DAPP under the influence of a single factor, which does not consider the driving effect of socioeconomic development and climate change on DAPP simultaneously. For example, Maji et al19 only considered the changes in pollutant concentration in the context of the air pollution prevention and control policy and ignored the changes in socioeconomic factors such as population and medical conditions. Shen et al20 studied the impact of population migration on DAPP in China and did not consider the impact of climatic factors on DAPP. Although Rafaj et al21 considered the impact of the age structure on DAPP, their scenario setting was mainly based on the paths of climate change, ignoring changes in other socioeconomic factors such as medical conditions. Secondly, from the perspective of the data, most studies in China did not fully account for the differences in climatic factors and socioeconomic factors among provinces, which could affect the reliability of the estimations. For example, Yue et al22. predicted China's DAPP in 2030 in different air pollution prevention and control policy scenarios. This scenario setting does not take into account the differences in PM_{2.5} concentration changes in different provinces in the future. In addition, the health data used by Wu et al 23 were national-scale data obtained from the Global Burden of Disease24 and did not include the differences in health levels across provinces. The population data used by Liu et al7 are also national-scale data, ignoring regional differences in population aging in China. In summary, we still do not have a reliable and effective estimate of DAPP that accounts for the driving factors of socioeconomic pathways and changes in climate across different provinces in China."
+    },
+    {
+      "index": 15,
+      "text": "The sixth Coupled Model Intercomparison Project (CMIP6) considers socioeconomic development as well as climate change factors and can reflect the interaction between them, providing the possibility to effectively predict DAPP in the future. CMIP6 combines representative concentration pathways (RCPs) with shared socioeconomic pathways (SSPs). Specifically, RCPs are multi-model global scenarios of greenhouse gases that use the radiative forcing per unit area at the end of the century to represent the climate impact of future greenhouse gas concentrations, covering a variety of climate mitigation levels and providing the basis for the simulation of PM_{2.5} in different climate change scenarios. SSPs are socioeconomic development scenarios related to greenhouse gas emissions that take socioeconomic aspects such as economy, population, technology, lifestyle, policies, and institutions into account, making it possible to study the socioeconomic factors affecting DAPP. In addition, Yin et al10 estimated disease mortality associated with air"
+    },
+    {
+      "index": 16,
+      "text": "pollution across provinces in China from 1990 to 2017, providing an important database for estimating differences in DAPP at the provincial scale. Decomposition analysis [22] can transform the nonlinear relationship between DAPP and its various drivers into a simple linear relationship, which takes into account the interaction between the various factors. Therefore, based on the CMIP6 dataset, provincial-level disease mortality data and decomposition analysis, this paper can study the driving effects of socioeconomic changes (especially population aging) and climate change on DAPP and their differences at the provincial scale in China."
+    },
+    {
+      "index": 17,
+      "text": "The purpose of this study is to estimate the temporal and spatial patterns of DAPP and the impact of population aging in China under alternative future scenarios considering both socioeconomic development and climate change. We first estimated and verified the spatiotemporal pattern of DAPP in China from 2005 to 2017 based on the comparable risk assessment framework. Then, we estimated the changes in DAPP in China in different scenarios from 2018 to 2035 by combining the RCPs and SSPs. Based on the results, the influence of population aging as well as other driving factors (e.g., population growth, change in  $\\mathrm{PM}_{2.5}$  concentrations and disease mortalities) were evaluated via decomposition analysis. The differences across regions are discussed and policy recommendations are made for improving public health."
+    },
+    {
+      "index": 18,
+      "text": "# 2. Results\n\n# 2.1 Trends in driving factors\n\nFrom 2000 to 2017, China has experienced a steady increase in population by  $9.8\\%$ , yet the projected population (2017-2035) varies under different scenarios (Figure 1). In the middle of the road scenario (SSP2-4.5) and the regional rivalry scenario (SSP3-7.0), the population grew from 2017, increasing by  $3.0\\%$  and  $5.9\\%$  in 2035, respectively. In the sustainability (SSP1-2.6) and fossil fuelled development (SSP5-8.5) scenarios, the population remained steady. The percentage of elderly people (65 years or older) continued to rise in all four scenarios, especially in SSP5-8.5 and SSP2-4.5, where it was projected to increase by  $190\\%$  and  $120\\%$  from 2017-2035, respectively. In SSP1-2.6 and SSP3-7.0, the percentage of elderly people increased  $110\\%$  and  $90\\%$ , respectively. The population-weighted  $\\mathrm{PM}_{2.5}$  concentration in China increased by  $46.6\\%$  from 2000 to 2017, while 2010 was a turning point; we only observed an increase of  $0.42~\\mathrm{ug / m^3}$  between 2010 and 2017 (Figure 1). The estimated trends of the population-weighted  $\\mathrm{PM}_{2.5}$  concentration revealed difference between the four scenarios (Figure 1). Specifically, only SSP3-7.0 saw an increase, with the population-weighted  $\\mathrm{PM}_{2.5}$  concentration in China reaching  $43.33~\\mathrm{ug / m^3}$  by 2035. In the other three scenarios, the population-weighted  $\\mathrm{PM}_{2.5}$  concentration was projected to decrease (2017-2035), with SSP1-2.6 experiencing the greatest decrease of  $50.0\\%$ , followed by SSP2-4.5 ( $39.1\\%$ ) and SSP5-8.5 ( $30.7\\%$ )."
+    },
+    {
+      "index": 19,
+      "text": "Most age-standardized death rates of diseases in different scenarios demonstrated a downward trend (Figure 1). With the joint effects of socioeconomic development and improvement in health care, most death rates of diseases saw a distinct decrease, especially in the sustainability scenario"
+    },
+    {
+      "index": 20,
+      "text": "(SSP1-2.6) and the fossil fuel development scenario (SSP5-8.5). For instance, in the SSP1-2.6 scenario, the age-standardized death rates of COPD, LRIs and stroke (2017-2035) decreased by  $42.7\\%$ ,  $17.6\\%$  and  $53.8\\%$ , respectively."
+    },
+    {
+      "index": 21,
+      "text": "![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\n\n![img-2.jpeg](img-2.jpeg)\n\nFigure 1 2000-2035 Change Trend of Driving Factors\n![img-3.jpeg](img-3.jpeg)\nNote: (d-i) Age-standardized disease mortality. COPD, DM2, IHD, LC and LRI refer to chronic obstructive pulmonary disease, type 2 diabetes, blood heart disease, lung cancer and lower respiratory tract infection, respectively. Shading indicates the  $95\\%$  confidence interval."
+    },
+    {
+      "index": 22,
+      "text": "![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)\n\n![img-6.jpeg](img-6.jpeg)\n\n![img-7.jpeg](img-7.jpeg)"
+    },
+    {
+      "index": 23,
+      "text": "![img-8.jpeg](img-8.jpeg)\n\n# 2.2 DAPP trends in China\n\nFrom 2017 to 2035, DAPP in China exhibited two contrasting trends for two stages in the four scenarios (Figure 2a). From 2017-2025, annual DAPP was projected to decline, with decreases of 132 (123-146,  $95\\%$  CI) thousand (SSP1-2.6), 71 (64-81,  $95\\%$  CI) thousand (SSP2-4.5), 26 (19-35,  $95\\%$  CI) thousand (SSP3-7.0) and 118 (103-136,  $95\\%$  CI) thousand (SSP5-8.5). Conversely, from 2025-2035, under SSP2-4.5, SSP3-7.0, and SSP5-8.5, DAPP in China was projected to grow by 37 (29-44  $95\\%$  CI) thousand, 72 (62-81,  $95\\%$  CI) thousand and 24 (19-33,  $95\\%$  CI) thousand, respectively. DAPP in the SSP1-2.6 scenario will decline with a minor decrease of 44 (37-53,  $95\\%$"
+    },
+    {
+      "index": 24,
+      "text": "CI) thousand.\n\nBetween 2017 and 2035, significant regional variation in DAPP occurred (Figure 2b). Taking the sustainability scenario (SSP1-2.6) as an example, the only increase (0.1%, 0%-0.13%) in DAPP was projected to occur in Northeast China, while in the six other regions DAPP declined. Central China showed the largest decrease (31%, 22.3% - 38.6%), while the eastern regions showed the smallest (8.8%, 3.2% - 10.7%, 95% CI). In addition, it is worth noting that between 2020 and 2035, except for the central and eastern regions where DAPP was projected to be higher than the national average value by 76.7% (64.2%-83.8%) and 29.1% (19.2%-37.8%)."
+    },
+    {
+      "index": 25,
+      "text": "Considering the changes in DAPP per capita in 2017-2035 (Figure 2c, 2d), Northeast China was again the only region expected to experience an increase (12.0%, 9.2-14.8%). In addition, DAPP per capita (2017-2035) in Northeast, Central and Northwest China was consistently above the national average value. By 2035, the DAPP per capita in Northeast China, Central China and Northwest China will reach 855, 679, and 634 people (per 10,000 people), respectively."
+    },
+    {
+      "index": 26,
+      "text": "![img-9.jpeg](img-9.jpeg)\n\n![img-10.jpeg](img-10.jpeg)\nFigure 2 Varying trends in DAPP from 2000 to 2035."
+    },
+    {
+      "index": 27,
+      "text": "a.) Changes in the total amount of DAPP in China; b.) Changes in the total amount of DAPP among regions; c.) Changes in DAPP per capita in China; d.) Changes in DAPP per capita among regions. The value for each region in (b) and (d) is the average value of DAPP or DAPP per capita for the provinces within that region. National average represents the average of all provinces in the country."
+    },
+    {
+      "index": 28,
+      "text": "There will be substantial spatial differences in the projected trends in DAPP in China (Figure 2). To illustrate, we describe the two most extreme scenarios\u2014the sustainability scenario (SSP1-2.6) with the greatest decline in DAPP and the regional rivalry scenario (SSP3-7.0) with the greatest growth (See the full results in Table S1 and Figure S1). Across regions, Henan and Hebei were projected to have the largest decrease in DAPP. In the sustainability scenario (SSP1-2.6), the decrease in DAPP in each province the DAPP reduction in the two provinces is more than 4 times to the national average level in China, and under the regional rivalry scenario (SSP3-7.0) scenario is more than 14 times to the national average."
+    },
+    {
+      "index": 29,
+      "text": "# 2.3 Driving factors of DAPP\n\nOverall, population aging is the most significant factor affecting the increase in DAPP in 2017-2035 (Figure 3). Population aging is the only factor contributing to the growth of DAPP in the sustainable development (SSP1-2.6) scenario and fossil fuel development (SSP5-8.5) scenario, resulting in increases of 674 thousand and 703 thousand DAPP per annum, respectively. In the business as usual (SSP2-4.5) and regional competition (SSP3-7.0) scenarios, although population growth will also bring a small amount of DAPP growth, more than 98% of it is due to population aging. Specifically, in these two scenarios, population aging brings increases of 730 thousand (718-746, 95% CI) and 634 (608-656, 95% CI) thousand DAPP, respectively. Meanwhile, disease mortality is an important factor alleviating the growth in DAPP, and more than 70% of the reduction in DAPP is due to the reduction in disease mortality which decreased DAPP by 615 (602-636, 95% CI) thousand, 658(608-656, 95%CI) thousand, 693 (678-726, 95% CI) thousand, and 636 (611-657, 95% CI) thousand from 2017-2035 in the four scenarios, respectively."
+    },
+    {
+      "index": 30,
+      "text": "The amount of DAPP growth caused by population aging was projected to offset the DAPP decline caused by the decrease in disease mortality in the future and lead to an increase in DAPP. Specifically, in the four scenarios, DAPP shows a decreasing trend from 2017 to 2025, which is mainly due to the decrease in disease mortality. In this period, taking the regional competition (SSP3-7.0) scenario as an example, the reduction in disease mortality resulted in a reduction in DAPP of 371(354-396, 95%CI) thousand, which effectively offset the increase in DAPP of 281(268-301, 95%CI) thousand due to population aging. From 2025 to 2035, the age structure will become the most important factor driving the growth in DAPP. The increase in the aging population has led to an increase of 353(328-376, 95% CI) thousand DAPP, an increase of 72 (57-96, 95% CI) thousand from a decade ago. The impact of disease mortality on DAPP was projected to level off. From 2025 to 2035, the reduction in disease mortality will bring a reduction of 266 (238-276, 95% CI) thousand DAPP, which is 49(29-56, 95% CI) thousand less than ten years ago. Therefore, the impact of age structure on DAPP will begin to exceed the impact of disease mortality on DAPP and become the main reason for the increase in DAPP from 2025-2035."
+    },
+    {
+      "index": 31,
+      "text": "![img-11.jpeg](img-11.jpeg)\n\n![img-12.jpeg](img-12.jpeg)\n\n![img-13.jpeg](img-13.jpeg)\nFigure 3 Contributions of different factors to DAPP changes in China from 2017 to 2035"
+    },
+    {
+      "index": 32,
+      "text": "![img-14.jpeg](img-14.jpeg)\n\nThe contributions of different drivers to DAPP showed certain differences at the provincial scale (Figure 4). For regions with higher rates of aging, such as Heilongjiang and Jilin, age structure was the most important factor affecting the change in DAPP. In these regions, the increase in DAPP attributable to population aging exceeded  $50\\%$  of the national average. Affected by the aging of the population, the total DAPP in these regions continued to rise under all four scenarios, and the total increase was 2 times the national average. Taking Heilongjiang Province with the highest level of aging population as an example, in the four scenarios, the total DAPP will increase by 10,000, 6,000, 10,000 and 3,000, respectively, which will be 1.2 times, 6.7 times, 5.8 times and 1.8 times higher than the average change in the national DAPP. In Tibet, Ningxia, and Guizhou, where the proportion of elderly population is lower, the growth in DAPP caused by population aging was projected to be less than half of the average change in the national DAPP. Although the reduction in DAPP caused by factors such as the improvement of medical conditions in these regions is also lower than the average of all provinces in the country, overall, the DAPP in these regions still shows a downward trend."
+    },
+    {
+      "index": 33,
+      "text": "[tbl-0.md](tbl-0.md)\n\n(a) SSP1-2.6\n\n[tbl-1.md](tbl-1.md)\n\n(c) SSP3-7.0\n\nChanges of DAPP: from lower to upper"
+    },
+    {
+      "index": 34,
+      "text": "(b) SSP2-4.5\n\n[tbl-2.md](tbl-2.md)\n\nFigure 4 Contribution of each driver to DAPP in provinces in China from 2017-2035."
+    },
+    {
+      "index": 35,
+      "text": "In addition, regarding types of diseases and considering all age groups affected by DAPP, the older individuals (65 years or older) are still the most vulnerable group to DAPP (Figure 5). By"
+    },
+    {
+      "index": 36,
+      "text": "|  the proportion of the old (%) | province | changes of DAPP (per 10,000 people) | population contribution | PM10 concentration contribution | age structure contribution | disease mortality contribution | changes of DAPP (per 10,000 people) | population contribution | PM10 concentration contribution | age structure contribution | disease mortality contribution  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  21.98 | Anhui | -1.27 | -0.24 | -0.89 | 2.26 | -2.4 | -0.67 | -0.18 | -0.37 | 2.47 | -2.59  |\n|  27.01 | Beijing | 0.23 | 0.06 | -0.35 | 0.97 | -0.46 | 0.47 | 0.08 | -0.17 | 1.06 | -0.5  |\n|  28.86 | Chongqing | -0.62 | -0.22 | -0.5 | 1.74 | -1.63 | -0.41 | -0.2 | -0.3 | 1.84 | -1.75  |\n|  22.36 | Fujian | -0.24 | 0.04 | -0.35 | 0.94 | -0.87 | 0.02 | 0.07 | -0.13 | 1.03 | -0.95  |\n|  21.92 | Gansu | -0.49 | 0 | -0.26 | 1.31 | -1.54 | -0.28 | 0.06 | -0.1 | 1.38 | -1.62  |\n|  18.33 | Guangdong | -0.65 | 0.69 | -1.07 | 2.57 | -2.85 | 0.28 | 0.86 | -0.34 | 2.82 | -3.07  |\n|  19.08 | Guangxi | -0.87 | 0.15 | -0.61 | 1.86 | -2.26 | -0.43 | 0.27 | -0.27 | 2.02 | -2.44  |\n|  17.48 | Guizhou | -0.8 | 0.13 | -0.53 | 0.94 | -1.35 | -0.45 | 0.22 | -0.26 | 1.04 | -1.45  |\n|  20.31 | Hainan | 0.05 | 0.03 | 0.01 | 0.23 | -0.22 | 0.1 | 0.05 | 0.03 | 0.25 | -0.23  |\n|  22.19 | Hebei | -2.56 | 0.09 | -1.62 | 3.42 | -4.44 | -1.73 | 0.21 | -0.85 | 3.72 | -4.81  |\n|  31.6 | Heilongjiang | 0.1 | -0.3 | -0.74 | 3.11 | -1.97 | 0.57 | -0.31 | -0.34 | 3.32 | -2.1  |\n|  20.35 | Hubei | -3.23 | 0.04 | -2.04 | 4.46 | -5.71 | -2.08 | 0.22 | -0.99 | 4.89 | -6.2  |\n|  25.94 | Hongxia | -1 | -0.19 | -1.36 | 3.91 | -3.37 | -0.29 | -0.11 | -0.75 | 4.21 | -3.65  |\n|  24.22 | Hunan | -1.82 | -0.26 | -1.63 | 4.45 | -4.39 | -1.03 | -0.14 | -0.93 | 4.79 | -4.74  |\n|  26.63 | Mongolia | 0.03 | -0.04 | -0.26 | 1.43 | -1.09 | 0.29 | -0.02 | -0.07 | 1.54 | -1.16  |\n|  27.96 | Jiangsu | 0.46 | 0 | -1.52 | 5.52 | -3.54 | 1.49 | 0.01 | -0.63 | 5.96 | -3.85  |\n|  19.38 | Jiangxi | -0.91 | -0.02 | -0.67 | 1.53 | -1.76 | -0.46 | 0.05 | -0.28 | 1.68 | -1.91  |\n|  32.28 | Jilin | 0.17 | -0.21 | -0.58 | 1.98 | -1.03 | 0.59 | -0.16 | -0.29 | 2.16 | -1.12  |\n|  32.33 | Laoning | -0.26 | -0.33 | -1.12 | 3.49 | -2.3 | 0.36 | -0.35 | -0.57 | 3.76 | -2.48  |\n|  17.08 | Ningxia | -0.15 | 0.03 | -0.06 | 0.11 | -0.22 | -0.1 | 0.04 | -0.03 | 0.12 | -0.24  |\n|  18.65 | Qinghai | -0.13 | 0.01 | -0.02 | 0.2 | -0.33 | -0.09 | 0.03 | 0.01 | 0.21 | -0.34  |\n|  23.96 | Shaanxi | -0.6 | -0.07 | -0.49 | 1.44 | -1.48 | -0.33 | -0.04 | -0.25 | 1.54 | -1.58  |\n|  26.48 | Shandong | -1.63 | -0.39 | -2.54 | 6.84 | -5.54 | -0.28 | -0.29 | -1.38 | 7.41 | -6.01  |\n|  30.49 | Shanghai | 0.44 | -0.09 | -0.26 | 1.31 | -0.51 | 0.68 | -0.09 | -0.08 | 1.41 | -0.56  |\n|  22.18 | Shanxi | -0.62 | -0.03 | -0.5 | 1.16 | -1.26 | -0.31 | 0 | -0.23 | 1.27 | -1.35  |\n|  26.1 | Sichuan | -0.53 | -0.55 | -1.04 | 4.44 | -3.38 | 0.36 | -0.53 | -0.25 | 4.64 | -3.7  |\n|  26.15 | Tianjin | -0.23 | -0.22 | -0.37 | 1.08 | -0.72 | -0.02 | -0.23 | -0.18 | 1.17 | -0.78  |\n|  13.77 | Tibet | -0.09 | -0.01 | 0.01 | 0.04 | -0.13 | -0.06 | -0.01 | 0.05 | 0.04 | -0.14  |\n|  17.55 | Xinjiang | -0.63 | 0.16 | -0.22 | 1.18 | -1.75 | -0.44 | 0.25 | -0.11 | 1.24 | -1.82  |\n|  18.03 | Yunnan | -1.02 | 0.05 | -0.24 | 0.91 | -1.74 | -0.63 | 0.1 | 0.15 | 1.02 | -1.91  |\n|  27.32 | Zhejiang | 1 | 0.46 | -0.76 | 2.58 | -1.28 | 1.68 | 0.55 | -0.29 | 2.82 | -1.39  |\n|  23.42 | Average | -0.58 | -0.04 | -0.73 | 2.18 | -1.98 | -0.1 | 0.01 | -0.33 | 2.36 | -2.14  |"
+    },
+    {
+      "index": 37,
+      "text": "|  the proportion of the old (%) | province | changes of DAPP (per 10,000 people) | population contribution | PM10 concentration contribution | age structure contribution | disease mortality contribution | changes of DAPP (per 10,000 people) | population contribution | PM10 concentration contribution | age structure contribution | disease mortality contribution  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  21.98 | Anhui | 0.31 | 0.16 | 0.32 | 2.79 | -2.96 | -0.58 | -0.45 | -0.73 | 3.29 | -2.68  |\n|  27.01 | Beijing | 0.47 | 0 | 0.01 | 0.96 | -0.5 | 0.38 | 0.17 | -0.28 | 0.99 | -0.49  |\n|  26.86 | Chongqing | -0.19 | -0.09 | 0.09 | 1.65 | -1.84 | -0.54 | -0.27 | -0.39 | 1.79 | -1.68  |\n|  22.36 | Fujian | 0.14 | 0.09 | 0.15 | 0.88 | -0.99 | -0.1 | 0.07 | -0.23 | 0.98 | -0.92  |\n|  21.92 | Gansu | -0.25 | 0.19 | 0.1 | 1.09 | -1.63 | -0.42 | -0.04 | -0.16 | 1.34 | -1.57  |\n|  18.33 | Guangdong | 0.52 | 0.76 | 0.61 | 2.29 | -3.14 | -0.08 | 1.06 | -0.7 | 2.58 | -3.02  |\n|  19.08 | Guangxi | -0.14 | 0.55 | 0.3 | 1.57 | -2.56 | -0.74 | 0.06 | -0.43 | 1.95 | -2.32  |\n|  17.48 | Guizhou | -0.17 | 0.47 | 0.21 | 0.71 | -1.56 | -0.71 | 0.05 | -0.38 | 1 | -1.37  |\n|  20.31 | Hainan | 0.13 | 0.06 | 0.09 | 0.21 | -0.24 | 0.07 | 0.04 | 0.02 | 0.24 | -0.23  |\n|  22.19 | Hebei | -1.43 | 0.52 | 0.07 | 2.94 | -4.96 | -2.31 | 0.04 | -1.31 | 3.52 | -4.58  |\n|  31.6 | Heilongjiang | 0.96 | -0.18 | 0.21 | 3.14 | -2.22 | 0.31 | -0.36 | -0.52 | 3.23 | -2.03  |\n|  20.35 | Henan | -1.55 | 0.89 | 0.19 | 3.84 | -6.47 | -2.99 | -0.21 | -1.59 | 4.64 | -5.82  |\n|  25.94 | Hubei | 0.19 | 0.25 | 0.11 | 3.64 | -3.82 | -0.8 | -0.35 | -1.06 | 4.06 | -3.45  |\n|  24.22 | Hunan | -0.41 | 0.35 | 0.15 | 4.08 | -5 | -1.62 | -0.48 | -1.29 | 4.63 | -4.48  |\n|  26.63 | Mongolia | 0.64 | -0.2 | 0.09 | 1.29 | -0.54 | 0.14 | -0.04 | -0.18 | 1.47 | -1.12  |\n|  27.96 | Jiangsu | -0.19 | 0.25 | 0.05 | 3.53 | -2.59 | 0.95 | 0.14 | -1.14 | 5.64 | -3.7  |\n|  19.38 | Jiangxi | -0.84 | -0.09 | 0.07 | 2.04 | -1.18 | 0.3 | -0.24 | -0.44 | 2.04 | -1.06  |\n|  32.28 | Jilin | 0.66 | -0.32 | 0.03 | 3.53 | -2.59 | 0 | -0.32 | -0.87 | 3.56 | -2.38  |\n|  32.33 | Laoning | -0.1 | 0.06 | 0.02 | 0.07 | -0.24 | -0.13 | 0.03 | -0.04 | 0.11 | -0.23  |\n|  17.08 | Ningxia | -0.09 | 0.05 | 0.05 | 0.16 | -0.35 | -0.1 | 0.02 | 0.02 | 0.21 | -0.34  |\n|  18.65 | Qinghai | -0.19 | 0.05 | 0.06 | 1.33 | -1.64 | -0.49 | -0.09 | -0.36 | 1.48 | -1.52  |\n|  23.96 | Shaanxi | -0.39 | 0.04 | 0.1 | -8.5 | -6.25 | -1.2 | -0.44 | -2.08 | 7.02 | -5.7  |\n|  26.48 | Shandong | 0.64 | -0.2 | 0.09 | 1.29 | -0.54 | 0.62 | 0.02 | -0.18 | 1.33 | -0.55  |\n|  30.49 | Shanghai | -0.19 | 0.1 | 0.08 | 1.03 | -1.4 | -0.51 | -0.04 | -0.37 | 1.2 | -1.3  |\n|  22.18 | Shanxi | 1.06 | -0.18 | 0.81 | 4.39 | -3.96 | -0.11 | -0.75 | -0.51 | 4.7 | -3.55  |\n|  26.1 | Sichuan | 1.06 | -0.18 | 0.81 | 4.39 | -3.96 | -0.12 | -0.15 | -0.29 | 0.94 | -0.72  |\n|  13.77 | Tibet | -0.06 | 0 | 0.05 | 0.03 | -0.14 | -0.07 | -0.01 | 0.04 | 0.04 | -0.14  |\n|  17.55 | Xinjiang | -0.46 | 0.33 | 0.07 | 0.94 | -1.82 | -0.53 | 0.19 | -0.12 | 1.19 | -1.79  |\n|  18.03 | Yunnan | -0.58 | 0.25 | 0.42 | 0.69 | -1.95 | -0.88 | 0.03 | -0.06 | 0.95 | -1.81  |\n|  27.32 | Zhejiang | 1.77 | 0.4 | 0.27 | 2.51 | -1.41 | 1.45 | 0.71 | -0.52 | 2.63 | -1.37  |\n|  23.42 | Average | 0.14 | 0.15 | 0.18 | 2.04 | -2.23 | -0.38 | -0.06 | -0.54 | 2.27 | -2.05  |"
+    },
+    {
+      "index": 38,
+      "text": "|  Changes of DAPP: from lower to upper  |\n| --- |\n\n2035, in any scenario, the average proportion of older people dying from six diseases (i.e., chronic obstructive pulmonary disease, lung cancer, lower respiratory infection, ischemic heart disease, stroke and diabetes mellitus type 2) will account for more than  $80\\%$  of the total DAPP. Specifically, the percentage of these individuals with chronic obstructive pulmonary disease and lower respiratory infection will be larger than  $95\\%$  and  $94\\%$ , respectively. Furthermore, the percentage of DAPP in older individuals for all six diseases will rise steadily from 2017 to 2035. Among them, the percentage attributable to lung cancer will increase the most, growing from  $66\\%$  in 2017 to  $81\\%$  in 2035 under SSP1-2.6, or showing an average increase of  $23\\%$  in the four scenarios. For ischemic heart disease and diabetes mellitus type 2, the increase in the percentage will exceed  $20\\%$ ."
+    },
+    {
+      "index": 39,
+      "text": "![img-15.jpeg](img-15.jpeg)\n\n![img-16.jpeg](img-16.jpeg)\n\n![img-17.jpeg](img-17.jpeg)\n\n![img-18.jpeg](img-18.jpeg)\nFigure 5 The proportion of deaths among the elderly population by disease from 2000 to 2035 Note: COPD, DM2, IHD, LC, and LRI refer to chronic obstructive pulmonary disease, type 2 diabetes, ischemic heart disease, lung cancer, and lower respiratory tract infection, respectively. Shading indicates the  $95\\%$  confidence interval."
+    },
+    {
+      "index": 40,
+      "text": "![img-19.jpeg](img-19.jpeg)\n\n![img-20.jpeg](img-20.jpeg)\n\n# 3. Discussion\n\n# 3.1 Population aging is the most important challenge in controlling DAPP"
+    },
+    {
+      "index": 41,
+      "text": "Population aging is the leading challenge China faces in dealing with the problem of DAPP in the future. Our study found that population aging will be the primary factor driving an increase in DAPP from 2017-2035 (Figure 6). First, although the proportion of the elderly population is relatively small, the elderly will account for a large fraction of total DAPP. Between 2017 and 2035, while the proportion of elderly people will range from  $10\\%$  to  $35\\%$  in most regions, more than  $70\\%$  (e.g.,  $95\\%$  in Northeast China) of the growth of DAPP will be caused by population aging."
+    },
+    {
+      "index": 42,
+      "text": "These estimates are also in line with previous studies. For example, Bu et al $^{25}$  found that the elderly have been affected disproportionately affected by DAPP from 1990-2017 on a global scale, and Wang et al $^{26}$  attributed DAPP growth in China by 2020 and 2030 largely to population aging. Second, population aging will be the only driver of the increase in DAPP for most scenarios, except for the regional rivalry scenario (SSP3-7.5), in which population growth and air pollution will also contribute (approximately  $2\\%$  only) to the increase in DAPP. In addition, although improvements in air quality and health care can decrease DAPP, DAPP was projected to grow in Northeast China which has the highest rate of population aging (Figure 9f)."
+    },
+    {
+      "index": 43,
+      "text": "![img-21.jpeg](img-21.jpeg)\nFigure 6 Contribution of age structure to DAPP\n\nIn addition, combined with the results of this study and previous studies, the DAPP-related challenges posed by population aging are mainly demonstrated in the following two aspects. First, the adverse impact of air pollution on people's health will be enhanced with age. Since humans experience weakening physiological and metabolic processes when getting older$^{8}$ and people are exposed to poisonous substances in ambient conditions that are absorbed by and then accumulate in the human body$^{27}$, older people are the most vulnerable to air pollution. Our findings show that by 2035, the average proportion of elderly people dying of diabetes mellitus type 2 and ischemic heart disease will account for over $80\\%$ of the respective total deaths of all ages. In addition, among six diseases related to DAPP, the proportions of deaths of older people will consistently increase, and three types of diseases (e.g., lung cancer) will increase by over $20\\%$. Third, with the fast-growing aging population in China, it is projected$^{28}$ that by 2022, China will enter a stage where the aging population will account for more than $14\\%$ of the total population. By 2035, the proportion of those individuals who are 65 years old will account for $20\\%$ of the total population, further intensifying the situation. The aging speed in China has exceeded that in most developed countries$^{29}$. As population aging continues, DAPP is likely to subsequently increase$^{30}$."
+    },
+    {
+      "index": 44,
+      "text": "In addition to directly causing the growth of DAPP, the aging of the population may also cause the increase of DAPP through the intermediating effect, by affecting the proportion of fossil energy consumption and the proportion of household medical and health expenditures. To this end, referring to existing studies, we used the KAYA model to verify the mediating effect of population aging on DAPP via energy consumptions and health expenditures (see Supplementary Texts 1 and Table S2 for details). The findings also confirm that population aging can negatively impact health by affecting fossil energy consumption and exacerbating air pollution. This is partly due to the fact that the elderly prefer indoor activities and/or heating in winter$^{31,32}$, and partly the aging population may inhibit technological innovation$^{33}$. In addition, the aging of the population will also increase the proportion of medical and health expenditure in the total household consumption by affecting the increase in DAPP. This means that the aging of the population will increase the pressure on household consumption, which is not conducive to the prevention and control of DAPP. This is also consistent with the results of existing studies$^{7,34}$."
+    },
+    {
+      "index": 45,
+      "text": "Hence, to alleviate the health burden caused by air pollution and decrease health risks, apart from improving air quality, China should pay special attention to older people who are directly exposed to air pollution. First, formulating plans for promoting public health awareness is suggested. This will encourage elderly individuals to conduct indoor activities during adverse weather conditions, thus reducing direct exposure to polluted air. For example, the U.S.A. and European"
+    },
+    {
+      "index": 46,
+      "text": "Union countries have implemented public health awareness plans\u2078 to provide information on air pollution for elderly individuals, encouraging them to reduce their activities in highly contaminated conditions. Second, the government should improve health care by supporting additional investments in health care and adopting targeted measures to improve older people's health care insurance and alleviate their economic burden. Other policies, such as providing people residing in polluted areas with medical compensation, incorporating medicines targeted at compulsory diseases into medical insurance and reducing the medical cost of treating air pollution-related diseases, are suggested as well. Studies\u00b2\u2077 have shown that assisting older people suffering from lung cancer and ischemic heart disease with economic support is effective in relieving the adverse health impacts of air pollution."
+    },
+    {
+      "index": 47,
+      "text": "## 3.2 International insight on DAPP Prevention and Control in different regions of China\n\nWith a rapidly aging society and room left to improve air quality and health care in Central, West and Northeast China, DAPP prevention and control in these regions is facing great challenges. Specifically, in Central and West China, in addition to the continuous increase in the proportion of the elderly population will hinder the prevention and control of DAPP, inferior medical treatment and environmental quality contribute a great deal. Zhang et al discussed the weak regulations on public health and environmental quality due to poor regional economic development\u00b3\u2075. Therefore, compared to the eastern regions, air pollution in poorer areas produced greater adverse effects on health. In Northeast China, population aging was the main driving factor in DAPP growth. In Heilongjiang and Jilin, the amount of DAPP caused by population aging equaled nearly twice the average amount among provinces. Confronted with high rates of population aging, even the improvement of health care and environmental quality could not reverse the DAPP trend, thus causing DAPP to grow consistently\u00b9\u2070. Although Central and Northeast China are faced with great challenges regarding DAPP prevention and control, Eastern, Southeast and Southwestern China have had some successes in this regard. The way of air pollution prevents and control and the equipped health care system in the area have set an imitable example for other regions. Kamal et al\u00b9\u2079 pointed out that the Air Pollution Prevention and Control Action Plan issued by the Chinese government makes it possible to contain PM\u2082.\u2085 pollution in certain cities, such as Shanghai and Guangzhou. Through the subsequent implementation of the plan, it is projected that by 2030, 280,000 premature deaths could be prevented. In terms of other socioeconomic aspects, Jiao et al\u00b3\u2076 found that in cities with better education and medical resources, such as Beijing and Shanghai, residents have better health awareness and public health insurance, thus offsetting the adverse effect caused by air pollution to some degree."
+    },
+    {
+      "index": 48,
+      "text": "The future trends in DAPP in different regions of China are informative for other countries and regions (Table 1). First, air pollution poses the biggest threat to health in less economically developed regions such as Central and West China. In the assessment of air pollution and health"
+    },
+    {
+      "index": 49,
+      "text": "from the WHO\u00b3\u2077 report, nearly 90% of air pollution-related deaths occurred in low-income and middle-income countries (e.g., South Asian and Western Pacific countries). Confined due to limitations in technology levels, most developing countries have substantial air pollution\u00b3\u2078. Therefore, these countries should draw lessons from developed countries in terms of adjusting their industrial structure and exploiting green energy to reduce air pollution, as well as improving health care levels."
+    },
+    {
+      "index": 50,
+      "text": "Second, for countries and regions that have achieved preliminary economic development and improvement in air quality and health care (e.g., Northeast China), the threat of population aging was the main culprit for the increase in DAPP. Therefore, on the premise of establishing a complete system of health care, these countries and regions should pay special attention to providing medical help and perfecting basic pension plans for vulnerable people such as elderly individuals. For instance, Beard et al\u00b3\u00b9 suggested that countries and regions should establish long-term nursing systems to fulfill the requirements of older people in all aspects of health care. In addition, governments should provide health services in regions adjacent to older people's residences, especially those live in polluted areas, guarantee their accessibility to vaccines and other medical products, and conduct targeted training for professional nursing personnel. Lloyd-Sherlock et al\u00b3\u00b2 specifically focused on sub-Saharan African countries, identifying local governments that adopted measures to improve the health care of older people in the face of population aging."
+    },
+    {
+      "index": 51,
+      "text": "Third, for regions and countries with high-level economic development (a region such as East China), due to improvements in air quality and health care facilities, the decrease in DAPP brought by lowering the death rates of diseases and improving air quality can effectively offset the increase in DAPP led by population aging. For countries and regions such as the U.S.A.\u00b3\u2079 and the European Union\u2074\u2070,\u2074\u00b9, continuously optimizing the health care system and further improving air quality are effective for controlling DAPP. In addition, conducting regional collaboration is encouraged to jointly address air pollution, develop a green economy and reduce health risks. For example, European countries have developed emissions reduction technology and encourage green business to reduce industrial pollution, thus reducing health risks\u2074\u2070. In the case of China, Wu et al\u2074\u00b2 also pointed out that regions such as the Yangtze River Delta (Shanghai, Jiangsu and Zhejiang) should collaborate frequently to tackle air pollution, thus maximizing the benefits. Ji et al\u2074\u00b3 also pointed out that creating more green space can help prolong life and cope with China's aging society."
+    },
+    {
+      "index": 52,
+      "text": "Table 1. Health risks of air pollution in countries with varied incomes.\n\n[tbl-3.md](tbl-3.md)\n\nGlobal population data and classifications by income levels were derived from publicly available World Bank information. Death rate data were accessed from Cohen et al. The Chinese classifications by income levels are based on income rankings of China."
+    },
+    {
+      "index": 53,
+      "text": "In summary, with the aging population increasing globally, the prevention and control of DAPP has become a common challenge faced by all countries worldwide. From 2000-2016, the proportion of people 60 years or older grew by  $50\\%$ . The growing proportion of older people is likely to add additional health costs brought by air pollution, making it more difficult to control DAPP and to achieve the Sustainable Development Goals (SDGs) over time. Therefore, it requires mutual cooperation and long-term continuous efforts among countries around the world to take actions to improve air quality, reduce the exposure of elderly individuals to air pollution, and improve health care for older people. On the one hand, immediate action is needed to improve air quality, adhere to a sustainable development path, and avoid the patterns of regional competition and burning of fossil fuels. This requires countries around the world to make efforts to reduce pollutant emissions from the source. At the same time, considering the fluidity of air pollution, cooperation in air pollution control will help all countries around the world jointly improve environmental quality, reducing the health risks from air pollution. On the other hand, attention needs to be paid to the health of the aging population. It is necessary to increase medical and health investment for the elderly population and to take more targeted measures to prevent elderly individuals from being exposed to air pollution and to take necessary measures to adjust the population structure to manage the aging of the population."
+    },
+    {
+      "index": 54,
+      "text": "# 4 Conclusions\n\nFrom 2017 to 2025, the trend in DAPP in China is estimated to decline by 19 -146 thousand (95% CI) in all four scenarios. From 2025-2035, the DAPP will begin to increase by 19-81 thousand (95% CI) in the three scenarios except the sustainable development scenario (SSP1-2.6), in which"
+    },
+    {
+      "index": 55,
+      "text": "|  Income Levels | World |   |   | China  |   |   |\n| --- | --- | --- | --- | --- | --- | --- |\n|   |  Country | Percentage of elderly individuals (65 years or more) (%) | Death rate attributable to air pollution (per thousand) | Regions | Percentage of elderly individuals (65 years or more) (%) | Death rate attributable to air pollution (per thousand)  |\n|  High income | U.S., Japan, etc. | 22.5 | 74.5 | East, South | 22.2 | 58.8  |\n|  Upper-middle income | Brazil, Russia, etc. | 12.6 | 94.6 | North, Northeast, | 28.4 | 74  |\n|  Lower-middle and low income | Bangladesh, Pakistan, etc. | 4.8 | 129 | Central, Northwest | 21.7 | 90.6  |"
+    },
+    {
+      "index": 56,
+      "text": "the DAPP will decrease by 44 thousand (37-53, 95% CI). The changes in DAPP among the provinces of China will exhibit substantial differences. Taking the sustainable development (SSP1-2.6) scenario as an example, from 2017 to 2035, East China will be the region with the least reduction in DAPP, while Central China will be the region with the largest reduction in DAPP, 231(211-253, 95% CI) thousand, nearly 7 times more than East China."
+    },
+    {
+      "index": 57,
+      "text": "Overall, from 2017 to 2035, population aging will be the most important driver of DAPP growth. In the sustainable development (SSP1-2.6) and fossil fuel development (SSP5-8.5) scenarios, population aging is the only factor leading to DAPP growth in 2017-2035, resulting in increases of 718-746 (95% CI) thousand and 608-656 (95% CI) thousand DAPP, respectively. In the business as usual (SSP2-4.5) and regional competition (SSP3-7.0) scenarios, more than 98% (95% CI) of DAPP growth is due to population aging."
+    },
+    {
+      "index": 58,
+      "text": "In the future, with the fast growth of global aging, the prevention and control of DAPP will require more effort from all countries to achieve the United Nations' Sustainable Development Goals. On the one hand, it is necessary to pay attention to the health problems caused by population aging, increase medical and health investment for the elderly population, separate heavy industry from where people (especially the elderly) live and take more targeted measures to avoid the exposure of the elderly population to air pollution. In addition, immediate action is needed to improve air quality, adhere to a sustainable development path, and avoid scenarios involving regional competition and the burning of fossil fuels. All these require mutual cooperation and the long-term efforts of all countries around the world."
+    },
+    {
+      "index": 59,
+      "text": "# Materials and methods\n\n# Study area\n\nThis paper focuses on the change in and driving factors of DAPP in China at the provincial scale. The GBD study showed that  $\\mathrm{PM}_{2.5}$  pollution caused 4.2 million deaths worldwide in 2015, of which China was the country with the largest number of deaths, reaching 1.11 million (IHME and HEI, 2017). In addition, China is the country with the largest elderly population in the world (United Nations, 2017). By the end of 2017, the population aged over 60 years in China was 240 million, accounting for  $25\\%$  of the world's elderly population."
+    },
+    {
+      "index": 60,
+      "text": "This study assessed 31 provinces, autonomous regions, and municipalities, with Hong Kong, Macau and Taiwan excluded due to data limitations. The 31 provinces were aggregated into North, Northeast, East, Central, South, Southwest, and Northwest regions (Appendix Figure S2). From 2000 to 2017, the population-weighted  $\\mathrm{PM}_{2.5}$  concentration and population aging in China showed an upward trend. The average population-weighted atmospheric  $\\mathrm{PM}_{2.5}$  concentration in China increased from  $28.1\\mathrm{ug/cm}^3$  to  $41.1\\mathrm{ug/cm}^3$ , an increase of  $46.3\\%$  (Global  $\\mathrm{PM}_{2.5}$  Assessment Dataset)."
+    },
+    {
+      "index": 61,
+      "text": "# Data\n\nThe data used in this study includes pollutant concentration data, disease mortality data, historical socioeconomic data, air pollutant composition data, future socioeconomic data, and other geographic data (Table 2)."
+    },
+    {
+      "index": 62,
+      "text": "Table 2 Data Resource\n\n[tbl-4.md](tbl-4.md)\n\n|   | Data | Resource  |\n| --- | --- | --- |\n|  Historical data (2000-2017) | Concentration of PM2.5 on surface (spatial resolution 0.1\u00b0) | Global PM2.5 Assessment Dataset44  |\n|   |  disease mortality data (provincial scale) | Yin et al10  |\n|   |  Socioeconomic data: population, GDP per capita, proportion of secondary industry, educational level, fertility rate (provincial scale) | \"China Statistical Yearbook\"45  |\n|  Future data (2017-2035) | Components of PM2.5 data: sea salt, sulfate, organic aerosol, black carbon (spatial resolution 1\u00b0) | CMIP6 dataset46  |\n|   |  Socioeconomic Data: Population Data | Jiang et al47 Chen et al48  |\n|  Geographic assistance data | Provincial administrative boundary data | 1:1 million data released by the National Bureau of Surveying, Mapping and Geographic Information  |"
+    },
+    {
+      "index": 63,
+      "text": "Future $\\mathrm{PM}_{2.5}$ composition data came from the CMIP6 dataset. Specifically, the data are based on the emissions, climate and meteorological specification under each scenario in the ScenarioMIP framework and are logically consistent with socioeconomic factors in the SSPs$^{46}$. We used the average of the simulation results of multiple models for each scenario$^{49}$."
+    },
+    {
+      "index": 64,
+      "text": "Future socioeconomic data include data on China's population age structure and population education level at the provincial scale$^{48}$ and data on the total population at $0.5^{\\circ}$ grid cell resolution$^{47}$. Based on the latest provincial and prefecture-level city statistical yearbook data and population data in the RCP pathways, the dataset from Chen et al$^{29}$ constructs the future population of China's provinces in five shared socioeconomic pathways from 2010 to 2100 for the first time and depicts the different developments of future economic and social systems. The data reflects the internally consistent relationships and logic of socio-economic development and climate change at the provincial scale. With 2010 as the base year, Jiang et al$^{47}$ accumulated data on key elements such as fertility, mortality, and migration rates and estimated the annual population out to 2100 under each SSP."
+    },
+    {
+      "index": 65,
+      "text": "## Estimate and validate the spatiotemporal pattern of DAPP in China from 2005 to 2017\n\nFirst, we used the comparable risk assessment framework$^{24}$ to calculate $\\mathrm{DAPP}^{50}$ as a function of the population attributable fraction (PAF), population, disease mortality and age structure$^{37,51}$:"
+    },
+    {
+      "index": 66,
+      "text": "$$\nDAPP = \\sum_{a,d} \\left( PAF_{a,d} \\times POP \\times Rate_{a,d} \\times AgeP_a \\right) \\tag{1}\n$$\n\nwhere $\\mathrm{PAF}_{\\mathrm{a,d}}$ refers to the attributable fraction of disease d in the population of age a, POP refers to the population, $Rate_{a,d}$ refers to the mortality rate of disease d in the people of age a, and AgePa refers to the proportion of the population of age a in the total population. Among them, age a includes 15 stages: 25-30, 30-35, ..., 90-95, and &gt;95 years old. Disease d includes 6 categories: chronic obstructive pulmonary disease, infectious lower respiratory tract infection, lung cancer, ischemic heart disease, stroke and type 2 diabetes$^{37}$. In addition, $\\mathrm{PAF}_{\\mathrm{a,d}}$ is determined by the relative risk $RR_{a,d}$ of death due to disease d in age group $a^{37}$. Specifically, it can be expressed as$^{5}$,"
+    },
+    {
+      "index": 67,
+      "text": "$$\nPAF_{a,d} = \\frac{RR_{a,d} - 1}{RR_{a,d}} \\tag{2}\n$$\n\nwhen the $\\mathrm{PM}_{2.5}$ exposure level is higher, the $RR_{a,d}$ will be higher$^{24,52}$. The quantitative relationship between them can be obtained from the exposure-response function. The exposure-response function used in this study comes from the MR-BRT model recently announced in GBD2019$^{24}$, and the DAPP estimated based on the median value of the MR-BRT model as the primary result$^{24}$."
+    },
+    {
+      "index": 68,
+      "text": "We used Pearson's correlation to verify the reliability of the results (Appendix Figure S3). Specifically, we compared the results obtained in Equation (1) with the estimates calculated by Yue et al$^{22}$ based on the Integrated Exposure Response (IER) model, the estimates calculated by Geng et al$^{14}$ based on the Global Exposure Mortality Model (GEMM), and the estimates calculated Yin et"
+    },
+    {
+      "index": 69,
+      "text": "al$^{10}$ at the provincial scale in China.\n\n## Estimate DAPP in China from 2017 to 2035\n\nWe calculated future the $\\mathrm{PM}_{2.5}$ concentration in China based on empirical formulas and future pollutant concentration data. We used the GBD model to estimate future disease mortality in China and quantified DAPP based on a comparable risk assessment framework."
+    },
+    {
+      "index": 70,
+      "text": "Specifically, referring to the study of Chowdhury et al$^{53}$ and Van Donkelaar et al$^{54}$, we used the empirical formula to estimate $\\mathrm{PM}_{2.5}$ concentration:"
+    },
+    {
+      "index": 71,
+      "text": "$$\n\\mathrm{PM}_{2.5} = \\mathrm{BC} + \\mathrm{OA} + SO_4 + NH_4 + 0.25 \\times SS + 0.1 \\times dust \\tag{3}\n$$"
+    },
+    {
+      "index": 72,
+      "text": "$$\nNH_4 = \\frac{(36 \\times SO_4)}{96} \\tag{4}\n$$\n\nwhere BC represents black carbon, OA represents organic aerosol, and SS represents sea salt. Since the CMIP6 does not report the concentration of surface $\\mathrm{NH}_4$, we assumed that $\\mathrm{NH}_4$ exists only in the form of ammonium sulfate, and the concentration of $\\mathrm{NH}_4$ was estimated from the concentration of $\\mathrm{SO}_4$."
+    },
+    {
+      "index": 73,
+      "text": "Since the $\\mathrm{PM}_{2.5}$ concentration obtained from the simulation is lower than the actual monitoring results, we calibrated the $\\mathrm{PM}_{2.5}$ concentration calculated by the model and the observation results of the baseline period (2012-2017) as follows:"
+    },
+    {
+      "index": 74,
+      "text": "$$\nPM_{2.5 \\text{mod pentad} = x} = PM_{2.5 \\text{sat pentad} = bl} + PM_{2.5 \\text{sat pentad} = bl} \\times \\frac{PM_{2.5 \\text{mod pentad} = x}^{- PM_{2.5 \\text{mod pentad} = bl}}}{PM_{2.5 \\text{mod pentad} = bl}} \\tag{5}\n$$"
+    },
+    {
+      "index": 75,
+      "text": "where $PM_{2.5\\text{sat pentad} = bl}$ represents the $\\mathrm{PM}_{2.5}$ concentration during the baseline period (2012-2017), $PM_{2.5\\text{mod pentad} = x}$ represents the $\\mathrm{PM}_{2.5}$ concentration obtained according to equation 5, and $PM_{2.5\\text{mod pentad} = bl}$ represents the $\\mathrm{PM}_{2.5}$ concentration during the baseline period obtained from equation 5."
+    },
+    {
+      "index": 76,
+      "text": "In addition, for future disease mortality, we used the GBD development prediction model to estimate it according to the study by Foreman et al$^{55}$. According to the model, the following relationship is satisfied between disease mortality and its drivers:"
+    },
+    {
+      "index": 77,
+      "text": "$$\n\\ln(m) \\sim N(\\hat{y} + \\hat{\\epsilon}, \\sigma) \\tag{6}\n$$\n\nwhere $m$ represents the mortality rate of a specific disease, whose value is mainly determined by $\\hat{y}$ (representing variables such as long-term trends, socioeconomic development, and risk factors) and $\\epsilon^{*}$ (representing residuals that cannot be explained by the above factors)."
+    },
+    {
+      "index": 78,
+      "text": "$$\n\\hat{y} = \\beta_1 SDI_{&lt; 0.8} + \\beta_2 SDI_{\\geq 0.8} + \\theta_a t + \\alpha_{la} \\tag{7}\n$$\n\n$$\n\\hat{\\epsilon} = \\text{ARIMA} \\left(\\epsilon_{\\text{Astory}}\\right) \\tag{8}\n$$"
+    },
+    {
+      "index": 79,
+      "text": "where $\\beta_0$ and $\\beta_1$ represent the global coefficients when the sociodemographic index (SDI) is less"
+    },
+    {
+      "index": 80,
+      "text": "than 0.8 and greater than 0.8, respectively. $\\theta_{\\mathrm{a}}$ represents the long-term trend for a specific age group, and t represents time. $\\alpha_{\\mathrm{is}}$ refers to the intercept for a specific age in a specific region. $\\epsilon^{*}$ can be calculated by the autoregressive integrated moving average function."
+    },
+    {
+      "index": 81,
+      "text": "Finally, based on the estimated results of $\\mathrm{PM}_{2.5}$ concentration and disease mortality as well as the population and age structure data, we quantified the DAPP from 2018 to 2035 with the comparable risk assessment framework model of Formula (1). In addition, the upper and lower bounds of the confidence interval for DAPP in this study were determined by the upper and lower bounds of the exposure response function and the upper and lower bounds of confidence intervals for $\\mathrm{PM}_{2.5}$ concentration and disease mortality. Among them, the upper and lower limits of the $95\\%$ confidence interval range of the exposure-response function are the $2.5\\%$ and $97.5\\%$ quantiles of each result in the 1000th curve fit of the meta-regression\u2014the Bayesian, regularized, trimmed (MR-BRT) model[24]. The confidence interval of the $\\mathrm{PM}_{2.5}$ concentration was determined by the difference of 11 models in the CMIP6 dataset[53]. This study assumed that the simulation results of each model conformed to the t-distribution[46], and the $95\\%$ confidence interval of the $\\mathrm{PM}_{2.5}$ concentration can be expressed as:"
+    },
+    {
+      "index": 82,
+      "text": "$$\nC_{CI} = \\operatorname{Con}_{\\text{mean}} \\pm \\sqrt{\\operatorname{Var}(C)} * T_{95\\%}(n - 1) \\tag{9}\n$$"
+    },
+    {
+      "index": 83,
+      "text": "where $C_{CI}$ represents the uncertainty interval of the $\\mathrm{PM}_{2.5}$ concentration, $C_{mean}$ refers to the mean value of the $\\mathrm{PM}_{2.5}$ concentration obtained by multiple models, and $\\operatorname{Var}(C)$ refers to the variance in the $\\mathrm{PM}_{2.5}$ concentration obtained from multiple models. $T_{95\\%}(n-1)$ represents the t-statistic with n-1 degrees of freedom under the $95\\%$ confidence interval, where n is the number of correlated modes."
+    },
+    {
+      "index": 84,
+      "text": "Disease mortality is determined by $\\epsilon$ in the linear model Formula (8) $^{55}$, $\\epsilon$ represents the residual between the estimated value and the actual value, obeying the mean of 0, and the variance of $\\operatorname{Var}(e_0)$ is normally distributed. Therefore, the $95\\%$ confidence interval for $\\ln(m)$ can be expressed as:"
+    },
+    {
+      "index": 85,
+      "text": "$$\n\\ln(m)_{CI} = \\hat{y} + \\hat{\\epsilon} \\pm \\sqrt{\\operatorname{Var}(\\epsilon - \\hat{\\epsilon})} * T_{95\\%}(n - 2) \\tag{10}\n$$"
+    },
+    {
+      "index": 86,
+      "text": "where $\\ln(m)_{CI}$ represents the uncertainty interval for the natural logarithm of mortality from a specific type and age group of diseases, the sum of $y^*$ and $\\epsilon^*$ represents the predicted value of $\\ln(m)$, and $\\operatorname{Var}(\\epsilon - \\hat{\\epsilon})$ refers to the variance of the residual term in the regression model (Equation 3.10). $T_{95\\%}(n-2)$ represents the t-statistic with n-2 degrees of freedom under the $95\\%$ confidence interval, where n is the sample size for constructing the regression model. $\\operatorname{Var}(\\epsilon - \\hat{\\epsilon})$ can be further obtained by the following formula."
+    },
+    {
+      "index": 87,
+      "text": "$$\n\\operatorname{Var}(\\epsilon - \\hat{\\epsilon}) = \\frac{\\sum e_i^2}{n - 2} \\times \\left[ \\frac{1}{n} \\times \\frac{(x_f - \\bar{x})^2}{(x_i - \\bar{x})^2} \\right] \\tag{11}\n$$"
+    },
+    {
+      "index": 88,
+      "text": "where $\\sum e_i^2$ is the residual sum of squares of the regression model, $x_i$ and $\\bar{x}$ represent the mean of each independent variable and independent variable in the regression model, respectively, and $x_f$ represents the input value of the independent variable when predicting the future based on the regression model."
+    },
+    {
+      "index": 89,
+      "text": "We further compared the DAPP calculated in this paper of historical periods with previous\n\nstudies to verify the rationality of the quantitative method. We found that previous studies^{10,14,22} showed similar results to ours. Although some estimates based on the GEMM model were higher than our estimates^{14}, the results showed a similar trend over time. This is because the RR estimated by GEMM model are higher compared to the RR values obtained by the IER function, especially in areas with high PM_{2.5} concentrations^{7}. Also, we compared the results estimated under different future scenarios with the results estimated by GBDMAPS (Table S3). Different from the four scenarios in this study, the results in GBDMAPS was mainly based on different emission pathways under different energy utilization and air pollution control policies. Consistent with our findings, DAPP were lower under the sustainable development paths with policy interventions (such as the BAU2 and PC2 scenarios in GBDMAPS China and the SSP1-2.6 scenarios in this study). However, since we only considered outdoor air pollution when quantifying DAPP, ignoring indoor pollution and its interaction with outdoor air pollution, the amount of DAPP in this study is lower than the results of GBDMAPS China. In addition, the disease mortality data used in GBDMAPS was simulated based on the estimated value of GBD2013. It was assumed that the change trend of disease mortality is consistent with the change trend from 1990 to 2013, and the changes in socioeconomic levels such as medical conditions across different scenarios were not taken into account. Therefore, the disease mortality in GDBMAPS China were higher than the ones in our study. This is another reason for the higher estimated DAPP estimated by GBDMAPS than our estimates."
+    },
+    {
+      "index": 90,
+      "text": "### 5.2 Analyze the drivers of DAPP by the decomposition method\n\nIn addition to being affected by the age structure of the population, DAPP is also affected by the effects of population size, PM_{2.5} concentration and related disease mortality. Specifically, the total population and proportion of aged population, PM_{2.5} concentration, and disease mortality are all positively correlated with DAPP. Based on Cohen et al^{5} and Yue et al^{22}, we quantified the influence of age structure and population size, PM_{2.5} concentration and related disease mortality on DAPP using the decomposition method. The advantage of decomposition method is to transform the nonlinear relationship between individual drivers and DAPP changes into a simple linear relationship^{5}. Compared with simple sensitivity analysis, decomposition method takes into account the interaction of various factors, which makes the number of DAPP correspond to the contribution of driving factors. The net change of DAPP in a certain period of time can be expressed as the sum of the contributions of various driving factors to the change of DAPP, which is helpful for the quantitative analysis of the driving mechanism of DAPP. At the same time, the decomposition method converts the changes of different driving factors into contributions to the changes of DAPP, which supports the judgment of the relative importance of each factor."
+    },
+    {
+      "index": 91,
+      "text": "In the decomposition analysis (Appendix Figure S4), we gradually introduced the\n\nchanges in age structure, population, $\\mathrm{PM}_{2.5}$ concentration and disease mortality separately to calculate DAPP. The difference between the pre-introduction and post-introduction results is the contribution of age structure. In addition, considering that the order of introduction can affect the calculation results, this study calculated all 24 possible combinations of the order of the introduction and used the average of the contributions of the four drivers in each case as the final result. Based on the decomposition analysis, we calculated the driving factors of DAPP in China in 2017-2025, 2025-2030, and 2030-2035 and then analyzed the synergistic driving effect of age structure and other factors on DAPP."
+    },
+    {
+      "index": 92,
+      "text": "## Acknowledgement\n\nWe thank Prof. Aaron J. Cohen (Health Effects Institute, Boston, USA) for his insightful comments on the manuscript. This work was supported by the National Key Research and Development Program of China (Grant No.2019YFA0607203), the National Natural Science Foundation of China (Grant No.41971270&amp; 41621061) and National Foundation of China Scholarship Council (Grant No.201806040156)."
+    },
+    {
+      "index": 93,
+      "text": "## References\n\n1. Kumar, A., Yang, T. &amp; Sharma, M. P. Long-term prediction of greenhouse gas risk to the Chinese hydropower reservoirs. *Science of the Total Environment* 646, 300-308, doi:10.1016/j.scitotenv.2018.07.314 (2019).\n2. Xie, Y., Dai, H., Dong, H., Hanaoka, T. &amp; Masui, T. Economic Impacts from PM2.5 Pollution-Related Health Effects in China: A Provincial-Level Analysis. *Environmental Science &amp; Technology* 50, 4836-4843, doi:10.1021/acs.est.5b05576 (2016).\n3. Southerland, V. A. et al. Global urban temporal trends in fine particulate matter (PM2\u00b75) and attributable health burdens: estimates from global datasets. *The Lancet. Planetary health* 6, e139-e146, doi:10.1016/s2542-5196(21)00350-8 (2022).\n4. Collaborators, G. S. Measuring progress from 1990 to 2017 and projecting attainment to 2030 of the health-related Sustainable Development Goals for 195 countries and territories: a systematic analysis for the Global Burden of Disease Study 2017. *The Lancet* 392, 2091-2138, doi:10.1016/s0140-6736(18)32281-5 (2018).\n5. Cohen, A. J., Brauer, M. &amp; Burnett, R. Estimates and 25-year trends of the global burden of disease attributable to ambient air pollution: an analysis of data from the Global Burden of Diseases Study 2015 (vol 389, pg 1907, 2017). *Lancet* 391, 1576-1576, doi:10.1016/s0140-6736(18)30900-0 (2018).\n6. Chen, K., Vicedo-Cabrera, A. M. &amp; Dubrow, R. Projections of Ambient Temperature- and Air Pollution-Related Mortality Burden Under Combined Climate Change and Population Aging Scenarios: a Review. *Current Environmental Health Reports* 7, 243-255, doi:10.1007/s40572-020-00281-6 (2020).\n7. Liu, J. et al. Transition in air pollution, disease burden and health cost in China: A comparative study of long-term and short-term exposure. *Environmental Pollution* 277, doi:10.1016/j.envpol.2021.116770 (2021).\n8. Shumake, K. L., Sacks, J. D., Lee, J. S. &amp; Johns, D. O. Susceptibility of older adults to health effects induced by ambient air pollutants regulated by the European Union and the United States. *Aging Clinical and Experimental Research* 25, 3-8, doi:10.1007/s40520-013-0001-5 (2013).\n9. World Bank. *Data bank*, <https: data.worldbank.org=\"\" indicator=\"\"> (2020).</https:>"
+    },
+    {
+      "index": 94,
+      "text": "10 Yin, P. et al. The effect of air pollution on deaths, disease burden, and life expectancy across China and its provinces, 1990-2017: an analysis for the Global Burden of Disease Study 2017. Lancet Planetary Health 4, E386-E398, doi:10.1016/s2542-5196(20)30161-3 (2020)."
+    },
+    {
+      "index": 95,
+      "text": "11 United Nations. World Population Prospects 2019, <https: population.un.org=\"\" population=\"\" wpd=\"\" wpp=\"\" www=\"\"> (2019)."
+    },
+    {
+      "index": 96,
+      "text": "12 Gongbenn, L. 100-year forecast of the development trend of China's population aging. (HuaLing, 2007)."
+    },
+    {
+      "index": 97,
+      "text": "13 United Nations. Transforming our world: the 2030 Agenda for Sustainable Development, <https: 2030agenda=\"\" sdgs.un.org=\"\"> (2015)."
+    },
+    {
+      "index": 98,
+      "text": "14 Geng, G. N. et al. Drivers of PM2.5 air pollution deaths in China 2002-2017. Nature Geoscience 14, 645-+, doi:10.1038/s41561-021-00792-3 (2021)."
+    },
+    {
+      "index": 99,
+      "text": "15 Gidden, M. J., Riahi, K., Smith, S. J., Fujimori, S. &amp; Takahashi, K. J. G. M. D. D. Global emissions pathways under different socioeconomic scenarios for use in CMIP6: a dataset of harmonized emissions trajectories through the end of the century. 1-42 (2018)."
+    },
+    {
+      "index": 100,
+      "text": "16 Silva et al. Future global mortality from changes in air pollution attributable to climate change (vol 7, pg 647, 2017)."
+    },
+    {
+      "index": 101,
+      "text": "17 Kuerban, M. et al. Spatio-temporal patterns of air pollution in China from 2015 to 2018 and implications for health risks. Environmental Pollution 258, doi:10.1016/j.envpol.2019.113659 (2020)."
+    },
+    {
+      "index": 102,
+      "text": "18 Xiao, Q., Liang, F., Ning, M., Zhang, Q. &amp; Liu, Y. J. C. The long-term trend of PM2.5-related mortality in China: The effects of source data selection. 263, 127894 (2020)."
+    },
+    {
+      "index": 103,
+      "text": "19 Maji, K. J., Ye, W.-F., Arora, M. &amp; Nagendra, S. M. S. PM2.5-related health and economic loss assessment for 338 Chinese cities. Environment International 121, 392-403, doi:10.1016/j.envint.2018.09.024 (2018)."
+    },
+    {
+      "index": 104,
+      "text": "20 Shen, H., Shu, T., Chen, Y., Ciais, P. &amp; Zhao, S. J. S. A. Urbanization-induced population migration has reduced ambient PM 2.5 concentrations in China. 3, e1700300 (2017)."
+    },
+    {
+      "index": 105,
+      "text": "21 Rafaj, P., Kiesewetter, G., Krey, V., Schpp, W. &amp; Vuuren, D. J. E. R. L. Air quality and health implications of $1.5 - 2^{\\circ}\\mathrm{C}$ climate pathways under considerations of ageing population: A multi-model scenario analysis. (2021)."
+    },
+    {
+      "index": 106,
+      "text": "22 Yue, H., He, C., Huang, Q., Yin, D. &amp; Bryan, B. A. Stronger policy required to substantially reduce deaths from PM2.5 pollution in China. Nature Communications 11, doi:10.1038/s41467-020-15319-4 (2020)."
+    },
+    {
+      "index": 107,
+      "text": "23 Wu, R. et al. Air quality and health benefits of China's emission control policies on coal-fired power plants during 2005-2020. Environmental Research Letters 14, doi:10.1088/1748-9326/ab3bae (2019)."
+    },
+    {
+      "index": 108,
+      "text": "24 Collaborators, G. R. F. Global burden of 87 risk factors in 204 countries and territories, 1990-2019: a systematic analysis for the Global Burden of Disease Study 2019. The Lancet 396, 1223-1249, doi:10.1016/s0140-6736(20)30752-2 (2020)."
+    },
+    {
+      "index": 109,
+      "text": "25 Bu, X. et al. Global PM2.5-attributable health burden from 1990 to 2017: Estimates from the Global Burden of disease study 2017. Environmental Research 197, doi:10.1016/j.envres.2021.111123 (2021)."
+    },
+    {
+      "index": 110,
+      "text": "26 Wang, Q., Wang, J., Zhou, J., Ban, J. &amp; Li, T. Estimation of PM2.5-associated disease burden in China in 2020 and 2030 using population and air quality scenarios: a modelling study. Lancet Planetary Health 3, E71-E80, doi:10.1016/s2542-5196(18)30277-8 (2019)."
+    },
+    {
+      "index": 111,
+      "text": "27 Crume, R. V., Sykes, K. E. &amp; Crume, Y. S. Air Quality Issues for an Aging Population. Proceedings of the 2007 National Conference on Environmental Science and Technology, 67-+, doi:10.1007/978-0-387-88483-7_10 (2009).</https:></https:>"
+    },
+    {
+      "index": 112,
+      "text": "28 Zeping, R. Characteristics and Trends of Population Aging in China. *China Elderly News* 0902 (2020)."
+    },
+    {
+      "index": 113,
+      "text": "29 Chen, Y. et al. Provincial and gridded population projection for China under shared socioeconomic pathways from 2010 to 2100. *Scientific Data* 7, doi:10.1038/s41597-020-0421-y (2020)."
+    },
+    {
+      "index": 114,
+      "text": "30 Fan, H., Wang, Y., Wang, Y. &amp; Coyte, P. C. The impact of environmental pollution on the physical health of middle-aged and older adults in China. *Environmental Science and Pollution Research* 29, 4219-4231, doi:10.1007/s11356-021-15832-z (2022)."
+    },
+    {
+      "index": 115,
+      "text": "31 Beard, J. R. et al. The World report on ageing and health: a policy framework for healthy ageing. *Lancet* 387, 2145-2154, doi:10.1016/s0140-6736(15)00516-4 (2016)."
+    },
+    {
+      "index": 116,
+      "text": "32 Lloyd-Sherlock, P. &amp; Amoakoh-Coleman, M. A critical review of intervention and policy effects on the health of older people in sub-Saharan Africa. *Social Science &amp; Medicine* 250, doi:10.1016/j.socscimed.2020.112887 (2020)."
+    },
+    {
+      "index": 117,
+      "text": "33 Peng, X. China's Demographic History and Future Challenges. *Science* 333, 581-587, doi:10.1126/science.1209396 (2011)."
+    },
+    {
+      "index": 118,
+      "text": "34 Yin, H. et al. Population ageing and deaths attributable to ambient PM2.5 pollution: a global analysis of economic cost (vol 5, pg e356, 2021). *Lancet Planetary Health* 5, E764-E764 (2021)."
+    },
+    {
+      "index": 119,
+      "text": "35 Zhang, C., Zheng, T. J. R. &amp; Reviews, S. E. The relationships between population factors and China's carbon emissions: Does population aging matter? 65, 1018-1025 (2016)."
+    },
+    {
+      "index": 120,
+      "text": "36 Jiao, K., Xu, M. &amp; Liu, M. Health status and air pollution related socioeconomic concerns in urban China. *International Journal for Equity in Health* 17, doi:10.1186/s12939-018-0719-y (2018)."
+    },
+    {
+      "index": 121,
+      "text": "37 World Health Organization. *Ambient air pollution: A global assessment of exposure and burden of disease*, <http: air-pollution-global-assessment=\"\" en=\"\" phe=\"\" publications=\"\" www.who.int=\"\"></http:> (2016)."
+    },
+    {
+      "index": 122,
+      "text": "38 Anwar, A., Ayub, M., Khan, N. &amp; Flahault, A. Nexus between Air Pollution and Neonatal Deaths: A Case of Asian Countries. *International Journal of Environmental Research and Public Health* 16, doi:10.3390/ijerph16214148 (2019)."
+    },
+    {
+      "index": 123,
+      "text": "39 Matus, K., Yang, T., Paltsev, S., Reilly, J. &amp; Nam, K.-M. Toward integrated assessment of environmental change: air pollution health effects in the USA. *Climatic Change* 88, 59-92, doi:10.1007/s10584-006-9185-4 (2008)."
+    },
+    {
+      "index": 124,
+      "text": "40 Vrontisi et al. Economic impacts of EU clean air policies assessed in a CGE framework.\n\n41 Mayeres, I. &amp; Van Regemorter, D. Modelling the health related benefits of environmental policies and their feedback effects: A CGE analysis for the EU countries with GEM-E3. *Energy Journal* 29, 135-150 (2008)."
+    },
+    {
+      "index": 125,
+      "text": "42 Wu, R. et al. Economic Impacts from PM2.5 Pollution-Related Health Effects: A Case Study in Shanghai. *Environmental Science &amp; Technology* 51, 5035-5042, doi:10.1021/acs.est.7b00026 (2017)."
+    },
+    {
+      "index": 126,
+      "text": "43 Ji, J. S. et al. Residential greenness and mortality in oldest-old women and men in China: a longitudinal cohort study. *Lancet Planetary Health* 3, E17-E25, doi:10.1016/s2542-5196(18)30264-x (2019)."
+    },
+    {
+      "index": 127,
+      "text": "44 Lutz, W., Goujon, A., Kc, S., Stonawski, M. &amp; Stilianakis, N. Demographic and human capital scenarios for the 21st century. (2018)."
+    },
+    {
+      "index": 128,
+      "text": "45 National Bureau of Statistics. *China city statistical yearbook*. (2000-2017).\n\n46 Turnock, S. T., Allen, R. J., Andrews, M., Bauer, S. E. &amp; Zhang, J. Historical and future changes in air pollutants from CMIP6 models. (2020)."
+    },
+    {
+      "index": 129,
+      "text": "47 Jiang, T. et al. Estimated population changes in China and provinces under the IPCC shared socioeconomic pathway. *Climate Change Research* 013, 128-137 (2017)."
+    },
+    {
+      "index": 130,
+      "text": "48 Chen, Y., Guo, F., Wang, J., Cai, W. &amp; Wang, K. J. S. D. Provincial and gridded population projection for China under shared socioeconomic pathways from 2010 to 2100. 7, 83- (2020)."
+    },
+    {
+      "index": 131,
+      "text": "49 O'Neill, B. C. et al. The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century. *Global Environmental Change-Human and Policy Dimensions* 42, 169-180, doi:10.1016/j.gloenvcha.2015.01.004 (2017)."
+    },
+    {
+      "index": 132,
+      "text": "50 Murray, C. J. L. &amp; Lopez, A. D. On the comparable quantification of health risks: Lessons from the Global Burden of Disease Study. *Epidemiology* 10, 594-605, doi:10.1097/00001648-199909000-00029 (1999)."
+    },
+    {
+      "index": 133,
+      "text": "51 Lim, S. S., Vos, T., Flaxman, A. D., AlMazroa, M. A. &amp; Memish, Z. A. A comparative risk assessment of burden of disease and injury attributable to 67 risk factors and risk factor clusters in 21 regions, 1990-2010: a systematic analysis for the Global Burden of Disease Study 2010 (vol 380, pg 2224, 2012). *Lancet* 381, 628-628 (2013)."
+    },
+    {
+      "index": 134,
+      "text": "52 Apte, J. S., Marshall, J. D., Cohen, A. J. &amp; Brauer, M. Addressing Global Mortality from Ambient PM2.5. *Environmental Science &amp; Technology* 49, 8057-8066, doi:10.1021/acs.est.5b01236 (2015)."
+    },
+    {
+      "index": 135,
+      "text": "53 Chowdhury, S., Dey, S. &amp; Smith, K. R. Ambient PM2.5 exposure and expected premature mortality to 2100 in India under climate change scenarios. *Nature Communications* 9, doi:10.1038/s41467-017-02755-y (2018)."
+    },
+    {
+      "index": 136,
+      "text": "54 Van Donkelaar, A., Martin, R. V., Brauer, M. &amp; Boys, B. L. J. E. H. P. Use of Satellite Observations for Long-Term Exposure Assessment of Global Concentrations of Fine Particulate Matter. 123 (2015)."
+    },
+    {
+      "index": 137,
+      "text": "55 Foreman, K. J. et al. Forecasting life expectancy, years of life lost, and all-cause and cause-specific mortality for 250 causes of death: reference and alternative scenarios for 2016-40 for 195 countries and territories. *Lancet* 392, 2052-2090, doi:10.1016/s0140-6736(18)31694-5 (2018)."
+    },
+    {
+      "index": 138,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- SupplemantraryMaterial.docx"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The framework (provincial CRA over 2005-2017 + 4-scenario CMIP6 projections to 2035 with index decomposition across 4 drivers) is well-motivated and the dataset broad. But the manuscript has several errors that affect interpretability and at least one paper-level claim. Most importantly: (1) decomposition results show scenario-label confusion between \u00a72.3 and \u00a74 with at least one numerically impossible reused CI, (2) per-annum vs cumulative units are mixed in the aging-driver figures making them internally impossible, (3) the PM2.5 calibration formula (Eq. 5) is mathematically circular as printed and cannot be evaluated without a corrected statement, and (4) the headline \"aging offsets gains\" claim applies only to the 2025-2035 sub-period but is presented in the abstract as a 2017-2035 result. Eq. 11's prediction-variance form is non-standard and the composite uncertainty rule is unspecified, so the reported confidence intervals cannot be reproduced. These are fixable with editorial correction and a numerical re-check, but the abstract's quantitative claims should not stand until they are.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Decomposition results: scenario labels swapped between \u00a72.3 and \u00a74, with at least one impossible reused CI",
+          "quote": "Population aging is the only factor contributing to the growth of DAPP in the sustainable development (SSP1-2.6) scenario and fossil fuel development (SSP5-8.5) scenario, resulting in increases of 674 thousand and 703 thousand DAPP per annum, respectively.",
+          "explanation": "The central decomposition results are internally inconsistent. (1) \u00a72.3 reports SSP1-2.6 aging = 674k and SSP5-8.5 aging = 703k, but \u00a74 (Conclusions) gives the same two scenarios as 718-746k and 608-656k. The 718-746 range matches \u00a72.3's reported SSP2-4.5 (730k, 718-746) and 608-656 matches \u00a72.3's SSP3-7.0 (634k, 608-656) \u2014 i.e., the Conclusions appear to mislabel which scenarios are being summarized, the very claim that 'aging is the only positive contributor in SSP1-2.6 and SSP5-8.5'. (2) \u00a72.3 also reports the disease-mortality reduction for SSP2-4.5 as '658(608-656, 95%CI) thousand' \u2014 the CI '608-656' is identical to that of the SSP3-7.0 aging contribution stated in the same paragraph. Two unrelated decomposition outputs cannot share an identical 95% CI to the unit; this is a copy-paste/labeling error. Together these errors mean the headline claim about which scenarios are 'aging-only' rests on numbers the paper itself reports inconsistently.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "Per-annum vs cumulative units error makes aging contribution figures internally impossible",
+          "quote": "Population aging is the only factor contributing to the growth of DAPP in the sustainable development (SSP1-2.6) scenario and fossil fuel development (SSP5-8.5) scenario, resulting in increases of 674 thousand and 703 thousand DAPP per annum, respectively.",
+          "explanation": "\u00a72.3 says aging produces increases of 674k DAPP 'per annum' for SSP1-2.6 (and 703k for SSP5-8.5). If 'per annum' is taken literally \u2014 18 years \u00d7 674k/year \u2248 12 million extra deaths from aging alone \u2014 this would dwarf the net DAPP changes (-32k to -178k over the entire 2017-2035 horizon) by two to three orders of magnitude. The intended meaning is cumulative 2017-2035, not annual. This units error is likely the source of several other anomalies (e.g., 'DAPP per capita 855 per 10,000' in Northeast China, which would imply ~8.55% annual mortality from PM2.5 \u2014 physically impossible). The paper consistently switches between cumulative-period decomposition contributions and per-year mortality without flagging the change.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "PM2.5 calibration formula (Eq. 5) is mathematically circular and uninterpretable as printed",
+          "quote": "PM_{2.5 \\text{mod pentad} = x} = PM_{2.5 \\text{sat pentad} = bl} + PM_{2.5 \\text{sat pentad} = bl} \\times \\frac{PM_{2.5 \\text{mod pentad} = x}^{- PM_{2.5 \\text{mod pentad} = bl}}}{PM_{2.5 \\text{mod pentad} = bl}}",
+          "explanation": "The bias-correction formula that translates raw CMIP6 PM2.5 reconstructions to the values used for all DAPP projections is uninterpretable. The variable PM_{2.5 mod x} appears on both the LHS and inside the RHS numerator, with a superscript that may be either a power or an OCR-rendered minus sign. The accompanying text defines PM_{2.5 mod x} as 'the PM2.5 concentration obtained according to equation 5' \u2014 i.e., circularly. The intended Chowdhury/van Donkelaar-style correction is presumably PM_calibrated_x = PM_obs_bl \u00d7 (PM_mod_x / PM_mod_bl), but Eq. (5) as printed cannot be reproduced. Since downstream PM2.5 projections \u2014 and therefore every reported DAPP figure \u2014 depend on this calibration, this is a critical reproducibility gap.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 74
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Composite uncertainty rule for DAPP confidence intervals not specified",
+          "quote": "the upper and lower bounds of the confidence interval for DAPP in this study were determined by the upper and lower bounds of the exposure response function and the upper and lower bounds of confidence intervals for $\\mathrm{PM}_{2.5}$ concentration and disease mortality.",
+          "explanation": "Three independent uncertainty sources feed the DAPP CI: the MR-BRT exposure-response (1000 posterior draws), the PM2.5 concentration (CMIP6 multi-model t-distribution with 11 models), and disease mortality (Foreman ARIMA residuals). The paper never describes how they are combined. Naive worst-case bounds, RSS combination, and Monte Carlo propagation give materially different intervals. Every 95% CI in the paper \u2014 including the abstract's 31.9 (26.6-45.6) to 178.8 (152.5-210.5) thousand range, the '95% in Northeast China' claim, and the '>98% from aging' decomposition shares \u2014 depends on this missing combination rule. Combined with the apparently incorrect prediction-variance formula in Eq. (11) and the singular 'the 1000th curve fit' phrasing, the CIs as reported cannot be independently validated.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 81
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "Eq. 11 prediction-variance formula is not the standard OLS prediction-interval form",
+          "quote": "$$\n\\operatorname{Var}(\\epsilon - \\hat{\\epsilon}) = \\frac{\\sum e_i^2}{n - 2} \\times \\left[ \\frac{1}{n} \\times \\frac{(x_f - \\bar{x})^2}{(x_i - \\bar{x})^2} \\right] \\tag{11}\n$$",
+          "explanation": "The standard OLS prediction-interval variance at a new point x_f is \u03c3\u00b2\u00b7[1/n + (x_f \u2212 x\u0304)\u00b2 / \u03a3(x_i \u2212 x\u0304)\u00b2], using a *sum* of squared deviations and *adding* the two leverage terms. As printed, Eq. (11) (i) shows (x_i \u2212 x\u0304)\u00b2 without a \u03a3 in the denominator, and (ii) multiplies (\u00d7) the two leverage terms rather than adding (+) them. As literally printed, the formula yields incorrect \u2014 and likely much smaller \u2014 variances. This affects every reported disease-mortality CI, which propagates into every DAPP CI. Either the formula is mis-typeset (in which case the corrected version should be substituted) or the implementation followed the printed form, in which case the entire CI structure is anti-conservative.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 87
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "Decomposition tables labeled 'PM10 concentration' although the analysis is about PM2.5",
+          "quote": "the proportion of the old (%) | province | changes of DAPP (per 10,000 people) | population contribution | PM10 concentration contribution | age structure contribution | disease mortality contribution",
+          "explanation": "The header row of all three provincial driver-decomposition tables (tbl-0/tbl-1/tbl-2 under Figure 4) reads 'PM10 concentration contribution', whereas the entire study quantifies and decomposes deaths attributable to PM2.5. Methods Eq. (3) reconstructs PM2.5 from CMIP6 species (BC + OA + SO4 + NH4 + 0.25*SS + 0.1*dust), and the exposure-response function (MR-BRT) is for PM2.5. PM10 has a different exposure-response function. Either this is a typo (likely), in which case it should be corrected because PM10 vs PM2.5 mortality is not interchangeable for downstream readers; or the decomposition actually used PM10 anywhere, which would be a major methodological inconsistency.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Headline 'aging offsets gains' claim applies only to 2025-2035 sub-period, not 2017-2035",
+          "quote": "We found that population aging will be the leading driver contributing to the increase in DAPP and offset the positive gains achieved by improvement in air pollution and healthcare.",
+          "explanation": "The abstract states aging will 'offset the positive gains' \u2014 implying net DAPP rises. But \u00a72.2 shows net 2017-2035 DAPP DECLINES in three of four scenarios (-32 to -178k); the only periods in which aging actually drives net growth are 2025-2035 (and only in three scenarios), with 2017-2025 dominated by disease-mortality declines. The abstract therefore overstates the temporal scope of the central finding. The accurate framing is 'beginning in 2025, aging becomes the dominant positive driver and largely offsets continuing gains, but net DAPP still declines by 2035 in three of four scenarios'. As written, a casual reader would conclude aging causes net DAPP rises across the whole period.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 9
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "Abstract restricts headline DAPP range to three of four scenarios, omitting SSP3-7.0",
+          "quote": "from 2017 to 2035, DAPP in China will decrease between 31.9 (26.6-45.6) thousand and 178.8 (152.5-210.5) thousand across three scenarios (sustainable development (SSP1-2.6), business as usual (SSP2-4.5), and fossil fuel development (SSP5-8.5).",
+          "explanation": "The paper's analysis covers four CMIP6 scenarios; \u00a72.2 and \u00a74 give DAPP changes for all four. The abstract excludes SSP3-7.0 (regional rivalry) without explanation \u2014 yet SSP3-7.0 is the only scenario in which population-weighted PM2.5 *rises* (to 43.33 \u00b5g/m\u00b3) and one of two scenarios in which net DAPP grows after 2025 (+72k from 2025-2035). Excluding the highest-DAPP scenario from the abstract's reported range materially understates the message of the paper to a reader who reads only the abstract.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 9
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "Conclusions report scenario ranges as cherry-picked CI bounds rather than point-estimate ranges",
+          "quote": "From 2017 to 2025, the trend in DAPP in China is estimated to decline by 19 -146 thousand (95% CI) in all four scenarios. From 2025-2035, the DAPP will begin to increase by 19-81 thousand (95% CI) in the three scenarios except the sustainable development scenario (SSP1-2.6)",
+          "explanation": "Section 2.2 gives 2017-2025 declines of 132/71/26/118k for SSP1/2/3/5 (point-estimate range 26-132) and 2025-2035 increases of 37/72/24k for SSP2/3/5 (range 24-72). The Conclusions instead state 'decline by 19-146 thousand' and 'increase by 19-81 thousand'. The 19, 146, and 81 values do not correspond to any scenario point estimate \u2014 they correspond to the lowest lower 95% CI bound and highest upper 95% CI bound across scenarios. Reporting these as a range conflates CI bounds across different scenarios in a way that misleadingly widens the apparent range. The Conclusions should give either point-estimate ranges or the range of CIs per scenario.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 54
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Population-weighted PM2.5 historical change reported as both 46.6% and 46.3%",
+          "quote": "The population-weighted  $\\mathrm{PM}_{2.5}$  concentration in China increased by  $46.6\\%$  from 2000 to 2017",
+          "explanation": "Section 2.1 reports the 2000-2017 population-weighted PM2.5 increase as 46.6%, while Study Area gives '46.3% (28.1 to 41.1 \u00b5g/m\u00b3)'. A 0.3 percentage-point inconsistency for the same population-weighted figure suggests two different rounding chains or two different population-weighting datasets. While individually small, the discrepancy points to inconsistent baseline numbers being re-used across sections, and reduces confidence that downstream calibration (Eq. 5) used a single self-consistent baseline. (PM2.5 unit is also reported as '\u00b5g/cm\u00b3' in Study Area, which is an additional typographical error since \u00b5g/cm\u00b3 would correspond to nonsensical concentrations.)",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Per-capita DAPP figures (e.g., '855 per 10,000') incompatible with annual mortality",
+          "quote": "By 2035, the DAPP per capita in Northeast China, Central China and Northwest China will reach 855, 679, and 634 people (per 10,000 people), respectively.",
+          "explanation": "855 deaths per 10,000 people (per year) implies an 8.55% annual mortality rate from PM2.5 alone \u2014 exceeding total all-cause crude mortality in China (~7-8 per thousand annually). This is physically impossible if interpreted as an annual rate. The decomposition tables earlier give per-capita DAPP changes in a plausible range (-3 to +7 per 10,000), so the units differ between sections without explanation. The most likely interpretations are (a) cumulative DAPP over 18 years per 10,000 baseline population, or (b) DAPP per 10,000 in some restricted age group. Either way, the unit needs to be made explicit.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Heilongjiang absolute DAPP increases stated in main text are an order of magnitude larger than table values",
+          "quote": "Taking Heilongjiang Province with the highest level of aging population as an example, in the four scenarios, the total DAPP will increase by 10,000, 6,000, 10,000 and 3,000, respectively, which will be 1.2 times, 6.7 times, 5.8 times and 1.8 times higher than the average change in the national DAPP.",
+          "explanation": "The decomposition tables show Heilongjiang per-capita DAPP changes of +0.1, +0.57, +0.96, +0.31 (per 10,000 people) across scenarios. With a Heilongjiang population of ~38 million, +0.1 per 10,000 implies ~380 added deaths, +0.57 implies ~2,170, +0.96 implies ~3,650, +0.31 implies ~1,180. The text claim of 10,000/6,000/10,000/3,000 is roughly an order of magnitude higher. This is a key example used to support the Northeast-China-grows claim, and readers cannot reconcile it with the tables. Combined with the per-annum/cumulative confusion, the magnitudes the paper presents are not internally derivable.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "Six diseases listed in methods but Figure 5 caption omits stroke",
+          "quote": "Note: COPD, DM2, IHD, LC, and LRI refer to chronic obstructive pulmonary disease, type 2 diabetes, ischemic heart disease, lung cancer, and lower respiratory tract infection, respectively. Shading indicates the  $95\\%$  confidence interval.",
+          "explanation": "Methods Eq. 1 and the discussion repeatedly state DAPP is computed for six diseases (COPD, DM2, IHD, LC, LRI, stroke). The text immediately above Figure 5 explicitly names six. But Figure 5's caption \u2014 the figure that purports to show the proportion of deaths by disease \u2014 lists only five. Stroke is a leading PM2.5-attributable cause and its omission from the figure caption is unlikely to be incidental. Either Figure 5 plots only five (in which case the central 'aging dominates by disease' claim has missing data) or the caption is wrong (still an error in a key supporting figure).",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Inconsistent disease nomenclature: IHD called 'blood heart disease' in Figure 1, ischemic heart disease elsewhere",
+          "quote": "COPD, DM2, IHD, LC and LRI refer to chronic obstructive pulmonary disease, type 2 diabetes, blood heart disease, lung cancer and lower respiratory tract infection, respectively.",
+          "explanation": "Figure 1's caption defines IHD as 'blood heart disease' \u2014 not a standard medical term \u2014 while Figure 5's caption, the methods, and the discussion uniformly use 'ischemic heart disease'. 'Blood heart disease' is likely a translation artifact of \u7f3a\u8840\u6027\u5fc3\u810f\u75c5 (literally 'blood-deficient heart disease'). Inconsistent disease naming for a key DAPP cause is a presentation flaw in an epidemiological paper that aims for international audiences.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Section 3.1 cross-reference to nonexistent 'Figure 9f'; manuscript contains only Figures 1-6",
+          "quote": "although improvements in air quality and health care can decrease DAPP, DAPP was projected to grow in Northeast China which has the highest rate of population aging (Figure 9f).",
+          "explanation": "The main manuscript contains only Figures 1-6. There is no Figure 9, let alone a panel 9f. The cited evidence supports the headline regional claim about Northeast China; the broken reference makes the supporting evidence non-locatable for the reader. Possibly a leftover reference to an earlier draft or to a supplementary figure; either way, it should be corrected.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 42
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Scenario name typo in \u00a73.1: 'SSP3-7.5' should be SSP3-7.0",
+          "quote": "Second, population aging will be the only driver of the increase in DAPP for most scenarios, except for the regional rivalry scenario (SSP3-7.5), in which population growth and air pollution will also contribute (approximately  $2\\%$  only) to the increase in DAPP.",
+          "explanation": "There is no SSP3-7.5 scenario in the SSP/RCP framework or in this paper. The intended reference is SSP3-7.0. This appears in \u00a73.1 \u2014 the section anchoring the central thesis \u2014 and could confuse readers about which scenario is being discussed.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 42
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "Section 3.1 numbered list jumps 'First, ... Third, ...' with no 'Second'",
+          "quote": "First, the adverse impact of air pollution on people's health will be enhanced with age. ... Third, with the fast-growing aging population in China, it is projected$^{28}$ that by 2022, China will enter a stage where the aging population will account for more than $14\\%$ of the total population.",
+          "explanation": "The paragraph is set up as a numbered list \u2014 explicitly stating 'mainly demonstrated in the following two aspects' \u2014 but advances from 'First' directly to 'Third', skipping 'Second'. The reader cannot tell whether (a) one item was deleted, (b) the second 'In addition' clause is the missing 'Second', or (c) 'two aspects' is wrong and there are actually three. This affects how the evidence chain for the 'aging is the most important challenge' claim is read.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 43
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Region-to-income mapping in \u00a73.2 narrative conflicts with Table 1",
+          "quote": "First, air pollution poses the biggest threat to health in less economically developed regions such as Central and West China. ... Second, for countries and regions that have achieved preliminary economic development and improvement in air quality and health care (e.g., Northeast China), the threat of population aging was the main culprit for the increase in DAPP. ... Third, for regions and countries with high-level economic development (a region such as East China)",
+          "explanation": "\u00a73.2 narrative classifies Chinese regions as low-income (Central, West), upper-middle (Northeast), and high-income (East). Table 1 in the same section uses different groups: 'East, South' high-income, 'North, Northeast' upper-middle, 'Central, Northwest' lower-middle. The narrative mentions West China but not Northwest, treats Northeast as upper-middle alone (not jointly with North), and omits North/South from the typology entirely. Additionally, Table 1 lists the elderly proportion of 'East, South' as 22.2% \u2014 close to U.S./Japan's 22.5% \u2014 but the introduction projects China's overall 65+ share at only 17.1% by 2030 and 26.3% by 2050. East China is among the more aged Chinese regions, but a current 22.2% would be implausible without a labeled time horizon. Together these inconsistencies make the international-insight comparison hard to verify.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Methods describe three-period decomposition but Results report only two",
+          "quote": "Based on the decomposition analysis, we calculated the driving factors of DAPP in China in 2017-2025, 2025-2030, and 2030-2035 and then analyzed the synergistic driving effect of age structure and other factors on DAPP.",
+          "explanation": "Methods \u00a75.2 explicitly state the decomposition was performed for three sub-periods (2017-2025, 2025-2030, 2030-2035), but the Results consistently report only two intervals (2017-2025 and 2025-2035). The 2025-2030 vs 2030-2035 split \u2014 likely the most informative for showing aging's accelerating dominance \u2014 is never presented. Either the methods description is inaccurate or important results are omitted from the main text without explanation.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 91
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Population data integration between Jiang et al (gridded) and Chen et al (provincial age structure) not described",
+          "quote": "Future socioeconomic data include data on China's population age structure and population education level at the provincial scale$^{48}$ and data on the total population at $0.5^{\\circ}$ grid cell resolution$^{47}$.",
+          "explanation": "Two distinct projection products are used: Chen et al. (ref 48) provides provincial age structure, while Jiang et al. (ref 47) provides 0.5\u00b0 gridded total population. The two datasets are built with different assumptions about fertility, mortality, and migration trajectories under the SSPs and need not agree even at the provincial total level. The paper never explains how they are reconciled \u2014 does the gridded Jiang population get rescaled to match Chen provincial totals? Are Chen age fractions applied directly to gridded Jiang totals? Mis-pairing biases both the AgeP_a term in Eq. (1) and the population term in the decomposition, but the procedure is unspecified.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 64
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "PM2.5 reconstruction Eq. (3) coefficients (0.25 SS, 0.1 dust) lack provenance and a sensitivity analysis",
+          "quote": "$$\n\\mathrm{PM}_{2.5} = \\mathrm{BC} + \\mathrm{OA} + SO_4 + NH_4 + 0.25 \\times SS + 0.1 \\times dust \\tag{3}\n$$",
+          "explanation": "Equation (3) reconstructs PM2.5 from CMIP6 species concentrations using factors 0.25 for sea salt and 0.10 for dust, representing the mass fraction in the fine size range. These factors come from Chowdhury et al. and van Donkelaar et al., but the paper does not state this and does not assess whether they hold across the 11 different CMIP6 models with their varying sea-salt size bins and dust resolutions. The constants could introduce systematic biases up to a factor of 2 in arid northwestern provinces, where dust dominates aerosol mass and where the provincial PM2.5 + aging story is most sensitive. No sensitivity analysis is presented.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 71
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "DAPP excludes deaths in <25 age group without justification, and excludes household air pollution without quantifying the bias",
+          "quote": "Among them, age a includes 15 stages: 25-30, 30-35, ..., 90-95, and >95 years old. Disease d includes 6 categories: chronic obstructive pulmonary disease, infectious lower respiratory tract infection, lung cancer, ischemic heart disease, stroke and type 2 diabetes",
+          "explanation": "Two related scoping decisions are made without justification. (1) DAPP is computed only for ages \u226525, excluding child LRI deaths which GBD 2019 attributes meaningfully to ambient PM2.5 in low-and-middle-income contexts. Restricting to \u226525 raises the elderly's relative DAPP share by construction. (2) Indoor (household) PM2.5 is excluded entirely \u2014 the methods note this and that GBDMAPS (which includes indoor) reports higher DAPP. Household PM2.5 produces ~2.3M global deaths/year (GBD 2019) and disproportionately exposes rural elderly via solid-fuel cooking and heating in winter. The paper's central claim is about elderly vulnerability; excluding indoor exposure systematically biases that very claim. Both decisions deserve explicit justification or sensitivity tests.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 66
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Validation by Pearson correlation cannot detect bias; magnitudes diverge in the paper's own comparison",
+          "quote": "We used Pearson's correlation to verify the reliability of the results (Appendix Figure S3). Specifically, we compared the results obtained in Equation (1) with the estimates calculated by Yue et al$^{22}$ based on the Integrated Exposure Response (IER) model, the estimates calculated by Geng et al$^{14}$ based on the Global Exposure Mortality Model (GEMM), and the estimates calculated Yin et al$^{10}$ at the provincial scale in China.",
+          "explanation": "Pearson correlation measures linear association, not magnitude agreement. Two methods can correlate at r=0.99 while one consistently produces 50% higher values. The paper later explicitly notes 'estimates based on the GEMM model were higher than our estimates' \u2014 a systematic bias Pearson cannot detect. Reporting only Pearson is a self-consistency standards issue: the paper recognizes magnitudes diverge across methods but the validation step never quantifies this. RMSE, mean bias, or Lin's concordance correlation should be reported with calibration scatterplots.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 68
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Ambiguous '190%/120%/110%/90%' growth in elderly proportion across SSPs",
+          "quote": "The percentage of elderly people (65 years or older) continued to rise in all four scenarios, especially in SSP5-8.5 and SSP2-4.5, where it was projected to increase by  $190\\%$  and  $120\\%$  from 2017-2035, respectively. In SSP1-2.6 and SSP3-7.0, the percentage of elderly people increased  $110\\%$  and  $90\\%$ , respectively.",
+          "explanation": "The figures are presented without an explicit base or unit. Read as percentage-point increases on top of China's 2017 ~11% elderly share, they would mean elderly shares in 2035 of ~31%/23%/22%/21% \u2014 implausibly large for a 13-year horizon (UN/Chen et al. SSP projections give ~17-21% by 2035). Read as relative percent increases (~110% means roughly doubling), SSP5-8.5 at +190% would still mean tripling the elderly share to ~32% by 2035 \u2014 also implausibly large. The paragraph supports the central thesis (population aging is the dominant DAPP driver), so a clearly-stated base/unit is essential. Either the figures are wrong or the prose is misleading.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Stated motivation overstates novelty: provincial DAPP+aging analyses already exist",
+          "quote": "In summary, we still do not have a reliable and effective estimate of DAPP that accounts for the driving factors of socioeconomic pathways and changes in climate across different provinces in China.",
+          "explanation": "The paper's motivating gap understates the prior literature it itself cites. Geng et al. (Nat Geosci 2021, ref 14) decompose DAPP drivers in China 2002-2017 with provincial granularity; Yin et al. (Lancet Planet Health 2020, ref 10) provide provincial mortality; Wang et al. (ref 26) project DAPP including aging; Yue et al. (Nat Commun 2020, ref 22) include policy scenarios. Together these works already provide provincial-level DAPP estimates and aging analyses. What is genuinely new in this study is the *integration* of provincial Yin mortality with CMIP6 scenarios and four-driver decomposition. The framing should claim integration novelty rather than asserting no reliable provincial estimate exists.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 14
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "Several presentation/typographical errors compound the overall impression of unreliable bookkeeping",
+          "quote": "32.33 | Laoning | -0.26 | -0.33 | -1.12 | 3.49 | -2.3 | 0.36 | -0.35 | -0.57 | 3.76 | -2.48",
+          "explanation": "A cluster of small errors makes it hard to trust the tables. (i) Province names in the decomposition tables are misspelled: 'Laoning' (should be Liaoning), 'Mongolia' (should be Inner Mongolia), 'Hongxia' (should be Ningxia, but the same row also misplaces values that look like Henan/Hubei). (ii) The Shaanxi row in the second decomposition table contains an age-structure value of -8.5 \u2014 anomalous against all other rows (range +0.03 to +7.02) and against Shaanxi's first-table value of +1.44; almost certainly a sign or transcription error. (iii) The disease-mortality regression Eq. (7) defines coefficients \u03b2_1 and \u03b2_2 but the surrounding prose names them \u03b2_0 and \u03b2_1; the same equation uses \u03b1_{la} but the text describes \u03b1_{is}. Individually minor, collectively these errors erode confidence in tables and equations that constitute the paper's primary evidence.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "Aging-share denominator (the '70%/95% caused by aging' claim) is not specified",
+          "quote": "Between 2017 and 2035, while the proportion of elderly people will range from  $10\\%$  to  $35\\%$  in most regions, more than  $70\\%$  (e.g.,  $95\\%$  in Northeast China) of the growth of DAPP will be caused by population aging.",
+          "explanation": "In SSP1-2.6, \u00a72.3 says aging is the *only* positive driver \u2014 so 100% of the growth-causing contribution is aging. The text instead reports '>70%' and '95% in Northeast China'. If the denominator is total positive contributions, the SSP1-2.6 fraction should be 100%, not 70%. If the denominator is gross |positive| + |negative| absolute contributions, the resulting fraction is not interpretable as 'growth caused by aging'. Likewise, for Heilongjiang (the most-aged province), the decomposition shows an age-structure positive contribution (~3.1) competing with disease-mortality (-2.0) and PM2.5 (-0.7) negatives, and a small population effect; whether this gives '95%' aging share depends entirely on the denominator. The paper should make the percentage formula explicit.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 41
+        },
+        {
+          "id": "openaireview__claude_27",
+          "title": "Discussion 3.1 paraphrases \u00a72.3's '80% of total DAPP' as '80% of total deaths of all ages'",
+          "quote": "Our findings show that by 2035, the average proportion of elderly people dying of diabetes mellitus type 2 and ischemic heart disease will account for over $80\\%$ of the respective total deaths of all ages.",
+          "explanation": "Section 2.3 reports: 'the average proportion of older people dying from six diseases ... will account for more than 80% of the total DAPP' \u2014 i.e., elderly DAPP is >80% of total DAPP from these six diseases. Discussion 3.1 paraphrases this as '80% of the respective total deaths of all ages' \u2014 a different claim (it would mean 80% of all DM2/IHD deaths from any cause are in the elderly, which is demographically plausible but is not what \u00a72.3 says). Slipping the denominator from 'PM2.5-attributable deaths' to 'all-cause deaths' is a substantive over-extension of the supporting evidence.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 43
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

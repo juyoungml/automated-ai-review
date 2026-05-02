@@ -1,0 +1,572 @@
+{
+  "slug": "paper59_skill",
+  "title": "Achieving health-oriented air pollution control requires integrating unequal toxicities of industrial particles",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Achieving health-oriented air pollution control requires integrating unequal toxicities of industrial particles"
+    },
+    {
+      "index": 1,
+      "text": "Di Wu\nFudan University\n\nHaotian Zheng\nTsinghua University\n\nQing Li ( qli@fudan.edu.cn )\nFudan University https://orcid.org/0000-0003-0587-1748"
+    },
+    {
+      "index": 2,
+      "text": "Shuxiao Wang\nSchool of Environment, Tsinghua University https://orcid.org/0000-0001-9727-1963\n\nBin Zhao\nPacific Northwest National Laboratory https://orcid.org/0000-0001-8438-9188"
+    },
+    {
+      "index": 3,
+      "text": "Ling Jin\nThe Hong Kong Polytechnic University https://orcid.org/0000-0003-1267-7396\n\nXiangdong Li\nThe Hong Kong Polytechnic University"
+    },
+    {
+      "index": 4,
+      "text": "Jiming Hao\nTsinghua University\n\nArticle\n\nKeywords:\n\nPosted Date: March 16th, 2023\n\nDOI: https://doi.org/10.21203/rs.3.rs-2645723/v1"
+    },
+    {
+      "index": 5,
+      "text": "License: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 6,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on October 14th, 2023. See the published version at https://doi.org/10.1038/s41467-023-42089-6."
+    },
+    {
+      "index": 7,
+      "text": "Page 1/23\n\n## Abstract\n\nProtecting human health from fine particulate matter (PM) pollution is the ambitious goal of clean air actions, but current control strategies ignore the role of source-specific PM toxicity. Here, we proposed health-oriented control strategies by integrating the unequal toxic potencies of the most polluting industrial PMs. Iron and steel industry (ISI)-emitted PM_{2.5} exhibit about one order of magnitude higher toxic potency than those of cement and power industries. Compared with the current mass-based control strategy (prioritizing implementation of ultralow emission standards in the power sector), the proposed health-oriented control strategy (priority control of the ISI sector) could generate 5.4 times higher reduction in population-weighted toxic potency-adjusted PM_{2.5} exposure among polluting industries in China. Furthermore, the marginal abatement cost per unit of toxic potency-adjusted mass of ISI-emitted PM_{2.5} is only a quarter of that of the other two sectors under ULE scenarios. We highlight a health-oriented air pollution control strategy is urgently required to achieve cost-effective reductions in particulate exposure risks."
+    },
+    {
+      "index": 8,
+      "text": "## Introduction\n\nAir pollution attributable to particulate matter (PM) is one of the greatest environmental health risks worldwide^{1--5}. Industrial sectors, constituting one of the major anthropogenic sources of ambient PM, contribute to approximately 0.9 million premature deaths and are a significant global health concern^{6, 7}. Clean air actions have been adopted earlier in developed regions to address industrial sources of air pollution^{8, 9}. Based on total PM mass emissions, these regulations initially focused on the most PM mass emission sectors, including power plants and coal-fired industrial facilities, and then spread to other industrial sectors since the early 1970s^{8, 10}. Regulations have become increasingly strict to meet the ever-stringent air quality standards over the last four decades^{8, 11, 12}. Referring to the total PM mass control strategies implemented in developed regions, similar emission control policies have been promulgated and prioritized among power plants and other industrial sectors in developing regions to combat the unprecedented air pollution over the last two decades^{12--14}. PM emitted from industrial sectors have gradually decreased after decades of emission control policy implementation in major economies, including the USA, Europe, and even China. However, the current regulations aimed at reducing the PM emission quality cannot proportionately reduce the adverse health effects of industrial PM emissions."
+    },
+    {
+      "index": 9,
+      "text": "The heterogeneity in source-specific PM, including the chemical composition and toxicological properties, and the toxicity effects of PM, such as the oxidative stress (OS) potency, have been verified as more health-relevant metrics than the PM mass^{15, 16}. The components of source-specific PM, which comprise complex mixtures of chemicals^{3, 17}, vary widely among industrial sectors^{18--20}, owing to the notable discrepancies in raw materials, boiler facilities and/or production processes, as well as air pollution control technologies^{21--23}. Different types of chemical components exhibit varying biological effects^{24}. Transition metals and polycyclic aromatic hydrocarbons (PAHs) can induce the formation of reactive oxygen species (ROS), thus yielding negative health outcomes^{16, 17, 25}, while many of the major PM"
+    },
+    {
+      "index": 10,
+      "text": "components, including inorganic sulfate and nitrate, are commonly considered innocuous species^{17}. Toxic components such as trace elements and PAHs and their roles in determining the toxic potency of source-specific PM have been scarcely identified and quantified^{26--28}. Thus, the toxic potencies of PM emitted from different industrial sources, comprising specific components, could likely exhibit a notable discrepancy. However, the toxic potencies of PM emitted from industrial sectors have been scarcely investigated based on field study. The lack of information on source-specific chemicals and relevant chemical-specific toxicities limits the current understanding of the adverse impacts of exposure to industry-emitted PM, which also hinders the formulation of effective control strategies for human health protection."
+    },
+    {
+      "index": 11,
+      "text": "In the present study, optimal health-relevant air pollution control strategies for industrial plants are proposed by integrating source-specific toxic potencies and reducing costs. The three most polluting industrial sectors, i.e. the iron and steel industry (ISI), cement industry, and power industry, were selected in this work. PM_{2.5} samples were collected from these three sectors in field across 21 provinces in mainland China (Supplementary Fig. 1 and Supplementary Tables 1 -- 3), which exhibit the highest production and consumption levels of fossil fuel-fired power, steel, and cement worldwide^{23, 29}. The obtained chemical composition and toxicological data (Supplementary Figs. 2 -- 5 and Supplementary Table 4) were further integrated with the model-simulated PM mass concentration under the ultralow emission (ULE) scenarios, which was estimated by using the updated Air Benefit and Cost and Attainment Assessment System (ABaCAS) emission inventory combined with the Weather Research and Forecasting -- Community Multiscale Air Quality (WRF-CMAQ) model^{30--32}. The integrated results could provide insight into the adverse effects of exposure to industry-emitted PM and could facilitate the formulation of priority control strategies to achieve cost-effective reduction in toxic potency-adjusted PM exposure risks. Details of the experiments and analysis approach are provided in the Methods section."
+    },
+    {
+      "index": 12,
+      "text": "## Results And Discussion\n\n### Unequal toxic potencies of industry-emitted PM_{2.5}.\n\nExposure to different industry-emitted PM_{2.5} samples exhibits substantial discrepancies in toxic potencies, including intracellular OS and cytotoxicity (CT) potency (Fig. 1 and Supplementary Fig. 2). EC_{1.5} (the concentration effectively leading to a 1.5-fold inhibition of intracellular ROS generation relative to that of the control) and IC_{20} (the concentration effectively leading to a 20% inhibition relative to that of the control) values were determined to elucidate the endpoints of PM_{2.5}-induced OS and CT potency, respectively. The toxic potency increased with decreasing EC_{1.5} and IC_{20} values. ISI-emitted PM_{2.5} exhibited the highest OS potency (19.1 \u00b1 10.9 \u03bcg/mL), which is nearly 5.0 and 5.4 times higher than that of power industry-emitted PM_{2.5} (94.9 \u00b1 41.9 \u03bcg/mL) and cement industry-emitted PM_{2.5} (103.6 \u00b1 46.3 \u03bcg/mL), respectively (Fig. 1a). Compared to the power and cement industries, the ISI involves a series of complex processes, mainly including sintering (and/or pelletizing), blast furnace (BF) based-ironmaking, basic oxygen furnace (BOF)-based or electric arc furnaces (EAF)-based steelmaking, and steel rolling^{22}. The EC_{1.5} values for the PM_{2.5} emitted from the"
+    },
+    {
+      "index": 13,
+      "text": "three major polluting processes of BOF-based crude steel production, i.e. the sinter ore (21.3 \u00b1 11.2 \u03bcg/mL), pig iron (20.7 \u00b1 12.1 \u03bcg/mL), and crude steel (14.7 \u00b1 7.8 \u03bcg/mL) generation, are shown in Supplementary Fig. 2b, while the EC_{1.5} values for other ISI processes (including pelletizing, EAF-based steelmaking, and steel rolling) are shown in Supplementary Fig. 3. The three processes contributed nearly 90% to the nationwide ISI PM_{2.5} emissions in China in 2019^{29}. The averaged OS potency of power industry-emitted PM_{2.5} resulted in very close EC_{1.5} values when the boilers were fed with different solid fuels, including coal (104 \u00b1 44 \u03bcg/mL), solid waste (89.7 \u00b1 48.1 \u03bcg/mL), and biomass (91.9 \u00b1 35.7 \u03bcg/mL) (Supplementary Fig. 2c). Additionally, the EC_{1.5} values for the PM_{2.5} emitted from the major production processes of cement plants were close, at 113.4 \u00b1 53.0 \u03bcg/mL for the kiln head and 98.7 \u00b1 39.9 \u03bcg/mL for the kiln tail (Supplementary Fig. 2d)."
+    },
+    {
+      "index": 14,
+      "text": "The distribution of the IC_{20} values further indicated similar substantial discrepancies among the three industrial sectors. The estimated CT potency of ISI-emitted PM_{2.5} (46.4 \u00b1 28.2 \u03bcg/mL) was nearly 12.1 times that of power generation-emitted PM_{2.5} (561 \u00b1 226 \u03bcg/mL) and 9.5 times that of cement production-emitted PM_{2.5} (442 \u00b1 221 \u03bcg/mL) (Fig. 1b). The CT potency of ISI-emitted PM_{2.5} successively increased for the major production processes of sinter ore (60.0 \u00b1 30.4 \u03bcg/mL), pig iron (43.4 \u00b1 22.7 \u03bcg/mL), and crude steel (36.1 \u00b1 26.4 \u03bcg/mL) (Supplementary Fig. 2f). The IC_{20} values for the other ISI processes are shown in Supplementary Fig. 3. The CT potency of power industry-emitted PM_{2.5} slightly varied among the different fuel-fired units, including coal- (604 \u00b1 254 \u03bcg/mL), biomass- (434 \u00b1 212 \u03bcg/mL), and solid waste-fired units (539 \u00b1 137 \u03bcg/mL) (Supplementary Fig. 2g). In terms of clinker production, the CT potency of kiln tail emitted-PM_{2.5} (396 \u00b1 214 \u03bcg/mL) was also close to that of kiln head-emitted PM_{2.5} (487 \u00b1 221 \u03bcg/mL) (Supplementary Fig. 2h)."
+    },
+    {
+      "index": 15,
+      "text": "Estimation through laboratory and field studies of all the major processes under the same quality control conditions revealed that the PM_{2.5} emitted from the ISI is much more toxic than those of the power and cement industries, especially the PM_{2.5} emitted from BF-based ironmaking and BOF-based steelmaking processes. A substantial inequality in the toxicological properties of the PM_{2.5} samples obtained from the three industrial sectors is uncovered according to the estimated OS and CT potency. Source-specific PM_{2.5} comprises a complex mixture of inorganic and organic chemicals, some of which are potential contributors to PM_{2.5} related toxicity^{16, 17}. Hence, it is necessary to uncover and quantify the key chemical components that determine PM_{2.5} toxicological effects to better understand the causes of the abovementioned inequality in toxicological properties."
+    },
+    {
+      "index": 16,
+      "text": "### Substantial discrepancies among key toxic chemicals in PM_{2.5}.\n\nThe chemical composition, including carbonaceous species (i.e. organic matters and elemental carbon), water soluble inorganic ions, elements, widely varied among the PM_{2.5} originating from the three industrial sources (Supplementary Fig. 4 and Supplementary Table 4). Here, the targeted chemicals are focused on metals and PAHs, which are commonly regarded as key toxic components associated with the biological effects of PM_{2.5}^{16, 17}. Ten toxic metals (i.e. Fe, Zn, Mn, Pb, Cu, V, Cr, Ni, As, and Cd) were observed at substantially higher"
+    },
+    {
+      "index": 17,
+      "text": "concentrations per unit mass of ISI-emitted PM_{2.5} (267 \u00b1 104 mg/g), exceeding those per unit mass of power industry- (13.9 \u00b1 3.7 mg/g) and the cement industry- (25.3 \u00b1 5.7 mg/g) emitted PM_{2.5} by approximately 19 and 11 times, respectively (Fig. 2a). Fe dominated the mass concentrations, with relative concentrations ranging from 62.6 -- 98.3%, 43.0 -- 94.8%, and 80.4 -- 94.1% in the selected metals within in PM_{2.5} emitted from the ISI, power, and cement industries, respectively (Fig. 2a). The observation results regarding the variation in toxic metals are consistent with those obtained in our previous study in regard to flue gases emitted from industrial plants^{33}. The concentration of metals per unit of PM_{2.5} emissions grouped by the prevailing processes in iron and steel production, the fuel type in power-generating units, and the prevailing processes in clinker and cement production are detailed in Supplementary Note 7 and Supplementary Fig. 5a."
+    },
+    {
+      "index": 18,
+      "text": "Other key toxic chemical in PM_{2.5}, i.e. 16 US Environmental Protection Agency (EPA) priority PAHs (Supplementary Table 5), were also revealed to substantially differ among the three industrial sectors studied (Fig. 2b). The content of these 16 PAHs (612 \u00b1 775 \u03bcg/g) in mass-normalized ISI-emitted PM_{2.5} was one order of magnitude higher than that in mass-normalized power sector-emitted PM_{2.5} (27.0 \u00b1 39.2 \u03bcg/g) and cement sector-emitted PM_{2.5} (13.5 \u00b1 14.8 \u03bcg/g). Compared to the PAHs emitted from the power and cement industries, higher carcinogenic species (with toxic equivalent factor (TEF) equal to or greater than 0.1) were more abundant in ISI-emitted PAHs, accounting for 31.2 -- 37.8% of the total mass of the 16 PAHs. In contrast, two- and three-ring PAHs (species with a lower toxicity) were the dominant species among the PAHs emitted from power and cement industries, owing to the higher combustion efficiency of their practical boilers than that of the boilers at ISI plants. The corresponding toxic equivalent benzo[a]pyrene values (BaP_{eq}) of the 16 PAHs can directly reflect their potential toxic discrepancies (Supplementary Fig. 6). The BaP_{eq} value per unit mass of ISI-emitted PM_{2.5} (41.1 \u00b1 58.7 \u03bcg/g) was two orders of magnitude higher than that per unit mass of power industry-emitted PM_{2.5} (0.20 \u00b1 0.16 \u03bcg/g) and cement industry-emitted PM_{2.5} (0.54 \u00b1 0.73 \u03bcg/g). Thus, the PAHs originating from the iron and steel production posed a much higher carcinogenic risk than those originating from the other two industrial sectors. The concentrations of the various PAHs per unit of PM_{2.5} emitted from individual iron- and steelmaking processes, power generation units driven by different fuel types, and individual clinker- and cement-making processes are detailed in the Supplementary Note 7 and Supplementary Fig. 5b."
+    },
+    {
+      "index": 19,
+      "text": "The relative contributions of the targeted metals and PAHs to PM_{2.5}-induced OS potency, quantified via the concentration addition reference model^{34}, are shown in Supplementary Fig. 7. The targeted metals contributed 84.6 \u00b1 22.6%, 83.8 \u00b1 9.8%, and 77.5 \u00b1 8.4% to OS potency induced by the primary PM_{2.5} emitted from the ISI, power, and cement industries, respectively. While the identified PAHs accounted for minor fractions (2.7 -- 3.6%) of the total PM_{2.5}-induced OS potency among the three major sectors (Supplementary Fig. 7a). The results indicated that the PM_{2.5}-induced OS potency could mainly be attributed to PM_{2.5}-bound toxic metals. The higher concentration of toxic metals per unit mass of ISI-emitted PM_{2.5} led to a much higher ROS-inducing effect than that of the PM_{2.5} emitted from the power and cement industries. Thus, the unequal toxic potencies of industry-emitted PM_{2.5} could be attributed to"
+    },
+    {
+      "index": 20,
+      "text": "the substantial discrepancies among toxic chemicals in PM_{2.5} emitted from the different industrial sectors (Supplementary Fig. 7b and c). Then the quantified toxic potencies of industries-emitted PM_{2.5} could be integrated with emission inventories to develop toxic potency- adjusted emission policies toward healthy air."
+    },
+    {
+      "index": 21,
+      "text": "### The iron and steel industry dominates PM_{2.5} toxic potency-adjusted emissions.\n\nThe quantified toxic potencies were integrated into PM_{2.5} emission inventories as PM_{2.5}-induced toxic potency-adjusted emissions of the three selected industrial sectors in China from 2005 -- 2019, as shown in Fig. 3. As the largest contributor to PM_{2.5}-induced toxic potency-adjusted emissions, the ISI is grouped by its major processes, including sintering, ironmaking, BOF-based steelmaking, and other processes. There existed substantial disproportionalities between the PM_{2.5} emissions and PM_{2.5}-induced toxic potency-adjusted emissions of the three industrial sectors. ISI-emitted PM_{2.5} accounted for only 29.0 \u00b1 7.6% of nationwide PM_{2.5} emissions among the three sectors in 2005, but accounted for approximately 70.7 \u00b1 32.9% of PM_{2.5}-induced OS potency-adjusted emissions (Fig. 3a). While power and cement industries-emitted PM_{2.5} accounted for 71.0 \u00b1 16.4% of the total mass emissions, and only 29.3 \u00b1 10.4% of the total PM_{2.5}-induced OS potency-adjusted emissions. Owing to the drastic reduction in PM_{2.5} emitted from power industry under the enforcement of the toughest ULE standards since 2014^{21}, the relative fractional contribution of the ISI increased to 43.8 \u00b1 12.0% of mass emissions and further contributed 81.8 \u00b1 37.3% to the overall PM_{2.5}-induced OS potency adjusted-emissions in 2019 (Fig. 3b)."
+    },
+    {
+      "index": 22,
+      "text": "The trends in total PM_{2.5}-induced OS potency-adjusted emissions of the three industrial sectors between 2005 and 2019, as illustrated in Fig. 3c, substantially differed from the corresponding trends in PM_{2.5} emissions (Supplementary Fig. 8). The total PM_{2.5}-induced OS potency-adjusted emissions fluctuated and eventually increased by approximately 12.2% between 2005 and 2012, although the total amount of nationwide PM_{2.5} emitted from the three sectors decreased by 20.0% during the same period. The increase in OS potency-adjusted emissions was mainly attributable to the ISI emission increase, particularly the emissions originating from BOF-based steelmaking and sintering processes. Since the per unit mass of ISI-emitted PM_{2.5} exhibit much higher OS toxic potencies, the slight increase (~ 10.4%) in ISI-emitted PM_{2.5} resulted in an increase of ~ 12.2% in the total PM_{2.5}-induced OS potency-adjusted emissions. The reduced OS potency attributed to the reduction in PM_{2.5} emissions in the power (629 kt) and cement (1462 kt) sectors was offset by the slight increase (716 kt) in the ISI-emitted PM_{2.5}. The PM_{2.5}-induced OS potency-adjusted emissions of the three sectors decreased by ~ 65.1% between 2012 and 2019. The decreases in the toxic potencies were mainly driven by the corresponding reductions in the ISI sector, with a contribution of ~ 86.8% to OS potency-adjusted emissions. While the reductions in the power generation and cement production sectors jointly contributed only 13.2% to the overall reduction in PM_{2.5}-induced OS potency-adjusted emissions, although these two sectors jointly accounted for ~ 47.2% of the reduction in total PM_{2.5} mass emissions."
+    },
+    {
+      "index": 23,
+      "text": "The temporal changes in PM_{2.5}-induced CT potency-adjusted emissions in the three industrial sectors exhibited a similar tendency to those in OS potency-adjusted emissions, as shown in Supplementary Fig. 9. Substantial reductions in the PM_{2.5} mass-based emissions of the power industry, which could be attributed to the implementation of the toughest-ever ULE standards based on the PM mass concentration, do not necessarily suggest an equivalent alleviation of PM_{2.5} health effects, as evidenced, for example, by the toxic potency (including OS and CT potency)-adjusted emissions in the present study. In contrast, the slight increases or decreases in ISI-emitted PM_{2.5} significantly dominated the variations in PM_{2.5} toxic potency-adjusted emissions among the three sectors. The disproportionate variation in nationwide PM_{2.5} toxic potency-adjusted emissions was mainly due to the unequal source-specific toxic potencies at equal PM_{2.5} mass concentrations. Furthermore, regional discrepancies in the industrial structure among the three sectors could lead to spatial variations in PM_{2.5} emissions and associated toxic potency-adjusted PM_{2.5} exposure risks across the nation."
+    },
+    {
+      "index": 24,
+      "text": "### Priority control in the iron and steel industry can result in a cost-effective reduction in the population-weighted PM_{2.5} exposure risk."
+    },
+    {
+      "index": 25,
+      "text": "Two reduction routes were developed to quantify the reduction effects on mass-based industrial PM_{2.5} emissions and toxic potency-adjusted industrial PM_{2.5} emissions (including the estimation of OS and CT potency) if all facilities in power, cement, and iron and steel industries meet the ULE levels, respectively (Fig. 4a). The implementation of ULE standards in the power industry (1000 kt) could yield a nearly 1.5- and 1.6-fold higher reduction in nationwide mass-based PM_{2.5} emissions than that obtained via the implementation of ULE standards in the ISI (621 kt) and cement industry (653 kt), respectively. However, the implementation of ULE standards in the ISI could result in the largest reduction in PM_{2.5}-induced toxic potency-adjusted emissions (including the estimation of OS and CT potency) among the three industrial sectors owing to the unequal OS and CT potency at an equal PM_{2.5} mass, respectively. Spatial distributions of the ambient PM_{2.5} concentration contributed by primary PM_{2.5} originating from the three sectors before and after ULE standards implementation in each sector are shown in Supplementary Fig. 10. The nationwide primary PM_{2.5} concentrations originating from the three industries if all existing units in the power, cement, and iron and steel industries, respectively, satisfied ULE standards in 2019 are shown in Supplementary Fig. 11. The nationwide annual mean population-weighted PM_{2.5} exposure could decrease by 37.6%, and 26.0%, and 36.4% if all facilities in power, cement, and ISI, respectively, met ULE standards in 2019 (Supplementary Table 6). The toxic potency-adjusted exposure risk (TPAE) metric was further developed to estimate a health-relevant risk index for exposure to industrial emitted PM_{2.5}, including estimation of PM_{2.5}-induced OS and CT potency-adjusted exposure risks (TPAE_{OS} and TPAE_{CT}). The cited toxic equivalent values of PM_{2.5}-induced OS and CT potencies are provided in Supplementary Table 7."
+    },
+    {
+      "index": 26,
+      "text": "Figure 4b -- d show the spatial distributions of the corresponding reduction in the total TPAE_{OS} value attributed to meeting ULE standards in the power, cement, and ISI in 2019, respectively. The decrease in the power and cement industries only accounted for a minor faction of the total reduction in the nationwide TPAE_{OS} value if all their units achieved ULE standards in 2019 (Fig. 4b and 4c). The highest"
+    },
+    {
+      "index": 27,
+      "text": "reductions in power industry- and cement industry-related TPAE_{OS} could be occurred in north and central China, respectively, which were consistent with the density of power and cement plants population. While the significant reduction in the nationwide TPAE_{OS} value could be obtained if all ISI facilities satisfied ULE standards in 2019 (Fig. 4d). Much higher reductions in ISI-associated TPAE_{OS} could be observed on the northern and eastern China, especially in densely populated areas such as Hebei and Jiangsu. Since these populated areas concentrated with a large portion of iron- and steelmaking plants, and majority of these plants could attain ULE levels due to the priority implementation ULE standards and a range of advanced technologies^{22}. TPAE_{OS} values attributed to each industry source with scenarios before and after ULE standards introduction are shown in Supplementary Fig. 12. The implementation of ULE standards in the power industry yielded the largest reduction in nationwide PM_{2.5} emissions (Fig. 4a) and PM_{2.5} concentration (Supplementary Figs. 10 and 11) among the three industrial sources. However, the implementation of ULE standards in the ISI sector could dominate the reduction in the nationwide TPAE_{OS} value among the three sectors if the unequal OS potencies of source-specific PM_{2.5} were included (Supplementary Table 4)."
+    },
+    {
+      "index": 28,
+      "text": "The nationwide total population-weighted TPAE_{OS} in the three sectors was dominated by the ISI (83%), owing to the higher OS potency per unit mass of ISI-emitted PM_{2.5}. The implementation of ULE standards in the ISI sector could generate a 5.44 \u00b1 3.95 and 8.16 \u00b1 6.58 times higher reduction in the nationwide population-weighted TPAE_{OS} than that obtained via the implementation of ULE standards in the power and cement industry sectors in 2019, respectively (Supplementary Table 8). The reduction in PM_{2.5}-induced CT potency-adjusted emissions and the reduction effect on the nationwide TPAE_{CT} as well as population-weighted TPAE_{CT} exhibited similar tendencies to that of TPAE_{OS} in mainland China (Fig. 4a and e -- g, Supplementary Fig. 13 and Supplementary Table 8). The results indicate that implementation of ULE standards in the ISI sector can achieve the largest reduction effect in both nationwide TPAE_{OS} and TPAE_{CT} in the three industrial sectors. Furthermore, the marginal reduction costs for PMs emitted from industries can be integrated into the analysis when installation and operating costs of dedusting systems to meet ULE standards are considered."
+    },
+    {
+      "index": 29,
+      "text": "Figure 5 shows the marginal reduction costs for per unit of mass of industry-emitted PM_{2.5} and per unit of toxic potency-adjusted mass of industry emitted-PM_{2.5} under the scenario with all facilities in each industrial sector meeting ULE standards across the nation in 2019. The marginal abatement cost per ton of the PM_{2.5} mass of the ISI sector was nearly 73% and 142% that per ton of the PM_{2.5} mass of the power and cement industries (Fig. 5a), respectively, while the abatement cost for per unit of OS potency-adjusted mass of ISI-emitted PM_{2.5} was only 14% and 25% that for per unit of OS potency-adjusted mass of power- and cement-emitted PM_{2.5} (Fig. 5b), respectively. The marginal cost for abating per unit of the CT potency-adjusted mass of ISI-emitted PM_{2.5} is only 12% and 15% that for per unit of CT potency-adjusted mass of power- and cement-emitted PM_{2.5} (Supplementary Fig. 14), respectively. The cost estimates indicated that reductions in the emission sources of higher toxic PM_{2.5} could greatly benefit the decrease"
+    },
+    {
+      "index": 30,
+      "text": "in PM_{2.5}-induced OS and CT potency-adjusted mass emissions instead of the reduction in the largest PM_{2.5} emission source. Thus, we suggest that priority control in the ISI could achieve a much more cost-effective reduction in the adverse impacts associated with exposure to PM_{2.5} originating from the three industrial sources."
+    },
+    {
+      "index": 31,
+      "text": "## Discussion And Policy Implication\n\nThe unequal toxic potencies of primary PM_{2.5} emitted from the different industrial sources, including the ISI, power, and cement industries, were elucidated via field measurements and laboratory analysis under the same quality control conditions. However, this health-relevant metric is still absent in current control policies based on pollutant mass concentrations worldwide^{3, 15}. As the conventional top polluting industry ranked by the total PM mass emissions, the toughest control policies were primarily enforced at power plants. However, the reduction in the nationwide TPAE value attributed to the implementation of ULE control policies at power plants accounted for only 6.6 -- 13.1% of total TPAE reduction among the three industrial sectors across mainland China, owing to the low toxic potency per unit mass of power industry-emitted PM_{2.5}. In contrast, the decrease in the ISI after the implementation of ULE standards at all facilities dominated the nationwide reduction in the total TPAE value (76.2 -- 86.7%) among the three sectors in 2019 across mainland China. Furthermore, the marginal abatement cost for the mitigation of per unit of toxic potency-adjusted mass of ISI-emitted PM_{2.5} is only 12 -- 25% that for the mitigation of per unit of toxic potency-adjusted mass of power industry-emitted PM_{2.5} under the scenario whereby all ISI facilities in mainland China reach satisfied standards in 2019 (Fig. 5). Therefore, the ISI should be prioritized among the three sectors, given its cost-effective role in reducing adverse impacts associated with exposure to industry emitted-PM_{2.5}. We highlight that it is urgent to shift from the mass-based control strategy to the health-oriented control policies via integrating unequal toxicities of industrial particulate emissions."
+    },
+    {
+      "index": 32,
+      "text": "The implementation of stricter control measures targeting ISI-emitted PM_{2.5} could be a big challenge in the real world because iron and steel production involves complex manufacturing processes and multiple emission sources^{22}, including the major processes of sintering, ironmaking, and BOF-based steelmaking. Due to their highest PM_{2.5} emissions and highest PM_{2.5}-induced toxic potency values, these major processes represent important targets for further adverse impacts reduction. Additionally, compared to the effects of conventional BOF-based steelmaking processes, EAF-based steelmaking processes could alleviate PM_{2.5}-induced toxic potencies, as indicated by our limited EAF-emitted PM_{2.5} samples (Supplementary Fig. 3). The obtained toxicity results expand the previous recognition of EAFs as an advanced technology option for the mitigation of ISI-emitted air pollutants^{29}. The shift from BOFs to EAFs is recommended over the next decades to achieve carbon neutrality and reduce ISI-emitted air pollutants, especially in developed regions. The uncertainties in the toxicity of EAF-emitted PM_{2.5} may hinder the evaluation of the effectiveness of current EAF technology in addressing the health effects of PM_{2.5} pollution. Hence, future efforts are warranted to quantify and clarify the toxic potency of EAF-"
+    },
+    {
+      "index": 33,
+      "text": "emitted PM_{2.5}. The obtained understanding may offer important insights to policymakers formulating targeted control policies to achieve air quality, climate, and health cobenefits in the ISI."
+    },
+    {
+      "index": 34,
+      "text": "Several limitations and uncertainties in field investigations and estimations exist in this study. Source-specific secondary and fugitive aerosols emission from manufacturing iron/steel and cement processes were not considered, which could result in underestimation of the adverse impacts associated with exposure to specific source-emitted aerosols. The observed toxic potencies based on in vitro cell tests are not strictly consistent with the actual PM_{2.5} exposure environment in the human body, and thus, toxic estimation methods limit the understanding of real-world human exposure scenarios. Additionally, the estimation of the contribution of a specific component to the overall toxic endpoints based on a chemical additional model may ignore the synergistic or inhibitory effects of different chemicals, and thus may generate additional uncertainties in quantitative contribution analysis of toxic components. Therefore, future efforts need to explore the industry source-emitted secondary and fugitive aerosols and their induced toxic potencies to comprehensively estimate the adverse impacts associated with exposure to industry-emitted PM_{2.5}. In addition, more realistic toxicological exposure studies, including human organoid-based in vitro model, are required to elucidate the multiple health-relevant end points associated with exposure to industry-emitted PM_{2.5}. In vivo and epidemiological studies are strongly encouraged to clarify and validate the relationship between exposure to industry-emitted PM_{2.5} and adverse health outcomes. On the other hand, the mixture effects of ambient PM_{2.5}, particularly in industrial areas, should be determined to better characterize and to dissect the quantitative contribution of toxic components and finally elucidate contributions of hazardous sources to mixture effects. Multilevel evidence could shed light on reducing the uncertainty in the estimation of the health effects of industry PM_{2.5} pollution and the formulation of tailored industry source control policies for human health protection."
+    },
+    {
+      "index": 35,
+      "text": "Despite the above limitations, our analysis could offer a novel perspective to policymakers, thereby emphasizing that a focus shift from emission mass-oriented policies to health-oriented control policies could help facilitate the most cost-effective reduction in the health effects of industry PM_{2.5} pollution. The method can be applied to other sectors. The results may provide guidance for developing regions suffering from similarly severe air pollution driven by multiple industrial sources that are seeking economic approaches for the mitigating of the health effects of industry-related emissions, such as India and Brazil^{35}. Since the industry structure, manufacturing processes, and energy consumption exhibit large discrepancies among different regions worldwide. Local measures to quantify and rank the toxicity of individual source-emitted PM_{2.5} are strongly recommended in the formulation of localized toxicity-based control policies to effectively mitigate source-specific PM_{2.5} effects on public health."
+    },
+    {
+      "index": 36,
+      "text": "## Methods\n\n### Field measurements.\n\nField studies of eighty-two typical units of energy- and emission-intensive industrial sectors, including the iron and steel industry (ISI), power industry, and cement industry, were conducted in 21 provinces in China from 2017 -- 2022 (Supplementary Fig. 1). These selected units covered the major"
+    },
+    {
+      "index": 37,
+      "text": "iron/steel and cement production processes, as well as the major types of fuel-fired power generating units. Information on these typical units is detailed in Supplementary Notes 1 -- 4 and Supplementary Tables 1 -- 3. The air pollution control measures enforced in the various industrial sectors, including the ISI, power, and cement plants, are outlined in Supplementary Note 1 and Supplementary Tables 9 -- 12. An isokinetic sampling system (C-5000, ESC, USA) was deployed to collect fine particulate matter (PM_{2.5}) emission samples originating from stationary sources following US EPA Method 17 (Supplementary Note 5 and Supplementary Fig. 15). To prevent water vapor and fuel gas condensation, the deployed isokinetic sampling equipment was heated to and maintained at a temperature of 120 \u00b0C throughout the whole sampling process. PM_{2.5} samples were collected on both quartz fiber and Teflon filters for weighing and further analysis. The PM_{2.5} remaining on the filter holders was removed via rinsing twice with acetone and collected in clean glassware for further weighing. The sampling time for PM_{2.5} emitted from the three types of plants ranged from 30 to 120 min. The selected units were operated at a stable generating load at over 75% of their capacity during each test. Three successful measurements of the selected units were performed at each sampling site. The field sampling and quality control methods for the industrial emissions have been detailed in our previous studies^{20, 36}."
+    },
+    {
+      "index": 38,
+      "text": "### Chemical and toxic potency analyses.\n\nThe chemical composition of PM_{2.5} emitted from the three industrial sources, including organic carbon, elemental carbon, water soluble ions, PM_{2.5}-bound 16 US EPA priority polycyclic aromatic hydrocarbons (PAHs) (i.e. Nap, Acy, Ace, Flu, Phe, Ant, Flt, Pyr, BaA, Chry, BbF, BkF, BaP, InP, DahA, and Bghip) and elements, was quantified with the use of standard methods^{20, 37, 38}, as detailed in Supplementary Note 6. Gas chromatography coupled with mass spectrometry (Thermo Scientific ISQ 7000 GC -- MS, USA) was employed to determine 16 EPA priority PAHs collected on quartz fiber filters. An inductively coupled plasma mass spectrometer (Thermo Scientific 7500a, USA) was used to examine elements collected on Teflon filters. Benzo(a)pyrene-equivalent carcinogenic potency (BaP_{eq}) values were examined to estimate the carcinogenic risk of the 16 PAHs, which were estimated based on toxic equivalent factors (TEFs). The TEFs of 16 PAHs were retrieved from a previous study^{39}. The full form, abbreviation, and the corresponding TEFs of the 16 PAHs are listed in Supplementary Table 5."
+    },
+    {
+      "index": 39,
+      "text": "Human epithelial A549 cell lines were adopted to examine PM_{2.5}-related biological effects, including PM_{2.5}-induced oxidative stress (OS) potency and cytotoxicity (CT) potency. The PM_{2.5} filter samples were sonicated in methanol and ultra-purified water, and the obtained PM_{2.5} extracts were then dried under purified nitrogen. Description of the analysis process are provided in Supplementary Note 6. OS potency induced by the PM_{2.5} samples was examined with a 2\u2032,7\u2032-dichlorofluorescein diacetate protocol. The CT potency measurement was achieved via a 3-(4,5-dimethylthiazol-2-yl)-2,5-diphenyltetrazolium bromide assay. A microplate reader (Varioskan LUX, Thermo Scientific) was employed to investigate the fluorescence intensity and optical density, which were detected at wavelengths of 488/525 and 570 nm, respectively. The endpoints of PM_{2.5}-induced OS potency and CT potency were reported as EC_{1.5} (the concentration effectively leading to a 1.5-fold inhibition of intracellular ROS generation relative to that of"
+    },
+    {
+      "index": 40,
+      "text": "the control) and IC_{20} (the concentration effectively leading to a 20% inhibition relative to that of the control) values, respectively. The detailed procedures can be found in previous studies^{37, 40--42}."
+    },
+    {
+      "index": 41,
+      "text": "### Development of the emission inventory and emission control scenarios.\n\nThe Air Benefit and Cost and Attainment Assessment System (ABaCAS) emission inventory of air pollutants in China from 2005 to 2019 was developed based on an emission-factor method, and the emissions from power plants and key industrial processes, such as the ISI and cement industry, were quantified via a unit-based approach, as in our previous studies^{32, 43, 44}. Regarding the ISI, all specific industrial processes, including sintering, pelletizing, blast furnace (BF)-based ironmaking, and basic oxygen furnace (BOF)- and electric arc furnace (EAF)-based steelmaking, were considered. Regarding the cement industry, cement grinding mills and cement clinkers, the latter of which include shaft kilns, rotary kilns, and new dry clinkers of different capacities, were considered. The activity data (energy consumption, product yield, etc.) from the energy statistical yearbooks and local or national surveys, such as the Second National Pollution Source Census, were collected^{45}. For 2019, the detailed location, fuel type, energy consumption, product yields, and end-of-pipe control information of 5508 power plants, 742 BFs, 658 BOFs, 124 EAFs, and 1939 cement plants were collected for emission calculation and Weather Research and Forecasting -- Community Multiscale Air Quality (WRF-CMAQ) simulation purposes, as in our previous study^{43}."
+    },
+    {
+      "index": 42,
+      "text": "Three control scenarios (no ultralow emission standard for electricity generation (ELE_noULE) scenario, ULE standard for cement industry (CI_ULE) scenario, and ULE standard for iron and steel industry (ISI_ULE) scenario) were developed to evaluate the potential emission reduction due to the implementation of ULE standards or technology improvement based on the base emission inventory of 2019, detailed as follows: (1) ELE_noULE scenario. Under this scenario, we used the energy consumption and technology structure of power plants in 2019 and the end-of-pipe control measures and shares of PM of power plants in 2014. (2) CI_ULE scenario. Under this scenario, we considered the product yield and technology structure of the cement industry in 2019 and end-of-pipe control technology of the ULE standard for PM control in the cement industry. (3) ISI_ULE scenario. Under this scenario, we employed the product yield and technology structure of the ISI in 2019 and end-of-pipe control technology of the ULE standard for PM control in the ISI."
+    },
+    {
+      "index": 43,
+      "text": "### Estimation of the toxic potency-adjusted exposure.\n\nAmbient PM_{2.5} concentrations were simulated with the WRF-CMAQ model. The simulation period covers the entirety of 2019. The WRF-CMAQ model with the updated ABaCAS emission inventory was adopted for baseline scenario simulation. The model simulation performance was evaluated via a comparison between the simulated parameter values and ground observations (Supplementary Note 8 and Supplementary Table 13). We operated the model with the above three emission control scenarios (including ELE_noULE, CI_ULE, and ISI_ULE) to estimate the reduction effect on toxic potency-adjusted exposure risk (TPAE) of the implementation of ULE standards and technology improvement. The differences between the baseline and ELE_noULE scenarios constitute the influence of the ULE standard for PM control implemented at power plants since 2015 in China. The differences between the baseline and CI_ULE and ISI_ULE scenarios represent the potential benefits of the"
+    },
+    {
+      "index": 44,
+      "text": "implementation of ULE standards targeting the PM emissions from the cement industry and ISI, respectively."
+    },
+    {
+      "index": 45,
+      "text": "Three additional zero-emission scenarios for the energy and industrial sectors were designed based on the emission inventory of 2019, including no electricity (NoELE) scenario, no cement industry (NoCI) scenario, and no iron and steel industry (NoISI) scenario, to examine the the contributions of power, cement, and ISI sectors to the ambient PM_{2.5} concentration in the base year (Supplementary Table 14). Emission inventories excluding primary PM_{2.5} emissions from power, cement, and ISI sectors, as obtained with the baseline scenarios, were used to simulate the NoELE, NoCI, and NoISI scenarios, respectively. The differences in the simulated concentrations between the baseline scenario and the NoELE, NoCI, and NoISI scenarios were employed to estimate the ambient PM_{2.5} concentration attributable to the power, cement, and ISI sectors, respectively. The uncertainties of the emission inventory of each source were quantified with 10000 times Monte Carlo simulation based on the uncertainty range of the activity data, emission factors, and end-of-pipe control efficiencies (Supplementary Note 11), as detailed in our previous study^{44}."
+    },
+    {
+      "index": 46,
+      "text": "The population-weighted exposure (PWE) attributable to PM_{2.5} pollution originating from each industry sector can be calculated as follow:"
+    },
+    {
+      "index": 47,
+      "text": "PWE = 1 P \u2211 i P i \u22c5 C i , s\n\n, where P is the total population, P_{i} is the population in each geographic unit (i), and C_{i,s} is the ambient PM_{2.5} concentration attributable to each emission sector (s) in each geographic unit (i), respectively. PM_{2.5}-induced toxic potencies were integrated to estimate the health-relevant risk index for exposure to industrial-emitted PM_{2.5}, including estimation of the PM_{2.5}-induced OS and CT potency-adjusted exposure risks (TPAE_{OS} and TPAE_{CT}). TPAE_{OS} and TPAE_{CT} were estimated as TPAE_{OS} = C_{i,s} \u00d7 OS_{i,s} and TPAE_{CT} = C_{i,s} \u00d7 CT_{i,s}, respectively, where OS_{i,s} and CT_{i,s} are the toxic equivalent values of the PM_{2.5}-induced OS and CT potency, respectively, originating from each industry sector (s) in each geographic unit (i). OS_{i,s} and CT_{i,s} (Supplementary Note 9 and Supplementary Table 7) were estimated on the basis of toxic units determined from the PM_{2.5}-induced OS and CT potency values, as detailed in our previous study^{42}. The population-weighted TPAE_{OS} and TPAE_{CT} can be estimated as PWE_{i,s} \u00d7 OS_{i,s} and PWE_{i,s} \u00d7 CT_{i,s}, respectively (Supplementary Table 8). The uncertainties of population-weighted TPAE were quantified based on the uncertainties of PM_{2.5}-induced toxic potency and PM_{2.5} emission inventory (Supplementary Note 11)."
+    },
+    {
+      "index": 48,
+      "text": "### Estimation of cost reduction.\n\nThe unit cost (UCost) of the implementation of ULE standards for PM_{2.5} emission control in the ISI, power, and cement industries can be calculated as follows:"
+    },
+    {
+      "index": 49,
+      "text": "$UCost_{i,s}=\\Delta TCost_{i,s}/\\Delta Emis_{i,s}$\n\n,\n\nwhere i and s denote a given end-of-pipe control measure and emission sector, respectively, DEmis is the abatement potential, and TCost is the total cost, which can be calculated with the same method as that in our previous study^{46--48}, as follows:"
+    },
+    {
+      "index": 50,
+      "text": "$TCost_{i,s}=CC_{i,s}+FOM_{i,s}+FUEL_{i,s}$\n\n,\n\nwhere CC is the annual average capital cost, FOM is the fixed operating and maintenance cost, and FUEL is the fuel cost per year. CC can be estimated as follows:"
+    },
+    {
+      "index": 51,
+      "text": "$CC_{i,s}=Cost_{i,s}\\times\\frac{\\alpha(1+\\alpha)^{t}}{(1+\\alpha)^{t}-1}$\n\n,\n\nwhere Cost_{i,s} is the initial investment cost, a is the discount rate, t is the lifetime of the considered end-of-pipe control measure. The discount rate and lifetime of the end-of-pipe control measures in these sectors were set to 10% and 20 years, respectively, based on a comprehensive analysis of pertinent literature and government reports^{48}. The unit cost of the implementation of ULE standards for toxic potency-adjusted PM emission control (including estimation of OS and CT) in the ISI, power, and cement industries can be calculated as follows:"
+    },
+    {
+      "index": 52,
+      "text": "$UCost_{OS}=$ $\\Delta TCost_{i,s}/(\\Delta Emis_{i,s}\\times OS_{i,s})$\n$UCost_{CT}=$ $\\Delta TCost_{i,s}/(\\Delta Emis_{i,s}\\times CT_{i,s})$"
+    },
+    {
+      "index": 53,
+      "text": "Further descriptions of the methods and data for unit cost calculation are provided in Supplementary Note 10 and Supplementary Tables 15 -- 18."
+    },
+    {
+      "index": 54,
+      "text": "### Declarations\n\n### Acknowledgements\n\nWe thank R. L. A. C. S.L. Y.L. X. C. F.Z. Q.W. T.L. J.J. L.W. and J.C. for supporting samples and data analysis. This work was funded by the National Natural Science Foundation of China (T2122006, 22188102, U22A20405, 92143301, 21625701, 21876028, 92043302, and 42007393), China Postdoctoral Science Foundation (BX20220088, 2022M710741, and 2022M711800), and the Research Grants Council of Hong Kong (15213922, 25210420, and T24-508/22-N). Professor Shuxiao Wang was also supported"
+    },
+    {
+      "index": 55,
+      "text": "by the Tencent Foundation through the XPLORER PRIZE and the Samsung Advanced Institute of Technology."
+    },
+    {
+      "index": 56,
+      "text": "# Author contributions\n\nQ. L., S. W., and X. L. conceived and designed the experiments. D. W., H.Z. and Q. L. performed the experiments. D. W., H. Z., B. Z., and J. L. analyzed the data; D.W., H. Z., B. Z., J. L., X. L. and J. H. contributed materials/analysis tools. D. W., H. Z., Q. L. and S. W. wrote the paper."
+    },
+    {
+      "index": 57,
+      "text": "# Competing interests\n\nAll the authors declare no competing interests.\n\n# Data availability\n\nAll data needed to evaluate the conclusions have been provided in the manuscript and/or the Supplementary Materials."
+    },
+    {
+      "index": 58,
+      "text": "# Code availability\n\nThe WRF and CMAQ models are open-source models. Their source codes are available on the respective release websites."
+    },
+    {
+      "index": 59,
+      "text": "(https://github.com/NCAR/WRFV3/releases; https://github.com/USEPA/CMAQ/releases).\n\n# References\n\n1. Lelieveld, J., et al. (2015). The contribution of outdoor air pollution sources to premature mortality on a global scale. Nature 525, 367-71.\n2. Liu, C., et al. (2019). Ambient Particulate Air Pollution and Daily Mortality in 652 Cities. N Engl J Med 381, 705-715.\n3. Li, X., et al. (2019). Air pollution: a global problem needs local fixes. Nature 570, 437-439.\n4. Cohen, A. J., et al. (2017). Estimates and 25-year trends of the global burden of disease attributable to ambient air pollution: an analysis of data from the Global Burden of Diseases Study 2015. The Lancet 389, 1907-1918.\n5. Dedoussi, I. C., et al. (2020). Premature mortality related to United States cross-state air pollution. Nature 578, 261-265.\n6. Oberschelp, C., et al. (2019). Global emission hotspots of coal power generation. Nat. Sustain. 2, 113-121.\n7. Weagle, C. L., et al. (2018). Global Sources of Fine Particulate Matter: Interpretation of PM2.5 Chemical Composition Observed by SPARTAN using a Global Chemical Transport Model. Environ. Sci. Technol. 52, 11670-11681."
+    },
+    {
+      "index": 60,
+      "text": "8. Crippa, M., et al. (2016). Forty years of improvements in European air quality: regional policy-industry interactions with global impacts. Atmos. Chem. Phys. 16, 3825-3841.\n9. Shapiro, J. S.; Walker, R. (2018). Why Is Pollution from US Manufacturing Declining? The Roles of Environmental Regulation, Productivity, and Trade. American Economic Review 108, 3814-54.\n10. Wallace, D., Environmental policy and industrial innovation: Strategies in Europe, the USA and Japan. Routledge: 2017.\n11. Tong, D., et al. (2018). Targeted emission reductions from global super-polluting power plant units. Nat. Sustain. 1, 59-68.\n12. Zheng, B., et al. (2018). Trends in China's anthropogenic emissions since 2010 as the consequence of clean air actions. Atmos. Chem. Phys. 18, 14095-14111.\n13. Ding, D., et al. Estimated Contributions of Emissions Controls, Meteorological Factors, Population Growth, and Changes in Baseline Mortality to Reductions in Ambient PM2.5 and PM2.5-Related Mortality in China, 2013-2017. Environ. Health Perspect. 127, 067009 1-12.\n14. Zhang, Q., et al. (2019). Drivers of improved PM2.5 air quality in China from 2013 to 2017. Proc. Natl. Acad. Sci. U.S.A 116, 24463-24469.\n15. Daellenbach, K. R., et al. (2020). Sources of particulate-matter air pollution and its oxidative potential in Europe. Nature 587, 414-419.\n16. Shiraiwa, M., et al. (2017). Aerosol Health Effects from Molecular to Global Scales. Environ. Sci. Technol. 51, 13545-13567.\n17. Kelly, F. J.; Fussell, J. C. (2012). Size, source and chemical composition as determinants of toxicity attributable to ambient particulate matter. Atmos. Environ. 60, 504-526.\n18. Guo, Z., et al. (2022). Field measurements on emission characteristics, chemical profiles, and emission factors of size-segregated PM from cement plants in China. Sci Total Environ 818, 151822-151831.\n19. Zeng, X., et al. (2021). Source profiles and emission factors of organic and inorganic species in fine particles emitted from the ultra-low emission power plant and typical industries. Sci. Total Environ. 789, 147966-147978.\n20. Ding, X., et al. (2019). Unexpectedly Increased Particle Emissions from the Steel Industry Determined by Wet/Semidry/Dry Flue Gas Desulfurization Technologies. Environ. Sci. Technol. 53, 10361-10370.\n21. Tang, L., et al. (2019). Substantial emission reductions from Chinese power plants after the introduction of ultra-low emissions standards. Nat. Energy 4, 929-938.\n22. Bo, X., et al. (2021). Effect of strengthened standards on Chinese ironmaking and steelmaking emissions. Nat. Sustain. 4, 811-820.\n23. Tang, L., et al. (2022). Plant-level real-time monitoring data reveal substantial abatement potential of air pollution and CO2 in China's cement sector. One Earth 5, 892-906.\n24. Escher, B. I., et al. (2020). Tracking complex mixtures of chemicals in our changing environment. Science 367, 388-392."
+    },
+    {
+      "index": 61,
+      "text": "25. Liu, S., et al. (2021). Significant but Spatiotemporal-Heterogeneous Health Risks Caused by Airborne Exposure to Multiple Toxic Trace Elements in China. Environ. Sci. Technol. 55, 12818-12830.\n26. Zhang, Y., et al. (2020). Emission characteristics and potential toxicity of polycyclic aromatic hydrocarbons in particulate matter from the prebaked anode industry. Sci. Total Environ. 722, 137546-137554.\n27. Kong, S., et al. (2013). Emission and profile characteristic of polycyclic aromatic hydrocarbons in PM2.5 and PM10 from stationary sources based on dilution sampling. Atmos. Environ. 77, 155-165.\n28. Guo, Y., et al. (2017). Chemical profiles of PM emitted from the iron and steel industry in northern China. Atmos. Environ. 150, 187-197.\n29. Li, Z.; Hanaoka, T. (2022). Plant-level mitigation strategies could enable carbon neutrality by 2060 and reduce non-CO2 emissions in China's iron and steel sector. One Earth 5, 932-943.\n30. Wang, S. X., et al. (2014). Emission trends and mitigation options for air pollutants in East Asia. Atmos. Chem. Phys. 14, 6571-6603.\n31. Leung, D. M., et al. (2020). Wintertime Particulate Matter Decrease Buffered by Unfavorable Chemical Processes Despite Emissions Reductions in China. Geophys. Res. Lett. 47, e2020GL087721.\n32. Zheng, H., et al. (2019). Transition in source contributions of PM2.5 exposure and associated premature mortality in China during 2005-2015. Environ. Int. 132, 105111-105124.\n33. Li, S., et al. (2021). Magnetic Particles Unintentionally Emitted from Anthropogenic Sources: Iron and Steel Plants. Environ. Sci. Technol. Lett. 8, 295-300.\n34. Jin, L., et al. (2019). Contributions of City-Specific Fine Particulate Matter (PM2.5) to Differential In Vitro Oxidative Stress and Toxicity Implications between Beijing and Guangzhou of China. Environ. Sci. Technol. 53, 2881-2891.\n35. Wang, P., et al. (2021). Efficiency stagnation in global steel production urges joint supply- and demand-side mitigation efforts. Nat. Commun. 12, 2066-2076.\n36. Ding, X., et al. (2020). Gaseous and Particulate Chlorine Emissions from Typical Iron and Steel Industry in China. J. Geophys. Res-Atmos. 125, e2020JD032729.\n37. Wu, D., et al. (2018). Primary Particulate Matter Emitted from Heavy Fuel and Diesel Oil Combustion in a Typical Container Ship: Characteristics and Toxicity. Environ. Sci. Technol. 52, 12943-12951.\n38. Ding, X., et al. (2021). Direct Observation of Sulfate Explosive Growth in Wet Plumes Emitted From Typical Coal-Fired Stationary Sources. Geophys. Res. Lett. 48, e2020GL092071.\n39. Nisbet, I. C. T.; Lagoy, P. K. (1992). Toxic equivalency factors (TEFs) for polycyclic aromatic hydrocarbons (PAHs). Regul. Toxicol. Pharmacol. 16, 290-230.\n40. Wu, D., et al. (2017). Chemical characterization and toxicity assessment of fine particulate matters emitted from the combustion of petrol and diesel fuels. Sci. Total. Environ. 605-606, 172-179.\n41. Roper, C., et al. (2019). PM2.5 Filter Extraction Methods: Implications for Chemical and Toxicological Analyses. Environ. Sci. Technol. 53, 434-442."
+    },
+    {
+      "index": 62,
+      "text": "Page 17/23\n\n42. Wu, D., et al. (2022). Toxic potency-adjusted control of air pollution for solid fuel combustion. Nat. Energy 7, 194-202.\n43. Zheng, H., et al. (2019). Development of a unit-based industrial emission inventory in the Beijing-Tianjin-Hebei region and resulting improvement in air quality modeling. Atmospheric Chemistry and Physics 19, 3447-3462.\n44. Li, S., et al. (2023). Emission trends of air pollutants and CO2 in China from 2005 to 2021. Earth Syst. Sci. Data Discuss. 2023, 1-22.\n45. Ministry of Ecology and Environment of the People's Republic of China, Announcement on the release of the \"Second National Pollution Source Census\". Ministry of Ecology and Environment of the People's Republic of China; Beijing, 2020.\n46. Sun, J., et al. (2014). Cost estimate of multi-pollutant abatement from the power sector in the Yangtze River Delta region of China. Energy Policy 69, 478-488.\n47. Xing, J., et al. (2019). Least-cost control strategy optimization for air quality attainment of Beijing-Tianjin-Hebei region in China. J. Environ. Manage. 245, 95-104.\n48. Zhang, F., et al. (2020). Estimation of abatement potentials and costs of air pollution emissions in China. J. Environ. Manage. 260, 110069-110080."
+    },
+    {
+      "index": 63,
+      "text": "## Figures\n\n![img-0.jpeg](img-0.jpeg)\nFigure 1\n\n![img-1.jpeg](img-1.jpeg)\n\nToxic potencies of  $\\mathsf{PM}_{2.5}$  emitted from typical industrial plants.  $\\mathsf{PM}_{2.5}$ -induced oxidative stress potency (a) and cytotoxicity potency (b) from iron and steel plants, power plants, and cement plants. The major iron and steel production processes include sintering, ironmaking, and basic oxygen furnace (BOF)-based steel making. Power-generating units can be grouped by the major fuel types as coal-, biomass-, and solid waste-fired units. Prevailing processes of pollutant emissions in clinker and cement production are kiln head and kiln tail. The toxic potencies of  $\\mathsf{PM}_{2.5}$  increased with decreasing  $\\mathsf{EC}_{1.5}$  and  $\\mathsf{IC}_{20}$  values."
+    },
+    {
+      "index": 64,
+      "text": "![img-2.jpeg](img-2.jpeg)\nFigure 2\n\n![img-3.jpeg](img-3.jpeg)\n\nMass-normalized concentrations of the selected metals and PAHs contained in  $\\mathsf{PM}_{2.5}$  originating from large-scale industrial plants. Concentrations of (a) 10 selected toxic metals (i.e., V, Cr, Mn, Fe, Ni, Cu, Zn, As, Cd, and Pb) and (b) 16 US EPA priority PAHs (i.e., Nap, Acy, Ace, Flu, Phe, Ant, Flt, Pyr, BaA, Chry, BbF, BkF, BaP, InP, DahA, and Bghip) per unit mass of  $\\mathsf{PM}_{2.5}$  emitted from typical plants in the iron and steel, power, and cement industries. The tested plants in the three industrial sectors are conventionally grouped by the rude steel production processes, fuel types, and clinker production processes, respectively."
+    },
+    {
+      "index": 65,
+      "text": "![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)\n\n![img-6.jpeg](img-6.jpeg)\nFigure 3\n\nChanges in the  $\\mathsf{PM}_{2.5}$  emissions and  $\\mathsf{PM}_{2.5}$ -induced oxidative stress potency-adjusted emissions of the three industrial sectors in China. Relative distribution of the  $\\mathsf{PM}_{2.5}$  emissions and the induced OS potency-adjusted emissions of the three industrial sectors (i.e., iron and steel production, power generation, and cement production) in 2005 (a) and 2019 (b), and temporal evolution the of  $\\mathsf{PM}_{2.5}$  absolute mass (orange line) and  $\\mathsf{PM}_{2.5}$ -induced OS potency-adjusted mass emission from the three industrial sources between 2005 and 2019 (c)."
+    },
+    {
+      "index": 66,
+      "text": "![img-7.jpeg](img-7.jpeg)\nFigure 4\n\nReduction in the industrial  $\\mathsf{PM}_{2.5}$  emissions and  $\\mathsf{PM}_{2.5}$ -induced toxic potency adjusted exposure under ultralow emission standards in China. Two reduction routes (including route 1 toward  $\\mathsf{PM}_{2.5}$  mass-based emission reduction and route 2 toward OS potency- and CT potency-adjusted emissions reduction) under the implementation of ultralow emission standards in each industrial sector (i.e., iron and steel production, power generation, and cement production) (a), as well as spatial distributions of the corresponding reductions in the OS potency-adjusted exposure ( $\\mathsf{TPAE}_{\\mathsf{OS}}$ ) and CT potency-adjusted"
+    },
+    {
+      "index": 67,
+      "text": "exposure  $(\\mathrm{TPAE}_{\\mathrm{CT}})$  attributed to all facilities meeting the ultralow emission standards in the power industry (b and e), cement industry (c and f), and iron and steel industry (d and g) in 2019, respectively."
+    },
+    {
+      "index": 68,
+      "text": "![img-8.jpeg](img-8.jpeg)\n(a) Reduction costs per unit of the  $\\mathbf{PM}_{2.5}$  mass\n\n![img-9.jpeg](img-9.jpeg)\n(b) Reduction costs per unit of OS-adjusted  $\\mathbf{PM}_{2.5}$  mass\nFigure 5"
+    },
+    {
+      "index": 69,
+      "text": "Costs for the reductions in the  $\\mathsf{PM}_{2.5}$  mass and  $\\mathsf{PM}_{2.5}$ -induced OS potency-adjusted mass from the industrial sectors. Reduction costs per unit of the  $\\mathsf{PM}_{2.5}$  mass (kg) (a) and per unit of the OS potency-adjusted  $\\mathsf{PM}_{2.5}$  mass (b) if all facilities in the iron and steel industry (red), power industry (green), and cement industry (blue) meet the ULE standards, respectively. The unit cost, namely marginal reduction cost, indicates the ratio of additional increased investment and the  $\\mathsf{PM}_{2.5}$  abatement potential under the application of the ULE standards to each industry source (as detailed in Methods section and Supplementary Note 10)."
+    },
+    {
+      "index": 70,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download.\n\n- IndustryemissionSI20230228.pdf"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The dataset (82 industrial-unit PM2.5 samples across 21 Chinese provinces, with chemical composition, in vitro toxicity, and a unit-based emission inventory) is unusually rich and supports the qualitative claim that ISI PM2.5 is more toxic per unit mass than power or cement PM2.5. However, several quantitative claims are not adequately supported as written. Most importantly: (1) the headline 5.4\u00d7 TPAE-reduction has a 1-\u03c3 lower bound near 1.5 that the abstract does not reflect; (2) toxic potency is measured only on A549 cells (a lung adenocarcinoma line) and never validated against epidemiological outcomes, yet drives a national policy conclusion; (3) the 2017-2022 toxic potencies are applied retroactively to 2005-2019 emission inventory without justification; and (4) the PWE/TPAE attribution does not separate the \"siting effect\" (where ISI plants happen to be located) from the \"intrinsic potency effect\", so the policy ranking conflates two distinct mechanisms. The work is worth revising \u2014 the central insight is plausible \u2014 but the policy recommendation and the magnitude of the comparative-effectiveness claim should be substantially softened or supported by the missing analyses.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Headline 5.4x reduction has 1-sigma lower bound near 1.5, not reflected in abstract",
+          "quote": "the proposed health-oriented control strategy (priority control of the ISI sector) could generate 5.4 times higher reduction in population-weighted toxic potency-adjusted PM_{2.5} exposure among polluting industries in China.",
+          "explanation": "The Abstract reports 5.4x as a definitive number. Section 7 reveals the underlying value is 5.44 \u00b1 3.95 (vs power) and 8.16 \u00b1 6.58 (vs cement). With 1-sigma error bars of 3.95 and 6.58, the lower edge of one standard deviation is approximately 1.5 \u2014 i.e., the central claim of dramatic ISI advantage may, within the authors' own uncertainty quantification, reduce to a roughly 1.5x effect. If the \u00b13.95 represents a 95% CI rather than 1 sigma (the paper does not specify), the lower bound could be below 1, meaning ISI control yields *no greater* TPAE reduction than power control. The abstract's single-point '5.4 times' presentation strips this uncertainty entirely. A faithful summary should report the range or at least flag that the central estimate has a wide uncertainty.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 7
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "TPAE is presented as health risk but never validated against epidemiological outcomes",
+          "quote": "the proposed health-oriented control strategy (priority control of the ISI sector) could generate 5.4 times higher reduction in population-weighted toxic potency-adjusted PM_{2.5} exposure among polluting industries in China.",
+          "explanation": "The TPAE_{OS} metric is defined as ambient PM_{2.5} concentration multiplied by an in-vitro EC_{1.5}-derived toxic equivalent. There is no demonstrated link between TPAE_{OS} and any clinical or epidemiological endpoint (mortality, hospitalization, lung function). Yet the Abstract and Discussion frame the TPAE reduction as a 'reduction in adverse impacts' and 'health-oriented' control. The Discussion does say 'In vivo and epidemiological studies are strongly encouraged to clarify and validate the relationship', acknowledging the gap, but the paper still presents TPAE as if it were a health metric to support the policy recommendation. Combined with the implicit linear dose-response assumption (TPAE = C \u00d7 OS, with reductions assumed to scale linearly to harm), this is a meaningful overclaim. A calibrated framing would distinguish 'reduction in toxic-potency-adjusted exposure' (what was measured) from 'reduction in health impact' (which requires further validation).",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 7
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "Static 2017-2022 toxic potency is applied retroactively to 2005-2019 inventory without justification",
+          "quote": "The quantified toxic potencies were integrated into PM_{2.5} emission inventories as PM_{2.5}-induced toxic potency-adjusted emissions of the three selected industrial sectors in China from 2005 -- 2019, as shown in Fig. 3.",
+          "explanation": "Field samples were collected 2017-2022, but the OS_{i,s} and CT_{i,s} potencies derived from those samples are applied without modification to the 2005-2019 emission inventory in Fig. 3. The 14-year window encompasses substantial industrial transitions: ISI raw materials and BF/BOF/EAF mix shifted; power-plant coal washing and ULE rollout (post-2014) dramatically changed flue-gas composition; cement clinker chemistry and end-of-pipe controls (ESPs to bag filters) evolved continuously. Each of these would change PM toxicity per gram. The headline narrative 'OS-adjusted emissions increased 12.2% during 2005-2012 even as mass dropped 20%' could be entirely an artifact of holding toxic potency constant. The paper does not perform a sensitivity analysis with time-varying OS_{i,s}, nor does it acknowledge this temporal extrapolation in the limitations paragraph.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "OS-adjusted emission share has uncertainty wider than the share itself (70.7 \u00b1 32.9%)",
+          "quote": "ISI-emitted PM_{2.5} accounted for only 29.0 \u00b1 7.6% of nationwide PM_{2.5} emissions among the three sectors in 2005, but accounted for approximately 70.7 \u00b1 32.9% of PM_{2.5}-induced OS potency-adjusted emissions (Fig. 3a).",
+          "explanation": "70.7 \u00b1 32.9% means the 1-sigma upper bound is 103.6%, which is mathematically impossible for a fractional share of a sum. Either the uncertainty propagation is incorrect, or the \u00b132.9% represents Monte-Carlo spread on the absolute OS-adjusted mass that has not been normalized properly to a percentage, or the standard deviation here mixes sample-level variability with share-level uncertainty. As reported, the uncertainty interval cannot reliably distinguish 'ISI \u2248 38%' from 'ISI > 100%' \u2014 which would gut the claim that ISI dominates OS-adjusted emissions. The supplement (Suppl. Note 11, Monte Carlo) presumably contains the proper computation, but in the main text the headline number is presented in a form that makes the result unfalsifiable. A more careful statistic (e.g. 5th-95th percentile of the share) should be reported.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "PWE/TPAE attribution does not separate 'siting effect' from 'intrinsic potency effect'",
+          "quote": "The nationwide total population-weighted TPAE_{OS} in the three sectors was dominated by the ISI (83%), owing to the higher OS potency per unit mass of ISI-emitted PM_{2.5}.",
+          "explanation": "Population-weighted exposure depends on both the toxic potency of emissions and the spatial overlap between emission sources and population. ISI plants are concentrated in densely populated regions like Hebei and Jiangsu, while power and cement plants have different spatial footprints. The paper attributes ISI's 83% dominance of TPAE_{OS} entirely to 'higher OS potency,' but a fraction of this advantage may be due to ISI's siting near population centers \u2014 which is a different policy lever (relocation, fugitive control, urban-rural reallocation) than ULE technology. A decomposition into 'siting effect' vs 'intrinsic potency effect' (e.g. compute TPAE if ISI emissions were spatially distributed identically to power) would clarify how much of the 5.4x advantage is portable to other countries with different industrial geography. Without this decomposition, the policy recommendation is bound to the specific Chinese siting pattern.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 28
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "Cost-per-OS-adjusted-ton metric is a deterministic transformation of cost-per-mass and OS potency",
+          "quote": "The marginal abatement cost per ton of the PM_{2.5} mass of the ISI sector was nearly 73% and 142% that per ton of the PM_{2.5} mass of the power and cement industries (Fig. 5a), respectively, while the abatement cost for per unit of OS potency-adjusted mass of ISI-emitted PM_{2.5} was only 14% and 25% that for per unit of OS potency-adjusted mass of power- and cement-emitted PM_{2.5} (Fig. 5b)",
+          "explanation": "UCost_OS = \u0394TCost / (\u0394Emis \u00d7 OS_{i,s}) = (cost per mass) / OS_{i,s}. Since ISI's OS_{i,s} is 5.0-5.4x larger than power/cement's, the cost per OS-adjusted ton must be roughly 5x lower than the cost per mass \u2014 which is exactly what Fig. 5b shows (73%/5.4 \u2248 14%; 142%/5.4 \u2248 26%). Fig. 5b therefore carries no independent information beyond Fig. 1 + Fig. 5a; it is a tautological algebraic consequence of the toxic-potency-adjusted metric definition. Presenting Fig. 5b as separate evidence that 'priority ISI control is more cost-effective for health' overstates the empirical content. The genuinely new information would be the propagated uncertainty on the cost-per-OS-adjusted-ton ratio (combining \u0394TCost CI with OS_{i,s} CI), which is not reported.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "Single in-vitro model (A549) drives policy conclusion without comparator or threshold sensitivity analysis",
+          "quote": "Human epithelial A549 cell lines were adopted to examine PM_{2.5}-related biological effects, including PM_{2.5}-induced oxidative stress (OS) potency and cytotoxicity (CT) potency.",
+          "explanation": "All toxic-potency values that drive the policy conclusion derive from one immortalized lung adenocarcinoma cell line (A549). The authors do not justify why A549 is the appropriate model for ranking source-specific PM toxicity, do not include a comparator (BEAS-2B, primary alveolar cells, alveolar macrophages, co-cultures), and do not perform a sensitivity analysis on the EC_{1.5} (1.5-fold ROS) and IC_{20} (20% viability) thresholds. These thresholds materially affect the OS_{i,s} ranking when dose-response curves differ across sectors. The Discussion's generic 'in vitro tests are not strictly consistent with actual exposure' caveat does not address whether ISI's apparent dominance survives a different cell line or threshold choice. Given that the entire policy argument rests on the OS_{i,s} ratio between sectors, a robustness check is essential.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "EC_{1.5} sampling at 120\u00b0C excludes condensable PM with sector-asymmetric bias",
+          "quote": "To prevent water vapor and fuel gas condensation, the deployed isokinetic sampling equipment was heated to and maintained at a temperature of 120 \u00b0C throughout the whole sampling process.",
+          "explanation": "Sampling at 120\u00b0C captures filterable PM but excludes condensable material (semi-volatile organics, secondary sulfate/nitrate, volatilized PAHs). This complies with EPA Method 17 for filterable mass, but condensable fractions differ across sectors: power plants with wet FGD have larger condensable sulfate (low intrinsic toxicity per the paper's own framing); ISI sintering may release more condensable PAHs. Whether the 120\u00b0C choice biases the cross-sector toxicity ratio upward or downward depends on which sector loses more toxic mass to condensation. The paper does not discuss this in the methods or limitations, even though it directly shapes the headline cross-sector toxicity comparison.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 37
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "EAF policy recommendation rests on 'limited samples' explicitly admitted by the paper",
+          "quote": "Additionally, compared to the effects of conventional BOF-based steelmaking processes, EAF-based steelmaking processes could alleviate PM_{2.5}-induced toxic potencies, as indicated by our limited EAF-emitted PM_{2.5} samples (Supplementary Fig. 3). ... The shift from BOFs to EAFs is recommended over the next decades to achieve carbon neutrality and reduce ISI-emitted air pollutants",
+          "explanation": "The Discussion explicitly admits 'limited EAF-emitted PM_{2.5} samples' yet uses the result to recommend a multi-decade industrial transition. The number of EAF samples is not given in the main text. The very next paragraph then says 'The uncertainties in the toxicity of EAF-emitted PM_{2.5} may hinder the evaluation of the effectiveness of current EAF technology' \u2014 a direct caveat against the recommendation just made. The two statements appear in adjacent paragraphs and are difficult to reconcile. A more honest framing would mark the BOF-to-EAF shift as a hypothesis to be confirmed with more data rather than a definitive recommendation.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 32
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "Sample sizes per process and per sector are not reported in the main text",
+          "quote": "Field studies of eighty-two typical units of energy- and emission-intensive industrial sectors, including the iron and steel industry (ISI), power industry, and cement industry, were conducted in 21 provinces in China from 2017 -- 2022 (Supplementary Fig. 1).",
+          "explanation": "The main text never reports how many units were sampled in each sector (ISI vs power vs cement) or in each sub-process (sinter, pig iron, crude steel, EAF, kiln head, kiln tail, coal/biomass/solid waste boilers). The headline EC_{1.5} ranges have coefficients of variation of 44-57%, but no n is given for any cell, no statistical test (ANOVA, Mann-Whitney, t-test) is reported for cross-sector ratios, and no power calculation is shown. PAH content for ISI is 612 \u00b1 775 \u03bcg/g \u2014 standard deviation exceeds the mean \u2014 yet no median or robust statistic is offered. Without n and tests, the reader cannot judge whether the cross-sector differences are statistically distinguishable from sample-level variability.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 36
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Concentration-addition attribution leaves 13-23% of OS unaccounted for and ignores synergy",
+          "quote": "The targeted metals contributed 84.6 \u00b1 22.6%, 83.8 \u00b1 9.8%, and 77.5 \u00b1 8.4% to OS potency induced by the primary PM_{2.5} emitted from the ISI, power, and cement industries, respectively. While the identified PAHs accounted for minor fractions (2.7 -- 3.6%) of the total PM_{2.5}-induced OS potency among the three major sectors (Supplementary Fig. 7a).",
+          "explanation": "Targeted metals + PAHs sum to ~87% (ISI), ~87% (power), ~80% (cement). The remaining 13-20% of OS potency is unaccounted for \u2014 the paper does not enumerate or quantify what these unidentified contributors are (organic-bound metals, quinones, PAH derivatives, transition-metal speciation). The standard deviation on the ISI metal contribution (\u00b122.6%) is large enough that some samples might have <60% of OS attributable to metals. Additionally, the concentration-addition reference model assumes purely additive mixture toxicity and ignores synergy/antagonism \u2014 but in the presence of high Fe (62.6-98.3% of measured ISI metals), redox cycling of Cu, Mn, V, Cr can be enhanced or suppressed via Fenton-type interactions. The Discussion mentions 'synergistic or inhibitory effects ... may generate additional uncertainties' as a generic caveat. A more cautious framing would say 'targeted toxic metals are a leading contributor' rather than 'OS potency could mainly be attributed to PM_{2.5}-bound toxic metals'.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 19
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "Iron speciation is not measured but is critical to the OS attribution",
+          "quote": "Fe dominated the mass concentrations, with relative concentrations ranging from 62.6 -- 98.3%, 43.0 -- 94.8%, and 80.4 -- 94.1% in the selected metals within in PM_{2.5} emitted from the ISI, power, and cement industries, respectively (Fig. 2a).",
+          "explanation": "Iron's contribution to oxidative stress depends on bioavailability, oxidation state (Fe(II) vs Fe(III)), and matrix (haematite vs magnetite vs soluble Fe). The paper aggregates 'total Fe' content into the metal concentration that feeds the OS attribution but never reports speciation. The authors' own ref 33 ('Magnetic Particles Unintentionally Emitted from Anthropogenic Sources: Iron and Steel Plants') indicates magnetite is a dominant ISI emission, and magnetite is *less* redox-active than soluble or amorphous iron oxides. If most ISI Fe is bound as magnetite, the OS attribution may overweight Fe's true ROS contribution. Without speciation data, the metal-driven attribution rests on an untested assumption, and reducing 'Fe content' alone may not reduce ROS as expected \u2014 undercutting the policy implication that ISI ULE retrofit translates linearly into health benefit.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 17
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "WRF-CMAQ model performance metrics are not reported in main text",
+          "quote": "Ambient PM_{2.5} concentrations were simulated with the WRF-CMAQ model. The simulation period covers the entirety of 2019. ... The model simulation performance was evaluated via a comparison between the simulated parameter values and ground observations (Supplementary Note 8 and Supplementary Table 13).",
+          "explanation": "The paper relies on WRF-CMAQ simulations to compute population-weighted exposure, sector attribution (NoELE/NoCI/NoISI), and ULE-scenario reductions. None of the standard model-performance metrics (NMB, NME, IOA, R for PM_{2.5}) are reported in the main text. Without these, readers cannot assess whether the model is sufficiently skillful for sector-attribution claims like 'ISI accounts for 83% of population-weighted TPAE_{OS}.' Source-attribution sensitivity (e.g., brute-force vs DDM-3D) could give different sector apportionments, especially for primary PM components co-emitted with secondary precursors. At minimum, bulk-PM_{2.5} R^2 and bias should appear in the main text.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 43
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Brute-force sector attribution conflates primary and secondary PM contributions",
+          "quote": "The differences in the simulated concentrations between the baseline scenario and the NoELE, NoCI, and NoISI scenarios were employed to estimate the ambient PM_{2.5} concentration attributable to the power, cement, and ISI sectors, respectively.",
+          "explanation": "Brute-force source apportionment (zeroing one source at a time) is appropriate for primary PM_{2.5} but does not yield additive contributions when secondary chemistry is non-linear (SO2 \u2192 sulfate via OH oxidation, NOx \u2192 nitrate equilibrium). For policy targeting *primary* PM_{2.5} from these three sectors, primary-only attribution would be appropriate, but the paper says 'ambient PM_{2.5} concentration attributable to the power, cement, and ISI sectors' \u2014 which would normally include secondary sulfate from power-plant SO2 and secondary OC from coke-oven VOCs. If those secondary contributions are bundled in via differencing, the three sector contributions don't sum to a meaningful total. Whether the analysis is primary-only or includes secondary contributions is not stated, which has direct implications for whether ULE retrofits (PM-only) actually deliver the projected reductions.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 45
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "Stack height, plume rise, and dispersion differences not separated from intrinsic potency effects",
+          "quote": "the implementation of ULE standards in the ISI sector could dominate the reduction in the nationwide TPAE_{OS} value among the three sectors if the unequal OS potencies of source-specific PM_{2.5} were included",
+          "explanation": "Population-weighted exposure depends heavily on stack height and effective plume rise. New Chinese power plant stacks are typically 240 m with significant plume rise; ISI sintering bag-filter stacks are typically 80-120 m. For the same ground-level mass emission, ISI's near-source population dose is generally higher than power's. WRF-CMAQ presumably handles this through layered emission input, but the paper does not quantify whether the TPAE advantage of ISI control is partly due to stack-height-induced near-source exposure rather than intrinsic PM toxicity. If yes, retrofitting power plants in dense urban areas could yield comparable per-mass health benefits because their plume mixes into people's breathing zones differently. A normalization to per-stack effective dose, or a sensitivity analysis fixing all sectors at the same stack height, would isolate the toxicity effect.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Cost calculation excludes variable O&M, retrofit downtime, and labor \u2014 likely biased toward ISI advantage",
+          "quote": "$TCost_{i,s}=CC_{i,s}+FOM_{i,s}+FUEL_{i,s}$",
+          "explanation": "TCost includes only capital, fixed O&M, and fuel costs. Excluded: variable O&M (consumables, sorbents, water for wet ESPs), labor and training cost differences, lost production or downtime during retrofits (especially material for ISI where retrofitting BFs is operationally difficult), end-of-life decommissioning, and compliance/monitoring. The Discussion notes 'implementation of stricter control measures targeting ISI-emitted PM_{2.5} could be a big challenge in the real world because iron and steel production involves complex manufacturing processes' \u2014 precisely where the omitted retrofit costs are largest. The under-estimate is therefore likely larger for ISI than for power (which has well-codified ULE retrofit pathways), biasing the cost-effectiveness comparison in favor of ISI prioritization, the headline finding.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 50
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "ULE attainability for sintering and ironmaking is assumed but not justified",
+          "quote": "majority of these plants could attain ULE levels due to the priority implementation ULE standards and a range of advanced technologies",
+          "explanation": "The ISI_ULE scenario assumes 'all facilities in the iron and steel industry meet the ULE levels,' but the main text does not specify the assumed PM_{2.5} emission factor under that scenario. Whether sintering machines (the dominant ISI PM source) can technically achieve power-sector-equivalent ULE limits (~10 mg/m^3) is contested in the literature \u2014 wet ESPs and bag filters perform well on power-plant flue gas but face challenges on sinter offgas due to higher temperatures, dust resistivity, and dioxin/heavy-metal content. The ULE attainability assumption is buried in supplementary materials and not justified in the main text, yet it controls the headline 'reduction potential.' If ISI ULE is partial or technology-specific, the projected 36.4% PWE reduction and 5.4x TPAE benefit are upper bounds, not central estimates.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Power ULE baseline assumption inconsistent with reported high pre-2019 ULE rollout",
+          "quote": "The implementation of ULE standards in the power industry (1000 kt) could yield a nearly 1.5- and 1.6-fold higher reduction in nationwide mass-based PM_{2.5} emissions than that obtained via the implementation of ULE standards in the ISI (621 kt) and cement industry (653 kt)",
+          "explanation": "1000 kt PM_{2.5} reduction implies a large fraction of power plants are NOT yet ULE-compliant in the 2019 baseline. This contradicts widely cited Chinese reports \u2014 including the paper's own ref 21 (Tang et al. 2019, Nat. Energy, 'Substantial emission reductions from Chinese power plants after the introduction of ultra-low emissions standards') \u2014 which document that >85% of coal capacity met ULE by 2019. If the baseline already incorporates this rollout, the marginal benefit of 'all power plants meeting ULE' should be much smaller than 1000 kt. If the 1000 kt instead represents the cumulative reduction delivered by the rollout from 2014 baseline to 2019 (i.e., 'no-ULE 2014 + 5 years of growth' counterfactual minus 'actual 2019'), the comparison to ISI's 621 kt 'fully-deployed ULE' projection is apples to oranges. The exact baseline assumption underlying the 1000 kt is not made explicit in the main text.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "EAF and other sub-processes folded into 'other' in Fig. 3 obscures within-ISI heterogeneity",
+          "quote": "the ISI is grouped by its major processes, including sintering, ironmaking, BOF-based steelmaking, and other processes.",
+          "explanation": "Fig. 3 groups ISI into sintering, ironmaking, BOF-based steelmaking, and 'other processes' \u2014 bundling EAF (which the authors note is *less* toxic) into 'other.' The methods section confirms the inventory tracks 124 EAFs separately at the unit level, so the data exist. Aggregating EAF into 'other' obscures the within-ISI heterogeneity that the policy recommendation depends on: 'shift from BOFs to EAFs' would benefit from knowing what fraction of OS-potency-adjusted emissions is currently attributable to BOFs vs EAFs. The lumping makes Fig. 3 less useful for policy and prevents validation of the EAF mitigation claim against quantitative inventory data.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Mass-balance arithmetic in 2005-2012 trend prose cannot be reconstructed from given numbers alone",
+          "quote": "The reduced OS potency attributed to the reduction in PM_{2.5} emissions in the power (629 kt) and cement (1462 kt) sectors was offset by the slight increase (716 kt) in the ISI-emitted PM_{2.5}.",
+          "explanation": "Power reduced 629 kt and cement reduced 1462 kt for a total reduction of 2091 kt. ISI increased 716 kt, net change -1375 kt. The text says 'total amount of nationwide PM_{2.5} emitted from the three sectors decreased by 20.0%', implying initial ~6875 kt. The text also says ISI mass rose ~10.4% and total OS-adjusted emissions rose ~12.2%. The arithmetic broadly hangs together if ISI's 70.7% of OS-adjusted in 2005 increased by 10.4%, but the specific 716 kt vs 629 kt vs 1462 kt numbers and the per-sector OS-adjusted contributions are never tabulated. A reader cannot reconstruct the 12.2% from prose alone. This is a presentation gap rather than an error, but the underlying numbers should appear in a supplementary table.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 22
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Causal attribution of ISI PAH composition to 'lower combustion efficiency' is mis-framed",
+          "quote": "two- and three-ring PAHs (species with a lower toxicity) were the dominant species among the PAHs emitted from power and cement industries, owing to the higher combustion efficiency of their practical boilers than that of the boilers at ISI plants.",
+          "explanation": "The claim 'owing to the higher combustion efficiency' is presented as a causal explanation but is not supported by reported combustion-efficiency data, oxygen levels, residence times, or temperature profiles for the sampled units. Additionally, BF and BOF processes in ISI are not 'boilers' \u2014 pig iron is reduced from iron ore via coke at ~1500\u00b0C in a reducing atmosphere, fundamentally different chemistry from coal combustion. Attributing the high carcinogenic-PAH fraction in ISI emissions to 'lower combustion efficiency' versus 'reducing-atmosphere coking chemistry' conflates two distinct mechanisms. A more accurate explanation would distinguish reducing vs oxidizing operating regimes.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "EC_{1.5}/IC_{20} are inversely related to potency but prose uses 'potency' and value interchangeably",
+          "quote": "The toxic potency increased with decreasing EC_{1.5} and IC_{20} values. ISI-emitted PM_{2.5} exhibited the highest OS potency (19.1 \u00b1 10.9 \u03bcg/mL), which is nearly 5.0 and 5.4 times higher than that of power industry-emitted PM_{2.5} (94.9 \u00b1 41.9 \u03bcg/mL)",
+          "explanation": "The paper defines EC_{1.5} such that 'toxic potency increased with decreasing EC_{1.5}' \u2014 i.e., the value is inversely proportional to potency. The reported '5.0 times higher OS potency' refers to the ratio 94.9/19.1 \u2248 5.0, where smaller EC_{1.5} is more potent. But the prose says 'OS potency (19.1 \u03bcg/mL) ... 5.0 times higher than (94.9 \u03bcg/mL),' which a careless reader could misread as 19.1 being numerically 5x larger than 94.9. The convention is consistent throughout the paper, but explicit notation ('EC_{1.5} of ISI is ~1/5 of power, corresponding to 5.0x higher potency') would prevent misreading. Same issue recurs for the CT analogue.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 12
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Generalization to India and Brazil is in tension with caveat that follows",
+          "quote": "The results may provide guidance for developing regions suffering from similarly severe air pollution driven by multiple industrial sources that are seeking economic approaches for the mitigating of the health effects of industry-related emissions, such as India and Brazil^{35}.",
+          "explanation": "The paper extrapolates its China-based finding ('prioritize ISI') to India and Brazil. But Indian power generation relies on coal of different rank and ash content; Brazilian iron and steel production is largely charcoal-based (renewable bio-coke), producing fundamentally different PAH profiles than Chinese coke-based ISI; Brazilian power is largely hydro. The next sentence does add the right caveat \u2014 'industry structure ... exhibit large discrepancies among different regions' and 'local measures to quantify and rank the toxicity ... are strongly recommended.' But the preceding sentence's specific naming of India and Brazil as targets for the *current* finding undercuts the caveat that follows. The cleaner framing would be: 'the methodological framework is generalizable; the specific ranking is not'.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 35
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "Fugitive ISI emissions are not measured but are likely a substantial fraction of total ISI PM",
+          "quote": "Source-specific secondary and fugitive aerosols emission from manufacturing iron/steel and cement processes were not considered, which could result in underestimation of the adverse impacts associated with exposure to specific source-emitted aerosols.",
+          "explanation": "ISI plants are not single-stack sources \u2014 sintering, BF, BOF each have multiple stack and fugitive sources (sinter cooler, BF cast house, BOF charging/tapping/secondary fume, slag handling, raw-material yards). The paper measures stack PM via isokinetic sampling, but a major fraction of ISI PM is fugitive. Fugitive emissions tend to be richer in iron oxides and depleted in PAHs, with potentially lower OS potency than stack samples. If the inventory's ISI emission factor includes fugitive sources but the toxic potency is derived only from stack samples, ISI's TPA emission is overestimated (higher mass \u00d7 inappropriately high unit potency). The Discussion mentions fugitive aerosols generally but does not quantify the bias direction.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 34
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Notation OS_{i,s} is inconsistently indexed; relationship to sector-only potency is unclear",
+          "quote": "TPAE_{OS} were estimated as TPAE_{OS} = C_{i,s} \u00d7 OS_{i,s} ... OS_{i,s} and CT_{i,s} (Supplementary Note 9 and Supplementary Table 7) were estimated on the basis of toxic units determined from the PM_{2.5}-induced OS and CT potency values",
+          "explanation": "The notation OS_{i,s} suggests it varies by both geographic unit i and sector s. But OS_{i,s} should physically depend only on the *source* (sector s), not the receptor location (i) \u2014 a power-plant emission has the same OS potency whether it deposits in Beijing or Guangzhou. So either the index i is redundant, or OS_{i,s} embeds some location-specific weighting (e.g. fraction of sector-s PM that is primary vs aged) that the paper does not specify. The methods refer to Suppl. Note 9 and authors' ref 42, which need to be consulted to disambiguate. As written in the methods, the formula TPAE = C \u00d7 OS is ambiguous about whether the i-subscript on OS is intentional or a typo.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 47
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "'Same quality control conditions' is asserted for cross-sector toxicity ranking but never documented",
+          "quote": "Estimation through laboratory and field studies of all the major processes under the same quality control conditions revealed that the PM_{2.5} emitted from the ISI is much more toxic than those of the power and cement industries",
+          "explanation": "The phrase 'under the same quality control conditions' is invoked twice (here and in the Discussion summary) but never specified: same instrument batch, same operator, same time window, same blank correction, same extraction protocol? The methods describe sonication in methanol/water and DCFH-DA, but do not state whether PM samples from different sectors were processed in the same batches with paired blanks, or in different campaigns where extraction efficiency could vary. Inter-sector toxicity ranking is sensitive to extraction efficiency for hydrophobic vs hydrophilic chemicals; without documented paired processing, cross-sector ratios may carry unreported systematic bias.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 15
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "'One order of magnitude' framing in the abstract is selectively framed",
+          "quote": "Iron and steel industry (ISI)-emitted PM_{2.5} exhibit about one order of magnitude higher toxic potency than those of cement and power industries.",
+          "explanation": "'One order of magnitude' suggests a ~10x difference. The actual measured ratios are 5.0x (vs power, OS), 5.4x (vs cement, OS), 12.1x (vs power, CT), 9.5x (vs cement, CT). Only two of the four ratios fall close to 10x; two are 5-5.4x, which is closer to half an order of magnitude. The abstract phrasing rounds the *upper* end of the range to '~one order of magnitude' without specifying that this applies to CT but not OS. Since OS potency is the primary metric driving the 5.4x population-weighted reduction headline, the abstract should explicitly state 'about 5x higher OS potency, up to ~12x for cytotoxicity' rather than collapsing to a single rounded number.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 7
+        },
+        {
+          "id": "openaireview__claude_27",
+          "title": "Abstract '1/4 cost' claim is a single-point summary of a 12-25% range",
+          "quote": "Furthermore, the marginal abatement cost per unit of toxic potency-adjusted mass of ISI-emitted PM_{2.5} is only a quarter of that of the other two sectors under ULE scenarios.",
+          "explanation": "The Abstract says 'a quarter' (25%), but the actual range is: per OS-adjusted ton, ISI is 14% (vs power) and 25% (vs cement); per CT-adjusted ton, ISI is 12% (vs power) and 15% (vs cement). The Abstract picks the *highest* (least-favorable to ISI) of the four ratios, which is a conservative framing \u2014 but presenting it as a single '1/4' rather than 'between 12% and 25%' still removes the precision the data support. Combined with the variable definition of 'toxic potency' (OS vs CT) and 'other two sectors' (power vs cement, separately), the single-point abstract claim conflates four distinct comparisons.",
+          "comment_type": "claim_accuracy",
+          "severity": "minor",
+          "paragraph_index": 7
+        },
+        {
+          "id": "openaireview__claude_28",
+          "title": "Discussion's 6.6-13.1% / 76.2-86.7% ranges are not labeled with metric/weighting",
+          "quote": "the reduction in the nationwide TPAE value attributed to the implementation of ULE control policies at power plants accounted for only 6.6 -- 13.1% of total TPAE reduction among the three industrial sectors across mainland China ... the decrease in the ISI after the implementation of ULE standards at all facilities dominated the nationwide reduction in the total TPAE value (76.2 -- 86.7%)",
+          "explanation": "The Discussion provides two new numerical ranges: power 6.6-13.1% and ISI 76.2-86.7% of total TPAE reduction. Section 7 reports population-weighted TPAE_{OS} ratios (5.44 \u00b1 3.95 vs power) and 'ISI dominated 83% of population-weighted TPAE_{OS}.' The exact mapping between the Discussion's ranges and Section 7 numbers is not made explicit. With four metrics in play (TPAE_{OS} or TPAE_{CT} \u00d7 population-weighted or area-weighted), the manuscript should label each numerical range to disambiguate which combination is being referenced.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_29",
+          "title": "'Multilevel evidence' phrase in Discussion is rhetorical, not specific",
+          "quote": "Multilevel evidence could shed light on reducing the uncertainty in the estimation of the health effects of industry PM_{2.5} pollution",
+          "explanation": "The Discussion does not specify what tiers of evidence would be required to validate the TPAE metric (e.g., dose-response from controlled-exposure animal studies, time-series epidemiology from regions undergoing source-mix transitions, mechanistic linkage to mortality endpoints). 'Multilevel evidence' is invoked but not anchored to a concrete validation roadmap. This is a calibration concern: the phrase acknowledges the validation gap but does not commit to closing it.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 34
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}

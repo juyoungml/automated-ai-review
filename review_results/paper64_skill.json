@@ -1,0 +1,457 @@
+{
+  "slug": "paper64_skill",
+  "title": "Self-supervised dynamic learning for long-term high-fidelity image transmission through unstabilized diffusive media",
+  "paragraphs": [
+    {
+      "index": 0,
+      "text": "# Self-supervised dynamic learning for long-term high-fidelity image transmission through unstabilized diffusive media"
+    },
+    {
+      "index": 1,
+      "text": "Ziwei Li\n\nlizw@fudan.edu.cn\n\nFudan Univ\n\nwei zhou\n\nFudan University\n\nShuqi Zhang\n\nFudan University\n\nJianyang Shi"
+    },
+    {
+      "index": 2,
+      "text": "Fudan University https://orcid.org/0000-0002-5478-3704\n\nChao Shen\n\nFudan University\n\nJunwen Zhang\n\nFudan Univeristy"
+    },
+    {
+      "index": 3,
+      "text": "Nan Chi\n\nFudan University\n\nQionghai Dai\n\nTsinghua University https://orcid.org/0000-0001-7043-3061\n\nArticle"
+    },
+    {
+      "index": 4,
+      "text": "Keywords:\n\nPosted Date: May 11th, 2023\n\nDOI: https://doi.org/10.21203/rs.3.rs-2858332/v1\n\nLicense: \u00a9 This work is licensed under a Creative Commons Attribution 4.0 International License. Read Full License"
+    },
+    {
+      "index": 5,
+      "text": "Additional Declarations: There is NO Competing Interest.\n\nVersion of Record: A version of this preprint was published at Nature Communications on February 19th, 2024. See the published version at https://doi.org/10.1038/s41467-024-45745-7."
+    },
+    {
+      "index": 6,
+      "text": "## Abstract\n\nMultimode fiber (MMF) which supports parallel transmission of spatially distributed information is a promising platform for remote imaging and capacity-enhanced optical communication. However, the variability of the scattering MMF channel poses a challenge for achieving long-term accurate transmission over long distances, of which static optical propagation modeling with calibrated transmission matrix or data-driven learning will inevitably degenerate. In this paper, we present a self-supervised dynamic learning approach that achieves long-term, high-fidelity transmission of arbitrary optical fields through unstabilized MMFs. Multiple networks carrying both long- and short-term memory of the propagation model variations are adaptively updated and ensembled to achieve robust image recovery. We demonstrate >99.9% accuracy in the transmission of 1024 spatial degree-of-freedom over 1km-length MMFs lasting over 1000 seconds. The long-term high-fidelity capability enables compressive encoded transfer of high-resolution video with orders of throughput enhancement, offering insights for artificial intelligence promoted diffusive spatial transmission in practical applications."
+    },
+    {
+      "index": 7,
+      "text": "## Introduction\n\nPropagation of optical field for long distance is the essential requirement in remote imaging and optical communication applications. Optical fibers, especially the single-mode fiber, have been elaborately deployed in internet connection, however, they only allow for the transmission of a single Gaussian fundamental beam. Multimode-fiber (MMF), on the other hand, permits hundreds to several thousand spatial modes to pass through. This makes them a promising platform for direct image transmission and mode-division multiplexing transmission to boost the channel capacity^{[1--5]}, showing potential in applications such as compact endoscopy in bio-imaging^{[6--11]} high-rate optical communication^{[12]}, and quantum key teleportation^{[13--15]}."
+    },
+    {
+      "index": 8,
+      "text": "However, the inevitable spatial mode dispersion in the MMFs induces a complex optical field mixing of the input image as it propagates through the fiber, resulting in intense scrambling of the output intensity distribution. Image restoration through diffuse media entails precise characterization of the physical system. Methods have been developed that measure the MMF's forward process in the form of a complex transmission matrix (TM), and unscramble the output image via back-projection^{[3--4,16--17]}. However, the calibration of TM with huge number of elements is time-consuming and complicated in implementation. Artificial intelligent approaches have been proposed to model the forward process^{[2,19]} or directly estimate the decoding process^{[20--24]} for image inference from the scrambled output. Notwithstanding the notable progress in modeling scattering process, it is foreseen that the instability of the MMF propagation induced by system drifting and environmental disturbance will accumulate and severely deviate from the characterized model after long time, especially for long-distance transmission. As a consequence, most reported literatures have experimented on short MMFs (<10 m)^{[2--4,24]} and were impeded from practical long-term high-fidelity image transmission. Therefore, developing a technique to support long-term"
+    },
+    {
+      "index": 9,
+      "text": "accurate spatial information transmission over long-distance for remote video transfer remains a challenge."
+    },
+    {
+      "index": 10,
+      "text": "One method to tackle the variation of scattering is to train a general network using large sets of data describing diverse conditions^{[22--25]}. However, this requires a long-duration training data collection and will hinder its flexible application in practice. Moreover, the generalized model often achieves poorer performance at a certain timepoint than using a \u2018specific' network trained on data acquired within small time durations. Another inspiring approach is to use the mixture-of-expert framework, in which multiple expert networks each responsible for one sub-problem are fused together to achieve better generalization^{[25--28]}. This architecture has been successfully applied for image denoising^{[29--31]} and phase retrieval^{[32]} to improve reconstruction accuracy and robustness to noise. However, the implementations have so far been confined to static contexts."
+    },
+    {
+      "index": 11,
+      "text": "In this work, we develop a dynamic learning framework that can adaptively handle the time-varying optical propagation in long MMFs. The proposed network, termed multi-scale memory dynamic-learning network (MMDN), leverages the multi-expert framework to separately model the long- and short-term dynamics of the unstable MMF channel with multiple networks and combine the multi-scale memory by adaptive weighted ensemble. The network parameters are dynamically updated over time in a self-supervised manner, by learning from currently predicted pseudo-labels to synthesize the optimal inverse transmission model for subsequent image inference. MMDN achieves adaptive and accurate tracing of the variations on the optical propagation model in MMF, enabling parallel transmission of 1024 spatial degrees of freedom through 1km-length fibers with >99.9% accuracy for over 1000s-duration. The high-fidelity performance enables efficient transmission of high-resolution video with several orders throughput enhancement by using compressive encoding, showing the feasibility of long-term high-fidelity spatial transmission. The proposed dynamic memory framework opens up a new paradigm for demixing through unstabilized diffuse media."
+    },
+    {
+      "index": 12,
+      "text": "## Results\n\n### Multi-scale memory dynamic-learning network\n\nWe experimented on an amplitude-to-amplitude optical setup (see Fig. 1 (a) and Supplementary Fig. 1). The input pattern coupled into the MMF is transformed into a complex distorted field at the distal end due to spatial mode dispersion. We calibrated and analyzed the variations of diverse 100m and 1km-length MMF transmission channels and observed slowly changing system drifting (see Supplementary Fig. 2). Deep learning approaches have been reported to solve this nonlinear transformation problem to retrieve the input image from output speckle, however, one generalized neural network will fail to precisely model the gradually varying MMF channel over a long time. In this work, we proposed a dynamic learning framework that adaptively tracks the optical propagation characteristics to achieve long-term image transmission with high accuracy through long MMFs. Instead of training a fixed and generalized neural network, we designed a compact network that generalizes well on short-term transmission. The MMDN"
+    },
+    {
+      "index": 13,
+      "text": "model will be dynamically updated by online training on the unlabeled streaming data using predicted input images as labels, hence working in a self-supervised architecture. According to the calibration results in Supplementary Fig. 2, the MMF transmission channels could sustain nearly unchanged within a 10-second duration, which ensures the feasibility of the self-supervised dynamic updating strategy."
+    },
+    {
+      "index": 14,
+      "text": "Besides slow-varying system drift, we also witnessed intense jitter effects that will cause severe MMF channel deviations (illustrated in Supplementary Fig. 3). This physical prior knowledge inspires us to develop an ensemble framework of subnetworks which carry multi-scale memory of the system variations for the MMDN block. As shown in Fig. 1 (c), the output speckle image is fed into three networks, where S1 and S2 indicate two transmission models with different short-term memories, and L3 indicates one model with long-term memory. A grading module was additionally designed for confidence evaluation of expert subnetworks, allowing adaptive memory fusing to produce an optimized prediction that has good adaptability to both slow drifting and abrupt jitter effect. For continuous data transmission, the multi-scale models are self-supervised updated at a short interval (i.e. 5 seconds). For S1 and S2 that aim to carry short-term information, we introduced the forgetting mechanism by alternatively wiping its memory of current model and rebuilding it with only the latest predicted data at specific intervals alternatively, as depicted in Fig. 1 (b); while the L3 will always keep the memory of previous transmission characterizations during the update process. The proposed MMDN is supposed to show better performance in long-term data recovery through scattering MMFs, attributed to the enriched perspectives provided by the adaptively updated multi-timescale models."
+    },
+    {
+      "index": 15,
+      "text": "### Long-term spatial transmission through unstabilized MMFs\n\nWe evaluated the performance of the proposed MMDN for long-term spatial transmission through diffuse media by experimenting on 100m- and 1km-length MMFs placed on the optical table without vibration isolation. To verify the ability to transmit arbitrary spatial information, we showed reconstruction of random binary patterns with spatial degree-of-freedom of 16\u00d716 and 32\u00d732, as opposed to the specified images such as the MNIST dataset. We additionally reshaped the common grid pixel assignment to accommodate the round-shape property of the MMF entry, and proved slightly enhanced performance (see Supplementary Fig. 5). The output speckle patterns were captured by a camera at 100 fps. At the preparation stage of data transmission, a sequence of known patterns is transmitted, and the MMDN is statically trained on the initial instances. Once finished, the MMDN is ready for dynamic update to support continuous image transmission."
+    },
+    {
+      "index": 16,
+      "text": "In Fig. 2, we show the transmission results for over 1000 seconds on four different settings. The static neural network (StaticNN) trained on the first 500-second data and tested on the following 500-second is taken as the baseline method. The MMDN was dynamically updated at each 5-second interval. Comparing the reconstructed accuracy averaged on each 5-second batch, we observed an obvious degradation after 200s using StaticNN, especially for 1km fibers; while MMDN achieved ~ 100% accuracy throughout the 1000s period. Although the increase of fiber distance makes its scattering channel vary more intensely, the dynamic learning ability of proposed MMDN allows it to precisely model the dynamics"
+    },
+    {
+      "index": 17,
+      "text": "and adapt to the current state of the physical process. We also illustrated representative recovered spatial profiles and the averaged spatial distribution of transmission accuracy. For 1km transmission, MMDN enables < 0.1% error rate across the spatial position and the average accuracy of 99.97%, which is two orders improved than using StaticNN. For 100m transmission cases, MMDN even reduce the averaged error rate to 2e-6 throughout the transmission period. As a result, we demonstrated that MMDN can permit long-term spatial information transmission with high fidelity."
+    },
+    {
+      "index": 18,
+      "text": "### Multi-scale memory ensemble improves instability robustness\n\nThe dynamic learning strategy for MMF dynamics modeling intuitively raises a critical demand for accurate inference on current batch, so as to provide reliable training sets for the subsequent update. However, two main factors exist that could hinder its na\u00efve implementation from practical usage. First of all, the inevitable inference error for previous batch induces a bias to the model update, which will accumulate and largely deteriorate the network effectiveness after a long period. Besides, the abrupt disturbances happen frequently for unstabilized long MMFs, resulting in significant transmission characteristics distinguishment even between adjacent batches. MMDN incorporates the physical prior inspired multi-scale memory mixture architecture, providing a solution for precise and robust modeling of system dynamics."
+    },
+    {
+      "index": 19,
+      "text": "We next investigated the benefits of long and short-term memory ensemble network design. We chose two highly variable MMF channels including a 100m-length gradient-indexed MMF of 200 \u03bcm diameter (GI-200) and a 1km-length step-indexed MMF of 200 \u03bcm diameter (SI-200) for spatial transmission of 16\u00d716 and 32\u00d732-pixel random binary patterns. We analyzed the contributions of different subnetworks in MMDN by evaluating their intermediate prediction accuracy. For GI-200 case, as shown in Fig. 3(a), we presented the average accuracy over a 1000s duration using S1, S2, L3 and the confidence-based ensemble network, and observed that the multi-scale model improved the accuracy by around 10-fold compared to the short-term models and the long-term model. Comparing the time-varying transmission error rate shown in Fig. 3(b), the long-term model shows degraded performance especially at the 40--55s period, while the short-term models provide \u2018wiser' predictions and contribute to producing a good ensemble model. Similar comparisons in averaged transmission accuracy and error rate at each timestep are also presented for the SI-200 case (see Fig. 3 (c)(d)). In this experiment, the long-term model works better than short-term models for most of the time, as the magnified time clip within 40--45s, and the multi-scale model outperforms all other single-scale models throughout the period. The above results verified that using a mixture of expert networks with different memory scales will enrich perspectives of the dynamic scattering channel by learning from the same data, and overcome diverse variations in MMFs to achieve spatial transmission with high accuracy over long periods."
+    },
+    {
+      "index": 20,
+      "text": "### Scalability and generalization of MMDN\n\nHaving validated long-term high-fidelity transmission of generalized patterns, we also noted that the MMDN is well applicable to transmit specific types of natural images. In Fig. 4 (a,b), we show a set of recovered hand-written digits and fashion symbols transmitted through a 1km-long fiber. The input images of 28\u00d728 pixels are upsampled to be 32\u00d732 and binarized by the greyscale threshold of 0.5. The initial MMDN model trained on 20,000 paired data is then dynamically updated to support continuous image transmission of over 1000s. To evaluate the quality of reconstructed images, we quantitively compared the SSIM and accuracy obtained using StaticNN and proposed MMDN. We observed nearly errorless transmission of both MNIST and fashion-MNIST datasets with MMDN during the whole period, and the SSIM is mostly above 0.99. Whereas, the static model will degrade in transmission accuracy and image similarity. This indicates the feasibility of image transmission in unstabilized scattering MMF using MMDN, laying the foundation for direct natural image transmission for remote imaging applications such as biological endoscopy."
+    },
+    {
+      "index": 21,
+      "text": "One big concern of learning-based image reconstruction approach is whether the network is able to transfer to other unseen categories of images. To demonstrate the generalized performance of proposed network, we used the MMDN dynamically trained on Latin alphabet images for inference on the digit dataset (see Fig. 4(c)) and measured the transmission accuracy (see Fig. 4(d)). Examples of reconstructed input patterns right after the switch of image category as well as 10s and 150s after the switch are presented in Fig. 4(e), respectively. We observed an average accuracy of 99.44% and good visual fidelity with a high SSIM of 0.978 even without fine-tuning the network (i.e. T = 0). The accuracy was further elevated up to 99.68% and the SSIM up to 0.989 after 2 batches (i.e. T = 10s) attributed to the dynamic update ability of MMDN, and the high accuracy could be well retained during the following 150s. This experiment demonstrates that the proposed MMDN has good generalization performance for image transmission."
+    },
+    {
+      "index": 22,
+      "text": "### Long-term high-throughput video transmission\n\nWe further propose a practical high-throughput video transmission protocol via unstabilized long MMFs, as shown in Fig. 5 (a). High-resolution video streams are compressively encoded into bit streams and spatially arranged to form a sequence of spatial-multiplexing-coded patterns. The spatial-multiplexed MMF setup can be used to support up to thousands of independent communication channels transmitting in parallel, and the proposed MMDN addresses the encoded spatial pattern recovery from recorded speckle images with nearly 100% accuracy to guarantee high-quality video decoding."
+    },
+    {
+      "index": 23,
+      "text": "We experimented on the 1km transmission of a 6-minute full-color video of 480\u00d7480-pixel resolution and 20 fps. The video was encoded in the form of H.264 with a compression ratio of 1.39\u2030 and then converted into 32\u00d732-pixel spatially multiplexed patterns. The proof-of-concept MMF setup with 150 fps acquisition rate guarantees adequate bandwidth for real-time transmission of encoded video. We evaluated the transmission accuracy of the spatial-multiplexed encoded signals in Fig. 5(b) and the visual fidelity of decoded video frames using SSIM metric in Fig. 5(c). When using the static network for image recovery, we observed that a slight signal accuracy deterioration of less than 2% starting at 100s would cause a significant drop in decoded video quality, leading to the SSIM of recovered video frames"
+    },
+    {
+      "index": 24,
+      "text": "d drastically dropping below 0.4. Noticeably, even when the transmission performance can be restored to good accuracy afterward, such as the 160--180s period as highlighted with the asterisk in Fig. 4 (b), the video decoding corruption still remains irreparable. By comparison, our proposed MMDN ensures high accuracy spatial transmission over long-term, hence can be incorporated into the highly-compressed encoded video transmission protocol to achieve high-quality image recovery with the SSIMs all above 0.995 within the 6-minute duration. Example recovered frames within 93--99s period are illustrated in Fig. 5(d) to visualize the decoding corruption caused by the slight transmission error using static network. The results validated the superiority in decoding accuracy using MMDN for encoded video transmission, which offered over 700-fold efficiency enhancement compared to the plain coded video transmission scheme (see Supplementary Fig. 6)."
+    },
+    {
+      "index": 25,
+      "text": "## Discussion\n\nSpatial reconstruction from diffusive MMF transmission is a challenging task, and has so far been limited to short-distance fibers and faced the tradeoff between high accuracy and long-time generalization. In the work, we described the MMDN, a multi-scale dynamic learning approach that can achieve >99.9% accuracy of long-time image transmission through unstabilized 1km MMF channels. The MMDN technique is developed based on the physically informed model of the diffusive MMF system that fully describes the long-term drifting and short-term abruption effects, therefore enabling good accommodation with the dynamics of the system characteristics. We compared MMDN with previous approaches in terms of time duration, reconstruction quality, and transmission distance, etc. and demonstrated a comprehensive improvement of our approach (see Supplementary Fig. 7). In particular, the high-fidelity long-term transmission performance of MMDN will allow for efficient video transmission in a highly compressed scheme. The superior decoding capability will also facilitate practical applications such as minimally invasive endoscopic imaging, spatial-multiplexed optical communication, and optical security taking diffusive channel as the decoding medium."
+    },
+    {
+      "index": 26,
+      "text": "## Methods\n\n### Experimental set-up\n\nThe optical setup for image transmission through the MMFs is described in Supplementary Fig. 1. The continuous-wave laser beam at wavelength 561nm is expanded by a pair of lenses (f_{1} = 10 mm, f_{2} = 100mm) and projected onto the SLM (V-7001) for binary amplitude modulation. The spatial modulated optical field is coupled by an objective lens (Nikon, 20X, 0.25NA) into the input facet of the MMF. At the output of the MMF, the speckle field at the distal end is magnified by another objective (Nikon, 20X, 0.25NA) and imaged by the CMOS (MER2-230-167U3M)."
+    },
+    {
+      "index": 27,
+      "text": "### Stability analysis of MMF channel\n\nWe adopted three metrics to evaluate the transmission channel stability over a large variety of MMFs, as summarized in Supplementary Fig. 2. The first metric measures the SSIM of a sequence of output speckle patterns to the reference pattern captured at $T=0$ while transmission a fixed image. The SSIM calculation can be expressed as $$SSIM=\\frac{\\left(2*\\mu_{x}*\\mu_{y}+C_{1}\\right)*\\left(2*\\sigma_{xy}+C_{2}\\right)}{\\left(\\mu_{x}^{2}+\\mu_{y}^{2}+C_{1}\\right)*\\left(\\sigma_{x}^{2}+\\sigma_{y}^{2}+C_{2}\\right)}.\\#(1.)$$"
+    },
+    {
+      "index": 28,
+      "text": "Here, $x$ and $y$ are the two images being compared, $\\mu_{x}$, $\\mu_{y}$ and $\\sigma_{x}^{2}$, $\\sigma_{y}^{2}$ are the mean values and variations of images $x$ and $y$, and $\\sigma_{xy}$ is the covariance between two images. The $C_{1}$ and $C_{2}$ are two constants used to prevent the denominator from becoming zero or the result becoming infinite."
+    },
+    {
+      "index": 29,
+      "text": "The second metric measures the Helinger distance of the speckle energy distribution of two batches. The speckle energy distribution of each batch is obtained by summing up all speckle images in that batch, and one batch consists of 500 output speckle images captured within 5 seconds. For two discrete energy distributions $P=(p_{1},p_{2}\\ldots,p_{n})$ and $Q=(q_{1},q_{2}\\ldots,q_{n})$, $n$ is the total number of pixels in a single speckle image, the Hellinger distance can be calculated as $$H^{2}\\left(P,Q\\right)=\\frac{1}{2}\\sum_{i=0}^{n}\\left(\\sqrt{q_{i}}-\\sqrt{p_{i}}\\right)^{2}.\\#(2.)$$"
+    },
+    {
+      "index": 30,
+      "text": "The third metric computes the pixel-wise accuracy of recovered image at each time point, by using an approximate reconstruction algorithm termed real-value inverse transmission matrix (RVITM)^{[3]}. The test image is transmitted right after the approximal transmission matrix is calibrated. The accuracy for each recovered image is the percentage of mis-distinguished pixels to the full number of pixels."
+    },
+    {
+      "index": 31,
+      "text": "## Data preparation\n\nOur research employed arbitrary random binary images, as well as natural scene images including the Fashion-MNIST dataset, Latin letters from the E-MNIST dataset, and handwritten digitals from the MNIST dataset. The input images tested in the experiments are of 16\u00d716-pixel and 32\u00d732-pixel resolution. According to the maximum number of spatial modes that is allowed to transmit through the MMF, it is theoretically possible to input images of larger pixel resolution. We used a binary SLM as the amplitude modulator to encode the spatial information, and the output speckles are captured by the monochromatic CMOS. To reduce computational complexity, we down-sampled the speckle images to 100\u00d7100-pixel and 150\u00d7150-pixel for reconstructing input patterns of 16\u00d716-pixel and 32\u00d732-pixel, respectively."
+    },
+    {
+      "index": 32,
+      "text": "## Neural network architecture\n\nWe designed an ensemble network consisting of three sub-networks with the same structure but updated differently over time. Each subnetwork is a convolutional neural network consisting of three convolutional"
+    },
+    {
+      "index": 33,
+      "text": "layers and one fully-connected layer. Each convolution layer is followed by Dropout, Batch normalization, and ReLu activation. A sigmoid activation function is applied to the output layer. We employed cross-entropy as the loss function, and trained the networks with the AdaDelta optimizer at a learning rate of 0.1. The network training was executed on a workstation equipped with NVidia RTX3090 GPU."
+    },
+    {
+      "index": 34,
+      "text": "### Confidence-based ensemble algorithm\n\nEach subnetwork of the ensemble network calculates the average confidence level of one predicted instance as: $$c = \\frac{1}{N}\\sum_{i = 1}^{N}\\left(\\left| P_{i} - 0.5 \\right| + 0.5 \\right), \\#(3.)$$ where $P_{i}$ represents the predicted value of pixel $i$ from the subnetwork, which is binarized to be either 0 or 1, and $N$ is the spatial resolution of the input patterns. The confidence-based weight of each subnetwork is defined as: $$w_{k} = \\exp\\left(\\frac{1 - c_{k}}{(1 - c_{1}) + (1 - c_{2}) + (1 - c_{3})} \\right). \\#(4.)$$ The final ensemble prediction is the weighted summation of predictions from three subnetworks: $$P = \\frac{w_{1} \\ast p_{1} + w_{2} \\ast p_{2} + w_{3} \\ast p_{3}}{w_{1} + w_{2} + w_{3}}. \\#(5.)$$"
+    },
+    {
+      "index": 35,
+      "text": "### Declarations\n\n#### Acknowledgement\n\nThis work was sponsored by the National Natural Science Foundation of China (62231018), and Shanghai Science and Technology funding (2021SHZDZX0103)."
+    },
+    {
+      "index": 36,
+      "text": "#### Author Contribution\n\nZ.L. conceived of the project; W.Z. developed and implemented the reconstruction algorithm; Z.L. S.Z. and W.Z. build the optical setup; W.Z. and Z.L. designed the experiments and analyzed the experimental data; W.Z. and S.Z. collected the data; N.C. and Q.D. provided mentoring support; Z.L. and W.Z. wrote the manuscript with input from all authors."
+    },
+    {
+      "index": 37,
+      "text": "#### Competing interests\n\nThe authors declare no competing interests.\n\n#### Data availability\n\nAll data are available from the corresponding author upon reasonable request."
+    },
+    {
+      "index": 38,
+      "text": "# Code availability\n\nThe code is available from the corresponding author upon reasonable request.\n\n# References"
+    },
+    {
+      "index": 39,
+      "text": "1. Richardson, David J., John M. Fini, and Lynn E. Nelson. \"Space-division multiplexing in optical fibres.\" Nature photonics 7.5 (2013): 354\u2013362.\n2. Caramazza, Piergiorgio, et al. \"Transmission of natural scene images through a multimode fibre.\" Nature communications 10.1 (2019): 2029.\n3. Zhao, Tianrui, et al. \"Seeing through multimode fibers with real-valued intensity transmission matrices.\" Optics Express 28.14 (2020): 20978\u201320991.\n4. Fan, Weiru, et al. \"High-Fidelity Image Reconstruction through Multimode Fiber via Polarization-Enhanced Parametric Speckle Imaging.\" Laser &amp; Photonics Reviews 15.5 (2021): 2000376.\n5. Li, Shuhui, et al. \"Compressively sampling the optical transmission matrix of a multimode fibre.\" Light: science &amp; applications 10.1 (2021): 88.\n6. Bianchi, Silvio, and Roberto Di Leonardo. \"A multi-mode fiber probe for holographic micromanipulation and microscopy.\" Lab on a Chip 12.3 (2012): 635\u2013639.\n7. Turtaev, Sergey, et al. \"High-fidelity multimode fibre-based endoscopy for deep brain in vivo imaging.\" Light: Science &amp; Applications 7.1 (2018): 92.\n8. Choi, Youngwoon, et al. \"Scanner-free and wide-field endoscopic imaging by using a single multimode optical fiber.\" Physical review letters 109.20 (2012): 203901.\n9. Pl\u00f6schner, Martin, Tom\u00e1\u0161 Tyc, and Tom\u00e1\u0161 \u010ci\u017em\u00e1r. \"Seeing through chaos in multimode fibres.\" Nature Photonics 9.8 (2015): 529\u2013535.\n10. Turtaev, Sergey, et al. \"High-fidelity multimode fibre-based endoscopy for deep brain in vivo imaging.\" Light: Science &amp; Applications 7.1 (2018): 92.\n11. Vasquez-Lopez, Sebastian A., et al. \"Subcellular spatial resolution achieved for deep-brain imaging in vivo using a minimally invasive multimode fiber.\" Light: science &amp; applications 7.1 (2018): 110.\n12. Richardson, David J., John M. Fini, and Lynn E. Nelson. \"Space-division multiplexing in optical fibres.\" Nature photonics 7.5 (2013): 354\u2013362.\n13. Li, Wei, et al. \"High-rate quantum key distribution exceeding 110 Mb s\u207b\u00b9.\" Nature Photonics (2023): 1\u20136.\n14. Ding, Yunhong, et al. \"High-dimensional quantum key distribution based on multicore fiber using silicon photonic integrated circuits.\" npj Quantum Information 3.1 (2017): 25.\n15. Zhou, Yiyu, et al. \"High-fidelity spatial mode transmission through a 1-km-long multimode fiber via vectorial time reversal.\" Nature communications 12.1 (2021): 1866.\n16. Popoff, S. M., et al. \"Controlling light through optical disordered media: transmission matrix approach.\" New Journal of Physics 13.12 (2011): 123021."
+    },
+    {
+      "index": 40,
+      "text": "17. \u010ci\u017em\u00e1r, Tom\u00e1\u0161, and Kishan Dholakia. \"Exploiting multimode waveguides for pure fibre-based imaging.\" Nature communications 3.1 (2012): 1027.\n18. Tahir, Waleed, Hao Wang, and Lei Tian. \"Adaptive 3D descattering with a dynamic synthesis network.\" Light: Science &amp; Applications 11.1 (2022): 42.\n19. Rahmani, Babak, et al. \"Actor neural networks for the robust control of partially measured nonlinear systems showcased for image propagation through diffuse media.\" Nature Machine Intelligence 2.7 (2020): 403-410.\n20. Fan, Pengfei, et al. \"Learning enabled continuous transmission of spatially distributed information through multimode fibers.\" Laser &amp; Photonics Reviews 15.4 (2021): 2000348.\n21. Borhani, Navid, et al. \"Learning to see through multimode fibers.\" Optica 5.8 (2018): 960-966.\n22. Resisi, Shachar, Sebastien M. Popoff, and Yaron Bromberg. \"Image transmission through a dynamically perturbed multimode fiber by deep learning.\" Laser &amp; Photonics Reviews 15.10 (2021): 2000553.\n23. Li, Yunzhe, Yujia Xue, and Lei Tian. \"Deep speckle correlation: a deep learning approach toward scalable imaging through scattering media.\" Optica 5.10 (2018): 1181-1190.\n24. Rahmani, Babak, et al. \"Multimode optical fiber transmission with a deep learning network.\" Light: science &amp; applications 7.1 (2018): 69.\n25. Tahir, Waleed, Hao Wang, and Lei Tian. \"Adaptive 3D descattering with a dynamic synthesis network.\" Light: Science &amp; Applications 11.1 (2022): 42.\n26. Gupta, Harshit, et al. \"CNN-based projected gradient descent for consistent CT image reconstruction.\" IEEE transactions on medical imaging 37.6 (2018): 1440-1453.\n27. Li, Fengqiang, et al. \"Compressive ghost imaging through scattering media with deep learning.\" Optics Express 28.12 (2020): 17395-17408.\n28. Sun, Yu, Zhihao Xia, and Ulugbek S. Kamilov. \"Efficient and accurate inversion of multiple scattering with deep learning.\" Optics express 26.11 (2018): 14678-14688.\n29. Weigert, Martin, et al. \"Content-aware image restoration: pushing the limits of fluorescence microscopy.\" Nature methods 15.12 (2018): 1090-1097.\n30. Agostinelli, Forest, Michael R. Anderson, and Honglak Lee. \"Adaptive multi-column deep neural networks with application to robust image denoising.\" Advances in neural information processing systems 26 (2013).\n31. Choi, Joon Hee, Omar A. Elgendy, and Stanley H. Chan. \"Optimal combination of image denoisers.\" IEEE Transactions on Image Processing 28.8 (2019): 4016-4031.\n32. Deng, Mo, et al. \"Learning to synthesize: robust phase retrieval at low photon counts.\" Light: Science &amp; Applications 9.1 (2020): 36."
+    },
+    {
+      "index": 41,
+      "text": "Figures\n\n![img-0.jpeg](img-0.jpeg)\n\n![img-1.jpeg](img-1.jpeg)\nFigure 1\n\nPrinciple of dynamic learning for image transmission in varying diffuse media.(a) Dynamic learning framework for long-term data transmission in MMFs. (b) Workflow of dynamic subnetworks update for continuous data recovery. (c) Multi-timescale expert networks with long- and short-term memories of the transmission characteristics ensembled adaptively by confidence-based weights."
+    },
+    {
+      "index": 42,
+      "text": "![img-2.jpeg](img-2.jpeg)\nFigure 2\n\nPerformance of spatial transmission over long time in unstabilized MMFs. Averaged transmission accuracy over time and accuracy spatial distribution of MMDN and static network are compared on four configurations with decreasing instability: (a) spatial resolution:  $32 \\times 32$ , fiber length:  $1\\mathrm{km}$ ; (b) spatial resolution:  $16 \\times 16$ , fiber length:  $1\\mathrm{km}$ ; (c) spatial resolution:  $32 \\times 32$ , fiber length:  $100\\mathrm{m}$ ; (d) spatial resolution:  $16 \\times 16$ , fiber length:  $100\\mathrm{m}$ ."
+    },
+    {
+      "index": 43,
+      "text": "![img-3.jpeg](img-3.jpeg)\n\n![img-4.jpeg](img-4.jpeg)\n\n![img-5.jpeg](img-5.jpeg)\nSI-200 MMF, Fiber length: 1km"
+    },
+    {
+      "index": 44,
+      "text": "![img-6.jpeg](img-6.jpeg)\nFigure 3\n\nPerformance of multi-scale ensemble in MMDN. Evaluation on averaged accuracy spatial distribution and error rate over time of (a-b)  $16 \\times 16$  spatial information transmission through  $100\\mathrm{m}$  GI MMF, and (c-d)  $32 \\times 32$  spatial information transmission through  $1\\mathrm{km}$  SI MMF, using S1, S2, L3, and the ensembled model."
+    },
+    {
+      "index": 45,
+      "text": "![img-7.jpeg](img-7.jpeg)\n\n![img-8.jpeg](img-8.jpeg)\nFigure 4\n\nScalability to natural image transmission and generalization evaluation. (a) Example E-MNIST images reconstructed with StaticNN and MMDN over 1000s through 1km fiber, and reconstruction accuracy over time and space domain. (b) Example of reconstructed fashion-MNIST images and accuracy performance. (c) Illustration of changing image category during transmission. (d) Transfer learning performance of reconstructing digits using MMDN trained on Latin alphabet letters dataset. (e) Example recovered images at  $T = 0$ s, 10s, 150s after image category change."
+    },
+    {
+      "index": 46,
+      "text": "![img-9.jpeg](img-9.jpeg)\n\n![img-10.jpeg](img-10.jpeg)\n\n![img-11.jpeg](img-11.jpeg)\nFigure 5\n\nLong-term transmission of compressive encoded high-throughput video. (a) Pipeline of compressive encoded video transmission through spatial-multiplexed MMF channel and decoding with MMDN. (b) Transmission accuracy of encoded signals. (c) SSIM of decoded video frames. (d) Example video frames recovered with StaticNN and MMDN."
+    },
+    {
+      "index": 47,
+      "text": "# Supplementary Files\n\nThis is a list of supplementary files associated with this preprint. Click to download."
+    },
+    {
+      "index": 48,
+      "text": "SupplementaryMovie1.mp4\n\n- SupplementaryMovie2.mp4\n- SupplementaryMovie3.mp4\n- MMDNSupplementary.docx"
+    }
+  ],
+  "methods": {
+    "openaireview__claude": {
+      "label": "OpenAIReview (claude)",
+      "model": "claude",
+      "overall_feedback": "The paper tackles a real and challenging problem - long-term, long-distance image transmission through unstabilized multimode fibers - and the dynamic-learning idea is a genuine contribution worth pursuing, but several core methodological issues currently weaken the headline claims. The most serious are the confidence-weighting formula (Eq. 4), which as written assigns the smallest weight to the most confident sub-network, and the matched 'confidence' definition (Eq. 3), which collapses to a constant if predictions are binarized as the text states - together these undermine the algorithmic core of the multi-scale ensemble. The 'two orders of magnitude improvement' is also against an unfair StaticNN baseline that is neither parameter- nor training-matched and has no online fine-tuning control. Finally, the abstract's framings - 'arbitrary optical fields' (the setup is amplitude-only, binary) and '1024 spatial degrees of freedom' (these are SLM pixels, not channel modes) - overstate what was demonstrated. These issues are largely fixable with a clearer algorithmic spec, an honest baseline, and tightened claim language; the underlying empirical result remains interesting.",
+      "comments": [
+        {
+          "id": "openaireview__claude_0",
+          "title": "Confidence weighting formula gives the most-confident network the smallest weight",
+          "quote": "$$w_{k} = \\exp\\left(\\frac{1 - c_{k}}{(1 - c_{1}) + (1 - c_{2}) + (1 - c_{3})} \\right). \\#(4.)$$",
+          "explanation": "For confidence c in [0.5, 1] (since c = mean(|P_i - 0.5| + 0.5)), each numerator (1-c_k) is in [0, 0.5] and the denominator is just the L1 norm of those numerators, putting the ratio in [0, 1] and exp(.) in [1, e]. Crucially, *higher* confidence c_k yields a *smaller* numerator and a *smaller* w_k, i.e. the most confident sub-network is given the *least* weight. This is the opposite of what the prose advertises ('grading module ... allowing adaptive memory fusing to produce an optimized prediction'). Either the formula has a sign/inversion error or the prose mis-describes the algorithm. As written, the ablation result in Fig. 3 cannot be explained by Eq. (4).",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 34
+        },
+        {
+          "id": "openaireview__claude_1",
+          "title": "'Confidence' definition collapses to a constant if predictions are binarized as stated",
+          "quote": "$$c = \\frac{1}{N}\\sum_{i = 1}^{N}\\left(\\left| P_{i} - 0.5 \\right| + 0.5 \\right), \\#(3.)$$ where $P_{i}$ represents the predicted value of pixel $i$ from the subnetwork, which is binarized to be either 0 or 1",
+          "explanation": "The Methods explicitly state that P_i 'is binarized to be either 0 or 1' in Eq. (3). Under that statement |P_i - 0.5| is identically 0.5 for every pixel, so c is identically 1.0 for every sub-network and Eq. (3) provides no discriminative information. All weights from Eq. (4) would then be equal and the 'confidence-based ensemble' would degenerate to a uniform average. If P_i is intended to be the pre-binarization sigmoid output in [0,1], that contradicts the explicit binarization clause. The reader cannot determine which is correct, and either reading is incompatible with the architecture being claimed.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 34
+        },
+        {
+          "id": "openaireview__claude_2",
+          "title": "'Forgetting mechanism' for S1/S2 is the central novelty but is under-specified",
+          "quote": "we introduced the forgetting mechanism by alternatively wiping its memory of current model and rebuilding it with only the latest predicted data at specific intervals alternatively, as depicted in Fig. 1 (b)",
+          "explanation": "The 'memory wiping' distinguishes S1/S2 from L3 and underlies the multi-scale claim, but the paper never specifies what wiping means in implementation terms (re-initialize weights? from what distribution? reset only optimizer state? reload a checkpoint?), nor at what cadence each of S1 vs S2 wipes (the word 'alternatively' is repeated without disambiguation). The Methods sections 'Multi-scale memory dynamic-learning network', 'Neural network architecture', and 'Confidence-based ensemble algorithm' do not address these. Without this information the architectural mechanism that supposedly drives the headline accuracy gain cannot be reproduced.",
+          "comment_type": "missing_information",
+          "severity": "major",
+          "paragraph_index": 14
+        },
+        {
+          "id": "openaireview__claude_3",
+          "title": "Network architecture is too under-specified for reproduction or capacity comparison",
+          "quote": "Each subnetwork is a convolutional neural network consisting of three convolutional layers and one fully-connected layer. Each convolution layer is followed by Dropout, Batch normalization, and ReLu activation.",
+          "explanation": "Three conv layers plus one FC layer is described without channel counts, kernel sizes, strides, dropout probability, or batch-norm batch size (which is non-trivial under online training with 500-frame windows). This prevents reproduction. It also matters for the central baseline comparison: MMDN aggregates 3 sub-networks (~3x StaticNN parameters), so the 'two-orders' improvement may partly reflect ensemble capacity rather than dynamic adaptation. A capacity-matched comparison (e.g., 3x-wider StaticNN, or 3 independent StaticNNs ensembled with the same weights but no online updates) is missing.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 33
+        },
+        {
+          "id": "openaireview__claude_4",
+          "title": "StaticNN baseline is weak and not parameter- or training-matched",
+          "quote": "The static neural network (StaticNN) trained on the first 500-second data and tested on the following 500-second is taken as the baseline method.",
+          "explanation": "The headline 'two orders of magnitude improvement' compares MMDN to a single network trained on the first 500 s and then frozen. Anyone deploying a learning-based MMF reconstructor under known channel drift would at minimum periodically retrain or fine-tune. The paper compares against neither (a) periodic offline retraining, (b) supervised online fine-tuning on actual labeled batches, nor (c) any prior dynamic method cited in the Introduction. In addition, the initial paired-data sizes are not stated to be matched (StaticNN appears to see ~50,000 frames; MMDN '20,000 paired data' for the natural-image experiment), so the comparison conflates dynamic-learning benefit with capacity and data-size differences.",
+          "comment_type": "methodology",
+          "severity": "major",
+          "paragraph_index": 16
+        },
+        {
+          "id": "openaireview__claude_5",
+          "title": "'Arbitrary optical fields' overstates what the amplitude-only setup demonstrates",
+          "quote": "we present a self-supervised dynamic learning approach that achieves long-term, high-fidelity transmission of arbitrary optical fields through unstabilized MMFs.",
+          "explanation": "The Abstract claims transmission of 'arbitrary optical fields', but the experimental section uses a 'binary SLM as the amplitude modulator' on an 'amplitude-to-amplitude optical setup', reconstructing binarized 0/1 patterns. There is no transmission of phase, polarization, or grayscale amplitude. In MMF imaging, 'arbitrary optical fields' typically connotes complex amplitude or full-Stokes transmission. The claim should be tightened (e.g., to 'arbitrary binary amplitude patterns'), otherwise it materially overstates the demonstrated capability.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_6",
+          "title": "'1024 spatial degrees of freedom' equates SLM pixels with optical modes",
+          "quote": "We demonstrate >99.9% accuracy in the transmission of 1024 spatial degree-of-freedom over 1km-length MMFs lasting over 1000 seconds.",
+          "explanation": "1024 = 32x32 is the SLM input pixel count, not the number of independent optical modes successfully transmitted. The proper figure of merit for MMF channel capacity is the number of supported propagation modes, which depends on V-number and is generally not equal to SLM pixel count. The paper does not measure distinguishable independent modes through the channel and does not even compute the V-number for the 200 um MMFs at 561 nm. The Methods section acknowledges this distinction obliquely ('it is theoretically possible to input images of larger pixel resolution'), but the abstract framing remains capacity-flavored when the result is image-recovery on a 1024-pixel input.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_7",
+          "title": "Per-pixel accuracy is reported as the headline number where per-image accuracy is what matters",
+          "quote": "The accuracy for each recovered image is the percentage of mis-distinguished pixels to the full number of pixels.",
+          "explanation": "All headline figures (99.97%, '< 0.1% error rate', 'two orders improved') are per-pixel binary classification accuracies. For 1024-pixel patterns at 99.97% per-pixel accuracy, the expected per-image error count is ~0.3 pixels, so a substantial fraction of images contain at least one wrong pixel. Yet the video section itself shows that even ~2% per-pixel error rate destroys decoded quality. Reporting per-pixel accuracy as the headline is misleading about how reliable the channel actually is for downstream applications. A per-image accuracy or bit-error-rate would be more informative and would be lower than the cited number.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 30
+        },
+        {
+          "id": "openaireview__claude_8",
+          "title": "Self-supervised pseudo-label training validated only over 1000 s with no error-accumulation analysis",
+          "quote": "the inevitable inference error for previous batch induces a bias to the model update, which will accumulate and largely deteriorate the network effectiveness after a long period.",
+          "explanation": "The authors explicitly recognize that pseudo-label drift can accumulate, then claim the multi-scale architecture controls it - but provide no quantitative analysis of error accumulation, no controlled experiment with intermittently injected true labels, and no theoretical bound. The reported 1000 s (~17 min) duration shows no degradation, but this is an order of magnitude shorter than the 'long-term' framing suggests for practical deployment (multi-hour, multi-day). Without a longer time series or a stress-test on a deliberately destabilized channel, the central 'long-term' claim is supported only out to 1000 s.",
+          "comment_type": "claim_accuracy",
+          "severity": "major",
+          "paragraph_index": 18
+        },
+        {
+          "id": "openaireview__claude_9",
+          "title": "5 s update interval is a critical hyperparameter with no sensitivity analysis",
+          "quote": "the MMF transmission channels could sustain nearly unchanged within a 10-second duration, which ensures the feasibility of the self-supervised dynamic updating strategy.",
+          "explanation": "The 5 s interval is justified post-hoc as 'half' of an asserted 10 s stability window. The paper provides no ablation across update intervals (1 s / 2 s / 5 s / 10 s / 20 s) and does not characterize how sensitive the headline accuracy is to this choice. Since update frequency directly trades off compute cost against tracking speed, and the central novelty is the dynamic update itself, this is the most important hyperparameter to sweep and it is not swept.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 13
+        },
+        {
+          "id": "openaireview__claude_10",
+          "title": "Ensemble ablation confounds fiber length, fiber type, and pattern resolution",
+          "quote": "We chose two highly variable MMF channels including a 100m-length gradient-indexed MMF of 200 \u03bcm diameter (GI-200) and a 1km-length step-indexed MMF of 200 \u03bcm diameter (SI-200) for spatial transmission of 16\u00d716 and 32\u00d732-pixel random binary patterns.",
+          "explanation": "The Fig. 3 ablation compares S1, S2, L3, and the ensemble across two cases that differ on three axes simultaneously - fiber length (100 m vs 1 km), refractive-index profile (GI vs SI), and resolution (16x16 vs 32x32). The flipped relative ordering of L3 vs S1/S2 between the two cases ('long-term works better most of the time' on SI-200; opposite on GI-200) cannot be attributed to channel volatility alone. A 2x2 design (length x resolution) on the same fiber type would be needed to support claims about which memory scale matters when.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 19
+        },
+        {
+          "id": "openaireview__claude_11",
+          "title": "'10x' ensemble improvement is reported without confidence intervals or replication",
+          "quote": "we presented the average accuracy over a 1000s duration using S1, S2, L3 and the confidence-based ensemble network, and observed that the multi-scale model improved the accuracy by around 10-fold compared to the short-term models and the long-term model.",
+          "explanation": "A 10-fold improvement at the >99% regime is error-rate reduction from ~10^-2 to ~10^-3, which is highly sensitive to the exact denominator and to single-trial fluctuations. The paper reports a single 1000 s run per condition, with no error bars, no replication across fibers or days, and no statistical test. Given the authors' own emphasis on day-to-day fiber drift and jitter, a single-run ratio is insufficient to validate the claim.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 19
+        },
+        {
+          "id": "openaireview__claude_12",
+          "title": "No ablation against supervised online updates or against simpler S1+L3 architecture",
+          "quote": "The MMDN model will be dynamically updated by online training on the unlabeled streaming data using predicted input images as labels, hence working in a self-supervised architecture.",
+          "explanation": "Two control experiments are missing. (1) An oracle that performs the same online updates with *true* labels would establish how much accuracy is lost to self-supervision specifically; this is the natural upper bound and it is not measured. (2) An S1+L3 (or S2+L3) ablation removing one short-term subnetwork would show whether two short-term experts are necessary or whether one suffices. The paper claims 'two short-term + one long-term' as a design but provides no evidence supporting two over one.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 13
+        },
+        {
+          "id": "openaireview__claude_13",
+          "title": "Train/evaluate workflow within a 5 s batch is not clearly described",
+          "quote": "For continuous data transmission, the multi-scale models are self-supervised updated at a short interval (i.e. 5 seconds).",
+          "explanation": "Within each 5 s batch, MMDN appears to (a) infer pseudo-labels on the batch frames, (b) train on those pseudo-labels, and (c) report accuracy against the known input patterns - but it is unclear whether reported accuracy is on the same frames used for training (overfit to batch) or on a held-out range, and whether 'pseudo-label' means MMDN's most recent inference or a re-inference after training. This methodological detail directly affects whether the reported accuracies reflect generalization or over-fitting to the training batch.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 14
+        },
+        {
+          "id": "openaireview__claude_14",
+          "title": "'700-fold throughput enhancement' has no main-text derivation and may simply restate the H.264 ratio",
+          "quote": "which offered over 700-fold efficiency enhancement compared to the plain coded video transmission scheme (see Supplementary Fig. 6).",
+          "explanation": "This is a headline contribution, also abstracted as 'orders of throughput enhancement', but the main text gives no formula, no per-pixel bit budget, and no comparison condition - the entire quantitative claim is delegated to a supplementary figure. The cited compression ratio is 1.39 per-mille (~720x), which is a property of H.264 alone and independent of MMDN. The reader cannot determine whether '700-fold' is a genuine gain attributable to MMDN's high-fidelity transmission or simply the codec compression ratio.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 24
+        },
+        {
+          "id": "openaireview__claude_15",
+          "title": "Bandwidth budget for real-time video is asserted, not demonstrated",
+          "quote": "The proof-of-concept MMF setup with 150 fps acquisition rate guarantees adequate bandwidth for real-time transmission of encoded video.",
+          "explanation": "Doing the arithmetic from the paper's own numbers: 480x480x24 bits x 20 fps x 1.39e-3 ~ 1.54e5 bits/s, while a 32x32 binary pattern at 150 fps yields exactly 1.54e5 bits/s. This leaves zero margin for retransmission, FEC, or update overhead. The claim of 'adequate bandwidth for real-time transmission' should be supported with the explicit budget rather than asserted.",
+          "comment_type": "missing_information",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_16",
+          "title": "StaticNN-vs-MMDN video gap may be an FEC artifact, not an MMDN advantage",
+          "quote": "we observed that a slight signal accuracy deterioration of less than 2% starting at 100s would cause a significant drop in decoded video quality, leading to the SSIM of recovered video frames d drastically dropping below 0.4.",
+          "explanation": "The argument that '<2% bit error collapses video quality' motivates MMDN, but raw H.264 with no FEC is famously fragile to bit errors. A practical encoded-video system would use forward error correction, channel coding, or interleaving, none of which are considered. If a standard FEC layer were applied to both StaticNN and MMDN outputs the gap would likely shrink substantially, so the dramatic StaticNN failure is at least as much a codec-choice artifact as a MMDN-vs-StaticNN comparison.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 23
+        },
+        {
+          "id": "openaireview__claude_17",
+          "title": "Figure reference in video-decoding paragraph points to the wrong figure",
+          "quote": "even when the transmission performance can be restored to good accuracy afterward, such as the 160--180s period as highlighted with the asterisk in Fig. 4 (b), the video decoding corruption still remains irreparable.",
+          "explanation": "This sentence is in the 'Long-term high-throughput video transmission' section, which corresponds to Fig. 5. Fig. 4 (b) is the Fashion-MNIST scalability panel and contains nothing about a 160-180 s asterisk. The intended reference is Fig. 5 (b). As written, the figure pointer is broken and disrupts a reader trying to verify the non-recoverability claim.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 24
+        },
+        {
+          "id": "openaireview__claude_18",
+          "title": "Headline accuracy figures are scattered and not systematically reported",
+          "quote": "We demonstrate >99.9% accuracy in the transmission of 1024 spatial degree-of-freedom over 1km-length MMFs lasting over 1000 seconds.",
+          "explanation": "Different sections cite >99.9% (Abstract), 99.97% and '< 0.1% error rate' (Long-term spatial transmission, 1km), 'error rate to 2e-6' (100 m case), and SSIM > 0.995 (video). There is no consolidated table mapping each (fiber length, resolution, dataset) configuration to its headline number with denominators stated; some numbers appear to be averages over time and others over space, but this is left implicit. A reader trying to verify the abstract's '>99.9% / 1024 DoF / 1km' claim must cross-reference figures.",
+          "comment_type": "presentation",
+          "severity": "moderate",
+          "paragraph_index": 6
+        },
+        {
+          "id": "openaireview__claude_19",
+          "title": "Hellinger distance formula has unusual normalization and a likely index typo",
+          "quote": "$$H^{2}\\left(P,Q\\right)=\\frac{1}{2}\\sum_{i=0}^{n}\\left(\\sqrt{q_{i}}-\\sqrt{p_{i}}\\right)^{2}.\\#(2.)$$",
+          "explanation": "The standard Hellinger-squared distance is H^2(P,Q) = (1/2) sum_{i=1}^{n} (sqrt(p_i) - sqrt(q_i))^2 with P and Q normalized so that sum_i p_i = sum_i q_i = 1, giving values in [0,1]. The paper sums from i=0 (n+1 terms) and treats P, Q as 'speckle energy distributions' from raw summed speckle images without describing normalization. If P and Q are not normalized to 1, equation (2) is not Hellinger distance and produced numbers are not comparable to typical Hellinger ranges. Combined with the lower-index typo this is a real concern about what was actually computed for the channel-stability metric.",
+          "comment_type": "methodology",
+          "severity": "moderate",
+          "paragraph_index": 29
+        },
+        {
+          "id": "openaireview__claude_20",
+          "title": "Generalization claim rests on a single intra-domain transfer between similar handwriting datasets",
+          "quote": "we used the MMDN dynamically trained on Latin alphabet images for inference on the digit dataset (see Fig. 4(c)) and measured the transmission accuracy",
+          "explanation": "The 'generalization' result is one transfer between two close subsets of the same family (Latin letters to digits, both 32x32 binarized handwriting). The conclusion that the network 'has good generalization performance' is broad relative to that single positive case. No transfer to substantially different distributions (natural scenes, grayscale, non-handwriting), no negative case, and no quantification of transfer breadth is shown.",
+          "comment_type": "claim_accuracy",
+          "severity": "moderate",
+          "paragraph_index": 21
+        },
+        {
+          "id": "openaireview__claude_21",
+          "title": "Initial calibration cost is large and not disclosed in main text",
+          "quote": "The initial MMDN model trained on 20,000 paired data is then dynamically updated to support continuous image transmission of over 1000s.",
+          "explanation": "The paper contrasts itself with prior approaches that 'require a long-duration training data collection', but MMDN itself uses 20,000 paired calibration samples (~200 s at 100 fps) before any dynamic update can occur. The paper does not state how long this calibration takes, whether the channel can drift during calibration, or how often re-calibration is required (e.g., after a fiber is unplugged). This tension with the 'practical / flexible application' framing should be addressed.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 20
+        },
+        {
+          "id": "openaireview__claude_22",
+          "title": "Channel mode capacity at 1024 input pixels is not verified against MMF physics",
+          "quote": "According to the maximum number of spatial modes that is allowed to transmit through the MMF, it is theoretically possible to input images of larger pixel resolution.",
+          "explanation": "The paper asserts that 1024 input pixels is within the supported mode count without computing or citing the V-number for the 200 um MMFs at 561 nm. For a 200 um core at 0.25 NA the V-number is large and many thousand modes are supported, so 1024 is plausible - but the burden of justification lies with the paper because the central claim hinges on it. A single sentence with V and mode-count would resolve this.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 31
+        },
+        {
+          "id": "openaireview__claude_23",
+          "title": "SSIM as a speckle stability metric may understate actual channel decorrelation",
+          "quote": "The first metric measures the SSIM of a sequence of output speckle patterns to the reference pattern captured at $T=0$ while transmission a fixed image.",
+          "explanation": "SSIM was designed for natural images and is known to behave poorly on speckle, where pixel-level decorrelation can be large while SSIM remains modest because mean and variance are unchanged. Standard MMF stability metrics use Pearson correlation of intensity or eigenvalue overlap of the transmission matrix. The choice of SSIM may make the channel look more stable than it is, which in turn affects the '10 s stability / 5 s update' justification. The choice should be defended or supplemented with a correlation-based metric.",
+          "comment_type": "methodology",
+          "severity": "minor",
+          "paragraph_index": 27
+        },
+        {
+          "id": "openaireview__claude_24",
+          "title": "Discussion claims 'comprehensive improvement' over prior work via supplementary figure only",
+          "quote": "We compared MMDN with previous approaches in terms of time duration, reconstruction quality, and transmission distance, etc. and demonstrated a comprehensive improvement of our approach (see Supplementary Fig. 7).",
+          "explanation": "Given the paper's central comparative framing (long distance, long duration, high fidelity beyond prior art), at least a 1-line summary table or per-method comparison should appear in the main text. As written, the strongest superiority claim is asserted on trust against an unseen supplementary figure.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 25
+        },
+        {
+          "id": "openaireview__claude_25",
+          "title": "Reference list contains exact duplicates",
+          "quote": "1. Richardson, David J., John M. Fini, and Lynn E. Nelson. \"Space-division multiplexing in optical fibres.\" Nature photonics 7.5 (2013): 354\u2013362.",
+          "explanation": "Richardson et al. 2013 appears as both ref [1] and ref [12]; Turtaev et al. 2018 as both ref [7] and ref [10]; Tahir et al. 2022 as both ref [18] and ref [25]. These imply the citation numbering broke during preparation and that body-text citations such as ref [12] (high-rate optical communication) and ref [25] (mixture-of-expert framework) may be mis-pointed.",
+          "comment_type": "presentation",
+          "severity": "minor",
+          "paragraph_index": 39
+        },
+        {
+          "id": "openaireview__claude_26",
+          "title": "Code and data are available only on request, despite ML-method centrality",
+          "quote": "The code is available from the corresponding author upon reasonable request.",
+          "explanation": "Both data ('All data are available from the corresponding author upon reasonable request.') and code are gated behind the corresponding author. This is a meaningful reproducibility concern given that the central novelty is a particular ensemble-update procedure with multiple under-specified hyperparameters (memory wiping, alternation cadence, update interval), and validation depends on hardware-tied calibration data that no third party can re-generate.",
+          "comment_type": "missing_information",
+          "severity": "minor",
+          "paragraph_index": 38
+        }
+      ],
+      "cost_usd": 0,
+      "prompt_tokens": 0,
+      "completion_tokens": 0
+    }
+  }
+}
